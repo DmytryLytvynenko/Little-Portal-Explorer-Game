@@ -310,7 +310,7 @@ GameObject:
   - component: {fileID: 9057447180156261568}
   - component: {fileID: 2363012331951304107}
   - component: {fileID: 1868945276378792712}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Hero
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -407,12 +407,6 @@ MonoBehaviour:
   damageJumpForce: 10
   explosionDamage: 3000
   LoseScreen: {fileID: 0}
-  xThrowSize: 0.8
-  yThrowSize: -0.2
-  zThrowSize: 0.4
-  yThrowAngle: 1
-  throwForce: 25
-  throwDamage: 1
 --- !u!54 &4792738596926923209
 Rigidbody:
   m_ObjectHideFlags: 0

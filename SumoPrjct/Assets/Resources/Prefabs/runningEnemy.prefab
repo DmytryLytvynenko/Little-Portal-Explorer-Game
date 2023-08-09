@@ -193,7 +193,7 @@ GameObject:
   - component: {fileID: 2420992438558452106}
   - component: {fileID: 2420992438558452105}
   - component: {fileID: 2312613521049584299}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: runningEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -320,15 +320,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64ea79cdef15c7d43a7070da9d155291, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  contactDamage: 0
   moveSpeed: 2
+  maxSpeed: 0
+  rotationSpeed: 15
   maxMoveSpeed: 2.5
   runSpeed: 6
   maxRunSpeed: 5
-  rotationSpeed: 15
   runDistnace: 6
   runTime: 1.5
   waitTillRunTime: 0.7
-  damage: 10
 --- !u!114 &2312613521049584299
 MonoBehaviour:
   m_ObjectHideFlags: 0

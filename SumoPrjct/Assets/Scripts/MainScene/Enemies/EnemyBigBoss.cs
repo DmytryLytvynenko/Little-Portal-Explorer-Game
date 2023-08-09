@@ -11,6 +11,7 @@ public class EnemyBigBoss : Enemy
     [SerializeField] private int explosionDamage;
     [SerializeField] private GameObject pointer;
     private GameObject _pointer;
+    private Throw _throw;
     private float prepareTimer = 0f;
     private float waitTillTime;
     private Action currentAction;
@@ -44,12 +45,6 @@ public class EnemyBigBoss : Enemy
     [SerializeField] private float kickDistnace;
     [SerializeField] private float waitTillKickTime;
     private bool canKick;
-    [SerializeField] private float xKickSize;
-    [SerializeField] private float yKickSize;
-    [SerializeField] private float zKickSize;
-    [SerializeField] private float yKickAngle;
-    [SerializeField] private float kickForce;
-    [SerializeField] private int kickDamage;
 
     private enum Action
     {
@@ -61,6 +56,7 @@ public class EnemyBigBoss : Enemy
     void Start()
     {
         /*pointer = Resources.Load<GameObject>("Prefabs/BigBossPointer");*/
+        _throw = GetComponent<Throw>();
         rb = GetComponent<Rigidbody>();
         target = GameObject.Find("Hero").GetComponent<Transform>();
         ShootPos = this.gameObject.transform.GetChild(0);
@@ -77,9 +73,7 @@ public class EnemyBigBoss : Enemy
         ControllJumpDistance();
         ControllShootDistance();
         ControllKickDistance();
-        VisualizeBox.DisplayBox(kickArea.position, new Vector3(xKickSize / 2, yKickSize / 2, zKickSize / 2), kickArea.rotation);
     }
-
     private void ChooseAction()
     {
         if (!isGrounded)
@@ -138,12 +132,12 @@ public class EnemyBigBoss : Enemy
         {
             return;
         }
+        if (!isGrounded)
+        {
+            return;
+        }
         if (rotationVector.magnitude <= kickDistnace)
         {
-            if (!isGrounded)
-            {
-                return;
-            }
             moveSpeed = 0f;
             waitTillTime = waitTillKickTime;
             IndicateAction(Action.Kick);
@@ -177,26 +171,7 @@ public class EnemyBigBoss : Enemy
         {
             return;
         }
-        Collider[] overlappedColiders = Physics.OverlapBox(kickArea.position, new Vector3(xKickSize / 2, yKickSize / 2, zKickSize / 2), kickArea.rotation);
-        for (int i = 0; i < overlappedColiders.Length; i++)
-        {
-            Rigidbody rigitbody = overlappedColiders[i].attachedRigidbody;
-            if (rigitbody && !overlappedColiders[i].gameObject.CompareTag("Boss"))
-            {
-                Vector3 enemyDir = new Vector3(rigitbody.transform.position.x - transform.position.x, (rigitbody.transform.position.y - transform.position.y) + yKickAngle, rigitbody.transform.position.z - transform.position.z);
-                Debug.DrawLine(transform.position, new Vector3(rigitbody.transform.position.x, rigitbody.transform.position.y + yKickAngle, rigitbody.transform.position.z), Color.red, 100);
-                rigitbody.AddForce(enemyDir.normalized * kickForce, ForceMode.Impulse);
-                Debug.Log("Kick!");
-                if (!rigitbody.gameObject.GetComponent<HealthControll>())
-                {
-                    continue;
-                }
-                else
-                {
-                    rigitbody.GetComponent<HealthControll>().ChangeHealth(-kickDamage);
-                }
-            }
-        }
+        _throw.EnemyBossThrow();
         canKick = false;
         currentAction = Action.None;
     }

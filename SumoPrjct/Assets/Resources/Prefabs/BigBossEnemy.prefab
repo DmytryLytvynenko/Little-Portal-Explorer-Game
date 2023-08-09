@@ -275,9 +275,10 @@ GameObject:
   - component: {fileID: 4248381522250933706}
   - component: {fileID: 4896998461962575691}
   - component: {fileID: 4672535749931551363}
+  - component: {fileID: -7574414302898759727}
   - component: {fileID: 1456865201736339904}
   - component: {fileID: 6968445415196885583}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BigBossEnemy
   m_TagString: Boss
   m_Icon: {fileID: 0}
@@ -406,12 +407,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73fa9e102fb12ea409959803cd9d1686, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
-  maxMoveSpeed: 4
-  rotationSpeed: 15
-  explosionDamage: 5
   contactDamage: 10
+  moveSpeed: 3
+  maxSpeed: 0
+  rotationSpeed: 15
+  maxMoveSpeed: 4
+  explosionDamage: 5
   pointer: {fileID: 6193311813821381323, guid: 0f5c00a049be0a14794c348139611fe7, type: 3}
+  chooseActionTime: 0
   waitTillShootTime: 2
   shootDistnace: 6
   xShootAngle: 45
@@ -425,12 +428,25 @@ MonoBehaviour:
   debugPath: 0
   kickDistnace: 1.7
   waitTillKickTime: 1
-  xKickSize: 2
-  yKickSize: 0.25
-  zKickSize: 0.8
-  yKickAngle: 0
-  kickForce: 7
-  kickDamage: 1
+--- !u!114 &-7574414302898759727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4896998461962575024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c12c7c9dadfd36439c27aae42b3c1b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  throwArea: {fileID: 173521400}
+  xThrowSize: 2
+  yThrowSize: 0.25
+  zThrowSize: 0.8
+  yThrowAngle: 0
+  throwForce: 7
+  throwDamage: 3
 --- !u!114 &1456865201736339904
 MonoBehaviour:
   m_ObjectHideFlags: 0

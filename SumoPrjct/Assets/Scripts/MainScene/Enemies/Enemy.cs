@@ -21,10 +21,6 @@ public class Enemy : MonoBehaviour
     }
     protected void GiveContactDamage(Collision collision)
     {
-        if (!collision.gameObject.CompareTag("Player"))
-        {
-            return;
-        }
         if (!collision.gameObject.GetComponent<HealthControll>())
         {
             return;
