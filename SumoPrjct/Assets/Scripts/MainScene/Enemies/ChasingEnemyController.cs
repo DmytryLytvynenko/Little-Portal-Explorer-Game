@@ -1,18 +1,19 @@
 ﻿using UnityEngine;
 
-public class ChasingEnemyController : Enemy
+public class ChasingEnemyController : Entity
 {
-    void Start()
+    private void Start()
     {
         rb = GetComponent<Rigidbody>();
         target = GameObject.Find("Hero").GetComponent<Transform>();
     }
-    void Update()
+    private void FixedUpdate()
     {
         Move();
     }
-    private void OnCollisionEnter(Collision collision)
+    protected override void OnCollisionEnter(Collision collision)
     {
+        base.OnCollisionEnter(collision);
         GiveContactDamage(collision);
     }
 }

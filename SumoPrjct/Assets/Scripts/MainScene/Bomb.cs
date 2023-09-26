@@ -11,6 +11,13 @@ public class Bomb : MonoBehaviour
     {
         explosion = GetComponent<Explosion>();
     }
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            explosion.BossExplode(0);
+        }
+    }
     private void OnCollisionEnter(Collision collision)
     {
         if (isActive)

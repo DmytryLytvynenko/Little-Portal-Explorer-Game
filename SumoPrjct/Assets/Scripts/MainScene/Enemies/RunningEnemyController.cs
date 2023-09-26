@@ -2,10 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RunningEnemyController : Enemy
+public class RunningEnemyController : Entity
 {
     // Main characteristics
-    [SerializeField] private float maxMoveSpeed;
     [SerializeField] private float runSpeed;
     [SerializeField] private float maxRunSpeed;
     [SerializeField] private float runDistnace;
@@ -43,7 +42,7 @@ public class RunningEnemyController : Enemy
             transform.rotation = Quaternion.Lerp(transform.rotation, rotation, rotationSpeed * Time.deltaTime);
         }
 
-        if (rb.velocity.magnitude < maxMoveSpeed)
+        if (rb.velocity.magnitude < maxSpeed)
         {
             rb.AddForce(transform.forward * moveSpeed, ForceMode.Impulse);//метод передвижения 
         }
@@ -116,8 +115,9 @@ public class RunningEnemyController : Enemy
             canRun = true;
         }
     }
-    private void OnCollisionEnter(Collision collision)
+    protected override void OnCollisionEnter(Collision collision)
     {
+        base.OnCollisionEnter(collision);
         GiveContactDamage(collision);
     }
 }

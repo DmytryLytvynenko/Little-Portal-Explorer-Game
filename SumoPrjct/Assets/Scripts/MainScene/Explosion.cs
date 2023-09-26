@@ -35,18 +35,11 @@ public class Explosion : MonoBehaviour
                 rigitbody.gameObject.GetComponent<Bomb>().SetActive(true);
             }
             rigitbody.AddExplosionForce(explosionForce, transform.position, explosionRadius);
-            if (!rigitbody.gameObject.GetComponent<HealthControll>())
-            {
-                continue;
-            }
-            else
+            if (rigitbody.gameObject.layer == LayerMask.NameToLayer("HaveHealth"))
             {
                 rigitbody.GetComponent<HealthControll>().ChangeHealth(-damage);
             }
-            print($"Explosion Damage:{damage}");
         }
-
-        print("explosion");
         /*Instantiate(explosionEffect, transform.position, Quaternion.identity);*/
     }
     public void NoDamageExplode()
@@ -67,10 +60,8 @@ public class Explosion : MonoBehaviour
             {
                 continue;
             }
-            Vector3 distanceToTarget = new Vector3(transform.position.x - rigitbody.transform.position.x, transform.position.y - rigitbody.transform.position.y, transform.position.z - rigitbody.transform.position.z);
             rigitbody.AddExplosionForce(noDamageExplosionForce, transform.position, noDamageExplosionRadius);
         }
-
         /*Instantiate(explosionEffect, transform.position, Quaternion.identity);*/
     }
     public void BossExplode(int explosionDamage)
@@ -91,19 +82,14 @@ public class Explosion : MonoBehaviour
             {
                 continue;
             }
+            Vector3 distanceToTarget = new Vector3(transform.position.x - rigitbody.transform.position.x, transform.position.y - rigitbody.transform.position.y, transform.position.z - rigitbody.transform.position.z);
+            int damage = Convert.ToInt32(((explosionRadius - distanceToTarget.magnitude) / explosionRadius) * explosionDamage);
             rigitbody.AddExplosionForce(explosionForce, transform.position, explosionRadius);
-            if (!rigitbody.gameObject.GetComponent<HealthControll>())
+            if (rigitbody.gameObject.layer == LayerMask.NameToLayer("HaveHealth"))
             {
-                continue;
+                rigitbody.GetComponent<HealthControll>().ChangeHealth(-damage);
             }
-            else
-            {
-                rigitbody.GetComponent<HealthControll>().ChangeHealth(-explosionDamage);
-            }
-            print($"Explosion Damage:{explosionDamage}");
-    }
-
-        print("explosion");
+        }
         /*Instantiate(explosionEffect, transform.position, Quaternion.identity);*/
     }
 }

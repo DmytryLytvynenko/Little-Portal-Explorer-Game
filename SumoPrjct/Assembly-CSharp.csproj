@@ -58,7 +58,6 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\MainScene\Scenario.cs" />
     <Compile Include="Assets\Scripts\MenuScene\HeroRotating.cs" />
-    <Compile Include="Assets\Scripts\MainScene\ActivateEnemy.cs" />
     <Compile Include="Assets\Scripts\MainScene\VisualizeBox.cs" />
     <Compile Include="Assets\Scripts\MainScene\Throw.cs" />
     <Compile Include="Assets\Scripts\MainScene\PlatformSpawn.cs" />
@@ -77,9 +76,10 @@
     <Compile Include="Assets\Scripts\MenuScene\FallingObject.cs" />
     <Compile Include="Assets\Scripts\MainScene\PlatformController.cs" />
     <Compile Include="Assets\Scripts\MainScene\Bomb.cs" />
+    <Compile Include="Assets\Scripts\MainScene\CameraRotate.cs" />
     <Compile Include="Assets\Scripts\MainScene\PauseGame.cs" />
-    <Compile Include="Assets\Scripts\MainScene\RotatingWall.cs" />
-    <Compile Include="Assets\Scripts\MainScene\Enemies\Enemy.cs" />
+    <Compile Include="Assets\Scripts\MainScene\Parent.cs" />
+    <Compile Include="Assets\Scripts\MainScene\Enemies\Entity.cs" />
     <Compile Include="Assets\Scripts\MainScene\CameraController.cs" />
     <Compile Include="Assets\Scripts\Scenes.cs" />
     <Compile Include="Assets\Scripts\MainScene\Enemies\ChasingEnemyController.cs" />

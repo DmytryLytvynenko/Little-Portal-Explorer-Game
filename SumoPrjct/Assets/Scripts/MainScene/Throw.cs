@@ -21,7 +21,7 @@ public class Throw : MonoBehaviour
         {
             Rigidbody rigitbody = overlappedColiders[i].attachedRigidbody;
             if (!rigitbody) return;
-            if (!rigitbody.gameObject.CompareTag("Player")) return;
+            if (rigitbody.gameObject.CompareTag("Player")) return;
 
             Vector3 enemyDir = new Vector3(rigitbody.transform.position.x - transform.position.x,
                                           (rigitbody.transform.position.y - transform.position.y) + yThrowAngle,
@@ -31,7 +31,7 @@ public class Throw : MonoBehaviour
             {
                 rigitbody.gameObject.GetComponent<Bomb>().SetActive(true);
             }
-            if (rigitbody.gameObject.layer == LayerMask.GetMask("HaveHealth"))
+            if (rigitbody.gameObject.layer == LayerMask.NameToLayer("HaveHealth"))
             {
                 rigitbody.GetComponent<HealthControll>().ChangeHealth(-throwDamage);
             }
@@ -44,14 +44,14 @@ public class Throw : MonoBehaviour
         {
             Rigidbody rigitbody = overlappedColiders[i].attachedRigidbody;
             if (!rigitbody) return;
-            if (!rigitbody.gameObject.CompareTag("Boss")) return;
+            if (rigitbody.gameObject.CompareTag("Boss")) return;
 
 
             Vector3 enemyDir = new Vector3(rigitbody.transform.position.x - transform.position.x,
                                           (rigitbody.transform.position.y - transform.position.y) + yThrowAngle,
                                            rigitbody.transform.position.z - transform.position.z);
             rigitbody.AddForce(enemyDir.normalized * throwForce, ForceMode.Impulse);
-            if (rigitbody.gameObject.layer == LayerMask.GetMask("HaveHealth"))
+            if (rigitbody.gameObject.layer == LayerMask.NameToLayer("HaveHealth"))
             {
                 rigitbody.GetComponent<HealthControll>().ChangeHealth(-throwDamage);
             }

@@ -8,18 +8,19 @@ public class HeroController : MonoBehaviour
     //Oсновные параметры
     [SerializeField] private float jumpForce;
     [SerializeField] private float moveSpeed;
-/*    [SerializeField] private float maxSpeed;*/
+    [SerializeField] private float maxSpeed;
     [SerializeField] private float rotationSpeed;
-    [SerializeField] private bool isGrounded;
-    [SerializeField] private bool canExplode = false;
     [SerializeField] private float ExplosionJumpHeight;
     [SerializeField] private float velocityToExplode;
-    [SerializeField] private float damageJumpForce;
     [SerializeField] private int explosionDamage;
+    private bool canExplode = false;
+    private float damageJumpForce;
+    [SerializeField] private bool isGrounded;
 
 
     //Ссылки на компоненты
     [SerializeField] private GameObject LoseScreen;
+    [SerializeField] private Transform cameraRoot;
     private MobileController mController;
     private Animator ch_animator;
     private Rigidbody rb;
@@ -38,19 +39,22 @@ public class HeroController : MonoBehaviour
 
     private void Start()
     {
+        damageJumpForce = jumpForce;
         explosion = GetComponent<Explosion>();
         rb = GetComponent<Rigidbody>();
         /*ch_animator = GetComponent<Animator>();*/
         mController = GameObject.FindGameObjectsWithTag("Joystick")[0].GetComponent<MobileController>();
     }
-
     private void Update()
     {
-        SetCanExplode();
         if (Input.GetKeyDown(KeyCode.Space))
         {
             Jump();
         }
+    }
+    private void FixedUpdate()
+    {
+        SetCanExplode();
         Move();
     }
 
@@ -59,20 +63,21 @@ public class HeroController : MonoBehaviour
         //вращение персонажа
         if (moveVector.magnitude > 0.1f)
         {
-            Quaternion rotation = Quaternion.LookRotation(moveVector);
+            float rotationAngle = Mathf.Atan2(moveVector.x,moveVector.z) * Mathf.Rad2Deg + cameraRoot.eulerAngles.y;
+            Quaternion rotation = Quaternion.Euler(0f,rotationAngle,0f);
             transform.rotation = Quaternion.Lerp(transform.rotation, rotation, rotationSpeed * Time.deltaTime);
         }
 
         //перемещение персонажа
         // без инерции
-        Vector3 offset = moveVector * moveSpeed * Time.deltaTime;
-        rb.MovePosition(rb.position + offset);
+/*        Vector3 offset = moveVector * moveSpeed * Time.deltaTime;
+        rb.MovePosition(rb.position + offset);*/
 
         // с инерцией
-        /*        if (rb.velocity.magnitude < maxSpeed)
-                {
-                    rb.AddForce(moveVector * moveSpeed, ForceMode.Impulse);//метод передвижения 
-                }*/
+        if (rb.velocity.magnitude < maxSpeed)
+        {
+            rb.AddForce(transform.forward * moveVector.magnitude * moveSpeed, ForceMode.Impulse);//метод передвижения 
+        }
     }
     public void Jump()
     {
@@ -82,33 +87,6 @@ public class HeroController : MonoBehaviour
             isGrounded = false;
         }
     }
-/*    public void Throw()
-    {
-        Collider[] overlappedColiders = Physics.OverlapBox(throwArea.position, new Vector3(xThrowSize/2, yThrowSize/2, zThrowSize/2), throwArea.rotation);
-        for (int i = 0; i < overlappedColiders.Length; i++)
-        {
-            Rigidbody rigitbody = overlappedColiders[i].attachedRigidbody;
-            if (rigitbody && !rigitbody.gameObject.CompareTag("Player"))
-            {
-                if (rigitbody.gameObject.CompareTag("Bomb"))
-                {
-                    rigitbody.gameObject.GetComponent<Bomb>().SetActive(true);
-                }
-                Vector3 enemyDir = new Vector3(rigitbody.transform.position.x - transform.position.x, (rigitbody.transform.position.y - transform.position.y) + yThrowAngle, rigitbody.transform.position.z - transform.position.z);
-                Debug.DrawLine(transform.position, new Vector3(rigitbody.transform.position.x, rigitbody.transform.position.y + yThrowAngle, rigitbody.transform.position.z), Color.red, 100);
-                rigitbody.AddForce(enemyDir.normalized * throwForce, ForceMode.Impulse);
-                Debug.Log("Throw!");
-                if (!rigitbody.gameObject.GetComponent<HealthControll>())
-                {
-                    continue;
-                }
-                else
-                {
-                    rigitbody.GetComponent<HealthControll>().ChangeHealth(-throwDamage);
-                }
-            }
-        }
-    }*/
     private void SetCanExplode()
     {
         if (isGrounded)
@@ -160,10 +138,6 @@ public class HeroController : MonoBehaviour
         {
             isGrounded = value;
         }
-    }
-    private void OnDrawGizmos()
-    {
-
     }
     public void Die()
     {

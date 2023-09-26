@@ -310,6 +310,7 @@ GameObject:
   - component: {fileID: 9057447180156261568}
   - component: {fileID: 2363012331951304107}
   - component: {fileID: 1868945276378792712}
+  - component: {fileID: 1351357455}
   m_Layer: 6
   m_Name: Hero
   m_TagString: Player
@@ -324,8 +325,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6836864531634666604}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.5676253, y: 5.5518384, z: -3.266406}
+  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+  m_LocalPosition: {x: -3.39, y: 0, z: 5.79}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -334,7 +335,7 @@ Transform:
   - {fileID: 8852483743064176647}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!33 &6836864531634666599
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -397,15 +398,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e0ac1bcacc600b479a7d7d06ba274d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpForce: 18
+  jumpForce: 50
   moveSpeed: 5
+  maxSpeed: 6
   rotationSpeed: 15
-  isGrounded: 1
-  canExplode: 0
   ExplosionJumpHeight: 4.5
   velocityToExplode: -6.5
-  damageJumpForce: 10
   explosionDamage: 3000
+  isGrounded: 1
   LoseScreen: {fileID: 0}
 --- !u!54 &4792738596926923209
 Rigidbody:
@@ -415,7 +415,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6836864531634666604}
   serializedVersion: 2
-  m_Mass: 3
+  m_Mass: 10
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -467,6 +467,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
+--- !u!114 &1351357455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6836864531634666604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c12c7c9dadfd36439c27aae42b3c1b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  throwArea: {fileID: 8852483743064176647}
+  xThrowSize: 0.8
+  yThrowSize: -0.2
+  zThrowSize: 1
+  yThrowAngle: 1
+  throwForce: 25
+  throwDamage: 500
 --- !u!1 &7909047830927345717
 GameObject:
   m_ObjectHideFlags: 0

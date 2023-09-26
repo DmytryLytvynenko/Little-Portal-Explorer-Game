@@ -46,9 +46,8 @@ GameObject:
   - component: {fileID: 228993800423009634}
   - component: {fileID: 228993800423009945}
   - component: {fileID: 228993800423009944}
-  - component: {fileID: 7196196025236354733}
   m_Layer: 6
-  m_Name: ShootingEnemy
+  m_Name: shootingEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -170,6 +169,7 @@ MonoBehaviour:
   shootDistnace: 6
   xShootAngle: -45
   shootCooldown: 1.5
+  ShootPos: {fileID: 228993799988786680}
   bullet: {fileID: 6997241007162612521, guid: 8379717eded0ad749b0b7d945065fe1e, type: 3}
 --- !u!114 &228993800423009944
 MonoBehaviour:
@@ -184,18 +184,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 2500
---- !u!114 &7196196025236354733
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 228993800423009635}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2dd9d21024e813c4caeecbb6d4dcb95a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &4104852528952209650
 GameObject:
   m_ObjectHideFlags: 0

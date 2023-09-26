@@ -31,7 +31,7 @@ public class HealthBar : MonoBehaviour
     }
     private void LateUpdate()
     {
-        transform.LookAt(new Vector3(transform.position.x, camera.transform.position.y, camera.transform.position.z));
+        transform.LookAt(new Vector3(camera.transform.position.x, camera.transform.position.y, camera.transform.position.z));
         transform.Rotate(0, 180, 0);
     }
 }

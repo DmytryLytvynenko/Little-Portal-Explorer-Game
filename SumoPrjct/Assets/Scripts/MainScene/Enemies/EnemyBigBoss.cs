@@ -2,50 +2,44 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyBigBoss : Enemy
+public class EnemyBigBoss : Entity
 {
     // Main characteristics
     [Header("Main")]
-    private float tempMoveSpeed;
-    [SerializeField] private float maxMoveSpeed;
+    [SerializeField] private float runSpeedIncrement;
     [SerializeField] private int explosionDamage;
-    [SerializeField] private GameObject pointer;
-    private GameObject _pointer;
+    [SerializeField] private GameObject explosionPointer;
+    private GameObject _explosionPointer;
     private Throw _throw;
-    private float prepareTimer = 0f;
-    private float waitTillTime;
+    private Explosion _explosion;
     private Action currentAction;
-    private float chooseActionTimer = 0f;
-    [SerializeField] private float chooseActionTime;
     private bool isGrounded;  
+    private float tempMoveSpeed;  
 
     [Header("Shoot")]
-    [SerializeField] private float waitTillShootTime;
+    [SerializeField] private float waitTillShoot;
     [SerializeField] private float shootDistnace;
     [SerializeField] private float xShootAngle;
     [SerializeField] private float numberOfBullets;
     [SerializeField] private float timeBetweenShots;
     [SerializeField] private GameObject bullet;
     private Transform ShootPos; // откуда стреляем
-    private bool isShooting;
-    private bool canShoot;
 
 
     [Header("Jump")]
     [SerializeField] private float jumpDistnace;
     private bool canJump;
-    [SerializeField] private float waitTilljumpTime;
+    [SerializeField] private float waitTilljump;
     [SerializeField] private float jumpHeight = 7;
     [SerializeField] private float gravity = -9.81f;
     [SerializeField] private bool debugPath;
 
 
     [Header("Kick")]
-    private Transform kickArea;
     [SerializeField] private float kickDistnace;
-    [SerializeField] private float waitTillKickTime;
-    private bool canKick;
+    [SerializeField] private float waitTillKick;
 
+    private bool isBusy;
     private enum Action
     {
         Shoot,
@@ -53,26 +47,36 @@ public class EnemyBigBoss : Enemy
         Kick,
         None
     }
-    void Start()
+    private void Awake()
     {
-        /*pointer = Resources.Load<GameObject>("Prefabs/BigBossPointer");*/
+        tempMoveSpeed = moveSpeed;
+        _explosion = GetComponent<Explosion>();
         _throw = GetComponent<Throw>();
         rb = GetComponent<Rigidbody>();
         target = GameObject.Find("Hero").GetComponent<Transform>();
         ShootPos = this.gameObject.transform.GetChild(0);
-        tempMoveSpeed = moveSpeed;
-        kickArea = transform.GetChild(2).transform;
         currentAction = Action.None;
     }
     void Update()
     {
+        Debug.Log(moveSpeed);
         Move();
-        ChooseAction();
-        Jump();
-        Kick();
-        ControllJumpDistance();
-        ControllShootDistance();
-        ControllKickDistance();
+        ControllDistance();
+    }
+    protected override void Move()
+    {
+        //перемещение персонажа
+        if (rotationVector.magnitude > 0.1f)
+        {
+            Quaternion rotation = Quaternion.LookRotation(rotationVector);
+            transform.rotation = Quaternion.Lerp(transform.rotation, rotation, rotationSpeed * Time.fixedDeltaTime);
+        }
+
+        if (rb.velocity.magnitude < maxSpeed)
+        {
+            Vector3 offset = transform.forward * moveSpeed * Time.deltaTime;
+            rb.MovePosition(rb.position + offset);//метод передвижения 
+        }
     }
     private void ChooseAction()
     {
@@ -94,136 +98,84 @@ public class EnemyBigBoss : Enemy
         switch (randomDigit)
         {
             case (1):
-                currentAction = Action.Shoot;
+                currentAction = Action.Jump;
                 break;
             case (2):
-                currentAction = Action.Jump;
+                currentAction = Action.Shoot;
                 break;
             case (3):
                 currentAction = Action.Kick;
+                moveSpeed += runSpeedIncrement;
+                maxSpeed += runSpeedIncrement;
                 break;
-            default:
-                break;
         }
+        IndicateAction(currentAction);
     }
-    protected override void Move()
+    
+    private void ControllDistance()
     {
-        //перемещение персонажа
-        if (canJump)
-        {
-            return;
-        }
-
-        if (rotationVector.magnitude > 0.1f)
-        {
-            Quaternion rotation = Quaternion.LookRotation(rotationVector);
-            transform.rotation = Quaternion.Lerp(transform.rotation, rotation, rotationSpeed * Time.fixedDeltaTime);
-        }
-
-        if (rb.velocity.magnitude < maxMoveSpeed)
-        {
-            Vector3 offset = transform.forward * moveSpeed * Time.deltaTime;
-            rb.MovePosition(rb.position + offset);//метод передвижения 
-        }
-    }
-    private void ControllKickDistance()
-    {
-        if (currentAction != Action.Kick)
-        {
-            return;
-        }
         if (!isGrounded)
+            return;
+
+        if (currentAction == Action.None)
         {
+            DeIndicateAction();
+            ChooseAction();
+        }
+        if (isBusy)
+        { 
             return;
         }
-        if (rotationVector.magnitude <= kickDistnace)
+
+        if (CompareDistance(currentAction))
         {
-            moveSpeed = 0f;
-            waitTillTime = waitTillKickTime;
-            IndicateAction(Action.Kick);
-            WaitForTime(Action.Kick);
-        }
-        else
-        {
-            if (!isGrounded)
+            switch (currentAction)
             {
-                return;
+                case Action.Jump:
+                    StartCoroutine(Jump());
+                    break;
+                case Action.Kick:
+                    StartCoroutine(Kick());
+                    break;
+                case Action.Shoot:
+                    StartCoroutine(Shoot());
+                    break;
             }
-            if (canKick)
-            {
-                return;
-            }
-            if (moveSpeed != 0)
-            {
-                return;
-            }
-            DeIndicateAction(Action.Jump);
-            moveSpeed = tempMoveSpeed;
         }
     }
-    public void Kick()
+    public IEnumerator Kick()
     {
-        if (currentAction != Action.Kick)
-        {
-            return;
-        }
-        if (!canKick)
-        {
-            return;
-        }
+        isBusy = true;
+        moveSpeed = 0;
+        yield return new WaitForSeconds(waitTillKick);
         _throw.EnemyBossThrow();
-        canKick = false;
+        yield return new WaitForSeconds(waitTillKick);
+        moveSpeed = tempMoveSpeed;
+        maxSpeed -= runSpeedIncrement;
         currentAction = Action.None;
+        isBusy = false;
     }
-    private void Jump()
+    private IEnumerator Jump()
     {
-        if (!canJump)
-        {
-            return;
-        }
-        /*Logic*/
+        isBusy = true;
+        float tempRotSpeed = rotationSpeed;
+        moveSpeed = 0;
+        rotationSpeed = 0;
+        yield return new WaitForSeconds(waitTilljump);
+
         DrawPointer();
         Launch();
-        canJump = false;
+        moveSpeed = tempMoveSpeed;
+        rotationSpeed = tempRotSpeed;
         currentAction = Action.None;
+        isBusy = false;
     }
-    private void ControllJumpDistance()
+    private IEnumerator Shoot()
     {
-        if (currentAction != Action.Jump)
-        {
-            return;
-        }
-        if (rotationVector.magnitude <= jumpDistnace)
-        {
-            if (!isGrounded)
-            {
-                return;
-            }
-            moveSpeed = 0f;
-            waitTillTime = waitTilljumpTime;
-            IndicateAction(Action.Jump);
-            WaitForTime(Action.Jump);
-        }
-        else
-        {
-            if (!isGrounded)
-            {
-                return;
-            }
-            if (canJump)
-            {
-                return;
-            }
-            if (moveSpeed != 0)
-            {
-                return;
-            }
-            DeIndicateAction(Action.Jump);
-            moveSpeed = tempMoveSpeed;
-        }
-    }
-    private IEnumerator ShootingCoroutine()
-    {
+        isBusy = true;
+        moveSpeed = 0;
+        yield return new WaitForSeconds(waitTillShoot);
+
         for (int i = 0; i < numberOfBullets; i++)
         {
             GameObject bullet = Instantiate(this.bullet, ShootPos.position, Quaternion.Euler(0f, transform.localEulerAngles.y, transform.localEulerAngles.z));
@@ -231,53 +183,9 @@ public class EnemyBigBoss : Enemy
 
             yield return new WaitForSeconds(timeBetweenShots);
         }
-        canShoot = false;
-        isShooting = false;
+        moveSpeed = tempMoveSpeed;
         currentAction = Action.None;
-    }
-    private void ControllShootDistance()
-    {
-        if (currentAction != Action.Shoot)
-        {
-            return;
-        }
-        if (rotationVector.magnitude <= shootDistnace)
-        {
-            if (canShoot)
-            {
-                return;
-            }
-            moveSpeed = 0f;
-            waitTillTime = waitTillShootTime;
-            IndicateAction(Action.Shoot);
-            WaitForTime(Action.Shoot);
-            if (!canShoot)
-            {
-                return;
-            }
-            if (isShooting)
-            {
-                return;
-            }
-            else
-            {
-                isShooting = true;
-                StartCoroutine(ShootingCoroutine());
-            }
-        }
-        else
-        {
-            if (canShoot)
-            {
-                return;
-            }
-            if (moveSpeed != 0)
-            {
-                return;
-            }
-            DeIndicateAction(Action.Shoot);
-            moveSpeed = tempMoveSpeed;
-        }
+        isBusy = false;
     }
     private void IndicateAction(Action action)
     {
@@ -299,64 +207,36 @@ public class EnemyBigBoss : Enemy
                 break;
         }
     }
-    private void DeIndicateAction(Action action)
+    private void DeIndicateAction()
     {
-        switch (action)
+        GetComponent<Renderer>().material.color = Color.red;
+    }
+    private bool CompareDistance(Action currentAction)
+    {
+        float distance = 0f;
+        switch (currentAction)
         {
             case Action.Shoot:
-                GetComponent<Renderer>().material.color = Color.red;
+                distance = shootDistnace;
                 break;
-
             case Action.Jump:
-                GetComponent<Renderer>().material.color = Color.red;
+                distance = jumpDistnace;
                 break;
-
             case Action.Kick:
-                GetComponent<Renderer>().material.color = Color.red;
-                break;
-
-            default:
+                distance = kickDistnace;
                 break;
         }
-    }
-    private void WaitForTime(Action action)
-    {
-        if (canShoot)
-        {
-            return;
-        }
-        if (prepareTimer <= waitTillTime)
-        {
-            prepareTimer += Time.deltaTime;
-        }
+        if (rotationVector.magnitude <= distance)
+            return true;
         else
-        {
-            prepareTimer = 0f;
-            switch (action)
-            {
-                case Action.Shoot:
-                    canShoot = true;
-                    break;
-
-                case Action.Jump:
-                    canJump = true;
-                    break;
-
-                case Action.Kick:
-                    canKick = true;
-                    break;
-
-                default:
-                    break;
-            }
-        }
+            return false;
     }
     private void DrawPointer()
     {
         Ray ray = new Ray(target.position, -Vector3.up * 10);
         Physics.Raycast(ray, out RaycastHit hit);
         Vector3 drawPoint = hit.point;
-        _pointer = Instantiate(pointer, drawPoint, Quaternion.identity);
+        _explosionPointer = Instantiate(explosionPointer, drawPoint, Quaternion.identity);
     }
     private void Launch()
     {
@@ -394,20 +274,21 @@ public class EnemyBigBoss : Enemy
 
     }
 
-    private void OnCollisionEnter(Collision collision)
+    protected override void OnCollisionEnter(Collision collision)
     {
+        base.OnCollisionEnter(collision);
         if (!isGrounded)
         {
-            gameObject.GetComponent<Explosion>().BossExplode(explosionDamage);
+            _explosion.BossExplode(explosionDamage);
         }
         IsGroundedUpate(collision, true);
-        if (_pointer != null)
+        if (_explosionPointer != null)
         {
-            Destroy(_pointer);
+            Destroy(_explosionPointer);
         }
         GiveContactDamage(collision);
     }
-    void OnCollisionExit(Collision collision)
+    private void OnCollisionExit(Collision collision)
     {
         IsGroundedUpate(collision, false);
     }

@@ -8,7 +8,7 @@ public class ObjectSpawn : MonoBehaviour
     private GameObject spawnObject;
 
     [SerializeField] private float spawnSpeed;
-    [SerializeField] private float timer;
+    private float timer = 0;
     private void Start()
     {
         Time.timeScale = 1;

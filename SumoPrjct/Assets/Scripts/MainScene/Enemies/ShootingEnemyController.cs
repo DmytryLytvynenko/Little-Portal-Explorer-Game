@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShootingEnemyController : Enemy
+public class ShootingEnemyController : Entity
 {
     // Main characteristics
     private float temporaryMoveSpeed;
@@ -12,15 +12,13 @@ public class ShootingEnemyController : Enemy
     private float timer = 0;
 
     //links
-    private Transform ShootPos; // откуда стреляем
-    public GameObject bullet;
+    [SerializeField] private Transform ShootPos; // откуда стреляем
+    [SerializeField] private GameObject bullet;
 
     void Start()
     {
-        bullet = Resources.Load<GameObject>("Prefabs/Bullet");
         rb = GetComponent<Rigidbody>();
         target = GameObject.Find("Hero").GetComponent<Transform>();
-        ShootPos = this.gameObject.transform.GetChild(0);
 
         temporaryMoveSpeed = moveSpeed;
     }
@@ -63,8 +61,9 @@ public class ShootingEnemyController : Enemy
         GameObject bullet = Instantiate(this.bullet, ShootPos.position, Quaternion.Euler(0f, transform.localEulerAngles.y, transform.localEulerAngles.z)) as GameObject;
         bullet.GetComponent<Bullet>().targetPoint = target;
     }
-    private void OnCollisionEnter(Collision collision)
+    protected override void OnCollisionEnter(Collision collision)
     {
+        base.OnCollisionEnter(collision);
         GiveContactDamage(collision);
     }
 }

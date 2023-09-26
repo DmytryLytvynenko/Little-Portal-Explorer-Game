@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &173521400
 Transform:
   m_ObjectHideFlags: 0
@@ -272,12 +272,11 @@ GameObject:
   - component: {fileID: 4896998461962575028}
   - component: {fileID: 4896998461962575031}
   - component: {fileID: 4896998461962575025}
-  - component: {fileID: 4248381522250933706}
   - component: {fileID: 4896998461962575691}
   - component: {fileID: 4672535749931551363}
   - component: {fileID: -7574414302898759727}
   - component: {fileID: 1456865201736339904}
-  - component: {fileID: 6968445415196885583}
+  - component: {fileID: 126292261}
   m_Layer: 6
   m_Name: BigBossEnemy
   m_TagString: Boss
@@ -361,7 +360,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4896998461962575024}
   serializedVersion: 2
-  m_Mass: 10
+  m_Mass: 20
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -369,19 +368,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!65 &4248381522250933706
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4896998461962575024}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &4896998461962575691
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -409,25 +395,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   contactDamage: 10
   moveSpeed: 3
-  maxSpeed: 0
+  maxSpeed: 4
   rotationSpeed: 15
-  maxMoveSpeed: 4
-  explosionDamage: 5
-  pointer: {fileID: 6193311813821381323, guid: 0f5c00a049be0a14794c348139611fe7, type: 3}
-  chooseActionTime: 0
-  waitTillShootTime: 2
+  runSpeedIncrement: 2
+  explosionDamage: 20
+  explosionPointer: {fileID: 1316529639190433923, guid: 5b150ba84f7204b48b72f0806ae491cc,
+    type: 3}
+  waitTillShoot: 2
   shootDistnace: 6
   xShootAngle: 45
-  numberOfBullets: 1
+  numberOfBullets: 4
   timeBetweenShots: 0.5
   bullet: {fileID: 6997241007162612521, guid: 8379717eded0ad749b0b7d945065fe1e, type: 3}
   jumpDistnace: 6
-  waitTilljumpTime: 1
+  waitTilljump: 2
   jumpHeight: 7
   gravity: -9.81
   debugPath: 0
   kickDistnace: 1.7
-  waitTillKickTime: 1
+  waitTillKick: 1.5
 --- !u!114 &-7574414302898759727
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -444,8 +430,8 @@ MonoBehaviour:
   xThrowSize: 2
   yThrowSize: 0.25
   zThrowSize: 0.8
-  yThrowAngle: 0
-  throwForce: 7
+  yThrowAngle: 1
+  throwForce: 15
   throwDamage: 3
 --- !u!114 &1456865201736339904
 MonoBehaviour:
@@ -459,23 +445,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad6a6e2d7d27c5749a255c7a66befa33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosionRadius: 4
-  explosionForce: 300
+  explosionRadius: 2
+  explosionForce: 3000
   noDamageExplosionForce: 0
   noDamageExplosionRadius: 0
   explosionEffect: {fileID: 0}
---- !u!114 &6968445415196885583
-MonoBehaviour:
+--- !u!136 &126292261
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4896998461962575024}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2dd9d21024e813c4caeecbb6d4dcb95a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Radius: 0.4
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4896998462367335466
 GameObject:
   m_ObjectHideFlags: 0
