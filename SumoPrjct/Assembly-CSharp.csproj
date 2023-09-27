@@ -59,6 +59,7 @@
     <Compile Include="Assets\Scripts\MainScene\Scenario.cs" />
     <Compile Include="Assets\Scripts\MenuScene\HeroRotating.cs" />
     <Compile Include="Assets\Scripts\MainScene\VisualizeBox.cs" />
+    <Compile Include="Assets\Scripts\Tutorial\WalkTutorialEnded.cs" />
     <Compile Include="Assets\Scripts\MainScene\Throw.cs" />
     <Compile Include="Assets\Scripts\MainScene\PlatformSpawn.cs" />
     <Compile Include="Assets\Scripts\MainScene\DeathPlatform.cs" />
@@ -85,6 +86,7 @@
     <Compile Include="Assets\Scripts\MainScene\Enemies\ChasingEnemyController.cs" />
     <Compile Include="Assets\Scripts\MainScene\Enemies\EnemyBigBoss.cs" />
     <Compile Include="Assets\Scripts\MenuScene\ObjectSpawn.cs" />
+    <Compile Include="Assets\Scripts\Tutorial\SwitchTipAnimation.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

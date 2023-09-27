@@ -70,14 +70,14 @@ public class HeroController : MonoBehaviour
 
         //перемещение персонажа
         // без инерции
-/*        Vector3 offset = moveVector * moveSpeed * Time.deltaTime;
-        rb.MovePosition(rb.position + offset);*/
+        Vector3 offset = transform.forward * moveVector.magnitude * moveSpeed * Time.deltaTime;
+        rb.MovePosition(rb.position + offset);
 
         // с инерцией
-        if (rb.velocity.magnitude < maxSpeed)
+/*        if (rb.velocity.magnitude < maxSpeed)
         {
             rb.AddForce(transform.forward * moveVector.magnitude * moveSpeed, ForceMode.Impulse);//метод передвижения 
-        }
+        }*/
     }
     public void Jump()
     {

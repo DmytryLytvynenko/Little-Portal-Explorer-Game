@@ -365,6 +365,8 @@
 "Assets/Scripts/MenuScene/HeroRotating.cs"
 "Assets/Scripts/MenuScene/ObjectSpawn.cs"
 "Assets/Scripts/Scenes.cs"
+"Assets/Scripts/Tutorial/SwitchTipAnimation.cs"
+"Assets/Scripts/Tutorial/WalkTutorialEnded.cs"
 -langversion:9.0
 
 /deterministic

@@ -20,8 +20,8 @@ public class Throw : MonoBehaviour
         for (int i = 0; i < overlappedColiders.Length; i++)
         {
             Rigidbody rigitbody = overlappedColiders[i].attachedRigidbody;
-            if (!rigitbody) return;
-            if (rigitbody.gameObject.CompareTag("Player")) return;
+            if (!rigitbody) continue;
+            if (rigitbody.gameObject.CompareTag("Player")) continue;
 
             Vector3 enemyDir = new Vector3(rigitbody.transform.position.x - transform.position.x,
                                           (rigitbody.transform.position.y - transform.position.y) + yThrowAngle,
@@ -43,8 +43,8 @@ public class Throw : MonoBehaviour
         for (int i = 0; i < overlappedColiders.Length; i++)
         {
             Rigidbody rigitbody = overlappedColiders[i].attachedRigidbody;
-            if (!rigitbody) return;
-            if (rigitbody.gameObject.CompareTag("Boss")) return;
+            if (!rigitbody) continue;
+            if (rigitbody.gameObject.CompareTag("Boss")) continue;
 
 
             Vector3 enemyDir = new Vector3(rigitbody.transform.position.x - transform.position.x,
