@@ -9,6 +9,7 @@ public class MobileController : MonoBehaviour, IDragHandler, IPointerUpHandler, 
     private Image joysickBG;
     private Image joystick;
     private Vector2 inputVector;//координаты джойстика
+    public bool IsWorking { get; private set; }
 
     private void Start()
     {
@@ -22,11 +23,13 @@ public class MobileController : MonoBehaviour, IDragHandler, IPointerUpHandler, 
     }
     public virtual void OnPointerUp(PointerEventData ped)
     {
+        IsWorking = false;
         inputVector = Vector2.zero;
         joystick.rectTransform.anchoredPosition = Vector2.zero;
     }
     public virtual void OnDrag(PointerEventData ped)
     {
+        IsWorking = true;
         Vector2 pos;
         if (RectTransformUtility.ScreenPointToLocalPointInRectangle(joysickBG.rectTransform, ped.position, ped.pressEventCamera, out pos))
         {
