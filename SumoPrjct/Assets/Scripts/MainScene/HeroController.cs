@@ -98,6 +98,10 @@ public class HeroController : MonoBehaviour
         Debug.DrawRay(transform.position, -100 * Vector3.up, Color.red);
         RaycastHit hit;
         Physics.Raycast(ray, out hit);
+        if (hit.collider.isTrigger)
+        {
+            return;
+        }
         if (hit.distance >= ExplosionJumpHeight && rb.velocity.y < velocityToExplode)
         {
             canExplode = true;
@@ -114,9 +118,13 @@ public class HeroController : MonoBehaviour
     void OnCollisionEnter(Collision collision)
     {
         IsGroundedUpate(collision, true);
-        if (collision.gameObject.CompareTag("Ground") && canExplode)
+        if (isGrounded && canExplode)
         {
             explosion.Explode(explosionDamage);
+            canExplode = false;
+        }
+        else
+        {
             canExplode = false;
         }
         if (collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("Bullet") || collision.gameObject.CompareTag("Boss"))

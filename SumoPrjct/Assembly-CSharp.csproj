@@ -61,6 +61,8 @@
     <Compile Include="Assets\Scripts\MenuScene\HeroRotating.cs" />
     <Compile Include="Assets\Scripts\MainScene\VisualizeBox.cs" />
     <Compile Include="Assets\Scripts\Tutorial\WalkTutorialEnded.cs" />
+    <Compile Include="Assets\Scripts\Tutorial\MoveTutorialTracker.cs" />
+    <Compile Include="Assets\Scripts\Tutorial\RotateTutorialTracker.cs" />
     <Compile Include="Assets\Scripts\MainScene\Throw.cs" />
     <Compile Include="Assets\Scripts\MainScene\PlatformSpawn.cs" />
     <Compile Include="Assets\Scripts\MainScene\DeathPlatform.cs" />
@@ -72,6 +74,7 @@
     <Compile Include="Assets\Scripts\MainScene\MobileController.cs" />
     <Compile Include="Assets\Scripts\MainScene\HealthBar.cs" />
     <Compile Include="Assets\Scripts\MainScene\HealthControll.cs" />
+    <Compile Include="Assets\Scripts\Tutorial\Respawn.cs" />
     <Compile Include="Assets\Scripts\MainScene\BombSpawn.cs" />
     <Compile Include="Assets\Scripts\MainScene\Enemies\RunningEnemyController.cs" />
     <Compile Include="Assets\Scripts\MainScene\EnemySpawn.cs" />
@@ -88,8 +91,8 @@
     <Compile Include="Assets\Scripts\MainScene\Enemies\EnemyBigBoss.cs" />
     <Compile Include="Assets\Scripts\MenuScene\ObjectSpawn.cs" />
     <Compile Include="Assets\Scripts\Tutorial\DisableObject.cs" />
-    <Compile Include="Assets\Scripts\Tutorial\MoveTutorialTracker.cs" />
-    <Compile Include="Assets\Scripts\Tutorial\RotateTutorialTracker.cs" />
+    <Compile Include="Assets\Scripts\Tutorial\BoxCounter.cs" />
+    <Compile Include="Assets\Scripts\Tutorial\JumpTutorialEnded.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

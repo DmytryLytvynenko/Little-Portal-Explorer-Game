@@ -7,7 +7,6 @@ public class WalkTutorialEnded : MonoBehaviour
     [SerializeField] private Animation _passBlockerAnimation;
     [SerializeField] private GameObject jumpButton;
     [SerializeField] private GameObject jumpTip;
-    Animator anim;
     private bool isTriggered;
     private void OnTriggerEnter(Collider other)
     {

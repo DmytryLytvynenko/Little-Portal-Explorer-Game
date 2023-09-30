@@ -7,9 +7,15 @@ public class Explosion : MonoBehaviour
     public float explosionForce;
     [SerializeField] private float noDamageExplosionForce;
     [SerializeField] private float noDamageExplosionRadius;
+    [SerializeField] private GameObject explosionEffect;
 
-    public GameObject explosionEffect;
-
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            Explode(0);
+        }
+    }
     public void Explode(int explosionDamage)
     {
         Collider[] overlappedColiders = Physics.OverlapSphere(transform.position, explosionRadius);
@@ -40,7 +46,10 @@ public class Explosion : MonoBehaviour
                 rigitbody.GetComponent<HealthControll>().ChangeHealth(-damage);
             }
         }
-        /*Instantiate(explosionEffect, transform.position, Quaternion.identity);*/
+
+        Ray ray = new Ray(transform.position, -100 * Vector3.up);
+        Physics.Raycast(ray, out RaycastHit hit);
+        Instantiate(explosionEffect,new Vector3(hit.point.x, hit.point.y + 0.01f, hit.point.z), Quaternion.identity);
     }
     public void NoDamageExplode()
     {
