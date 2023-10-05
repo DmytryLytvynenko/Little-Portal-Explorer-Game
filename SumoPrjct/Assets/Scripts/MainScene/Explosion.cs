@@ -3,18 +3,38 @@ using UnityEngine;
 
 public class Explosion : MonoBehaviour
 {
-    public float explosionRadius;
-    public float explosionForce;
+    [SerializeField] private float explosionRadius;
+    [SerializeField] private float explosionForce;
     [SerializeField] private float noDamageExplosionForce;
     [SerializeField] private float noDamageExplosionRadius;
     [SerializeField] private GameObject explosionEffect;
+    public static Action Exploded;
 
+    private EffectScaling effectScaling;
+    private float defaultExplosionRadius;
+    private void Awake()
+    {
+        defaultExplosionRadius = explosionRadius;
+        effectScaling = explosionEffect.GetComponent<EffectScaling>();
+        effectScaling.SetScale(explosionRadius);
+    }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E))// потом убрать
         {
             Explode(0);
         }
+    }
+    public void SetExplosionRadius(float newRadius)
+    {
+        explosionRadius = newRadius;
+        effectScaling.SetScale(newRadius);
+        print($"Scale now{newRadius}");
+    }    
+    public void SetExplosionRadiusToNormal()
+    {
+        explosionRadius = defaultExplosionRadius;
+        effectScaling.SetScale(explosionRadius);
     }
     public void Explode(int explosionDamage)
     {
@@ -36,7 +56,7 @@ public class Explosion : MonoBehaviour
             }
             Vector3 distanceToTarget = new Vector3(transform.position.x - rigitbody.transform.position.x, transform.position.y - rigitbody.transform.position.y, transform.position.z - rigitbody.transform.position.z);
             int damage =Convert.ToInt32(((explosionRadius - distanceToTarget.magnitude) / explosionRadius) * explosionDamage);// Чем ближе к игроку протимник тем больше damage
-            if (rigitbody.gameObject.CompareTag("Bomb") && damage >= (explosionDamage/2))// Активируем бомбу если она задета взрывом достаточно сильно
+            if (rigitbody.gameObject.CompareTag("Bomb") && damage >= (explosionDamage/2/*магическое число*/))    // Активируем бомбу если она задета взрывом достаточно сильно
             {
                 rigitbody.gameObject.GetComponent<Bomb>().SetActive(true);
             }
@@ -46,6 +66,7 @@ public class Explosion : MonoBehaviour
                 rigitbody.GetComponent<HealthControll>().ChangeHealth(-damage);
             }
         }
+        Exploded?.Invoke();
 
         Ray ray = new Ray(transform.position, -100 * Vector3.up);
         Physics.Raycast(ray, out RaycastHit hit);

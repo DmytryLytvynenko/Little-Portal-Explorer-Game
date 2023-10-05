@@ -12,7 +12,7 @@ public class CameraRotate : MonoBehaviour, IDragHandler, IPointerUpHandler, IPoi
     public bool IsWorking { get; private set; }
     public void OnDrag(PointerEventData ped)
     {
-        float xRotation = cameraRoot.localEulerAngles.x + ped.delta.y * rotationSensitivity;
+        float xRotation = cameraRoot.localEulerAngles.x - ped.delta.y * rotationSensitivity;
         float yRotation = cameraRoot.localEulerAngles.y + ped.delta.x * rotationSensitivity;
         xRotation = Mathf.Clamp(xRotation, minVerticalAngle, maxVerticalAngle);
 

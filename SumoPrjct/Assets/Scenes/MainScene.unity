@@ -3125,7 +3125,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &865776176
 Transform:
   m_ObjectHideFlags: 0
@@ -6699,6 +6699,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bomb
       objectReference: {fileID: 0}
+    - target: {fileID: 8502569469706987189, guid: fabe621eac9a0704190a79c732220460,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fabe621eac9a0704190a79c732220460, type: 3}
 --- !u!114 &2363012332727522597 stripped
@@ -6720,6 +6725,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1351357455, guid: eb349ddad09570e41a3c03cbe40fd477, type: 3}
+      propertyPath: throwForce
+      value: 3000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2363012331951304107, guid: eb349ddad09570e41a3c03cbe40fd477,
+        type: 3}
+      propertyPath: explosionEffect
+      value: 
+      objectReference: {fileID: 6605087354438946986, guid: 4f4394901f46a6f4c92f37d482f7bbd7,
+        type: 3}
+    - target: {fileID: 2363012331951304107, guid: eb349ddad09570e41a3c03cbe40fd477,
+        type: 3}
+      propertyPath: explosionRadius
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6836864531634666598, guid: eb349ddad09570e41a3c03cbe40fd477,
         type: 3}
       propertyPath: m_RootOrder

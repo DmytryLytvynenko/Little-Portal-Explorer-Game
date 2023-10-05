@@ -56,12 +56,14 @@
     <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\MainScene\Buffs\Buff.cs" />
     <Compile Include="Assets\Scripts\Tutorial\SwitchTipAnimation.cs" />
     <Compile Include="Assets\Scripts\MainScene\Scenario.cs" />
     <Compile Include="Assets\Scripts\MenuScene\HeroRotating.cs" />
     <Compile Include="Assets\Scripts\MainScene\VisualizeBox.cs" />
     <Compile Include="Assets\Scripts\Tutorial\WalkTutorialEnded.cs" />
     <Compile Include="Assets\Scripts\Tutorial\MoveTutorialTracker.cs" />
+    <Compile Include="Assets\Scripts\Tutorial\FallExplosionTutorial.cs" />
     <Compile Include="Assets\Scripts\Tutorial\RotateTutorialTracker.cs" />
     <Compile Include="Assets\Scripts\MainScene\Throw.cs" />
     <Compile Include="Assets\Scripts\MainScene\PlatformSpawn.cs" />
@@ -69,30 +71,32 @@
     <Compile Include="Assets\Scripts\MainScene\ButtonCooldown.cs" />
     <Compile Include="Assets\Scripts\MainScene\HeroController.cs" />
     <Compile Include="Assets\Scripts\MainScene\Bullet.cs" />
+    <Compile Include="Assets\Scripts\MainScene\EffectScaling.cs" />
     <Compile Include="Assets\Scripts\MainScene\Explosion.cs" />
     <Compile Include="Assets\Scripts\MainScene\Enemies\ShootingEnemyController.cs" />
     <Compile Include="Assets\Scripts\MainScene\MobileController.cs" />
     <Compile Include="Assets\Scripts\MainScene\HealthBar.cs" />
     <Compile Include="Assets\Scripts\MainScene\HealthControll.cs" />
     <Compile Include="Assets\Scripts\Tutorial\Respawn.cs" />
+    <Compile Include="Assets\Scripts\Tutorial\ExplosionTutorial.cs" />
     <Compile Include="Assets\Scripts\MainScene\BombSpawn.cs" />
     <Compile Include="Assets\Scripts\MainScene\Enemies\RunningEnemyController.cs" />
     <Compile Include="Assets\Scripts\MainScene\EnemySpawn.cs" />
     <Compile Include="Assets\Scripts\MenuScene\FallingObject.cs" />
     <Compile Include="Assets\Scripts\MainScene\PlatformController.cs" />
     <Compile Include="Assets\Scripts\MainScene\Bomb.cs" />
+    <Compile Include="Assets\Scripts\Tutorial\BoxCounter.cs" />
     <Compile Include="Assets\Scripts\MainScene\CameraRotate.cs" />
     <Compile Include="Assets\Scripts\MainScene\PauseGame.cs" />
-    <Compile Include="Assets\Scripts\MainScene\Parent.cs" />
+    <Compile Include="Assets\Scripts\MainScene\RotatingPlatform.cs" />
     <Compile Include="Assets\Scripts\MainScene\Enemies\Entity.cs" />
     <Compile Include="Assets\Scripts\MainScene\CameraController.cs" />
     <Compile Include="Assets\Scripts\Scenes.cs" />
     <Compile Include="Assets\Scripts\MainScene\Enemies\ChasingEnemyController.cs" />
     <Compile Include="Assets\Scripts\MainScene\Enemies\EnemyBigBoss.cs" />
+    <Compile Include="Assets\Scripts\Tutorial\JumpTutorialEnded.cs" />
     <Compile Include="Assets\Scripts\MenuScene\ObjectSpawn.cs" />
     <Compile Include="Assets\Scripts\Tutorial\DisableObject.cs" />
-    <Compile Include="Assets\Scripts\Tutorial\BoxCounter.cs" />
-    <Compile Include="Assets\Scripts\Tutorial\JumpTutorialEnded.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
