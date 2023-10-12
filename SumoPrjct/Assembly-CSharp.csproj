@@ -79,6 +79,7 @@
     <Compile Include="Assets\Scripts\MainScene\EffectScaling.cs" />
     <Compile Include="Assets\Scripts\MainScene\Explosion.cs" />
     <Compile Include="Assets\Scripts\MainScene\Enemies\ShootingEnemyController.cs" />
+    <Compile Include="Assets\Scripts\MainScene\Pool\PoolBase.cs" />
     <Compile Include="Assets\Scripts\MainScene\UI\MobileController.cs" />
     <Compile Include="Assets\Scripts\MainScene\HelthSystem\HealthBar.cs" />
     <Compile Include="Assets\Scripts\MainScene\HelthSystem\HealthControll.cs" />
@@ -97,6 +98,7 @@
     <Compile Include="Assets\Scripts\MainScene\Enemies\Entity.cs" />
     <Compile Include="Assets\Scripts\MainScene\UI\CameraController.cs" />
     <Compile Include="Assets\Scripts\MainScene\Enemies\ThrowerDisk.cs" />
+    <Compile Include="Assets\Scripts\MainScene\Pool\GameObjectPool.cs" />
     <Compile Include="Assets\Scripts\Scenes.cs" />
     <Compile Include="Assets\Scripts\MainScene\Enemies\ChasingEnemyController.cs" />
     <Compile Include="Assets\Scripts\MainScene\Buffs\Heal.cs" />
@@ -105,8 +107,6 @@
     <Compile Include="Assets\Scripts\Tutorial\JumpTutorialEnded.cs" />
     <Compile Include="Assets\Scripts\MenuScene\ObjectSpawn.cs" />
     <Compile Include="Assets\Scripts\Tutorial\DisableObject.cs" />
-    <Compile Include="Assets\Scripts\MainScene\Pool\PoolBase.cs" />
-    <Compile Include="Assets\Scripts\MainScene\Pool\GameObjectPool.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
