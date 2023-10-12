@@ -25,6 +25,7 @@ public class RunningEnemyController : Entity
     void Update()
     {
         Run();
+        Rotate();
         Move();
         ControllDistance();
     }
@@ -35,13 +36,6 @@ public class RunningEnemyController : Entity
         {
             return;
         }
-
-        if (rotationVector.magnitude > 0.1f)
-        {
-            Quaternion rotation = Quaternion.LookRotation(rotationVector);
-            transform.rotation = Quaternion.Lerp(transform.rotation, rotation, rotationSpeed * Time.deltaTime);
-        }
-
         if (rb.velocity.magnitude < maxSpeed)
         {
             rb.AddForce(transform.forward * moveSpeed, ForceMode.Impulse);//метод передвижения 
@@ -118,6 +112,5 @@ public class RunningEnemyController : Entity
     protected override void OnCollisionEnter(Collision collision)
     {
         base.OnCollisionEnter(collision);
-        GiveContactDamage(collision);
     }
 }

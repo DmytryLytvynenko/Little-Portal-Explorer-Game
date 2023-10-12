@@ -5,11 +5,11 @@ using UnityEngine;
 public class ShootingEnemyController : Entity
 {
     // Main characteristics
+    [SerializeField] private float shootDistnace;
+    [SerializeField] private float xShootAngle;
+    [SerializeField] private float shootCooldown;
     private float temporaryMoveSpeed;
-    public float shootDistnace;
-    public float xShootAngle;
-    public float shootCooldown;
-    private float timer = 0;
+    private bool isShooting;
 
     //links
     [SerializeField] private Transform ShootPos; // откуда стреляем
@@ -18,13 +18,14 @@ public class ShootingEnemyController : Entity
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        target = GameObject.Find("Hero").GetComponent<Transform>();
+        target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
 
         temporaryMoveSpeed = moveSpeed;
     }
     void Update()
     {
         ControllDistance();
+        Rotate();
         Move();
     }
 
@@ -32,20 +33,11 @@ public class ShootingEnemyController : Entity
     {
         if (rotationVector.magnitude <= shootDistnace)
         {
-            Stop();
-            if (timer >= shootCooldown)
+            if (isShooting)
             {
-                Shoot();
-                timer = 0;
+                return;
             }
-            else
-            {
-                timer += Time.deltaTime;
-            }
-        }
-        else
-        {
-            Go();
+            StartCoroutine(Shoot());
         }
     }
     private void Stop()
@@ -56,14 +48,21 @@ public class ShootingEnemyController : Entity
     {
         moveSpeed = temporaryMoveSpeed;
     }
-    private void Shoot()
+    private IEnumerator Shoot()
     {
+        isShooting = true;
+        Stop();
+
+        yield return new WaitForSeconds(shootCooldown);
+
         GameObject bullet = Instantiate(this.bullet, ShootPos.position, Quaternion.Euler(0f, transform.localEulerAngles.y, transform.localEulerAngles.z)) as GameObject;
         bullet.GetComponent<Bullet>().targetPoint = target;
+
+        isShooting = false;
+        Go();
     }
     protected override void OnCollisionEnter(Collision collision)
     {
         base.OnCollisionEnter(collision);
-        GiveContactDamage(collision);
     }
 }

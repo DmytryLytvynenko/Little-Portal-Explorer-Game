@@ -16,14 +16,17 @@ public class HeroController : MonoBehaviour
     [SerializeField] private int explosionDamage;
     private bool canExplode = false;
     private float damageJumpForce;
-    Dictionary<string, MyDelegate> buffableStats;
-    private delegate IEnumerator MyDelegate(float newRadius);
     [SerializeField] private bool isGrounded;
+
+    //Elements for buff system
+    Dictionary<string, MyDelegate> buffableStats;
+    private delegate IEnumerator MyDelegate(float newRadius, float buffCooldown);
 
 
     //Ссылки на компоненты
     [SerializeField] private GameObject LoseScreen;
     [SerializeField] private Transform cameraRoot;
+    private HealthControll healthControll;
     private MobileController mController;
     private Animator ch_animator;
     private Rigidbody rb;
@@ -46,30 +49,43 @@ public class HeroController : MonoBehaviour
     private void OnEnable()
     {
         Buff.BuffCollected += OnBuffCollected;
+        Entity.EnemyAndPlayerContacted += OnEnemyColission;
     }
     private void OnDisable()
     {
         Buff.BuffCollected -= OnBuffCollected;
+        Entity.EnemyAndPlayerContacted -= OnEnemyColission;
     }
 
-    private void Start()
+    private void Awake()
     {
-        MyDelegate[] buffFoos = new MyDelegate[5];//magic number
-
-        // Присваиваем значения элементам массива
-        buffFoos[0] = BuffExplosionRadius;
+        MyDelegate[] buffFoos = new MyDelegate[]
+        {
+            // Присваиваем значения элементам массива
+            BuffExplosionRadius,
+            BuffMaxSpeed,
+            BuffJumpForce
+        };
 
         buffableStats = new Dictionary<string, MyDelegate>() 
         {
-            { "Explosion Radius", buffFoos[0]}//magic word!!!
+            // Присваиваем значения элементам словаря <название усиленной характеристики, функция которая ее усиливает>
+            { "Explosion Radius", buffFoos[0]},//magic word!!!
+            { "Max Speed", buffFoos[1]},//magic word!!!
+            { "Jump Force", buffFoos[2]}//magic word!!!
         };
-        defaultMoveSpeed = moveSpeed;
-        defaultMaxSpeed = maxSpeed;
-        damageJumpForce = jumpForce;
+    }
+    private void Start()
+    {
+        healthControll = GetComponent<HealthControll>();
         explosion = GetComponent<Explosion>();
         rb = GetComponent<Rigidbody>();
         /*ch_animator = GetComponent<Animator>();*/
-        mController = GameObject.FindGameObjectsWithTag("Joystick")[0].GetComponent<MobileController>();
+        mController = GameObject.FindGameObjectWithTag("Joystick").GetComponent<MobileController>();
+
+        defaultMoveSpeed = moveSpeed;
+        defaultMaxSpeed = maxSpeed;
+        damageJumpForce = jumpForce;
     }
     private void Update()
     {
@@ -107,7 +123,19 @@ public class HeroController : MonoBehaviour
         if (currentVelocityXY < maxSpeed)
         {
             rb.AddForce(transform.forward * moveVector.magnitude * moveSpeed, ForceMode.Impulse);//метод передвижения 
-        }
+        }/*
+        if (!isGrounded)
+        {
+            if (currentVelocityXY >= maxSpeed)
+            {
+                rb.AddForce(-transform.forward * moveVector.magnitude * moveSpeed/2, ForceMode.Force); 
+                rb.AddForce(transform.forward * moveVector.magnitude * moveSpeed, ForceMode.Force);
+            }
+            else
+            {
+                rb.AddForce(transform.forward * moveVector.magnitude * moveSpeed, ForceMode.Force);
+            }
+        }*/
     }
     public void Jump()
     {
@@ -181,24 +209,47 @@ public class HeroController : MonoBehaviour
         }
     }
 
-    private void OnBuffCollected(float newValue, string buffedStatName)
+    private void OnBuffCollected(float newValue, float buffCooldown, string buffedStatName)
     {
         buffableStats.TryGetValue(buffedStatName, out MyDelegate foo);
-        StartCoroutine(foo(newValue));
+        StartCoroutine(foo(newValue, buffCooldown));
+    }   
+    private void OnEnemyColission(int contactDamage)
+    {
+        healthControll.ChangeHealth(contactDamage);
     }
-    private IEnumerator BuffExplosionRadius(float newRadius)
+    private IEnumerator BuffExplosionRadius(float newRadius, float buffCooldown)
     {
         explosion.SetExplosionRadius(newRadius);
-        yield return new WaitForSeconds(7);// magic number!!!
+        yield return new WaitForSeconds(buffCooldown);
         print("radius normal again");
         explosion.SetExplosionRadiusToNormal();
     }
-    private IEnumerator WaitBuffToEnd(float timeToWait)
+    private IEnumerator BuffMaxSpeed(float newMaxSpeed, float buffCooldown)
     {
-        yield return new WaitForSeconds(timeToWait);
+        float increment = newMaxSpeed - defaultMaxSpeed;
+        defaultMaxSpeed += increment;
+        print($"Max speed now {defaultMaxSpeed}");
+
+        yield return new WaitForSeconds(buffCooldown);
+
+        defaultMaxSpeed -= increment;
+        print($"Max speed normal again ({defaultMaxSpeed})");
     }
+    private IEnumerator BuffJumpForce(float newJumpForce, float buffCooldown)
+    {
+        float increment = newJumpForce - jumpForce;
+        jumpForce += increment;
+        print($"jumpForce now {jumpForce}");
+
+        yield return new WaitForSeconds(buffCooldown);
+
+        jumpForce -= increment;
+        print($"jumpForce normal again ({jumpForce})");
+    }   
     public void Die()
     {
+        // это надо оптимизировать
         GameObject.Find("JumpButton").GetComponent<Button>().interactable = false;
         GameObject.Find("ThrowButton").GetComponent<Button>().interactable = false;
         GameObject.Find("ExplosionButton").GetComponent<Button>().interactable = false;

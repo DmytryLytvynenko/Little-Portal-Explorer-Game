@@ -13,7 +13,6 @@ public class EnemyBigBoss : Entity
     private Throw _throw;
     private Explosion _explosion;
     private Action currentAction;
-    private bool isGrounded;  
     private float tempMoveSpeed;  
 
     [Header("Shoot")]
@@ -59,19 +58,12 @@ public class EnemyBigBoss : Entity
     }
     void Update()
     {
-        Debug.Log(moveSpeed);
+        Rotate();
         Move();
         ControllDistance();
     }
     protected override void Move()
     {
-        //перемещение персонажа
-        if (rotationVector.magnitude > 0.1f)
-        {
-            Quaternion rotation = Quaternion.LookRotation(rotationVector);
-            transform.rotation = Quaternion.Lerp(transform.rotation, rotation, rotationSpeed * Time.fixedDeltaTime);
-        }
-
         if (rb.velocity.magnitude < maxSpeed)
         {
             Vector3 offset = transform.forward * moveSpeed * Time.deltaTime;
@@ -281,22 +273,9 @@ public class EnemyBigBoss : Entity
         {
             _explosion.BossExplode(explosionDamage);
         }
-        IsGroundedUpate(collision, true);
         if (_explosionPointer != null)
         {
             Destroy(_explosionPointer);
-        }
-        GiveContactDamage(collision);
-    }
-    private void OnCollisionExit(Collision collision)
-    {
-        IsGroundedUpate(collision, false);
-    }
-    private void IsGroundedUpate(Collision collision, bool value)
-    {
-        if (collision.gameObject.tag == ("Ground") || collision.gameObject.tag == ("Platform"))
-        {
-            isGrounded = value;
         }
     }
 }

@@ -50,7 +50,7 @@ public class Explosion : MonoBehaviour
             {
                 continue;
             }
-            if (rigitbody.CompareTag("Player"))
+            if (rigitbody.CompareTag(gameObject.tag))
             {
                 continue;
             }

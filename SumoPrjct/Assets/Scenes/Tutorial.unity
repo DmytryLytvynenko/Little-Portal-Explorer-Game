@@ -625,7 +625,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &90039177
 RectTransform:
   m_ObjectHideFlags: 0
@@ -856,7 +856,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 93657350}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -9, y: 0.7749585, z: 0}
+  m_LocalPosition: {x: -7.75, y: 0.7749585, z: -9.88}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -2320,7 +2320,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &235653885
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9364,7 +9364,7 @@ GameObject:
   - component: {fileID: 993766492}
   - component: {fileID: 993766491}
   - component: {fileID: 993766494}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9617,7 +9617,7 @@ PrefabInstance:
     - target: {fileID: 6836864531634666598, guid: eb349ddad09570e41a3c03cbe40fd477,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -13
+      value: -19.4
       objectReference: {fileID: 0}
     - target: {fileID: 6836864531634666598, guid: eb349ddad09570e41a3c03cbe40fd477,
         type: 3}
@@ -9627,27 +9627,27 @@ PrefabInstance:
     - target: {fileID: 6836864531634666598, guid: eb349ddad09570e41a3c03cbe40fd477,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -12.2
       objectReference: {fileID: 0}
     - target: {fileID: 6836864531634666598, guid: eb349ddad09570e41a3c03cbe40fd477,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6836864531634666598, guid: eb349ddad09570e41a3c03cbe40fd477,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6836864531634666598, guid: eb349ddad09570e41a3c03cbe40fd477,
-        type: 3}
-      propertyPath: m_LocalRotation.y
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6836864531634666598, guid: eb349ddad09570e41a3c03cbe40fd477,
         type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6836864531634666598, guid: eb349ddad09570e41a3c03cbe40fd477,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6836864531634666598, guid: eb349ddad09570e41a3c03cbe40fd477,
+        type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6836864531634666598, guid: eb349ddad09570e41a3c03cbe40fd477,
         type: 3}
@@ -9657,7 +9657,7 @@ PrefabInstance:
     - target: {fileID: 6836864531634666598, guid: eb349ddad09570e41a3c03cbe40fd477,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6836864531634666598, guid: eb349ddad09570e41a3c03cbe40fd477,
         type: 3}
@@ -9677,7 +9677,7 @@ PrefabInstance:
     - target: {fileID: 7279223856504301113, guid: eb349ddad09570e41a3c03cbe40fd477,
         type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7279223856504301113, guid: eb349ddad09570e41a3c03cbe40fd477,
         type: 3}
@@ -9703,7 +9703,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 1037689636}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3e0ac1bcacc600b479a7d7d06ba274d7, type: 3}
   m_Name: 
@@ -15012,8 +15012,8 @@ GameObject:
   - component: {fileID: 1614254379}
   - component: {fileID: 1614254378}
   - component: {fileID: 1614254380}
-  m_Layer: 0
-  m_Name: ExplRadiusBuff
+  m_Layer: 7
+  m_Name: Heal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15057,12 +15057,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1614254377}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5cf04e37c33f19a4c9474d7e2ba29a61, type: 3}
+  m_Script: {fileID: 11500000, guid: b0c5b081222767f4fabbbd9d34cf4418, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   pickupEffect: {fileID: 0}
-  newValue: 4
-  buffedStatName: Explosion Radius
+  healAmount: 20
 --- !u!1 &1623444445
 GameObject:
   m_ObjectHideFlags: 0
