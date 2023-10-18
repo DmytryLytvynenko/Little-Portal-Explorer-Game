@@ -15,8 +15,6 @@ public class ThrowerBomb : Projectile
     private float curveEnd;
     private int explosionDamage = 20;
 
-    public Action<ThrowerBomb> ThrowersBombExploded;
-
     private void Awake()
     {
         target = GameObject.FindAnyObjectByType<HeroController>().transform;
@@ -27,7 +25,7 @@ public class ThrowerBomb : Projectile
         moveSpeed = 1 / (duration);
         startHeight = transform.position.y;
     }
-    private IEnumerator PlayAnimation()//использу€ этот метод примерно в 10% траэктори€ полета шалит
+    private IEnumerator PlayAnimation()
     {
         float expiredTime = 0f;
         float progress = 0f;
@@ -45,6 +43,7 @@ public class ThrowerBomb : Projectile
 
         projectileAnimation.Stop();
         bombRigidbody.useGravity = true;
+        bombRigidbody.isKinematic = false;
         bombRigidbody.AddForce(moveVector.normalized * pushForce, ForceMode.Impulse);
         Invoke(nameof(Explode), explosionDelay);
     }
@@ -55,12 +54,14 @@ public class ThrowerBomb : Projectile
     private void Explode()
     {
         explosion.Explode(explosionDamage);
-        ThrowersBombExploded?.Invoke(this);
+        ProjectileDistroyed?.Invoke(this);
     }
     public override void InitiateThrow()
     {
         base.InitiateThrow();
         transform.rotation = Quaternion.identity;
+        bombRigidbody.velocity = Vector3.zero;
+        bombRigidbody.angularVelocity = Vector3.zero;
         moveVector = target.position - thrower.position;
         Debug.DrawLine(thrower.position, target.position, Color.red, 10f);
         StartCoroutine(PlayAnimation());

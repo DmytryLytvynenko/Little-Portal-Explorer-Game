@@ -91,7 +91,7 @@ Animation:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 139986801}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Animation: {fileID: 7400000, guid: 6d36892206eab414eaf02399f406f30b, type: 2}
   m_Animations:
@@ -161,21 +161,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c90ac47d132367f44ac1e3270406cc7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  thrower: {fileID: 0}
+  projectileAnimation: {fileID: 0}
   throwTrajectory:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0
+      time: -0.00089263916
       value: 0
       inSlope: 0.4355838
-      outSlope: 0.4355838
-      tangentMode: 0
+      outSlope: 0.007434386
+      tangentMode: 69
       weightedMode: 0
       inWeight: 0
       outWeight: 0.16243652
     - serializedVersion: 3
-      time: 0.29552555
-      value: 2
+      time: 0.29106998
+      value: 0.0021705627
       inSlope: -0.089342296
       outSlope: -0.089342296
       tangentMode: 0
@@ -183,23 +186,23 @@ MonoBehaviour:
       inWeight: 0.33333334
       outWeight: 0.18103239
     - serializedVersion: 3
-      time: 0.517395
-      value: -1.0103226
-      inSlope: -9.987695
-      outSlope: -9.987695
+      time: 0.52008057
+      value: 0.0028494708
+      inSlope: 0.019586926
+      outSlope: 0.019586926
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.07940208
+      inWeight: 0.15127012
       outWeight: 0.1411563
     - serializedVersion: 3
-      time: 0.5282565
-      value: -0.97068584
-      inSlope: 11.061846
-      outSlope: 11.061846
+      time: 0.5568209
+      value: 0.013963819
+      inSlope: -0.08998575
+      outSlope: -0.08998575
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
-      outWeight: 0.07080803
+      outWeight: 0.5610977
     - serializedVersion: 3
       time: 0.64907116
       value: 0.01547879
@@ -221,12 +224,10 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  target: {fileID: 0}
   duration: 2
   height: 1
   pushForce: 5
   explosionDelay: 2
-  animation: {fileID: 139986803}
 --- !u!54 &278043096728163156
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -239,7 +240,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 0
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -255,9 +256,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad6a6e2d7d27c5749a255c7a66befa33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosionRadius: 1.5
+  explosionRadius: 4
   explosionForce: 3000
   noDamageExplosionForce: 0
   noDamageExplosionRadius: 0
-  explosionEffect: {fileID: 6605087354438946986, guid: 4f4394901f46a6f4c92f37d482f7bbd7,
+  explosionEffect: {fileID: 6605087354438946986, guid: 5f06ed8731fc1984f9adc4a81cc691bf,
     type: 3}

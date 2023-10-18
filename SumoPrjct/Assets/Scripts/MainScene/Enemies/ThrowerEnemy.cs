@@ -5,6 +5,7 @@ using ObjectsPool;
 public class ThrowerEnemy : Entity
 {
     const int BOMB_PRELOAD_COUNT = 5;
+    const int DISK_PRELOAD_COUNT = 5;
 
     [SerializeField] private GameObject bombPrefab;
     [SerializeField] private GameObject diskPrefab;
@@ -12,18 +13,22 @@ public class ThrowerEnemy : Entity
     [SerializeField] private Transform diskShootPoint;
     [SerializeField] private float shootDistnace;
     [SerializeField] private float shootCooldown;
+    [SerializeField] private float bombDistance;
     [SerializeField] private float timeBeforeShoot;
     private float temporaryMoveSpeed;
     private bool isShooting;
-    private ThrowerBomb bomb;
-    private ThrowerDisk disk;
 
     private GameObjectPool bombObjectsPool;
+    private GameObjectPool diskObjectsPool;
 
     private ShootAction randomShootAction 
     { 
         get 
         {
+            if (rotationVector.magnitude < bombDistance)
+            {
+                return ShootAction.Disk;
+            }
             int rand =  UnityEngine.Random.Range(0, 2); 
             return (ShootAction)rand; 
         }  
@@ -37,6 +42,7 @@ public class ThrowerEnemy : Entity
     private void Awake()
     {
         bombObjectsPool = new GameObjectPool(bombPrefab, BOMB_PRELOAD_COUNT);
+        diskObjectsPool = new GameObjectPool(diskPrefab, DISK_PRELOAD_COUNT);
 
         InitializeFieldsInPool();
 
@@ -57,18 +63,17 @@ public class ThrowerEnemy : Entity
             if (isShooting)
                 return;
 
-            StartCoroutine(Shoot( bombShootPoint));
-/*            switch (randomShootAction)
+            switch (randomShootAction)
             {
                 case ShootAction.Bomb:
-                    StartCoroutine(Shoot(bomb, bombShootPoint));
+                    StartCoroutine(Shoot(bombShootPoint, bombObjectsPool));
                     break;
                 case ShootAction.Disk:
-                    StartCoroutine(Shoot(disk, diskShootPoint));
+                    StartCoroutine(Shoot(diskShootPoint, diskObjectsPool));
                     break;
                 default:
                     break;
-            }*/
+            }
         }
     }
     private void Stop()
@@ -80,20 +85,20 @@ public class ThrowerEnemy : Entity
     {
         moveSpeed = temporaryMoveSpeed;
     }
-    private IEnumerator Shoot(Transform shootPosition)
+    private IEnumerator Shoot(Transform shootPosition, GameObjectPool pool)
     {
         Stop();
         isShooting = true;
 
         yield return new WaitForSeconds(timeBeforeShoot);
 
-        GameObject bombObject = bombObjectsPool.Get();
-        ThrowerBomb throwerBomb = bombObject.GetComponent<ThrowerBomb>();
-        throwerBomb.ThrowersBombExploded += OnThrowersBombExploded;
+        GameObject projectileObject = pool.Get();
+        Projectile projectile = projectileObject.GetComponent<Projectile>();
+        projectile.ProjectileDistroyed += OnProjectileDestroyed;
 
-        bombObject.transform.position = shootPosition.position;
+        projectileObject.transform.position = shootPosition.position;
 
-        throwerBomb.InitiateThrow();
+        projectile.InitiateThrow();
 
 
         yield return new WaitForSeconds(shootCooldown);
@@ -101,11 +106,15 @@ public class ThrowerEnemy : Entity
         isShooting = false;
     }
 
-    private void OnThrowersBombExploded( ThrowerBomb throwerBomb)
+    private void OnProjectileDestroyed( Projectile projectile)
     {
-        throwerBomb.ThrowersBombExploded -= OnThrowersBombExploded;
-        bombObjectsPool.Return(throwerBomb.gameObject);
-    }
+        projectile.ProjectileDistroyed -= OnProjectileDestroyed;
+
+/*        if (projectile.gameObject.GetComponent<ThrowerBomb>())
+            bombObjectsPool.Return(projectile.gameObject);
+        else*/
+            diskObjectsPool.Return(projectile.gameObject);
+    } 
     private void InitializeFieldsInPool()
     {
         List<GameObject> allItems = new List<GameObject>();
@@ -113,6 +122,11 @@ public class ThrowerEnemy : Entity
         foreach (var item in allItems)
         {
             item.GetComponent<ThrowerBomb>().SetThrower(bombShootPoint);
+        }
+        allItems = diskObjectsPool.GetAll();
+        foreach (var item in allItems)
+        {
+            item.GetComponent<ThrowerDisk>().SetThrower(diskShootPoint);
         }
     }
 }

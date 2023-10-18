@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -39,8 +40,9 @@ public class ThrowerDisk : Projectile
             yield return null;
         }
 
+        progress = 0;
         projectileAnimation.Stop();
-        gameObject.SetActive(false);
+        ProjectileDistroyed?.Invoke(this);
     }
 
     private void OnCollisionEnter(Collision collision)

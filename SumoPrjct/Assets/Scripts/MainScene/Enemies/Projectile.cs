@@ -1,4 +1,5 @@
 using UnityEngine;
+using System;
 
 public class Projectile : MonoBehaviour
 {
@@ -7,6 +8,8 @@ public class Projectile : MonoBehaviour
     [SerializeField] protected Animation projectileAnimation;
     [SerializeField] protected AnimationCurve throwTrajectory;
     [SerializeField] protected float duration;
+
+    public Action<Projectile> ProjectileDistroyed;
 
     protected Vector3 moveVector;
 

@@ -147,8 +147,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3430151663479813678}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.5, z: 1}
-  m_LocalScale: {x: 1.6, y: 0.4, z: 2}
+  m_LocalPosition: {x: 0, y: -0.25, z: 1.5}
+  m_LocalScale: {x: 3, y: 1.5, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6836864531634666598}
@@ -297,6 +297,7 @@ GameObject:
   - component: {fileID: 2363012331951304107}
   - component: {fileID: 1868945276378792712}
   - component: {fileID: 1351357455}
+  - component: {fileID: 8133727762810727488}
   m_Layer: 6
   m_Name: Hero
   m_TagString: Player
@@ -313,7 +314,7 @@ Transform:
   m_GameObject: {fileID: 6836864531634666604}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: -3.39, y: 0, z: 5.79}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6403242245705947400}
@@ -379,7 +380,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6836864531634666604}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3e0ac1bcacc600b479a7d7d06ba274d7, type: 3}
   m_Name: 
@@ -387,13 +388,13 @@ MonoBehaviour:
   jumpForce: 100
   moveSpeed: 6
   maxSpeed: 6
-  rotationSpeed: 15
+  rotationSpeed: 7.5
   ExplosionJumpHeight: 4.5
   velocityToExplode: -6.5
   explosionDamage: 3000
-  isGrounded: 1
   LoseScreen: {fileID: 0}
   cameraRoot: {fileID: 0}
+  surfaceSlider: {fileID: 8133727762810727488}
 --- !u!54 &4792738596926923209
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -454,7 +455,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33438a174875f1940a1dee41e10cee11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth: 1000
 --- !u!114 &1351357455
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -468,13 +469,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   throwArea: {fileID: 8852483743064176647}
-  xThrowSize: 0.8
-  yThrowSize: 0.2
+  xThrowSize: 1.5
+  yThrowSize: 0.75
   zThrowSize: 1
   yThrowAngle: 1
   throwForce: 2000
   explosionRadius: 0
   throwDamage: 500
+--- !u!114 &8133727762810727488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6836864531634666604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 050495c8e3a17ca429d5393157cb20bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  acceptableVerticalAngle: 30
 --- !u!1 &7909047830927345717
 GameObject:
   m_ObjectHideFlags: 0

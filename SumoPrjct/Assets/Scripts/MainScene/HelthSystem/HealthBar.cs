@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class HealthBar : MonoBehaviour
@@ -9,13 +7,13 @@ public class HealthBar : MonoBehaviour
     [SerializeField] private HealthControll Health;
     [SerializeField] private Gradient gradient;
 
-    private Camera camera;
+    private Camera mainCamera;
 
 
     private void Awake()
     {
         Health.HealthChanged += OnHealthChanged;
-        camera = Camera.main;
+        mainCamera = Camera.main;
         healthBarFilling.color = gradient.Evaluate(1);
     }
     private void OnDestroy()
@@ -31,7 +29,7 @@ public class HealthBar : MonoBehaviour
     }
     private void LateUpdate()
     {
-        transform.LookAt(new Vector3(camera.transform.position.x, camera.transform.position.y, camera.transform.position.z));
+        transform.LookAt(mainCamera.transform.position);
         transform.Rotate(0, 180, 0);
     }
 }

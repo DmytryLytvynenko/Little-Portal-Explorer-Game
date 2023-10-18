@@ -16,7 +16,6 @@ public class HeroController : MonoBehaviour
     [SerializeField] private int explosionDamage;
     private bool canExplode = false;
     private float damageJumpForce;
-    [SerializeField] private bool isGrounded;
 
     //Elements for buff system
     Dictionary<string, MyDelegate> buffableStats;
@@ -26,6 +25,7 @@ public class HeroController : MonoBehaviour
     //Ссылки на компоненты
     [SerializeField] private GameObject LoseScreen;
     [SerializeField] private Transform cameraRoot;
+    [SerializeField] private SurfaceSlider surfaceSlider;
     private HealthControll healthControll;
     private MobileController mController;
     private Animator ch_animator;
@@ -36,6 +36,7 @@ public class HeroController : MonoBehaviour
     private float defaultMoveSpeed;
     private float defaultMaxSpeed;
 
+    public bool IsGrounded { get; private set; }
     private Vector3 moveVector// направление  передвижения
     {
         get
@@ -118,36 +119,26 @@ public class HeroController : MonoBehaviour
 
         // с инерцией
         maxSpeed = defaultMaxSpeed * moveVector.magnitude;
+        Vector3 directionAlongSurface = surfaceSlider.Project(transform.forward);
 
         float currentVelocityXY = (Mathf.Abs(rb.velocity.x) + Mathf.Abs(rb.velocity.z));
         if (currentVelocityXY < maxSpeed)
         {
-            rb.AddForce(transform.forward * moveVector.magnitude * moveSpeed, ForceMode.Impulse);//метод передвижения 
-        }/*
-        if (!isGrounded)
-        {
-            if (currentVelocityXY >= maxSpeed)
-            {
-                rb.AddForce(-transform.forward * moveVector.magnitude * moveSpeed/2, ForceMode.Force); 
-                rb.AddForce(transform.forward * moveVector.magnitude * moveSpeed, ForceMode.Force);
-            }
-            else
-            {
-                rb.AddForce(transform.forward * moveVector.magnitude * moveSpeed, ForceMode.Force);
-            }
-        }*/
+            Vector3 direction = IsGrounded ? directionAlongSurface : transform.forward;
+            rb.AddForce(direction * moveVector.magnitude * moveSpeed, ForceMode.Impulse);//метод передвижения 
+        }
     }
     public void Jump()
     {
-        if (isGrounded)
+        if (IsGrounded)
         {
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
-            isGrounded = false;
+            IsGrounded = false;
         }
     }
     private void SetCanExplode()
     {
-        if (isGrounded)
+        if (IsGrounded)
         {
             return;
         }
@@ -179,7 +170,7 @@ public class HeroController : MonoBehaviour
     void OnCollisionEnter(Collision collision)
     {
         IsGroundedUpate(collision, true);
-        if (isGrounded && canExplode)
+        if (IsGrounded && canExplode)
         {
             explosion.Explode(explosionDamage);
             canExplode = false;
@@ -205,7 +196,7 @@ public class HeroController : MonoBehaviour
     {
         if (collision.gameObject.tag == ("Ground") || collision.gameObject.tag == ("Platform"))
         {
-            isGrounded = value;
+            IsGrounded = value;
         }
     }
 
