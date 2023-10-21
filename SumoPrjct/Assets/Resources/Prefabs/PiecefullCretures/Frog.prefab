@@ -1,0 +1,1032 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &28451611745693792
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3139150693759332113}
+  m_Layer: 0
+  m_Name: GothGirlLBackLeg2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3139150693759332113
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 28451611745693792}
+  m_LocalRotation: {x: 0.011003956, y: 0.30385613, z: 0.90431297, w: 0.2996138}
+  m_LocalPosition: {x: -1.2325038, y: 0.00000038757324, z: 0.000001550293}
+  m_LocalScale: {x: 1.0000105, y: 0.99999213, z: 0.99999785}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6140437282798064786}
+  m_Father: {fileID: 5036777923833671413}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -32.885925, y: 13.917484, z: 139.2122}
+--- !u!1 &259761267981095121
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2651722408065954314}
+  m_Layer: 0
+  m_Name: GothGirlPelvis001
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2651722408065954314
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 259761267981095121}
+  m_LocalRotation: {x: 0.27059793, y: -0.65328157, z: -0.27059817, w: 0.65328145}
+  m_LocalPosition: {x: 0.000000038150233, y: 0.8400247, z: 1.3121847}
+  m_LocalScale: {x: 0.99999994, y: 0.99999994, z: 0.99999994}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 5036777923833671413}
+  - {fileID: 5100635015129952321}
+  - {fileID: 5440656818452348000}
+  m_Father: {fileID: 7327005249087313527}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0.00001878302, y: 89.99997, z: -60.000004}
+--- !u!1 &326585996401757254
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3628574996660643897}
+  m_Layer: 0
+  m_Name: GothGirlRLegFrAnkle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3628574996660643897
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 326585996401757254}
+  m_LocalRotation: {x: -0.07045017, y: -0.07011016, z: -0.8018251, w: 0.589235}
+  m_LocalPosition: {x: -1.361506, y: 0.000000048446655, z: 0}
+  m_LocalScale: {x: 0.9999949, y: 1.000006, z: 0.9999998}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6135584324804390058}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -11.271338, y: 1.7736845, z: -107.55314}
+--- !u!1 &488892635893347116
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 826503743641893828}
+  m_Layer: 0
+  m_Name: GothGirlLFrLegPlatform
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &826503743641893828
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 488892635893347116}
+  m_LocalRotation: {x: 0.27059793, y: -0.65328157, z: -0.27059817, w: 0.65328145}
+  m_LocalPosition: {x: 1.141744, y: -0.00000010290661, z: -0.5143686}
+  m_LocalScale: {x: 0.99999994, y: 0.99999994, z: 0.99999994}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7327005249087313527}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: -0.000013660378, y: 89.999985, z: -90}
+--- !u!1 &1103547272591719535
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1853996233666746907}
+  m_Layer: 0
+  m_Name: GothGirlRBckLegPlatform
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1853996233666746907
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1103547272591719535}
+  m_LocalRotation: {x: 0.27059793, y: -0.65328157, z: -0.27059817, w: 0.65328145}
+  m_LocalPosition: {x: -1.5458741, y: 0.00000012611461, z: 1.1603419}
+  m_LocalScale: {x: 0.99999994, y: 0.99999994, z: 0.99999994}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7327005249087313527}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: -0.000013660378, y: 89.999985, z: -90}
+--- !u!1 &1266468879814285163
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8460474038165605905}
+  m_Layer: 0
+  m_Name: GothGirlRBackLeg2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8460474038165605905
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1266468879814285163}
+  m_LocalRotation: {x: -0.010460536, y: -0.3051913, z: 0.90798193, w: 0.2869108}
+  m_LocalPosition: {x: -1.2325033, y: 0.00000058135987, z: -0.00000029067994}
+  m_LocalScale: {x: 0.99999654, y: 1.0000025, z: 1.0000015}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1468921078780830209}
+  m_Father: {fileID: 5100635015129952321}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 33.244564, y: -13.421244, z: 140.90474}
+--- !u!1 &1629769436484011522
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6140437282798064786}
+  m_Layer: 0
+  m_Name: GothGirlLBackLegAnkle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6140437282798064786
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1629769436484011522}
+  m_LocalRotation: {x: -0.19266921, y: -0.2547996, z: 0.9398261, w: -0.12117219}
+  m_LocalPosition: {x: -2.1054385, y: -0.000000048446655, z: 0}
+  m_LocalScale: {x: 1.0000029, y: 0.99999696, z: 1.0000005}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3139150693759332113}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 31.710457, y: -20.67807, z: -171.23883}
+--- !u!1 &1682264247467841281
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1675066903452711082}
+  m_Layer: 0
+  m_Name: GothGirlHeadRibbite001
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1675066903452711082
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1682264247467841281}
+  m_LocalRotation: {x: 0.000000016141243, y: -0.0000000014388877, z: 0.000000029802326,
+    w: 1}
+  m_LocalPosition: {x: 0.6161854, y: 1.0672644, z: -0.00000005227886}
+  m_LocalScale: {x: 0.99999994, y: 1, z: 0.9999999}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6436453450076132020}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0.0000018496501, y: -0.00000016488433, z: 0.0000034150949}
+--- !u!1 &2017415527601083870
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4736860221792873494}
+  m_Layer: 0
+  m_Name: GothGirl
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4736860221792873494
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2017415527601083870}
+  m_LocalRotation: {x: 0.27059793, y: -0.65328157, z: -0.27059817, w: 0.65328145}
+  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalScale: {x: 0.99999994, y: 0.99999994, z: 0.99999994}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7327005249087313527}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: -0.0000051226416, y: 0, z: 0}
+--- !u!1 &2081011291709090101
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5440656818452348000}
+  m_Layer: 0
+  m_Name: GothGirlSpine
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5440656818452348000
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2081011291709090101}
+  m_LocalRotation: {x: -0.000000043320462, y: 0.00000018880039, z: 0.89071256, w: -0.45456702}
+  m_LocalPosition: {x: -0.035459172, y: 0.5567135, z: -0.00000017060167}
+  m_LocalScale: {x: 1, y: 0.99999994, z: 1.0000004}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1138286595931340795}
+  m_Father: {fileID: 2651722408065954314}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: -0.000017013961, y: -0.000014256163, z: -125.92584}
+--- !u!1 &2224199215018063013
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5036777923833671413}
+  m_Layer: 0
+  m_Name: GothGirlLBackLeg1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5036777923833671413
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2224199215018063013}
+  m_LocalRotation: {x: -0.0034988523, y: 0.8145161, z: -0.14480045, w: 0.5617687}
+  m_LocalPosition: {x: -0, y: 0.00000038757324, z: 0.85955393}
+  m_LocalScale: {x: 1.0000018, y: 1.0000006, z: 0.99999964}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 3139150693759332113}
+  m_Father: {fileID: 2651722408065954314}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 13.412109, y: 109.637184, z: -9.968674}
+--- !u!1 &2321442590390253374
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2106868277672618027}
+  m_Layer: 0
+  m_Name: GothGirlLFrontLeg1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2106868277672618027
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2321442590390253374}
+  m_LocalRotation: {x: 0.3942639, y: 0.9187625, z: -0.020640437, w: -0.0023233707}
+  m_LocalPosition: {x: -0.061939728, y: 0.0472569, z: 1.2762552}
+  m_LocalScale: {x: 0.9999995, y: 1.0000005, z: 1.0000001}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 3650221070185699145}
+  m_Father: {fileID: 1138286595931340795}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 2.068556, y: -178.822, z: 46.47202}
+--- !u!1 &3569459931487108521
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6436453450076132020}
+  m_Layer: 0
+  m_Name: GothGirlHead003
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6436453450076132020
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3569459931487108521}
+  m_LocalRotation: {x: 0.00001633377, y: 0.00022078949, z: 0.032035537, w: 0.99948674}
+  m_LocalPosition: {x: -1.7612336, y: 0, z: -2.3655593e-11}
+  m_LocalScale: {x: 1, y: 1.0000002, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1675066903452711082}
+  m_Father: {fileID: 8554016693768192850}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0.0010602328, y: 0.025347587, z: 3.6716304}
+--- !u!1 &3715381328228862629
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3715381328228862628}
+  - component: {fileID: 3715381328228862651}
+  m_Layer: 0
+  m_Name: Target
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3715381328228862628
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3715381328228862629}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7071910396441037786}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &3715381328228862651
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3715381328228862629}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &3857297209797736944
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 850037076009406486}
+  m_Layer: 0
+  m_Name: GothGirlLLegFrontAnkle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &850037076009406486
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3857297209797736944}
+  m_LocalRotation: {x: 0.06764285, y: -0.010699086, z: -0.68828607, w: 0.7221997}
+  m_LocalPosition: {x: -1.3615065, y: 0.000000006055832, z: 0}
+  m_LocalScale: {x: 1.0000173, y: 0.9999838, z: 0.9999999}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3650221070185699145}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 4.7596025, y: -6.254485, z: -87.50549}
+--- !u!1 &3944950498424797928
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1662883509130098297}
+  m_Layer: 0
+  m_Name: GothGirlRFrontLeg1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1662883509130098297
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3944950498424797928}
+  m_LocalRotation: {x: 0.36286792, y: 0.9280871, z: -0.039923973, w: 0.07339822}
+  m_LocalPosition: {x: -0.06193876, y: 0.047254965, z: -1.2762558}
+  m_LocalScale: {x: 0.9999996, y: 1.0000004, z: 1.0000002}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6135584324804390058}
+  m_Father: {fileID: 1138286595931340795}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 7.3178473, y: 173.7915, z: 42.31208}
+--- !u!1 &5104321785510393873
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1468921078780830209}
+  m_Layer: 0
+  m_Name: GothGirlRLegBackAnkle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1468921078780830209
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5104321785510393873}
+  m_LocalRotation: {x: 0.08667422, y: 0.31047383, z: 0.9271314, w: -0.19110455}
+  m_LocalPosition: {x: -2.1054387, y: -0.000000048446655, z: -0.00000019378662}
+  m_LocalScale: {x: 0.99999917, y: 1.0000014, z: 0.9999999}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8460474038165605905}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -37.504787, y: 3.038522, z: -157.7379}
+--- !u!1 &5754945464837075198
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3650221070185699145}
+  m_Layer: 0
+  m_Name: GothGirlLFrLeg2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3650221070185699145
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5754945464837075198}
+  m_LocalRotation: {x: -0.014327075, y: -0.047636576, z: 0.886309, w: -0.46041492}
+  m_LocalPosition: {x: -0.9849177, y: 0.0000007751465, z: -0.0000024223327}
+  m_LocalScale: {x: 1.0000091, y: 0.9999923, z: 0.9999988}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 850037076009406486}
+  m_Father: {fileID: 2106868277672618027}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 5.602956, y: 1.0633222, z: -125.04651}
+--- !u!1 &6010096656774372973
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5100635015129952321}
+  m_Layer: 0
+  m_Name: GothGirlRBackLeg1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5100635015129952321
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6010096656774372973}
+  m_LocalRotation: {x: 0.09509018, y: -0.7854215, z: -0.2622153, w: 0.55255234}
+  m_LocalPosition: {x: -0, y: 0.00000038757324, z: -0.8595545}
+  m_LocalScale: {x: 0.9999993, y: 1.0000001, z: 1.0000017}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 8460474038165605905}
+  m_Father: {fileID: 2651722408065954314}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: -17.867357, y: -105.34442, z: -27.477531}
+--- !u!1 &6048788004909901497
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8554016693768192850}
+  m_Layer: 0
+  m_Name: GothGirlFrSpine
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8554016693768192850
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6048788004909901497}
+  m_LocalRotation: {x: -0.0000054558836, y: -0.00022134252, z: 0.017112222, w: 0.99985355}
+  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalScale: {x: 0.9999999, y: 1.0000002, z: 0.9999999}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6436453450076132020}
+  m_Father: {fileID: 1138286595931340795}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -0.00019107251, y: -0.025370969, z: 1.9610121}
+--- !u!1 &6095829435313456132
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 999956212639330122}
+  m_Layer: 0
+  m_Name: GothGirlRFrLegPlatform
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &999956212639330122
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6095829435313456132}
+  m_LocalRotation: {x: 0.27059793, y: -0.65328157, z: -0.27059817, w: 0.65328145}
+  m_LocalPosition: {x: -1.0729586, y: -0.00000010290661, z: -0.018432207}
+  m_LocalScale: {x: 0.99999994, y: 0.99999994, z: 0.99999994}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7327005249087313527}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: -0.000013660378, y: 89.999985, z: -90}
+--- !u!1 &6508166417366908337
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6135584324804390058}
+  m_Layer: 0
+  m_Name: GothGirlRFrotLeg2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6135584324804390058
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6508166417366908337}
+  m_LocalRotation: {x: -0.019796485, y: -0.041116618, z: -0.7691327, w: 0.6374579}
+  m_LocalPosition: {x: -0.984918, y: 0.00000019378662, z: 0.000001550293}
+  m_LocalScale: {x: 0.9999993, y: 1.0000064, z: 0.9999942}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 3628574996660643897}
+  m_Father: {fileID: 1662883509130098297}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -5.076578, y: -1.2637315, z: -100.64002}
+--- !u!1 &6509128517328792271
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1138286595931340795}
+  m_Layer: 0
+  m_Name: GothGirlHead002
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1138286595931340795
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6509128517328792271}
+  m_LocalRotation: {x: 0.0000000724313, y: 0.000000039183636, z: 0.1631886, w: 0.9865949}
+  m_LocalPosition: {x: -1.3783765, y: 0, z: -4.620233e-14}
+  m_LocalScale: {x: 1.0000001, y: 1.0000001, z: 1.0000002}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 8554016693768192850}
+  - {fileID: 2106868277672618027}
+  - {fileID: 1662883509130098297}
+  m_Father: {fileID: 5440656818452348000}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0.000007456017, y: 0.0000057843913, z: 18.784046}
+--- !u!1 &7071910396441037785
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7071910396441037786}
+  - component: {fileID: 7071910396441037781}
+  - component: {fileID: 7071910396441037780}
+  - component: {fileID: 7071910396441037787}
+  m_Layer: 0
+  m_Name: Frog
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7071910396441037786
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7071910396441037785}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_ConstrainProportionsScale: 1
+  m_Children:
+  - {fileID: 3715381328228862628}
+  - {fileID: 7327005249087313527}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &7071910396441037781
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7071910396441037785}
+  m_Material: {fileID: 13400000, guid: 061ad366e52e5aa4e923f82b2f9c75f7, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.4
+  m_Center: {x: 0, y: -7.4, z: 0}
+--- !u!54 &7071910396441037780
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7071910396441037785}
+  serializedVersion: 2
+  m_Mass: 5
+  m_Drag: 0.3
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0
+--- !u!114 &7071910396441037787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7071910396441037785}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1d8c8af8f859b641b6cda6073f67038, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  contactDamage: 0
+  moveSpeed: 2
+  maxSpeed: 0
+  rotationSpeed: 2
+  anotherTargetCooldown: 10
+  jumpForce: 20
+  moveArea: {fileID: 0}
+  jumpHeightMultiplier: 4
+  animator: {fileID: 7990811636589251790}
+  materials:
+  - {fileID: 2100000, guid: 368f87693cc3b614c95db3d0e42f0798, type: 2}
+  - {fileID: 2100000, guid: 36df49e3f5c0f4045afad60bbded705c, type: 2}
+  - {fileID: 2100000, guid: a84437b2f6b3e47488862309ef9f29bc, type: 2}
+  skinnedMeshRenderer: {fileID: 73115636273332914}
+--- !u!1 &7247581476649078646
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1912010176180323742}
+  m_Layer: 0
+  m_Name: GothGirlLBckLegPlatform
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1912010176180323742
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7247581476649078646}
+  m_LocalRotation: {x: 0.27059793, y: -0.65328157, z: -0.27059817, w: 0.65328145}
+  m_LocalPosition: {x: 1.1998701, y: 0.00000012611461, z: 1.1603436}
+  m_LocalScale: {x: 0.99999994, y: 0.99999994, z: 0.99999994}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7327005249087313527}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: -0.000013660378, y: 89.999985, z: -90}
+--- !u!1 &7990811636589251789
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7327005249087313527}
+  - component: {fileID: 7990811636589251790}
+  m_Layer: 0
+  m_Name: FrogRunnoSmooth
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7327005249087313527
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7990811636589251789}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: 0, y: -7.69, z: 0}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
+  m_ConstrainProportionsScale: 1
+  m_Children:
+  - {fileID: 4072011664202387250}
+  - {fileID: 4736860221792873494}
+  - {fileID: 1912010176180323742}
+  - {fileID: 826503743641893828}
+  - {fileID: 2651722408065954314}
+  - {fileID: 1853996233666746907}
+  - {fileID: 999956212639330122}
+  m_Father: {fileID: 7071910396441037786}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!95 &7990811636589251790
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7990811636589251789}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b911aafec9eadb14e8a78adb158b8c94, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!1 &8894601618400878451
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4072011664202387250}
+  - component: {fileID: 73115636273332914}
+  m_Layer: 0
+  m_Name: Frog
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4072011664202387250
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8894601618400878451}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7327005249087313527}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!137 &73115636273332914
+SkinnedMeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8894601618400878451}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 3
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: -4963801623029300775, guid: 0a24667ab634f7d4f9670ff4aea2813a, type: 3}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  serializedVersion: 2
+  m_Quality: 0
+  m_UpdateWhenOffscreen: 0
+  m_SkinnedMotionVectors: 1
+  m_Mesh: {fileID: -4454997591212173726, guid: 0a24667ab634f7d4f9670ff4aea2813a, type: 3}
+  m_Bones:
+  - {fileID: 1138286595931340795}
+  - {fileID: 8554016693768192850}
+  - {fileID: 6436453450076132020}
+  - {fileID: 1675066903452711082}
+  - {fileID: 5440656818452348000}
+  - {fileID: 2651722408065954314}
+  - {fileID: 5036777923833671413}
+  - {fileID: 2106868277672618027}
+  - {fileID: 3650221070185699145}
+  - {fileID: 850037076009406486}
+  - {fileID: 3139150693759332113}
+  - {fileID: 6140437282798064786}
+  - {fileID: 5100635015129952321}
+  - {fileID: 1662883509130098297}
+  - {fileID: 6135584324804390058}
+  - {fileID: 3628574996660643897}
+  - {fileID: 8460474038165605905}
+  - {fileID: 1468921078780830209}
+  m_BlendShapeWeights: []
+  m_RootBone: {fileID: 2651722408065954314}
+  m_AABB:
+    m_Center: {x: 0.2975399, y: 1.4311371, z: 0.074359775}
+    m_Extent: {x: 1.26, y: 2.6, z: 1.99}
+  m_DirtyAABB: 0
