@@ -832,9 +832,9 @@ MonoBehaviour:
   jumpHeightMultiplier: 4
   animator: {fileID: 7990811636589251790}
   materials:
-  - {fileID: 2100000, guid: 368f87693cc3b614c95db3d0e42f0798, type: 2}
-  - {fileID: 2100000, guid: 36df49e3f5c0f4045afad60bbded705c, type: 2}
-  - {fileID: 2100000, guid: a84437b2f6b3e47488862309ef9f29bc, type: 2}
+  - {fileID: 2100000, guid: d6f5538145fbce542a8f6d748c063730, type: 2}
+  - {fileID: 2100000, guid: c841c9ec2fbf8b94c85ad03ef7f2a95c, type: 2}
+  - {fileID: 2100000, guid: ca755c9f0760e904a921b6f47ac859bd, type: 2}
   skinnedMeshRenderer: {fileID: 73115636273332914}
 --- !u!1 &7247581476649078646
 GameObject:
