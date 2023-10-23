@@ -61,10 +61,14 @@
     <Compile Include="Assets\Scripts\Tutorial\SwitchTipAnimation.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Components\FxaaComponent.cs" />
     <Compile Include="Assets\Scripts\MainScene\Scenario.cs" />
+    <Compile Include="Assets\Scripts\FrogLevel\QuestGiver.cs" />
     <Compile Include="Assets\Scripts\MainScene\Enemies\ThrowerBomb.cs" />
     <Compile Include="Assets\Scripts\MenuScene\HeroRotating.cs" />
+    <Compile Include="Assets\Scripts\FrogLevel\PiecefullCretures\FrogDisabler.cs" />
     <Compile Include="Assets\Scripts\MainScene\Launch.cs" />
+    <Compile Include="Assets\Scripts\FrogLevel\FrogSpawner.cs" />
     <Compile Include="Assets\Scripts\MainScene\VisualizeBox.cs" />
+    <Compile Include="Assets\Scripts\FrogLevel\Environment\IlluminationBlinking.cs" />
     <Compile Include="Assets\Scripts\Tutorial\WalkTutorialEnded.cs" />
     <Compile Include="Assets\Scripts\Tutorial\MoveTutorialTracker.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Attributes\GetSetAttribute.cs" />
@@ -73,6 +77,7 @@
     <Compile Include="Assets\PostProcessing\Runtime\Attributes\TrackballGroupAttribute.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Utils\ColorGradingCurve.cs" />
     <Compile Include="Assets\Scripts\Tutorial\FallExplosionTutorial.cs" />
+    <Compile Include="Assets\Scripts\FrogLevel\FrogCounter.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\PostProcessingBehaviour.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Models\EyeAdaptationModel.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Utils\GraphicsUtils.cs" />
@@ -130,6 +135,7 @@
     <Compile Include="Assets\Scripts\MainScene\Enemies\Entity.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\PostProcessingComponent.cs" />
     <Compile Include="Assets\Scripts\MainScene\UI\CameraController.cs" />
+    <Compile Include="Assets\Scripts\FrogLevel\Environment\AnimationStarter.cs" />
     <Compile Include="Assets\Scripts\MainScene\Enemies\ThrowerDisk.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Components\EyeAdaptationComponent.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Models\ChromaticAberrationModel.cs" />
@@ -139,6 +145,7 @@
     <Compile Include="Assets\PostProcessing\Runtime\Components\DepthOfFieldComponent.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Components\ColorGradingComponent.cs" />
     <Compile Include="Assets\Scripts\MainScene\SurfaceSlider.cs" />
+    <Compile Include="Assets\Scripts\FrogLevel\PiecefullCretures\FrogController.cs" />
     <Compile Include="Assets\Scripts\Scenes.cs" />
     <Compile Include="Assets\Scripts\MainScene\Enemies\ChasingEnemyController.cs" />
     <Compile Include="Assets\Scripts\MainScene\Buffs\Heal.cs" />
@@ -154,13 +161,6 @@
     <Compile Include="Assets\Scripts\Tutorial\DisableObject.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Models\AntialiasingModel.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Models\DitheringModel.cs" />
-    <Compile Include="Assets\Scripts\FrogLevel\PiecefullCretures\FrogController.cs" />
-    <Compile Include="Assets\Scripts\FrogLevel\Environment\AnimationStarter.cs" />
-    <Compile Include="Assets\Scripts\FrogLevel\Environment\IlluminationBlinking.cs" />
-    <Compile Include="Assets\Scripts\FrogLevel\PiecefullCretures\FrogDisabler.cs" />
-    <Compile Include="Assets\Scripts\FrogLevel\QuestGiver.cs" />
-    <Compile Include="Assets\Scripts\FrogLevel\FrogSpawner.cs" />
-    <Compile Include="Assets\Scripts\FrogLevel\FrogCounter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
