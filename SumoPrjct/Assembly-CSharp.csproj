@@ -60,7 +60,6 @@
     <Compile Include="Assets\Scripts\MainScene\COMSetter.cs" />
     <Compile Include="Assets\Scripts\Tutorial\SwitchTipAnimation.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Components\FxaaComponent.cs" />
-    <Compile Include="Assets\Scripts\MainScene\Scenario.cs" />
     <Compile Include="Assets\Scripts\FrogLevel\QuestGiver.cs" />
     <Compile Include="Assets\Scripts\MainScene\Enemies\ThrowerBomb.cs" />
     <Compile Include="Assets\Scripts\MenuScene\HeroRotating.cs" />
@@ -120,7 +119,6 @@
     <Compile Include="Assets\Scripts\Tutorial\ExplosionTutorial.cs" />
     <Compile Include="Assets\Scripts\MainScene\BombSpawn.cs" />
     <Compile Include="Assets\Scripts\MainScene\Enemies\RunningEnemyController.cs" />
-    <Compile Include="Assets\Scripts\MainScene\EnemySpawn.cs" />
     <Compile Include="Assets\Scripts\MenuScene\FallingObject.cs" />
     <Compile Include="Assets\Scripts\MainScene\PlatformController.cs" />
     <Compile Include="Assets\Scripts\MainScene\Bomb.cs" />
@@ -161,6 +159,12 @@
     <Compile Include="Assets\Scripts\Tutorial\DisableObject.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Models\AntialiasingModel.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Models\DitheringModel.cs" />
+    <Compile Include="Assets\MeshCombiner\Scripts\MeshCombiner.cs" />
+    <Compile Include="Assets\Scripts\LevelTeleport.cs" />
+    <Compile Include="Assets\Scripts\MainScene\Triggers\BattleTrigger.cs" />
+    <Compile Include="Assets\Scripts\MainScene\GlobalData.cs" />
+    <Compile Include="Assets\Scripts\MainScene\EnemySpawner.cs" />
+    <Compile Include="Assets\Scripts\MainScene\GlobalDataInitializer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

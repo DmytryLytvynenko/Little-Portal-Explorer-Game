@@ -130,6 +130,7 @@ MonoBehaviour:
   targetPoint: {fileID: 0}
   damage: 5
   damageMultiplier: 60
+  pointer: {fileID: 6193311813821381323, guid: 0f5c00a049be0a14794c348139611fe7, type: 3}
   jumpHeight: 7
   gravity: -9.81
   debugPath: 0

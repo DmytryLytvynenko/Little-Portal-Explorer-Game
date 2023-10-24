@@ -1,29 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Launch
 {
 	public class Launch 
     {
-/*		public Transform targetPoint;
-		private Rigidbody bullet;
-		private GameObject pointer;
-		private GameObject _pointer;
-		[SerializeField] private int damage;
-		[SerializeField] private int damageMultiplier;//если пуля ударит врага, его здоровье уменьшиться так же сильно, как и у игрока
-
-		// Shoot characteristics
-		public float jumpHeight = 7;
-		public float gravity = -9.81f;
-		public bool debugPath;
-		private void Start()
-		{
-			pointer = Resources.Load<GameObject>("Prefabs/Pointer");
-			bullet = GetComponent<Rigidbody>();
-			bullet.useGravity = false;
-			InitiateLaunch();
-		}*/
 		public void InitiateLaunch(Transform targetPoint, Rigidbody launchObject, float jumpHeight, float gravity)
 		{
 			launchObject.useGravity = true;
@@ -31,14 +11,14 @@ namespace Launch
 		}
 		LaunchData CalculateLaunchData(Transform targetPoint, Rigidbody launchObject, float jumpHeight, float gravity)
 		{
-			if (targetPoint.position.y >= launchObject.position.y)
+/*			if (targetPoint.position.y >= launchObject.position.y)
 			{
 				jumpHeight = targetPoint.position.y + 1;
 			}
 			else
 			{
 				jumpHeight = launchObject.position.y + 1;
-			}
+			}*/
 
 			float displacementY = targetPoint.position.y - launchObject.position.y;
 			Vector3 displacementXZ = new Vector3(targetPoint.position.x - launchObject.position.x, 0, targetPoint.position.z - launchObject.position.z);

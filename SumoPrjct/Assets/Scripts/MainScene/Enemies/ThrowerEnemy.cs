@@ -110,9 +110,9 @@ public class ThrowerEnemy : Entity
     {
         projectile.ProjectileDistroyed -= OnProjectileDestroyed;
 
-/*        if (projectile.gameObject.GetComponent<ThrowerBomb>())
+        if (projectile.gameObject.GetComponent<ThrowerBomb>())
             bombObjectsPool.Return(projectile.gameObject);
-        else*/
+        else
             diskObjectsPool.Return(projectile.gameObject);
     } 
     private void InitializeFieldsInPool()

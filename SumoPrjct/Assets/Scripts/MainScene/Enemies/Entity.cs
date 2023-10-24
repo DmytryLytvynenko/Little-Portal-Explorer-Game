@@ -39,6 +39,10 @@ public class Entity : MonoBehaviour
             rb.AddForce(transform.forward * moveSpeed, ForceMode.Impulse);//метод передвижения 
         }
     }
+    public void SetTarget(Transform target)
+    {
+        this.target = target;
+    }
     protected virtual void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Player"))//magic word!!!
@@ -52,13 +56,6 @@ public class Entity : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))//magic word!!!
         {
             isGrounded = false;
-        }
-    }
-    private void IsGroundedUpate(Collision collision, bool value)
-    {
-        if (collision.gameObject.tag == ("Ground") || collision.gameObject.tag == ("Platform"))
-        {
-            isGrounded = value;
         }
     }
     protected void Die()

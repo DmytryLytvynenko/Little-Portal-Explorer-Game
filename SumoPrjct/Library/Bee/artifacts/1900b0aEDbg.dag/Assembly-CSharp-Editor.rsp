@@ -354,6 +354,7 @@
 -r:"Library/Bee/artifacts/1900b0aEDbg.dag/UnityEngine.TestRunner.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aEDbg.dag/UnityEngine.UI.ref.dll"
 "Assets/LowPolyWater_Pack/Scripts/Editor/GeneratePlane.cs"
+"Assets/MeshCombiner/Editor/MeshCombinerEditor.cs"
 "Assets/PostProcessing/Editor/Attributes/PostProcessingModelEditorAttribute.cs"
 "Assets/PostProcessing/Editor/Models/AmbientOcclusionModelEditor.cs"
 "Assets/PostProcessing/Editor/Models/AntialiasingModelEditor.cs"

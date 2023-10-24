@@ -91,6 +91,7 @@
     <Compile Include="Assets\PostProcessing\Editor\Models\DitheringModelEditor.cs" />
     <Compile Include="Assets\PostProcessing\Editor\Models\ChromaticAberrationEditor.cs" />
     <Compile Include="Assets\PostProcessing\Editor\Monitors\VectorscopeMonitor.cs" />
+    <Compile Include="Assets\MeshCombiner\Editor\MeshCombinerEditor.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

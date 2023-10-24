@@ -10,6 +10,7 @@ public class JumperEnemy : Entity
     [Range(0f, 4f)]
     [SerializeField] private float jumpHeightMultiplier;
     [SerializeField] private float aimedJumpDistanse;
+    Launch.Launch launch;
 
     private float timer = 0;
 
@@ -17,6 +18,7 @@ public class JumperEnemy : Entity
     {
         rb = GetComponent<Rigidbody>();
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        launch = new Launch.Launch();
     }
 
     // Update is called once per frame
@@ -33,10 +35,9 @@ public class JumperEnemy : Entity
 
         if (isGrounded)
         {
-            if (rotationVector.magnitude < aimedJumpDistanse)//magic number
+            if (rotationVector.magnitude < aimedJumpDistanse)
             {
-                Launch.Launch launch = new Launch.Launch();
-                launch.InitiateLaunch(target, rb, jumpHeightMultiplier, Physics.gravity.y);//magic number
+                launch.InitiateLaunch(target, rb, jumpHeightMultiplier, Physics.gravity.y);
                 isGrounded = false;
             }
             else
