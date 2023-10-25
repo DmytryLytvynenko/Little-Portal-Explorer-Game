@@ -28,7 +28,6 @@ public class ShootingEnemyController : Entity
         Rotate();
         Move();
     }
-
     private void ControllDistance()
     {
         if (rotationVector.magnitude <= shootDistnace)

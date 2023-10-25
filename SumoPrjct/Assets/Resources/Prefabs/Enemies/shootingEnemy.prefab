@@ -162,7 +162,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e787d8971e254d49a7c81cc54e50566, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contactDamage: 0
+  contactDamage: -5
   moveSpeed: 2
   maxSpeed: 2.5
   rotationSpeed: 5

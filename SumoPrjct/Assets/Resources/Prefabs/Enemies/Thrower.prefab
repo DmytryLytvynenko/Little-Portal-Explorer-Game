@@ -130,7 +130,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9000bfbead4c8d14898f6786ad0835a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  contactDamage: 5
+  contactDamage: -10
   moveSpeed: 2
   maxSpeed: 3
   rotationSpeed: 5
@@ -142,6 +142,7 @@ MonoBehaviour:
   diskShootPoint: {fileID: 3096531187292151520}
   shootDistnace: 10
   shootCooldown: 5
+  bombDistance: 0
   timeBeforeShoot: 0
 --- !u!1 &3096531186675476053
 GameObject:

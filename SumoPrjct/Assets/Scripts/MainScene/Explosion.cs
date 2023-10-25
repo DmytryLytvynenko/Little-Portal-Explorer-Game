@@ -22,7 +22,7 @@ public class Explosion : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E))// потом убрать
         {
-            Explode(0);
+            Explode(3000);
         }
     }
     public void SetExplosionRadius(float newRadius)

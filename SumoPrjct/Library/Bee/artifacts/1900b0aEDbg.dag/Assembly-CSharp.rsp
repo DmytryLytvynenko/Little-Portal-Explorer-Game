@@ -440,6 +440,7 @@
 "Assets/Scripts/MenuScene/HeroRotating.cs"
 "Assets/Scripts/MenuScene/ObjectSpawn.cs"
 "Assets/Scripts/Scenes.cs"
+"Assets/Scripts/SquidGameLevel/TrapHatch.cs"
 "Assets/Scripts/Tutorial/BoxCounter.cs"
 "Assets/Scripts/Tutorial/DisableObject.cs"
 "Assets/Scripts/Tutorial/ExplosionTutorial.cs"

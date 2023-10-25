@@ -71,6 +71,7 @@
     <Compile Include="Assets\Scripts\Tutorial\WalkTutorialEnded.cs" />
     <Compile Include="Assets\Scripts\Tutorial\MoveTutorialTracker.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Attributes\GetSetAttribute.cs" />
+    <Compile Include="Assets\Scripts\MainScene\Triggers\BattleTrigger.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Components\ChromaticAberrationComponent.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Components\BuiltinDebugViewsComponent.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Attributes\TrackballGroupAttribute.cs" />
@@ -88,6 +89,7 @@
     <Compile Include="Assets\PostProcessing\Runtime\Components\VignetteComponent.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Utils\MaterialFactory.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Models\FogModel.cs" />
+    <Compile Include="Assets\Scripts\MainScene\GlobalData.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Components\TaaComponent.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Components\ScreenSpaceReflectionComponent.cs" />
     <Compile Include="Assets\Scripts\MainScene\Enemies\Projectile.cs" />
@@ -97,6 +99,7 @@
     <Compile Include="Assets\PostProcessing\Runtime\PostProcessingModel.cs" />
     <Compile Include="Assets\Scripts\MainScene\UI\ButtonCooldown.cs" />
     <Compile Include="Assets\Scripts\MainScene\HeroController.cs" />
+    <Compile Include="Assets\Scripts\MainScene\EnemySpawner.cs" />
     <Compile Include="Assets\Scripts\MainScene\Bullet.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\PostProcessingProfile.cs" />
     <Compile Include="Assets\Scripts\MainScene\EffectScaling.cs" />
@@ -114,11 +117,13 @@
     <Compile Include="Assets\Scripts\MainScene\HelthSystem\HealthControll.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Models\MotionBlurModel.cs" />
     <Compile Include="Assets\LowPolyWater_Pack\Scripts\LowPolyWater.cs" />
+    <Compile Include="Assets\MeshCombiner\Scripts\MeshCombiner.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Components\UserLutComponent.cs" />
     <Compile Include="Assets\Scripts\Tutorial\Respawn.cs" />
     <Compile Include="Assets\Scripts\Tutorial\ExplosionTutorial.cs" />
     <Compile Include="Assets\Scripts\MainScene\BombSpawn.cs" />
     <Compile Include="Assets\Scripts\MainScene\Enemies\RunningEnemyController.cs" />
+    <Compile Include="Assets\Scripts\LevelTeleport.cs" />
     <Compile Include="Assets\Scripts\MenuScene\FallingObject.cs" />
     <Compile Include="Assets\Scripts\MainScene\PlatformController.cs" />
     <Compile Include="Assets\Scripts\MainScene\Bomb.cs" />
@@ -153,18 +158,14 @@
     <Compile Include="Assets\Scripts\MainScene\Enemies\JumperEnemy.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Models\DepthOfFieldModel.cs" />
     <Compile Include="Assets\Scripts\Tutorial\JumpTutorialEnded.cs" />
+    <Compile Include="Assets\Scripts\MainScene\GlobalDataInitializer.cs" />
     <Compile Include="Assets\Scripts\MenuScene\ObjectSpawn.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Attributes\TrackballAttribute.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Components\AmbientOcclusionComponent.cs" />
     <Compile Include="Assets\Scripts\Tutorial\DisableObject.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Models\AntialiasingModel.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Models\DitheringModel.cs" />
-    <Compile Include="Assets\MeshCombiner\Scripts\MeshCombiner.cs" />
-    <Compile Include="Assets\Scripts\LevelTeleport.cs" />
-    <Compile Include="Assets\Scripts\MainScene\Triggers\BattleTrigger.cs" />
-    <Compile Include="Assets\Scripts\MainScene\GlobalData.cs" />
-    <Compile Include="Assets\Scripts\MainScene\EnemySpawner.cs" />
-    <Compile Include="Assets\Scripts\MainScene\GlobalDataInitializer.cs" />
+    <Compile Include="Assets\Scripts\SquidGameLevel\TrapHatch.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

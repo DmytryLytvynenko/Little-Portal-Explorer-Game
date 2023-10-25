@@ -20,9 +20,8 @@ public class Bullet : MonoBehaviour
 	private void Start()
 	{
 		launch = new Launch.Launch();
-		launch.InitiateLaunch(targetPoint, bullet, trajectoryHeight, Physics.gravity.y);
 		bullet = GetComponent<Rigidbody>();
-		bullet.useGravity = false;
+		launch.InitiateLaunch(targetPoint, bullet, trajectoryHeight, Physics.gravity.y);
 		DrawPointer();
 	}
 	private void DrawPointer()
