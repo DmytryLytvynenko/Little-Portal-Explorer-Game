@@ -140,6 +140,7 @@
     <Compile Include="Assets\PostProcessing\Runtime\PostProcessingComponent.cs" />
     <Compile Include="Assets\Scripts\MainScene\UI\CameraController.cs" />
     <Compile Include="Assets\Scripts\FrogLevel\Environment\AnimationStarter.cs" />
+    <Compile Include="Assets\Scripts\TrampolineLevel\VerticalAccelerator.cs" />
     <Compile Include="Assets\Scripts\MainScene\Enemies\ThrowerDisk.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Components\EyeAdaptationComponent.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Models\ChromaticAberrationModel.cs" />
@@ -161,6 +162,7 @@
     <Compile Include="Assets\Scripts\Tutorial\JumpTutorialEnded.cs" />
     <Compile Include="Assets\Scripts\MainScene\GlobalDataInitializer.cs" />
     <Compile Include="Assets\Scripts\MenuScene\ObjectSpawn.cs" />
+    <Compile Include="Assets\Scripts\TrampolineLevel\HorizontalAccelerator.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Attributes\TrackballAttribute.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Components\AmbientOcclusionComponent.cs" />
     <Compile Include="Assets\Scripts\Tutorial\DisableObject.cs" />

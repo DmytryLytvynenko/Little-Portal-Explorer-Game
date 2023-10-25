@@ -168,7 +168,7 @@ MonoBehaviour:
   rotationSpeed: 5
   shootDistnace: 6
   xShootAngle: -45
-  shootCooldown: 1.5
+  shootCooldown: 3
   ShootPos: {fileID: 228993799988786680}
   bullet: {fileID: 6997241007162612521, guid: 8379717eded0ad749b0b7d945065fe1e, type: 3}
 --- !u!114 &228993800423009944

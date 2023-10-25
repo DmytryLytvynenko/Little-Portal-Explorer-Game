@@ -11,14 +11,10 @@ namespace Launch
 		}
 		LaunchData CalculateLaunchData(Transform targetPoint, Rigidbody launchObject, float jumpHeight, float gravity)
 		{
-/*			if (targetPoint.position.y >= launchObject.position.y)
+			if (targetPoint.position.y >= launchObject.position.y)
 			{
-				jumpHeight = targetPoint.position.y + 1;
+				jumpHeight = targetPoint.position.y - launchObject.position.y + jumpHeight;
 			}
-			else
-			{
-				jumpHeight = launchObject.position.y + 1;
-			}*/
 
 			float displacementY = targetPoint.position.y - launchObject.position.y;
 			Vector3 displacementXZ = new Vector3(targetPoint.position.x - launchObject.position.x, 0, targetPoint.position.z - launchObject.position.z);
