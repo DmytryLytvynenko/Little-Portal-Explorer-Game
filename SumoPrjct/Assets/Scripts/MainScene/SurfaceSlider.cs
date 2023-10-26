@@ -9,7 +9,8 @@ public class SurfaceSlider : MonoBehaviour
     private bool canMoveAtAngle;
     public Vector3 Project( Vector3 moveVector)
     {
-        canMoveAtAngle = (Mathf.Abs(Vector3.Angle(normal, horizontal) - 90)) <= acceptableVerticalAngle;
+        canMoveAtAngle = Mathf.Abs(Vector3.Angle(normal, transform.forward) - 90) <= acceptableVerticalAngle;
+        print(Mathf.Abs(Vector3.Angle(normal, transform.forward) - 90));
         return (moveVector - Vector3.Dot(moveVector, normal) * normal) * Convert.ToInt32(canMoveAtAngle);
     }
 

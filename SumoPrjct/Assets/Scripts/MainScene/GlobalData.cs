@@ -6,4 +6,5 @@ public static class GlobalData
 {
     public static GameObject PlayerInstance;
     public static string PlayerTag = "Player";
+    public static Transform currentCheckPoint;
 }

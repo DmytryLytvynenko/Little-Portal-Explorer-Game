@@ -36,7 +36,7 @@ public class Entity : MonoBehaviour
 
         if (rb.velocity.magnitude < maxSpeed)
         {
-            rb.AddForce(transform.forward * moveSpeed, ForceMode.Impulse);//метод передвижения 
+            rb.AddForce(transform.forward * moveSpeed * Convert.ToInt32(isGrounded), ForceMode.Impulse);//метод передвижения 
         }
     }
     public void SetTarget(Transform target)
