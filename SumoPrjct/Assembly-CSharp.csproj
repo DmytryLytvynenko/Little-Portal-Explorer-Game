@@ -74,6 +74,7 @@
     <Compile Include="Assets\Scripts\MainScene\Triggers\BattleTrigger.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Components\ChromaticAberrationComponent.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Components\BuiltinDebugViewsComponent.cs" />
+    <Compile Include="Assets\Scripts\LevelLoading.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Attributes\TrackballGroupAttribute.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Utils\ColorGradingCurve.cs" />
     <Compile Include="Assets\Scripts\Tutorial\FallExplosionTutorial.cs" />
@@ -84,6 +85,7 @@
     <Compile Include="Assets\Scripts\Tutorial\RotateTutorialTracker.cs" />
     <Compile Include="Assets\Scripts\MainScene\Throw.cs" />
     <Compile Include="Assets\Scripts\MainScene\Enemies\ThrowerEnemy.cs" />
+    <Compile Include="Assets\Scripts\PlayerRespawner.cs" />
     <Compile Include="Assets\Scripts\MainScene\PlatformSpawn.cs" />
     <Compile Include="Assets\PostProcessing\Utilities\CustomMotionTexture\ExampleWheelController.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Components\VignetteComponent.cs" />
@@ -118,6 +120,7 @@
     <Compile Include="Assets\Scripts\MainScene\HelthSystem\HealthBar.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Components\BloomComponent.cs" />
     <Compile Include="Assets\Scripts\MainScene\HelthSystem\HealthControll.cs" />
+    <Compile Include="Assets\Scripts\Utilities.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Models\MotionBlurModel.cs" />
     <Compile Include="Assets\LowPolyWater_Pack\Scripts\LowPolyWater.cs" />
     <Compile Include="Assets\MeshCombiner\Scripts\MeshCombiner.cs" />
@@ -170,9 +173,6 @@
     <Compile Include="Assets\Scripts\Tutorial\DisableObject.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Models\AntialiasingModel.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Models\DitheringModel.cs" />
-    <Compile Include="Assets\Scripts\Utilities.cs" />
-    <Compile Include="Assets\Scripts\LevelLoading.cs" />
-    <Compile Include="Assets\Scripts\PlayerRespawner.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

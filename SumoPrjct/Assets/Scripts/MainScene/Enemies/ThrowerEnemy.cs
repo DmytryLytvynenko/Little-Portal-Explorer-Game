@@ -48,7 +48,7 @@ public class ThrowerEnemy : Entity
 
         temporaryMoveSpeed = moveSpeed;
         rb = GetComponent<Rigidbody>();
-        target = GameObject.FindAnyObjectByType<HeroController>().transform;
+        target = GlobalData.PlayerInstance.transform;
     }
     void Update()
     {

@@ -142,8 +142,8 @@ MonoBehaviour:
   diskShootPoint: {fileID: 3096531187292151520}
   shootDistnace: 10
   shootCooldown: 5
-  bombDistance: 0
-  timeBeforeShoot: 0
+  bombDistance: 4
+  timeBeforeShoot: 1
 --- !u!1 &3096531186675476053
 GameObject:
   m_ObjectHideFlags: 0
