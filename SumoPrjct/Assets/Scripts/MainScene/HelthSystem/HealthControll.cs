@@ -61,6 +61,10 @@ public class HealthControll : MonoBehaviour
         ChangeHealth(healAmount);
         return true;
     }
+    public void RestoreHealth()
+    {
+        ChangeHealth(maxHealth - currentHelth);
+    }
     private void Die()
     {
         HealthChanged?.Invoke(0);

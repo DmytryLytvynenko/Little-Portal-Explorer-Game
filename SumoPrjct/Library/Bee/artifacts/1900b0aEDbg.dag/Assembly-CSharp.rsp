@@ -395,6 +395,7 @@
 "Assets/Scripts/FrogLevel/PiecefullCretures/FrogController.cs"
 "Assets/Scripts/FrogLevel/PiecefullCretures/FrogDisabler.cs"
 "Assets/Scripts/FrogLevel/QuestGiver.cs"
+"Assets/Scripts/LevelLoading.cs"
 "Assets/Scripts/LevelTeleport.cs"
 "Assets/Scripts/MainScene/Bomb.cs"
 "Assets/Scripts/MainScene/BombSpawn.cs"
@@ -441,6 +442,7 @@
 "Assets/Scripts/MenuScene/FallingObject.cs"
 "Assets/Scripts/MenuScene/HeroRotating.cs"
 "Assets/Scripts/MenuScene/ObjectSpawn.cs"
+"Assets/Scripts/PlayerRespawner.cs"
 "Assets/Scripts/Scenes.cs"
 "Assets/Scripts/SquidGameLevel/TrapHatch.cs"
 "Assets/Scripts/TrampolineLevel/HorizontalAccelerator.cs"
@@ -455,6 +457,7 @@
 "Assets/Scripts/Tutorial/RotateTutorialTracker.cs"
 "Assets/Scripts/Tutorial/SwitchTipAnimation.cs"
 "Assets/Scripts/Tutorial/WalkTutorialEnded.cs"
+"Assets/Scripts/Utilities.cs"
 -langversion:9.0
 
 /deterministic

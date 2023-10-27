@@ -11,12 +11,14 @@ public class CheckPoint : MonoBehaviour
     [SerializeField] private float animationLength;
 
     private string animatorParameter = "Enabled";
+    private bool Active = false;
 
     public static Action PlayerSavedGame;
 
 
     private void OnEnable()
     {
+        checkPointAnimator.enabled = false;
         PlayerSavedGame += OnPlayerSavedGame;
     }
     private void OnDisable()
@@ -34,13 +36,34 @@ public class CheckPoint : MonoBehaviour
     }
     private void ActivateCheckPoint()
     {
-        GlobalData.currentCheckPoint = checkPoint;
+        if (Active) return;
+
+        checkPointAnimator.enabled = true;
+        Active = true;
+        GlobalData.CurrentCheckPoint = checkPoint;
+
+        rememberCheckPoint(checkPoint);
         ActivateLights();
-        checkPointAnimator.SetBool(animatorParameter, true);
+        checkPointAnimator.SetBool(animatorParameter, Active);
         gameSavedMessage.SetActive(true);
-    }    private void DiativateCheckPoint()
+    }
+    public void ActivateCheckPointOnLoad()
     {
-        checkPointAnimator.SetBool(animatorParameter, false);
+        if (Active) return;
+
+        checkPointAnimator.enabled = true;
+        Active = true;
+        GlobalData.CurrentCheckPoint = checkPoint;
+
+        rememberCheckPoint(checkPoint);
+        ActivateLights();
+        checkPointAnimator.SetBool(animatorParameter, Active);
+    }
+    private void DiativateCheckPoint()
+    {
+        Active = false;
+
+        checkPointAnimator.SetBool(animatorParameter, Active);
         StartCoroutine(DiactivateLights());
     }
     private void ActivateLights()
@@ -51,10 +74,17 @@ public class CheckPoint : MonoBehaviour
     {
         yield return new WaitForSeconds(animationLength);
         lights.SetActive(false);
+        checkPointAnimator.enabled = false;
+    }
+    private void rememberCheckPoint(Transform checkPointPosition)
+    {
+        PlayerPrefs.SetString("CheckPointPosition", $"{checkPointPosition.position.x}.{checkPointPosition.position.y}.{checkPointPosition.position.z}");
+        PlayerPrefs.SetInt("CheckPointID", transform.GetInstanceID());
+        print($"{checkPointPosition.position.x}.{checkPointPosition.position.y}.{checkPointPosition.position.z}");
     }
     private void OnPlayerSavedGame()
     {
-        if (GlobalData.currentCheckPoint != checkPoint)
+        if (GlobalData.CurrentCheckPoint != checkPoint)
         {
             DiativateCheckPoint();
         }

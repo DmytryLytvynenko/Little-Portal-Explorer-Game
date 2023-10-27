@@ -240,12 +240,7 @@ public class HeroController : MonoBehaviour
     }   
     public void Die()
     {
-        // это надо оптимизировать
-        GameObject.Find("JumpButton").GetComponent<Button>().interactable = false;
-        GameObject.Find("ThrowButton").GetComponent<Button>().interactable = false;
-        GameObject.Find("ExplosionButton").GetComponent<Button>().interactable = false;
         LoseScreen.SetActive(true);
-        Time.timeScale = 0;
     }
     public void Win()
     {

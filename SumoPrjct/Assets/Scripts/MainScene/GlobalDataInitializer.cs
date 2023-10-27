@@ -1,12 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using Utilities;
 
 public class GlobalDataInitializer : MonoBehaviour
 {
-    void Start()
+    private void Awake()
     {
         GlobalData.PlayerInstance = GameObject.FindGameObjectWithTag(GlobalData.PlayerTag);
-       
     }
 }

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1547566436580248216}
   - component: {fileID: 1547566436578921144}
   - component: {fileID: 1547566436577953912}
-  - component: {fileID: 1547566436579856411}
+  - component: {fileID: 5817081603586212819}
   m_Layer: 0
   m_Name: rock2
   m_TagString: Untagged
@@ -84,8 +84,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &1547566436579856411
-BoxCollider:
+--- !u!135 &5817081603586212819
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -95,7 +95,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.5, y: 0.8890661, z: 1.5}
+  m_Radius: 0.94940025
   m_Center: {x: 0.9174855, y: 0.4089582, z: -0.2731344}
 --- !u!1 &1547566436793420667
 GameObject:
@@ -112,7 +112,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1547566436793420668
 Transform:
   m_ObjectHideFlags: 0
@@ -139,8 +139,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1547566437195394585}
-  - component: {fileID: 1547566437195394586}
   - component: {fileID: 1547566437195394587}
+  - component: {fileID: 1200680843}
   m_Layer: 0
   m_Name: CheckPoint 1
   m_TagString: Untagged
@@ -166,19 +166,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1547566437195394586
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1547566437195394584}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 2.68, y: 1, z: 2.61}
-  m_Center: {x: 0.76, y: 0, z: -0.18}
 --- !u!114 &1547566437195394587
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -196,6 +183,19 @@ MonoBehaviour:
   gameSavedMessage: {fileID: 0}
   lights: {fileID: 1547566436793420667}
   animationLength: 1.5
+--- !u!135 &1200680843
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1547566437195394584}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.5
+  m_Center: {x: 0.95, y: 0.28, z: -0.24}
 --- !u!1 &1547566437554743145
 GameObject:
   m_ObjectHideFlags: 0

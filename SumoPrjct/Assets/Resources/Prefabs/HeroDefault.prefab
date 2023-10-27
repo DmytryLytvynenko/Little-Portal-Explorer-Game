@@ -386,7 +386,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpForce: 100
-  moveSpeed: 6
+  moveSpeed: 4.5
   maxSpeed: 6
   rotationSpeed: 7.5
   ExplosionJumpHeight: 4.5
@@ -405,7 +405,7 @@ Rigidbody:
   serializedVersion: 2
   m_Mass: 10
   m_Drag: 0.5
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0.5
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 1
@@ -472,7 +472,7 @@ MonoBehaviour:
   xThrowSize: 1.5
   yThrowSize: 0.75
   zThrowSize: 1
-  yThrowAngle: 1
+  yThrowAngle: 0.37
   throwForce: 3000
   explosionRadius: 0
   throwDamage: 500

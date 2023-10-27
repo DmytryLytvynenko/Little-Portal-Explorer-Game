@@ -87,6 +87,7 @@
     <Compile Include="Assets\Scripts\MainScene\PlatformSpawn.cs" />
     <Compile Include="Assets\PostProcessing\Utilities\CustomMotionTexture\ExampleWheelController.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Components\VignetteComponent.cs" />
+    <Compile Include="Assets\Scripts\MainScene\CheckPoint.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Utils\MaterialFactory.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Models\FogModel.cs" />
     <Compile Include="Assets\Scripts\MainScene\GlobalData.cs" />
@@ -94,6 +95,7 @@
     <Compile Include="Assets\PostProcessing\Runtime\Components\ScreenSpaceReflectionComponent.cs" />
     <Compile Include="Assets\Scripts\MainScene\Enemies\Projectile.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Models\VignetteModel.cs" />
+    <Compile Include="Assets\Scripts\MainScene\UI\UIAnimationTimer.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Models\GrainModel.cs" />
     <Compile Include="Assets\Scripts\MainScene\DeathPlatform.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\PostProcessingModel.cs" />
@@ -168,8 +170,9 @@
     <Compile Include="Assets\Scripts\Tutorial\DisableObject.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Models\AntialiasingModel.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Models\DitheringModel.cs" />
-    <Compile Include="Assets\Scripts\MainScene\UI\UIAnimationTimer.cs" />
-    <Compile Include="Assets\Scripts\MainScene\CheckPoint.cs" />
+    <Compile Include="Assets\Scripts\Utilities.cs" />
+    <Compile Include="Assets\Scripts\LevelLoading.cs" />
+    <Compile Include="Assets\Scripts\PlayerRespawner.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
