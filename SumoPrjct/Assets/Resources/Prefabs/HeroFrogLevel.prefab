@@ -169,7 +169,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 976926571692803620}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -657,7 +657,7 @@ MonoBehaviour:
   yThrowSize: 1.5
   zThrowSize: 2
   yThrowAngle: 7
-  throwForce: 2500
+  throwForce: 1500
   explosionRadius: 0
   throwDamage: 500
 --- !u!114 &5977449916843088970

@@ -18,7 +18,7 @@ public class VerticalAccelerator : MonoBehaviour
             SpeedUp();
         }
     }
-    private void SpeedUp()
+    public void SpeedUp()
     {
         body.AddForce(-transform.up * accelerationForce, ForceMode.Impulse); 
     }

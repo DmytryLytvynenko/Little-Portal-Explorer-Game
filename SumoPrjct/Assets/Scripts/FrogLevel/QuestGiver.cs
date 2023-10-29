@@ -10,6 +10,7 @@ public class QuestGiver : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             QuestTip.SetActive(true);
+            gameObject.SetActive(false);
         }
     }
 }
