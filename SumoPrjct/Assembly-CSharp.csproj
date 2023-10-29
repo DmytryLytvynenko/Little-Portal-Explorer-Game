@@ -103,6 +103,7 @@
     <Compile Include="Assets\PostProcessing\Runtime\PostProcessingModel.cs" />
     <Compile Include="Assets\Scripts\MainScene\UI\ButtonCooldown.cs" />
     <Compile Include="Assets\Scripts\MainScene\Hero\HeroController.cs" />
+    <Compile Include="Assets\Scripts\MainScene\Hero\Jump.cs" />
     <Compile Include="Assets\Scripts\MainScene\EnemySpawner.cs" />
     <Compile Include="Assets\Scripts\MainScene\Bullet.cs" />
     <Compile Include="Assets\Scripts\SquidGameLevel\TrapHatch.cs" />
@@ -118,6 +119,7 @@
     <Compile Include="Assets\Scripts\MainScene\UI\MobileController.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Models\UserLutModel.cs" />
     <Compile Include="Assets\Scripts\MainScene\HelthSystem\HealthBar.cs" />
+    <Compile Include="Assets\Scripts\MainScene\Environment\Elevator.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Components\BloomComponent.cs" />
     <Compile Include="Assets\Scripts\MainScene\HelthSystem\HealthControll.cs" />
     <Compile Include="Assets\Scripts\Utilities.cs" />
@@ -173,10 +175,8 @@
     <Compile Include="Assets\PostProcessing\Runtime\Components\AmbientOcclusionComponent.cs" />
     <Compile Include="Assets\Scripts\Tutorial\DisableObject.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Models\AntialiasingModel.cs" />
-    <Compile Include="Assets\PostProcessing\Runtime\Models\DitheringModel.cs" />
     <Compile Include="Assets\Scripts\MainScene\Hero\Attack.cs" />
-    <Compile Include="Assets\Scripts\MainScene\Hero\Jump.cs" />
-    <Compile Include="Assets\Scripts\MainScene\Environment\Elevator.cs" />
+    <Compile Include="Assets\PostProcessing\Runtime\Models\DitheringModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
