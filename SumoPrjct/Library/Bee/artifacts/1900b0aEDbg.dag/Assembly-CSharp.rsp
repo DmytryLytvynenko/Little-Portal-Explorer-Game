@@ -395,6 +395,7 @@
 "Assets/Scripts/FrogLevel/PiecefullCretures/FrogController.cs"
 "Assets/Scripts/FrogLevel/PiecefullCretures/FrogDisabler.cs"
 "Assets/Scripts/FrogLevel/QuestGiver.cs"
+"Assets/Scripts/GpuInstancingEnabler.cs"
 "Assets/Scripts/LevelLoading.cs"
 "Assets/Scripts/LevelTeleport.cs"
 "Assets/Scripts/MainScene/Bomb.cs"

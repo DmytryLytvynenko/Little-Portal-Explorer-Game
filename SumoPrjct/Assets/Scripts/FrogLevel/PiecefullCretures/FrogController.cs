@@ -90,8 +90,4 @@ public class FrogController : Entity
     {
         this.moveArea = moveArea;
     }
-    private void OnDrawGizmos()
-    {
-        Gizmos.DrawLine(transform.position, target.position);
-    }
 }
