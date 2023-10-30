@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 173521400}
   - component: {fileID: 173521402}
   - component: {fileID: 173521401}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: KickArea
   m_TagString: Boss
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 4752059449967034717}
   - component: {fileID: 7486993290424109070}
   - component: {fileID: 7895121992684520553}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: StatsCanvas
   m_TagString: Boss
   m_Icon: {fileID: 0}
@@ -195,7 +195,7 @@ GameObject:
   - component: {fileID: 7680025281087998910}
   - component: {fileID: 3366423236898653429}
   - component: {fileID: 3259178893886826557}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: HealthBarFilling
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -277,7 +277,7 @@ GameObject:
   - component: {fileID: -7574414302898759727}
   - component: {fileID: 1456865201736339904}
   - component: {fileID: 126292261}
-  m_Layer: 6
+  m_Layer: 11
   m_Name: BigBossEnemy
   m_TagString: Boss
   m_Icon: {fileID: 0}
@@ -427,11 +427,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   throwArea: {fileID: 173521400}
-  xThrowSize: 2
-  yThrowSize: 0.25
-  zThrowSize: 0.8
   yThrowAngle: 1
   throwForce: 15
+  explosionRadius: 0
   throwDamage: 3
 --- !u!114 &1456865201736339904
 MonoBehaviour:
@@ -473,7 +471,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4896998462367335467}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ShootPoint
   m_TagString: Boss
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
@@ -507,7 +505,7 @@ GameObject:
   - component: {fileID: 2121737158961270850}
   - component: {fileID: 5779349499741529256}
   - component: {fileID: 1192373915540666529}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: HealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}

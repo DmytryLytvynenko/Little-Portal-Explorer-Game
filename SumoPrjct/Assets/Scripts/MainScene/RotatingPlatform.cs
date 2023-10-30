@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class RotatingPlatform : MonoBehaviour
 {
-    [SerializeField]private float rotatingSpeed;
+    [SerializeField] private float rotatingSpeed;
 
-    private void Update()
+    private void FixedUpdate()
     {
-/*        Rotate();*/
+        Rotate();
     }
     private void Rotate()
     {

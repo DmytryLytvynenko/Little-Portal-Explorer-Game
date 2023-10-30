@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2420992437671060199}
   - component: {fileID: 2420992437671060197}
   - component: {fileID: 2420992437671060198}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: HealthBarFilling
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -88,7 +88,7 @@ GameObject:
   - component: {fileID: 2420992438181160428}
   - component: {fileID: 2420992438181160429}
   - component: {fileID: 2420992438181160430}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: StatsCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -192,7 +192,7 @@ GameObject:
   - component: {fileID: 2420992438558452104}
   - component: {fileID: 2420992438558452106}
   - component: {fileID: 2420992438558452105}
-  m_Layer: 6
+  m_Layer: 11
   m_Name: runningEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -340,7 +340,7 @@ GameObject:
   - component: {fileID: 2420992439104096581}
   - component: {fileID: 2420992439104096582}
   - component: {fileID: 2420992439104096583}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: HealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}

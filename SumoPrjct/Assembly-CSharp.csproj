@@ -177,6 +177,7 @@
     <Compile Include="Assets\PostProcessing\Runtime\Models\AntialiasingModel.cs" />
     <Compile Include="Assets\Scripts\MainScene\Hero\Attack.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Models\DitheringModel.cs" />
+    <Compile Include="Assets\Scripts\MainScene\PortalController.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

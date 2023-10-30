@@ -434,6 +434,7 @@
 "Assets/Scripts/MainScene/PlatformSpawn.cs"
 "Assets/Scripts/MainScene/Pool/GameObjectPool.cs"
 "Assets/Scripts/MainScene/Pool/PoolBase.cs"
+"Assets/Scripts/MainScene/PortalController.cs"
 "Assets/Scripts/MainScene/RotatingPlatform.cs"
 "Assets/Scripts/MainScene/Triggers/BattleTrigger.cs"
 "Assets/Scripts/MainScene/UI/ButtonCooldown.cs"

@@ -4,18 +4,25 @@ using UnityEngine;
 public class Elevator : MonoBehaviour
 {
     [SerializeField] AnimationCurve moovementCurve;
+    [SerializeField] Transform startPoint;
+    [SerializeField] Transform endPoint;
     [SerializeField] protected float duration;
     [SerializeField] protected float height;
-    [SerializeField] protected bool AtDownPosition = true;
+    [SerializeField] protected bool AtStartPosition = true;
 
-    private float startHeight;
-
-    private void Awake()
+    private Vector3 moveVector;
+    private Vector3 startPosition;
+    private IEnumerator PlayAnimation()
     {
-        startHeight = transform.position.y;
-    }
-    private IEnumerator PlayAnimationUp()
-    {
+        if (AtStartPosition)
+        {
+            moveVector = endPoint.position - startPoint.position;
+        }
+        else
+        {
+            moveVector = startPoint.position - endPoint.position;
+        }
+        startPosition = transform.position;
         float expiredTime = 0f;
         float progress = 0f;
 
@@ -24,34 +31,15 @@ public class Elevator : MonoBehaviour
             expiredTime += Time.deltaTime;
             progress = expiredTime / duration;
 
-            transform.position = new Vector3(transform.position.x, startHeight + moovementCurve.Evaluate(progress) * height, transform.position.z);
+            transform.position = startPosition + moveVector * moovementCurve.Evaluate(progress);
 
             yield return null;
         }
-        AtDownPosition = false;
-    }
-    private IEnumerator PlayAnimationDown()
-    {
-        float expiredTime = duration;
-        float progress = 1f;
-
-        while (progress > 0)
-        {
-            expiredTime -= Time.deltaTime;
-            progress = expiredTime / duration;
-
-            transform.position = new Vector3(transform.position.x, startHeight + moovementCurve.Evaluate(progress) * height, transform.position.z);
-
-            yield return null;
-        }
-        AtDownPosition = true;
+        AtStartPosition = !AtStartPosition;
     }
     public void ActivateElevator()
     {
-        if(AtDownPosition)
-            StartCoroutine(PlayAnimationUp());
-        else
-            StartCoroutine(PlayAnimationDown());
+        StartCoroutine(PlayAnimation());
     }
 
     private void OnTriggerEnter(Collider other)

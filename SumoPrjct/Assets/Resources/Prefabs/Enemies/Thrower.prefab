@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3096531186333210272}
   - component: {fileID: 3096531186333210273}
   - component: {fileID: 3096531186333210268}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Thrower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -153,7 +153,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3096531186675476052}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: BombShootPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -184,7 +184,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3096531187292151520}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: DiskShootPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
