@@ -450,6 +450,7 @@
 "Assets/Scripts/Scenes.cs"
 "Assets/Scripts/SquidGameLevel/TrapHatch.cs"
 "Assets/Scripts/TrampolineLevel/HorizontalAccelerator.cs"
+"Assets/Scripts/TrampolineLevel/RespawnPointSetter.cs"
 "Assets/Scripts/TrampolineLevel/VerticalAccelerator.cs"
 "Assets/Scripts/Tutorial/BoxCounter.cs"
 "Assets/Scripts/Tutorial/DisableObject.cs"

@@ -149,6 +149,7 @@
     <Compile Include="Assets\Scripts\FrogLevel\Environment\AnimationStarter.cs" />
     <Compile Include="Assets\Scripts\TrampolineLevel\VerticalAccelerator.cs" />
     <Compile Include="Assets\Scripts\MainScene\Enemies\ThrowerDisk.cs" />
+    <Compile Include="Assets\Scripts\MainScene\PortalController.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Components\EyeAdaptationComponent.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Models\ChromaticAberrationModel.cs" />
     <Compile Include="Assets\Scripts\MainScene\Pool\GameObjectPool.cs" />
@@ -177,7 +178,7 @@
     <Compile Include="Assets\PostProcessing\Runtime\Models\AntialiasingModel.cs" />
     <Compile Include="Assets\Scripts\MainScene\Hero\Attack.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Models\DitheringModel.cs" />
-    <Compile Include="Assets\Scripts\MainScene\PortalController.cs" />
+    <Compile Include="Assets\Scripts\TrampolineLevel\RespawnPointSetter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
