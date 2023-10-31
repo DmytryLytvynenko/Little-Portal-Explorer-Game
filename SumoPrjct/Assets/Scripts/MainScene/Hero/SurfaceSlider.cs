@@ -19,15 +19,13 @@ public class SurfaceSlider : MonoBehaviour
     }
     private void OnCollisionExit(Collision collision)
     {
-        normal = transform.forward;
+        normal = transform.up;
     }
     private void OnCollisionStay(Collision collision)
     {
-        if (collision.contacts[0].thisCollider.CompareTag("Ground"))//magic word!
-        {
-            normal = transform.forward;
+        if (!collision.contacts[0].otherCollider.CompareTag("Ground"))//magic word!
             return;
-        }
+
         normal = collision.contacts[0].normal;
     }
     private void OnDrawGizmos()

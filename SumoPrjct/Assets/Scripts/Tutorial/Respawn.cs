@@ -1,8 +1,11 @@
+using System;
 using UnityEngine;
 
 public class Respawn : MonoBehaviour
 {
     [SerializeField] private Transform defaultRespawnPoint;
+
+    public static Action PlayerFell;
     public Transform respawnPoint {private get;  set; }
 
     private void Start()
@@ -11,6 +14,10 @@ public class Respawn : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        other.transform.position = respawnPoint.position;
+        if (other.GetComponent<HeroController>())
+        {
+            other.transform.position = respawnPoint.position;
+            PlayerFell?.Invoke();
+        }
     }
 }
