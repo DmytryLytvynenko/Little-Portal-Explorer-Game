@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class COMSetter : MonoBehaviour
 {
-    //Этот скрипт работает только для мих дверей
+    //Этот скрипт работает только для мoих дверей
     [SerializeField] private Transform COM;
     [SerializeField] private Transform referenceScale;
     private Rigidbody rb;

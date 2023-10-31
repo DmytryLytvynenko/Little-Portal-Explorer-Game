@@ -464,6 +464,7 @@
 "Assets/Scripts/Tutorial/SwitchTipAnimation.cs"
 "Assets/Scripts/Tutorial/WalkTutorialEnded.cs"
 "Assets/Scripts/Utilities.cs"
+"Assets/Zololgo/OrbitZoomPanCamera/Scripts/OrbitZoomPanCamera.cs"
 -langversion:9.0
 
 /deterministic

@@ -11,6 +11,7 @@ TagManager:
   - Enemy
   - Bomb
   - Box
+  - Log
   layers:
   - Default
   - TransparentFX

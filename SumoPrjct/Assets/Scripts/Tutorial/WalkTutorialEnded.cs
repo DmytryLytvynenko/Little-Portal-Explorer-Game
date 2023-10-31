@@ -12,7 +12,6 @@ public class WalkTutorialEnded : MonoBehaviour
     {
         if (!isTriggered)
         {
-            _passBlockerAnimation.Play();// Открываем проход дальше
             isTriggered = true;
             jumpButton.SetActive(true);
             jumpTip.SetActive(true);
