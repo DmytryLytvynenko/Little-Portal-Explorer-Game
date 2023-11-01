@@ -1,7 +1,7 @@
 using UnityEngine;
 using System;
 
-public class FrogController : Entity
+public class FrogController : Enemy
 {
     const string ANIMATOR_PARAMETER_JUMP = "Jump";
     const string ANIMATOR_PARAMETER_DISABLED = "Disabled";
@@ -19,8 +19,8 @@ public class FrogController : Entity
     private float timer = 0;
     void Start()
     {
-        target = transform.GetChild(0).transform;
-        target.parent = null;
+        Target = transform.GetChild(0).transform;
+        Target.parent = null;
         rb = GetComponent<Rigidbody>();
 
         PickRandomMaterial();
@@ -39,12 +39,12 @@ public class FrogController : Entity
     void Update()
     {
         ChooseAnitherTarget();
-        Rotate();
+        Rotate(GetRotationVectorChase());
         Move();
     }
-    protected override void Move()
+    public override void Move()
     {
-        rb.MovePosition(transform.position + rotationVector.normalized * Time.deltaTime * moveSpeed * Convert.ToInt32(isGrounded));
+        rb.MovePosition(transform.position + GetRotationVectorChase().normalized * Time.deltaTime * moveSpeed * Convert.ToInt32(isGrounded));
     }
     private void ChooseAnitherTarget()
     {
@@ -57,11 +57,11 @@ public class FrogController : Entity
     }
     private void ChangeTarget()
     {
-        target.position = randomPointInArea;
+        Target.position = randomPointInArea;
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject == target.gameObject)
+        if (other.gameObject == Target.gameObject)
         {
             ChangeTarget();
             timer = 0;
