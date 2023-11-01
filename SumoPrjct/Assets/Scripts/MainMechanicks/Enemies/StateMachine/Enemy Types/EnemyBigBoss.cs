@@ -46,8 +46,10 @@ public class EnemyBigBoss : Enemy
         Kick,
         None
     }
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
+
         tempMoveSpeed = moveSpeed;
         _explosion = GetComponent<Explosion>();
         _throw = GetComponent<Throw>();
@@ -56,9 +58,10 @@ public class EnemyBigBoss : Enemy
         ShootPos = this.gameObject.transform.GetChild(0);
         currentAction = Action.None;
     }
-    void Update()
+    protected override void Update()
     {
-        Rotate(GetRotationVectorChase());
+        base.Update();
+        Rotate(Target);
         Move();
         ControllDistance();
     }
@@ -218,7 +221,7 @@ public class EnemyBigBoss : Enemy
                 distance = kickDistnace;
                 break;
         }
-        if (GetRotationVectorChase().magnitude <= distance)
+        if (GetRotationVector(Target).magnitude <= distance)
             return true;
         else
             return false;

@@ -3,10 +3,12 @@ using System.Collections.Generic;
 
 public class EnemyIdleState : EnemyState
 {
-    public Vector3 target;
+    public Transform target;
+    private Transform moveArea;
     public EnemyIdleState(Enemy enemy, EnemyStateMachine enemyStateMachine) : base(enemy, enemyStateMachine)
     {
-
+        moveArea = enemy.IdleMoovementArea;
+        target = enemy.IdleTargetTrigger.transform;
     }
 
     public override void AnimationTriggerEvent(Enemy.AnimationTriggerType animationTriggerType)
@@ -18,38 +20,53 @@ public class EnemyIdleState : EnemyState
     {
         base.EnterState();
 
-        target = GetRandomPositionInCircle();
+        enemy.IdleTargetReached += OnIdleTargetReached;
+        target.parent = null;
+        target.position = GetRandomPositionInArea();
     }
 
     public override void ExitState()
     {
         base.ExitState();
+
+        enemy.IdleTargetReached -= OnIdleTargetReached;
     }
 
     public override void FrameUpdate()
     {
         base.FrameUpdate();
-        CheckTargetDistanse();
     }
 
     public override void PhysicsUpdate()
     {
         base.PhysicsUpdate();
-        enemy.Rotate(enemy.GetRotationVectorIdle(target));
+        enemy.Rotate(target);
         enemy.Move();
     }
 
-    private Vector3 GetRandomPositionInCircle()
+    private Vector3 GetRandomPositionInArea()
     {
-        Vector3 randomInsideCircle = (Vector3)Random.insideUnitSphere;
-        randomInsideCircle.y = enemy.transform.position.y;
-        return enemy.transform.position + randomInsideCircle * enemy.RandomMoovementRange;
-    }
-    public void CheckTargetDistanse() 
-    {
-        if ((enemy.transform.position - target).magnitude < 1f)
+        int multiplier = Random.Range(0, 2) == 0 ? -1 : 1;
+        Vector3 randomInsideBox = new Vector3
+            (
+            moveArea.position.x + Random.Range(0, moveArea.localScale.x / 2) * multiplier,
+            moveArea.transform.position.y,
+            moveArea.position.z + Random.Range(0, moveArea.localScale.z / 2) * multiplier
+            );
+
+        RaycastHit hitInfo;
+        Physics.Raycast(randomInsideBox, -Vector3.up,out hitInfo ,100);
+
+        if (hitInfo.collider == null)
         {
-            target = GetRandomPositionInCircle();
+            Debug.Log("Под зоной нет коллайдера");
+            return Vector3.zero;
         }
+
+        return hitInfo.point;
+    }
+    public void OnIdleTargetReached() 
+    {
+        target.position = GetRandomPositionInArea();
     }
 }

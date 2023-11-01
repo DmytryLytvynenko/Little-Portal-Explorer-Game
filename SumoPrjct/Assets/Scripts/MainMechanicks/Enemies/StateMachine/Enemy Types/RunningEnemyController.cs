@@ -16,16 +16,18 @@ public class RunningEnemyController : Enemy
     private float timer = 0f;
     private float timer1 = 0f;
     private float tempMoveSpeed;
-    void Start()
+    protected override void Start()
     {
+        base.Start();
         rb = GetComponent<Rigidbody>();
         Target = GameObject.Find("Hero").GetComponent<Transform>();
         tempMoveSpeed = moveSpeed;
     }
-    void Update()
+    protected override void Update()
     {
+        base.Update();
         Run();
-        Rotate(GetRotationVectorChase());
+        Rotate(Target);
         Move();
         ControllDistance();
     }
@@ -63,7 +65,7 @@ public class RunningEnemyController : Enemy
     }
     private void ControllDistance()
     {
-        if (GetRotationVectorChase().magnitude <= runDistnace)
+        if (GetRotationVector(Target).magnitude <= runDistnace)
         {
             if (canRun)
             {
@@ -72,7 +74,7 @@ public class RunningEnemyController : Enemy
             IndicateRun();
             moveSpeed = 0f;
             WaitForRun();
-            runVector = GetRotationVectorChase();
+            runVector = GetRotationVector(Target);
         }
         else
         {

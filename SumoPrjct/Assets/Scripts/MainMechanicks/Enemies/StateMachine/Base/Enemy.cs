@@ -5,31 +5,29 @@ using System;
 public class Enemy : MonoBehaviour
 {
     #region Fields
-    public Transform Target;
-    protected Rigidbody rb;
+    protected Transform Target;
+    public IdleTargetTrigger IdleTargetTrigger;
+    public Transform IdleMoovementArea;
     [SerializeField] protected int contactDamage;
 
     [SerializeField] protected float moveSpeed;
     [SerializeField] protected float maxSpeed;
     [SerializeField] protected float rotationSpeed;
     protected bool isGrounded;
+    protected Rigidbody rb;
     #endregion
 
     #region StateMAchineVariables
     public EnemyStateMachine stateMachine { get; set; }
 
     public EnemyIdleState idleState { get; set; }
-    public EnemyAtackState atackState { get; set; }
+    public EnemyIdleState stayState { get; set; }
     public EnemyChaseState chaseState { get; set; }
-    #endregion
-
-    #region IdleStateVariables
-    [field: SerializeField] public float RandomMoovementRange { get; private set; } = 5f;
-    [field: SerializeField] public float RandomMoovementSpeed { get; private set; } = 1f;
     #endregion
 
     #region Events
     public static Action<int> EnemyAndPlayerContacted;
+    public Action IdleTargetReached;
 
     #endregion
 
@@ -46,18 +44,21 @@ public class Enemy : MonoBehaviour
 
     #endregion
 
+    #region MonoBehavior
     protected virtual void Awake()
     {
         stateMachine = new EnemyStateMachine();
         idleState = new EnemyIdleState(this, stateMachine);
         chaseState = new EnemyChaseState(this, stateMachine);
-        atackState = new EnemyAtackState(this, stateMachine);
     }
-
     protected virtual void Start()
     {
         stateMachine.Initiallize(idleState);
     }
+
+    #endregion
+
+    #region Updates
     protected virtual void Update()
     {
         stateMachine.CurrentEnemyState.FrameUpdate();
@@ -67,16 +68,16 @@ public class Enemy : MonoBehaviour
         stateMachine.CurrentEnemyState.PhysicsUpdate();
     }
 
-    public Vector3 GetRotationVectorChase()// направление  передвижения
+    #endregion
+
+    #region Methods
+    public Vector3 GetRotationVector(Transform target)// направление  передвижения
     {
-        return new Vector3(Target.position.x - transform.position.x, 0.0f, Target.position.z - transform.position.z);
+        return new Vector3(target.position.x - transform.position.x, 0.0f, target.position.z - transform.position.z);
     }
-    public Vector3 GetRotationVectorIdle(Vector3 target)// направление  передвижения
+    public virtual void Rotate(Transform target)
     {
-        return new Vector3(target.x - transform.position.x, 0.0f, target.z - transform.position.z);
-    }
-    public virtual void Rotate(Vector3 rotationVector)
-    {
+        Vector3 rotationVector = GetRotationVector(target);
         if (rotationVector.magnitude > 0.1f)
         {
             Quaternion rotation = Quaternion.LookRotation(rotationVector);
@@ -92,10 +93,19 @@ public class Enemy : MonoBehaviour
             rb.AddForce(transform.forward * moveSpeed * Convert.ToInt32(isGrounded), ForceMode.Impulse);//метод передвижения 
         }
     }
+    public virtual void Attack() { }
     public void SetTarget(Transform target)
     {
         this.Target = target;
-    }  
+    }
+    protected void Die()
+    {
+        Destroy(this.gameObject);
+    }
+
+    #endregion
+
+    #region Callbacks
     protected virtual void OnCollisionEnter(Collision collision)
     {
 
@@ -113,14 +123,16 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    protected void Die()
-    {
-        Destroy(this.gameObject);
-    }
+    #endregion
+
+
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.yellow;
-        Gizmos.DrawSphere(idleState.target, 0.1f);
-        Debug.Log($"{idleState.target}");
+        if (idleState != null)
+        {
+            Gizmos.DrawSphere(idleState.target.position, 0.1f);
+
+        }
     }
 }

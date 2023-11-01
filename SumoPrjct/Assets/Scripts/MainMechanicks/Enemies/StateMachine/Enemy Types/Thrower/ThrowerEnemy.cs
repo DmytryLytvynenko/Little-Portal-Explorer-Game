@@ -25,7 +25,7 @@ public class ThrowerEnemy : Enemy
     { 
         get 
         {
-            if (GetRotationVectorChase().magnitude < bombDistance)
+            if (GetRotationVector(Target).magnitude < bombDistance)
             {
                 return ShootAction.Disk;
             }
@@ -39,8 +39,10 @@ public class ThrowerEnemy : Enemy
         Disk
     }
 
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
+
         bombObjectsPool = new GameObjectPool(bombPrefab, BOMB_PRELOAD_COUNT);
         diskObjectsPool = new GameObjectPool(diskPrefab, DISK_PRELOAD_COUNT);
 
@@ -50,15 +52,17 @@ public class ThrowerEnemy : Enemy
         rb = GetComponent<Rigidbody>();
         Target = GlobalData.PlayerInstance.transform;
     }
-    void Update()
+    protected override void Update()
     {
+        base.Update();
+
         ControllDistance();
-        Rotate(GetRotationVectorChase());
+        Rotate(Target);
         Move();
     }
     private void ControllDistance()
     {
-        if (GetRotationVectorChase().magnitude <= shootDistnace)
+        if (GetRotationVector(Target).magnitude <= shootDistnace)
         {
             if (isShooting)
                 return;

@@ -17,8 +17,10 @@ public class FrogController : Enemy
     [SerializeField] private SkinnedMeshRenderer skinnedMeshRenderer;
 
     private float timer = 0;
-    void Start()
+    protected override void Start()
     {
+        stateMachine.ChangeState(chaseState);
+
         Target = transform.GetChild(0).transform;
         Target.parent = null;
         rb = GetComponent<Rigidbody>();
@@ -36,15 +38,15 @@ public class FrogController : Enemy
             return new Vector3(randomX, 0, randomZ);
         }
     }
-    void Update()
+    protected override void Update()
     {
         ChooseAnitherTarget();
-        Rotate(GetRotationVectorChase());
+        Rotate(Target);
         Move();
     }
     public override void Move()
     {
-        rb.MovePosition(transform.position + GetRotationVectorChase().normalized * Time.deltaTime * moveSpeed * Convert.ToInt32(isGrounded));
+        rb.MovePosition(transform.position + GetRotationVector(Target).normalized * Time.deltaTime * moveSpeed * Convert.ToInt32(isGrounded));
     }
     private void ChooseAnitherTarget()
     {

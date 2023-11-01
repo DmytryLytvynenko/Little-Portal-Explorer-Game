@@ -14,17 +14,20 @@ public class JumperEnemy : Enemy
 
     private float timer = 0;
 
-    private void Start()
+    protected override void Start()
     {
+        base.Start();
+
         rb = GetComponent<Rigidbody>();
         Target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         launch = new Launch.Launch();
     }
 
     // Update is called once per frame
-    void Update()
+    protected override void Update()
     {
-        Rotate(GetRotationVectorChase());
+        base.Update();
+        Rotate(Target);
         Move();
     }
 
@@ -35,7 +38,7 @@ public class JumperEnemy : Enemy
 
         if (isGrounded)
         {
-            if (GetRotationVectorChase().magnitude < aimedJumpDistanse)
+            if (GetRotationVector(Target).magnitude < aimedJumpDistanse)
             {
                 launch.InitiateLaunch(Target, rb, jumpHeightMultiplier, Physics.gravity.y);
                 isGrounded = false;
