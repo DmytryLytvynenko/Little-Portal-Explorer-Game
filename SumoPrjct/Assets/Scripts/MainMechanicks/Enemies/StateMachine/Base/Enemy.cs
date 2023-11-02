@@ -14,6 +14,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] protected float moveSpeed;
     [SerializeField] protected float maxSpeed;
     [SerializeField] protected float rotationSpeed;
+    public float AgrDistance;
 
     protected bool isGrounded;
     protected Rigidbody rb;
@@ -28,6 +29,7 @@ public class Enemy : MonoBehaviour
     #endregion
 
     #region Events
+
     public static Action<int> EnemyAndPlayerContacted;
     public Action IdleTargetReached;
     public Action PlayerEnteredChaseZone;
@@ -65,7 +67,7 @@ public class Enemy : MonoBehaviour
     }
     protected virtual void Start()
     {
-        stateMachine.Initiallize(chaseState);
+        stateMachine.Initiallize(stayState);
     }
     #endregion
 
@@ -140,8 +142,11 @@ public class Enemy : MonoBehaviour
         Gizmos.color = Color.yellow;
         if (idleState != null)
         {
-            Gizmos.DrawSphere(idleState.target.position, 0.1f);
-
+            Gizmos.DrawWireSphere(idleState.target.position, 0.1f);
+        }  
+        if (chaseState != null)
+        {
+            Gizmos.DrawWireSphere(transform.position, AgrDistance);
         }
     }
     #endregion

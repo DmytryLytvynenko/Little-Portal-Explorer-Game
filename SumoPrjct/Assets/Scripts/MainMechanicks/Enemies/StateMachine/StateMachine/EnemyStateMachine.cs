@@ -4,7 +4,7 @@ using UnityEngine;
 public class EnemyStateMachine
 {
     public EnemyState CurrentEnemyState { get; set; }
-    public List<EnemyState> AllStates;
+    public List<EnemyState> AllStates = new List<EnemyState>();
 
     public void Initiallize(EnemyState startingState)
     {

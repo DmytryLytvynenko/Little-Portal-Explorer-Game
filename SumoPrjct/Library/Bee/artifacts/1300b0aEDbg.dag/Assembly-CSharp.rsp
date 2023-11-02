@@ -438,6 +438,7 @@
 "Assets/Scripts/MainMechanicks/Hero/Throw.cs"
 "Assets/Scripts/MainMechanicks/Hero/VisualizeBox.cs"
 "Assets/Scripts/MainMechanicks/Launch.cs"
+"Assets/Scripts/MainMechanicks/Other/Coroutines.cs"
 "Assets/Scripts/MainMechanicks/Pool/GameObjectPool.cs"
 "Assets/Scripts/MainMechanicks/Pool/PoolBase.cs"
 "Assets/Scripts/MainMechanicks/PortalController.cs"

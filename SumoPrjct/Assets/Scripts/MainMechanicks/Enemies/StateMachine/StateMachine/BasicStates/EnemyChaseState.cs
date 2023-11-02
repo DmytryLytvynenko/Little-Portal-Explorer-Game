@@ -1,13 +1,18 @@
+using System;
+using System.Collections;
 using System.Data;
 using UnityEngine;
+using Utilities;
 
-delegate DataTable WaitForStateExit();
 public class EnemyChaseState : EnemyState
 {
     public Transform target;
+    private Action ExitChaseStateFunc;
+    private float ExitChaseStateDelay = 2f; 
+    private Coroutine ExitChaseStateCoroutine;
     public EnemyChaseState(Enemy enemy, EnemyStateMachine enemyStateMachine) : base(enemy, enemyStateMachine)
     {
-
+        ExitChaseStateFunc = ExitChaseState;
     }
 
     public override void AnimationTriggerEvent(Enemy.AnimationTriggerType animationTriggerType)
@@ -17,11 +22,13 @@ public class EnemyChaseState : EnemyState
     public override void OnEnable()
     {
         enemy.PlayerEnteredChaseZone += OnPlayerEnteredChaseZone;
+        enemy.PlayerExitedChaseZone += OnPlayerExitedChaseZone;
     }
 
     public override void OnDisable()
     {
         enemy.PlayerEnteredChaseZone -= OnPlayerEnteredChaseZone;
+        enemy.PlayerExitedChaseZone -= OnPlayerExitedChaseZone;
     }
     public override void EnterState()
     {
@@ -47,14 +54,33 @@ public class EnemyChaseState : EnemyState
     }
     private void OnPlayerEnteredChaseZone()
     {
+        if (ExitChaseStateCoroutine != null)
+        {
+            Coroutines.StopRoutine(ExitChaseStateCoroutine);
+            ExitChaseStateCoroutine = null;
+            return;
+        }
+        if (enemyStateMachine.CurrentEnemyState == this)
+            return;
+
         enemyStateMachine.ChangeState(this);
     }    
     private void OnPlayerExitedChaseZone()
     {
+        if (ExitChaseStateCoroutine != null)
+            return;
 
+        ExitChaseStateCoroutine = Coroutines.StartRoutine(DoMethodAftedDelay(ExitChaseStateFunc, ExitChaseStateDelay));
+        
     }
     private void ExitChaseState()
     {
-        enemyStateMachine.ChangeState(enemy.idleState);
+        enemyStateMachine.ChangeState(enemy.stayState);
+        ExitChaseStateCoroutine = null;
+    }
+    private IEnumerator DoMethodAftedDelay(Action WaitForStateExit, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        WaitForStateExit.Invoke();
     }
 }

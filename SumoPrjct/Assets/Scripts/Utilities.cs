@@ -1,6 +1,5 @@
 using System;
 using System.Collections;
-using System.Data;
 using UnityEngine;
 
 namespace Utilities
@@ -25,10 +24,11 @@ namespace Utilities
         {
             GlobalData.PlayerInstance.transform.position = position;
         }
-/*        public static IEnumerator DoMethodAftedDelay(WaitForChaseStateExit method)
+        public static IEnumerator DoMethodAftedDelay(Action WaitForStateExit, float delay)
         {
-            yield return null;    
-        }*/
+            yield return new WaitForSeconds(delay);
+            WaitForStateExit.Invoke();
+        }
     }
 }
 
