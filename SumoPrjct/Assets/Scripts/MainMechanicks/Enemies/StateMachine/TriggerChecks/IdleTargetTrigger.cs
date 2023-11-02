@@ -4,10 +4,14 @@ using UnityEngine;
 
 public class IdleTargetTrigger : MonoBehaviour
 {
-    [SerializeField] private Enemy parentEnemy;
+    private Enemy parentEnemy;
+    private void Start()
+    {
+        parentEnemy = GetComponentInParent<Enemy>();
+    }
     private void OnTriggerEnter(Collider other)
     {
-        if (parentEnemy.IdleTargetTrigger == this)
+        if (other.GetComponent<HeroController>())
         {
             parentEnemy.IdleTargetReached?.Invoke();
         }  

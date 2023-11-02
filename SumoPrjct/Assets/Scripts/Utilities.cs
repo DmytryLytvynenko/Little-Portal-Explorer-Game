@@ -1,12 +1,15 @@
 using System;
+using System.Collections;
+using System.Data;
 using UnityEngine;
 
 namespace Utilities
 {
-    public class Utilities
+    public static class Utilities
     {
         public static void SetPlayerPosition() 
         {
+
             string[] currentCheckPointString = PlayerPrefs.GetString("CheckPointPosition").Split(".");
             Vector3 currentCheckPoint = new Vector3
                 (
@@ -22,6 +25,10 @@ namespace Utilities
         {
             GlobalData.PlayerInstance.transform.position = position;
         }
+/*        public static IEnumerator DoMethodAftedDelay(WaitForChaseStateExit method)
+        {
+            yield return null;    
+        }*/
     }
 }
 

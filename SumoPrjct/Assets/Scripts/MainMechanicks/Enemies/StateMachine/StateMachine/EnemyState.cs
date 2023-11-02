@@ -1,7 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
 public class EnemyState
 {
     protected Enemy enemy;
@@ -11,10 +7,13 @@ public class EnemyState
     {
         this.enemy = enemy;
         this.enemyStateMachine = enemyStateMachine;
+        enemyStateMachine.AddState(this);
     }
 
     public virtual void EnterState() { }
     public virtual void ExitState() { }
+    public virtual void OnEnable() { }
+    public virtual void OnDisable() { }
     public virtual void FrameUpdate() { }
     public virtual void PhysicsUpdate() { }
     public virtual void AnimationTriggerEvent(Enemy.AnimationTriggerType animationTriggerType) { }

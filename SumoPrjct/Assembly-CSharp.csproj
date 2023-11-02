@@ -61,7 +61,7 @@
     <Compile Include="Assets\Scripts\Tutorial\SwitchTipAnimation.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Components\FxaaComponent.cs" />
     <Compile Include="Assets\Scripts\FrogLevel\QuestGiver.cs" />
-    <Compile Include="Assets\Scripts\MainMechanicks\Enemies\StateMachine\StateMachine\ConcreteStates\EnemyIdleState.cs" />
+    <Compile Include="Assets\Scripts\MainMechanicks\Enemies\StateMachine\StateMachine\BasicStates\EnemyIdleState.cs" />
     <Compile Include="Assets\Scripts\MainMechanicks\Enemies\StateMachine\Enemy Types\Thrower\ThrowerBomb.cs" />
     <Compile Include="Assets\Scripts\MainMechanicks\Enemies\StateMachine\StateMachine\EnemyStateMachine.cs" />
     <Compile Include="Assets\Scripts\Menu\HeroRotating.cs" />
@@ -72,6 +72,7 @@
     <Compile Include="Assets\Scripts\FrogLevel\Environment\IlluminationBlinking.cs" />
     <Compile Include="Assets\Scripts\Tutorial\WalkTutorialEnded.cs" />
     <Compile Include="Assets\Scripts\Tutorial\MoveTutorialTracker.cs" />
+    <Compile Include="Assets\Scripts\MainMechanicks\Enemies\StateMachine\TriggerChecks\IdleTargetTrigger.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Attributes\GetSetAttribute.cs" />
     <Compile Include="Assets\Scripts\MainMechanicks\Triggers\BattleTrigger.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Components\ChromaticAberrationComponent.cs" />
@@ -158,7 +159,7 @@
     <Compile Include="Assets\PostProcessing\Runtime\Models\ChromaticAberrationModel.cs" />
     <Compile Include="Assets\Scripts\MainMechanicks\Pool\GameObjectPool.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Models\ColorGradingModel.cs" />
-    <Compile Include="Assets\Scripts\MainMechanicks\Enemies\StateMachine\StateMachine\ConcreteStates\EnemyAtackState.cs" />
+    <Compile Include="Assets\Scripts\MainMechanicks\Enemies\StateMachine\StateMachine\BasicStates\EnemyAtackState.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Models\ScreenSpaceReflectionModel.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Components\DepthOfFieldComponent.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Components\ColorGradingComponent.cs" />
@@ -180,11 +181,12 @@
     <Compile Include="Assets\PostProcessing\Runtime\Attributes\TrackballAttribute.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Components\AmbientOcclusionComponent.cs" />
     <Compile Include="Assets\Scripts\Tutorial\DisableObject.cs" />
-    <Compile Include="Assets\Scripts\MainMechanicks\Enemies\StateMachine\StateMachine\ConcreteStates\EnemyChaseState.cs" />
+    <Compile Include="Assets\Scripts\MainMechanicks\Enemies\StateMachine\StateMachine\BasicStates\EnemyChaseState.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Models\AntialiasingModel.cs" />
     <Compile Include="Assets\Scripts\MainMechanicks\Hero\Attack.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Models\DitheringModel.cs" />
-    <Compile Include="Assets\Scripts\MainMechanicks\Enemies\StateMachine\TriggerChecks\IdleTargetTrigger.cs" />
+    <Compile Include="Assets\Scripts\MainMechanicks\Enemies\StateMachine\StateMachine\BasicStates\EnemyStayState.cs" />
+    <Compile Include="Assets\Scripts\MainMechanicks\Enemies\StateMachine\TriggerChecks\ChaseTrigger.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

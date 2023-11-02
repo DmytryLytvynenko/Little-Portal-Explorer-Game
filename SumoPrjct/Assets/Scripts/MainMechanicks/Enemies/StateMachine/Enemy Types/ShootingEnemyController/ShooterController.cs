@@ -22,13 +22,13 @@ public class ShooterController : Enemy
         base.Awake();
 
         atackState = new EnemyAtackState(this, stateMachine);
+        Target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
     }
     protected override void Start()
     {
         base.Start();
 
         rb = GetComponent<Rigidbody>();
-/*        target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();*/
 
         temporaryMoveSpeed = moveSpeed;
     }
@@ -36,6 +36,17 @@ public class ShooterController : Enemy
     {
         base.Update();
 
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            if (stateMachine.CurrentEnemyState == idleState)
+            {
+                stateMachine.ChangeState(stayState);
+            }
+            else
+            {
+                stateMachine.ChangeState(idleState);
+            }
+        }
 /*        ControllDistance();
         Rotate();
         Move();*/

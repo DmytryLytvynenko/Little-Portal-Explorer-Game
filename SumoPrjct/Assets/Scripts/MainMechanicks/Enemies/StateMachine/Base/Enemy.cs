@@ -5,29 +5,33 @@ using System;
 public class Enemy : MonoBehaviour
 {
     #region Fields
-    protected Transform Target;
+    public Transform Target;
+
     public IdleTargetTrigger IdleTargetTrigger;
     public Transform IdleMoovementArea;
-    [SerializeField] protected int contactDamage;
 
+    [SerializeField] protected int contactDamage;
     [SerializeField] protected float moveSpeed;
     [SerializeField] protected float maxSpeed;
     [SerializeField] protected float rotationSpeed;
+
     protected bool isGrounded;
     protected Rigidbody rb;
     #endregion
 
-    #region StateMAchineVariables
-    public EnemyStateMachine stateMachine { get; set; }
+    #region StateMachineVariables
+    protected EnemyStateMachine stateMachine { get; set; }
 
     public EnemyIdleState idleState { get; set; }
-    public EnemyIdleState stayState { get; set; }
+    public EnemyStayState stayState { get; set; }
     public EnemyChaseState chaseState { get; set; }
     #endregion
 
     #region Events
     public static Action<int> EnemyAndPlayerContacted;
     public Action IdleTargetReached;
+    public Action PlayerEnteredChaseZone;
+    public Action PlayerExitedChaseZone;
 
     #endregion
 
@@ -41,21 +45,28 @@ public class Enemy : MonoBehaviour
         EnemyDamaged,
         PlayFootstepsSound
     }
-
     #endregion
 
     #region MonoBehavior
+    protected virtual void OnEnable()
+    {
+        stateMachine.AllStatesOnEnable();
+    }
+    private void OnDisable()
+    {
+        stateMachine.AllStatesOnDisable();
+    }
     protected virtual void Awake()
     {
         stateMachine = new EnemyStateMachine();
         idleState = new EnemyIdleState(this, stateMachine);
         chaseState = new EnemyChaseState(this, stateMachine);
+        stayState = new EnemyStayState(this, stateMachine);
     }
     protected virtual void Start()
     {
-        stateMachine.Initiallize(idleState);
+        stateMachine.Initiallize(chaseState);
     }
-
     #endregion
 
     #region Updates
@@ -123,8 +134,6 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    #endregion
-
 
     private void OnDrawGizmos()
     {
@@ -135,4 +144,5 @@ public class Enemy : MonoBehaviour
 
         }
     }
+    #endregion
 }
