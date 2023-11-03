@@ -24,7 +24,7 @@ public class FallExplosionTutorial : MonoBehaviour
         if (explosionTip.activeSelf)
         {
             explosionTip.GetComponent<Animator>().SetBool(animParameterName, true);
-            explosionButton.interactable = false;
+            explosionButton.interactable = true;
         }
     }
     private void OnTriggerEnter(Collider other)

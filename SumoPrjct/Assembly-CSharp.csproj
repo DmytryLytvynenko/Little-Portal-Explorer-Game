@@ -140,7 +140,7 @@
     <Compile Include="Assets\Scripts\LevelTeleport.cs" />
     <Compile Include="Assets\Scripts\Menu\FallingObject.cs" />
     <Compile Include="Assets\Scripts\MainMechanicks\Bomb.cs" />
-    <Compile Include="Assets\Scripts\Tutorial\BoxCounter.cs" />
+    <Compile Include="Assets\Scripts\Tutorial\ItemCounter.cs" />
     <Compile Include="Assets\Scripts\MainMechanicks\UI\CameraRotate.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Models\AmbientOcclusionModel.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Components\DitheringComponent.cs" />

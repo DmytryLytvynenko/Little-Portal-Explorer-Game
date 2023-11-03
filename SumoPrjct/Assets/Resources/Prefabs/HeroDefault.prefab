@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 988434658495159432}
   - component: {fileID: 7256910202197686260}
   - component: {fileID: 6944835354108968941}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: HealthBar
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 8852483743064176647}
   - component: {fileID: 2910378882084630920}
   - component: {fileID: 5492614900167195430}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ThrowArea
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -215,7 +215,7 @@ GameObject:
   - component: {fileID: 6172319633804288782}
   - component: {fileID: 2488043650849055963}
   - component: {fileID: 4384269621925544952}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: HealthBarFilling
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -301,7 +301,7 @@ GameObject:
   - component: {fileID: 2129792525}
   - component: {fileID: 2129792526}
   - component: {fileID: 2129792527}
-  m_Layer: 6
+  m_Layer: 10
   m_Name: HeroDefault
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -395,6 +395,9 @@ MonoBehaviour:
   ExplosionJumpHeight: 4.5
   velocityToExplode: -6.5
   explosionDamage: 3000
+  raycastLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
   LoseScreen: {fileID: 0}
   cameraRoot: {fileID: 0}
   surfaceSlider: {fileID: 8133727762810727488}
@@ -541,7 +544,7 @@ GameObject:
   - component: {fileID: 6403242245705947400}
   - component: {fileID: 8286903750600916859}
   - component: {fileID: 1810300375154043691}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Face
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -625,7 +628,7 @@ GameObject:
   - component: {fileID: 4705809751600209670}
   - component: {fileID: 14681552460696752}
   - component: {fileID: 9043103195010491895}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: StatsCanvas
   m_TagString: Player
   m_Icon: {fileID: 0}

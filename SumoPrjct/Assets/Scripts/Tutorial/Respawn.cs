@@ -4,6 +4,7 @@ using UnityEngine;
 public class Respawn : MonoBehaviour
 {
     [SerializeField] private Transform defaultRespawnPoint;
+    [SerializeField] private float verticalOfffset;
 
     public static Action PlayerFell;
     public Transform respawnPoint {private get;  set; }
@@ -16,7 +17,7 @@ public class Respawn : MonoBehaviour
     {
         if (other.GetComponent<HeroController>())
         {
-            other.transform.position = respawnPoint.position;
+            other.transform.position = new Vector3(respawnPoint.position.x, respawnPoint.position.y + verticalOfffset, respawnPoint.position.z);
             PlayerFell?.Invoke();
         }
     }

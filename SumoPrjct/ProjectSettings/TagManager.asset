@@ -19,15 +19,15 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Accelerator
   - Buff
   - PostProcessing
   - LightSources
   - Player
   - Enemy
-  - 
-  - 
-  - 
+  - Environment
+  - Interactable
+  - Trigger
   - 
   - 
   - 

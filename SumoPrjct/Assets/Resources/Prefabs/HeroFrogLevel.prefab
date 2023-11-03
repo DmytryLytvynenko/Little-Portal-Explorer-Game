@@ -482,7 +482,7 @@ GameObject:
   - component: {fileID: 4322108304479089410}
   - component: {fileID: 2455839800910029829}
   - component: {fileID: 5977449916843088970}
-  m_Layer: 6
+  m_Layer: 10
   m_Name: HeroFrogLevel
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -576,9 +576,13 @@ MonoBehaviour:
   ExplosionJumpHeight: 4.5
   velocityToExplode: -6.5
   explosionDamage: 3000
+  raycastLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
   LoseScreen: {fileID: 0}
   cameraRoot: {fileID: 0}
   surfaceSlider: {fileID: 5977449916843088970}
+  verticalAccelerator: {fileID: 0}
 --- !u!54 &6960277033585480131
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -653,9 +657,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   throwArea: {fileID: 6399248134447073293}
-  xThrowSize: 3
-  yThrowSize: 1.5
-  zThrowSize: 2
   yThrowAngle: 7
   throwForce: 1500
   explosionRadius: 0

@@ -6,6 +6,7 @@ public class LevelTeleport : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        if (other.GetComponent<HeroController>())
         LoadLevel();
     }
 

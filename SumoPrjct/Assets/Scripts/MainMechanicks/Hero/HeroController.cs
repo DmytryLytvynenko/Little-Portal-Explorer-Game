@@ -14,6 +14,7 @@ public class HeroController : MonoBehaviour
     [SerializeField] private float ExplosionJumpHeight;
     [SerializeField] private float velocityToExplode;
     [SerializeField] private int explosionDamage;
+    [SerializeField] private LayerMask raycastLayerMask;
     private bool canExplode = false;
     private float damageJumpForce;
 
@@ -151,7 +152,7 @@ public class HeroController : MonoBehaviour
         Ray ray = new Ray(transform.position, -100*Vector3.up);
         Debug.DrawRay(transform.position, -100 * Vector3.up, Color.red);
         RaycastHit hit;
-        Physics.Raycast(ray, out hit);
+        Physics.Raycast(ray, out hit, 1000f, raycastLayerMask);
         if (!hit.collider)
         {
             return;
@@ -174,6 +175,7 @@ public class HeroController : MonoBehaviour
     }
     void OnCollisionEnter(Collision collision)
     {
+        print(collision.gameObject);
         IsGroundedUpate(collision, true);
         if (isGrounded && canExplode)
         {

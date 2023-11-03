@@ -11927,6 +11927,11 @@ PrefabInstance:
       propertyPath: cameraRoot
       value: 
       objectReference: {fileID: 1081954356}
+    - target: {fileID: 7279223856504301113, guid: eb349ddad09570e41a3c03cbe40fd477,
+        type: 3}
+      propertyPath: raycastLayerMask.m_Bits
+      value: 15425
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb349ddad09570e41a3c03cbe40fd477, type: 3}
 --- !u!114 &2129792515 stripped
@@ -12253,6 +12258,21 @@ PrefabInstance:
       propertyPath: gameSavedMessage
       value: 
       objectReference: {fileID: 843540604}
+    - target: {fileID: 1547566438606505338, guid: 5d6a5fdcd30842144a0b62762aae4619,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.277
+      objectReference: {fileID: 0}
+    - target: {fileID: 1547566438606505338, guid: 5d6a5fdcd30842144a0b62762aae4619,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.713
+      objectReference: {fileID: 0}
+    - target: {fileID: 1547566438606505338, guid: 5d6a5fdcd30842144a0b62762aae4619,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.746
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5d6a5fdcd30842144a0b62762aae4619, type: 3}
 --- !u!23 &2570646523221331077
