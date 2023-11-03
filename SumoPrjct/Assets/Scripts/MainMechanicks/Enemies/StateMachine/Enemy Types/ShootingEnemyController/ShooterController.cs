@@ -1,27 +1,35 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class ShooterController : Enemy
 {
     // Main characteristics
-    [SerializeField] private float shootDistnace;
+    public float AttackDistnace;
     [SerializeField] private float xShootAngle;
-    [SerializeField] private float shootCooldown;
+    public float ShootCooldown;
     private float temporaryMoveSpeed;
     private bool isShooting;
 
-    public EnemyAtackState atackState { get; set; }
+    public ShooterEnemyAtackState atackState { get; set; }
 
     //links
     [SerializeField] private Transform ShootPos; // откуда стреляем
     [SerializeField] private GameObject bullet;
 
+    #region Events
+
+    public Action PlayerEnteredAttackZone;
+    public Action PlayerExitedAttackZone;
+
+    #endregion
+
     protected override void Awake()
     {
         base.Awake();
 
-        atackState = new EnemyAtackState(this, stateMachine);
+        atackState = new ShooterEnemyAtackState(this, stateMachine);
         Target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
     }
     protected override void Start()
@@ -53,13 +61,12 @@ public class ShooterController : Enemy
     }
     private void ControllDistance()
     {
-        if (GetRotationVector(Target).magnitude <= shootDistnace)
+        if (GetRotationVector(Target).magnitude <= ShootCooldown)
         {
             if (isShooting)
             {
                 return;
             }
-            StartCoroutine(Shoot());
         }
     }
     private void Stop()
@@ -70,25 +77,30 @@ public class ShooterController : Enemy
     {
         moveSpeed = temporaryMoveSpeed;
     }
-    public override void Attack() 
+    public void Attack()
     {
-        StartCoroutine(Shoot());
-    }
-    private IEnumerator Shoot()
-    {
-        isShooting = true;
-        Stop();
-
-        yield return new WaitForSeconds(shootCooldown);
-
         GameObject bullet = Instantiate(this.bullet, ShootPos.position, Quaternion.Euler(0f, transform.localEulerAngles.y, transform.localEulerAngles.z)) as GameObject;
         bullet.GetComponent<Bullet>().targetPoint = Target;
-
-        isShooting = false;
-        Go();
     }
     protected override void OnCollisionEnter(Collision collision)
     {
         base.OnCollisionEnter(collision);
+    }
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.green;
+        if (atackState != null)
+        {
+            Gizmos.DrawWireSphere(transform.position, AttackDistnace);
+        }
+        Gizmos.color = Color.yellow;
+        if (idleState != null)
+        {
+            Gizmos.DrawWireSphere(idleState.target.position, 0.1f);
+        }
+        if (chaseState != null)
+        {
+            Gizmos.DrawWireSphere(transform.position, AgrDistance);
+        }
     }
 }

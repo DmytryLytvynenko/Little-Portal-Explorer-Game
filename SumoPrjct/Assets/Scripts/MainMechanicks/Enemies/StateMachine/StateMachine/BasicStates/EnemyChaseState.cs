@@ -70,17 +70,12 @@ public class EnemyChaseState : EnemyState
         if (ExitChaseStateCoroutine != null)
             return;
 
-        ExitChaseStateCoroutine = Coroutines.StartRoutine(DoMethodAftedDelay(ExitChaseStateFunc, ExitChaseStateDelay));
+        ExitChaseStateCoroutine = Coroutines.StartRoutine(Utilities.Utilities.DoMethodAftedDelay(ExitChaseStateFunc, ExitChaseStateDelay));
         
     }
     private void ExitChaseState()
     {
         enemyStateMachine.ChangeState(enemy.stayState);
         ExitChaseStateCoroutine = null;
-    }
-    private IEnumerator DoMethodAftedDelay(Action WaitForStateExit, float delay)
-    {
-        yield return new WaitForSeconds(delay);
-        WaitForStateExit.Invoke();
     }
 }

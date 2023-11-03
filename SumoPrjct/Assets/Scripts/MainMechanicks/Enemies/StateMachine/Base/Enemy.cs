@@ -106,7 +106,6 @@ public class Enemy : MonoBehaviour
             rb.AddForce(transform.forward * moveSpeed * Convert.ToInt32(isGrounded), ForceMode.Impulse);//метод передвижения 
         }
     }
-    public virtual void Attack() { }
     public void SetTarget(Transform target)
     {
         this.Target = target;
