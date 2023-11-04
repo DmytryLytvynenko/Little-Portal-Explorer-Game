@@ -6,7 +6,6 @@ public class ChaseTrigger : MonoBehaviour
     private void Start()
     {
         parentEnemy = GetComponentInParent<Enemy>();
-        GetComponent<SphereCollider>().radius = parentEnemy.AgrDistance;
     }
     private void OnTriggerEnter(Collider other)
     {

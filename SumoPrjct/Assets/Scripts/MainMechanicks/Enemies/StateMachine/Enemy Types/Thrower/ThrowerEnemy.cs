@@ -25,7 +25,7 @@ public class ThrowerEnemy : Enemy
     { 
         get 
         {
-            if (GetRotationVector(Target).magnitude < bombDistance)
+            if (GetRotationVector(target).magnitude < bombDistance)
             {
                 return ShootAction.Disk;
             }
@@ -50,19 +50,17 @@ public class ThrowerEnemy : Enemy
 
         temporaryMoveSpeed = moveSpeed;
         rb = GetComponent<Rigidbody>();
-        Target = GlobalData.PlayerInstance.transform;
+        target = GlobalData.PlayerInstance.transform;
     }
-    protected override void Update()
+    private void Update()
     {
-        base.Update();
-
         ControllDistance();
-        Rotate(Target);
+        Rotate(target);
         Move();
     }
     private void ControllDistance()
     {
-        if (GetRotationVector(Target).magnitude <= shootDistnace)
+        if (GetRotationVector(target).magnitude <= shootDistnace)
         {
             if (isShooting)
                 return;

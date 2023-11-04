@@ -5,13 +5,14 @@ using UnityEngine;
 public class IdleTargetTrigger : MonoBehaviour
 {
     private Enemy parentEnemy;
-    private void Start()
+    private void Awake()
     {
         parentEnemy = GetComponentInParent<Enemy>();
+        gameObject.SetActive(false);
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.GetComponent<HeroController>())
+        if (other.gameObject == parentEnemy.gameObject)
         {
             parentEnemy.IdleTargetReached?.Invoke();
         }  

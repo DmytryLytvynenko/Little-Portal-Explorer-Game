@@ -87,6 +87,7 @@
     <Compile Include="Assets\PostProcessing\Runtime\Utils\GraphicsUtils.cs" />
     <Compile Include="Assets\Scripts\Tutorial\RotateTutorialTracker.cs" />
     <Compile Include="Assets\Scripts\MainMechanicks\Hero\Throw.cs" />
+    <Compile Include="Assets\Scripts\MainMechanicks\Enemies\StateMachine\TriggerChecks\AttackTrigger.cs" />
     <Compile Include="Assets\Scripts\MainMechanicks\Enemies\StateMachine\Enemy Types\Thrower\ThrowerEnemy.cs" />
     <Compile Include="Assets\Scripts\PlayerRespawner.cs" />
     <Compile Include="Assets\PostProcessing\Utilities\CustomMotionTexture\ExampleWheelController.cs" />
@@ -188,7 +189,6 @@
     <Compile Include="Assets\Scripts\MainMechanicks\Hero\Attack.cs" />
     <Compile Include="Assets\Scripts\MainMechanicks\Enemies\StateMachine\TriggerChecks\ChaseTrigger.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Models\DitheringModel.cs" />
-    <Compile Include="Assets\Scripts\MainMechanicks\Enemies\StateMachine\TriggerChecks\AttackTrigger.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

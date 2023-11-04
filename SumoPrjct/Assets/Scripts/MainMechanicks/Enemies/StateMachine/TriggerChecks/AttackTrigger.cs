@@ -6,7 +6,6 @@ public class AttackTrigger : MonoBehaviour
     private void Start()
     {
         parentEnemy = GetComponentInParent<ShooterController>();
-        GetComponent<SphereCollider>().radius = parentEnemy.AttackDistnace;
     }
     private void OnTriggerEnter(Collider other)
     {

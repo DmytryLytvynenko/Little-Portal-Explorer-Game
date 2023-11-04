@@ -6,12 +6,16 @@ using Utilities;
 
 public class EnemyChaseState : EnemyState
 {
-    public Transform target;
+    private Transform target;
     private Action ExitChaseStateFunc;
     private float ExitChaseStateDelay = 2f; 
     private Coroutine ExitChaseStateCoroutine;
-    public EnemyChaseState(Enemy enemy, EnemyStateMachine enemyStateMachine) : base(enemy, enemyStateMachine)
+    private SphereCollider chaseCollider;
+    public EnemyChaseState(Enemy enemy, EnemyStateMachine enemyStateMachine, SphereCollider ChaseCollider, float AgrDistnace, Transform Target) : base(enemy, enemyStateMachine)
     {
+        target = Target;
+        chaseCollider = ChaseCollider;
+        chaseCollider.radius = AgrDistnace;
         ExitChaseStateFunc = ExitChaseState;
     }
 
@@ -32,24 +36,21 @@ public class EnemyChaseState : EnemyState
     }
     public override void EnterState()
     {
-        base.EnterState();
-        target = enemy.Target.transform;
     }
 
     public override void ExitState()
     {
-        base.ExitState();
     }
 
     public override void FrameUpdate()
     {
         base.FrameUpdate();
+        enemy.Rotate(target);
     }
 
     public override void PhysicsUpdate()
     {
         base.PhysicsUpdate();
-        enemy.Rotate(target);
         enemy.Move();
     }
     private void OnPlayerEnteredChaseZone()
@@ -75,7 +76,7 @@ public class EnemyChaseState : EnemyState
     }
     private void ExitChaseState()
     {
-        enemyStateMachine.ChangeState(enemy.stayState);
+        enemyStateMachine.ChangeState(enemy.idleState);
         ExitChaseStateCoroutine = null;
     }
 }

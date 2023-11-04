@@ -175,7 +175,6 @@ public class HeroController : MonoBehaviour
     }
     void OnCollisionEnter(Collision collision)
     {
-        print(collision.gameObject);
         IsGroundedUpate(collision, true);
         if (isGrounded && canExplode)
         {

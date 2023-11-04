@@ -3,9 +3,9 @@ using UnityEngine;
 public class EnemyStayState : EnemyState
 {
     public Transform target;
-    public EnemyStayState(Enemy enemy, EnemyStateMachine enemyStateMachine) : base(enemy, enemyStateMachine)
+    public EnemyStayState(Enemy enemy, EnemyStateMachine enemyStateMachine, Transform Target) : base(enemy, enemyStateMachine)
     {
-
+        target = Target;
     }
 
     public override void AnimationTriggerEvent(Enemy.AnimationTriggerType animationTriggerType)
@@ -15,13 +15,10 @@ public class EnemyStayState : EnemyState
 
     public override void EnterState()
     {
-        base.EnterState();
-        target = enemy.Target.transform;
     }
 
     public override void ExitState()
     {
-        base.ExitState();
     }
 
     public override void FrameUpdate()

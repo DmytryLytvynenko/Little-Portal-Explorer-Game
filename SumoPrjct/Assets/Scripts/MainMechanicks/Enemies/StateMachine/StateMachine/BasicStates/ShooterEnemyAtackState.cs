@@ -6,15 +6,22 @@ using UnityEngine;
 
 public class ShooterEnemyAtackState : EnemyState
 {
-    ShooterController shooter;
+    private Transform target;
+    private ShooterController shooter;
     private Action ExitAttackStateFunc;
-    private float ExitAttackStateDelay = 2f;
     private Coroutine ExitAttackStateCoroutine;
+    private SphereCollider attackCollider;
+    private float ExitAttackStateDelay = 2f;
+    private float shootCooldown;
     private float timer = 0;
 
-    public ShooterEnemyAtackState(ShooterController enemy, EnemyStateMachine enemyStateMachine) : base(enemy, enemyStateMachine)
+    public ShooterEnemyAtackState(ShooterController enemy, EnemyStateMachine enemyStateMachine,SphereCollider AttackCollider,float ShootCooldown,float AttackDistnace, Transform Target) : base(enemy, enemyStateMachine)
     {
+        target = Target;
+        attackCollider = AttackCollider;
+        AttackCollider.radius = AttackDistnace;
         shooter = enemy;
+        shootCooldown = ShootCooldown;
         ExitAttackStateFunc = ExitAttackState;
     }
 
@@ -35,24 +42,17 @@ public class ShooterEnemyAtackState : EnemyState
     }
     public override void EnterState()
     {
-        base.EnterState();
     }
 
     public override void ExitState()
     {
-        base.ExitState();
     }
 
     public override void FrameUpdate()
     {
         base.FrameUpdate();
         CountTimeToShoot();
-    }
-
-    public override void PhysicsUpdate()
-    {
-        base.PhysicsUpdate();
-        enemy.Rotate(enemy.Target);
+        enemy.Rotate(target);
     }
 
     private void OnPlayerEnteredAttackZone()
@@ -67,6 +67,7 @@ public class ShooterEnemyAtackState : EnemyState
             return;
 
         enemyStateMachine.ChangeState(this);
+        Debug.Log(timer);
     }
     private void OnPlayerExitedAttackZone()
     {
@@ -78,14 +79,13 @@ public class ShooterEnemyAtackState : EnemyState
     }
     private void ExitAttackState()
     {
-        enemyStateMachine.ChangeState(enemy.stayState);
+        enemyStateMachine.ChangeState(enemy.chaseState);
         ExitAttackStateCoroutine = null;
-        timer = 0;
     }
     private void CountTimeToShoot()
     {
         timer += Time.deltaTime;
-        if (timer > shooter.ShootCooldown) 
+        if (timer > shootCooldown) 
         {
             shooter.Attack();
             timer = 0;

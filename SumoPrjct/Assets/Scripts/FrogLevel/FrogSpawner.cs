@@ -28,8 +28,7 @@ public class FrogSpawner : MonoBehaviour
     {
         for (int i = 0; i < FrogCount; i++)
         {
-            FrogController frogController = Instantiate(frog, randomPointInArea, Quaternion.identity).GetComponent < FrogController>();
-            frogController.SetMoveArea(frogMoveArea);
+            Instantiate(frog, randomPointInArea, Quaternion.identity);
             yield return new WaitForSeconds(Random.Range(spawnTimeRange[0], spawnTimeRange[1]));
         }
     }

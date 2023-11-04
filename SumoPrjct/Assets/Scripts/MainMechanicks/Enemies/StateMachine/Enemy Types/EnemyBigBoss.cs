@@ -54,14 +54,13 @@ public class EnemyBigBoss : Enemy
         _explosion = GetComponent<Explosion>();
         _throw = GetComponent<Throw>();
         rb = GetComponent<Rigidbody>();
-        Target = GameObject.Find("Hero").GetComponent<Transform>();
+        target = GameObject.Find("Hero").GetComponent<Transform>();
         ShootPos = this.gameObject.transform.GetChild(0);
         currentAction = Action.None;
     }
-    protected override void Update()
+    private void Update()
     {
-        base.Update();
-        Rotate(Target);
+        Rotate(target);
         Move();
         ControllDistance();
     }
@@ -174,7 +173,7 @@ public class EnemyBigBoss : Enemy
         for (int i = 0; i < numberOfBullets; i++)
         {
             GameObject bullet = Instantiate(this.bullet, ShootPos.position, Quaternion.Euler(0f, transform.localEulerAngles.y, transform.localEulerAngles.z));
-            bullet.GetComponent<Bullet>().targetPoint = Target;
+            bullet.GetComponent<Bullet>().targetPoint = target;
 
             yield return new WaitForSeconds(timeBetweenShots);
         }
@@ -221,14 +220,14 @@ public class EnemyBigBoss : Enemy
                 distance = kickDistnace;
                 break;
         }
-        if (GetRotationVector(Target).magnitude <= distance)
+        if (GetRotationVector(target).magnitude <= distance)
             return true;
         else
             return false;
     }
     private void DrawPointer()
     {
-        Ray ray = new Ray(Target.position, -Vector3.up * 10);
+        Ray ray = new Ray(target.position, -Vector3.up * 10);
         Physics.Raycast(ray, out RaycastHit hit);
         Vector3 drawPoint = hit.point;
         _explosionPointer = Instantiate(explosionPointer, drawPoint, Quaternion.identity);
@@ -239,17 +238,17 @@ public class EnemyBigBoss : Enemy
     }
     LaunchData CalculateLaunchData()
     {
-        if (Target.position.y >= rb.position.y)
+        if (target.position.y >= rb.position.y)
         {
-            jumpHeight = Target.position.y + 1;
+            jumpHeight = target.position.y + 1;
         }
         else
         {
             jumpHeight = rb.position.y + 1;
         }
 
-        float displacementY = Target.position.y - rb.position.y;
-        Vector3 displacementXZ = new Vector3(Target.position.x - rb.position.x, 0, Target.position.z - rb.position.z);
+        float displacementY = target.position.y - rb.position.y;
+        Vector3 displacementXZ = new Vector3(target.position.x - rb.position.x, 0, target.position.z - rb.position.z);
         float time = Mathf.Sqrt(-2 * jumpHeight / gravity) + Mathf.Sqrt(2 * (displacementY - jumpHeight) / gravity);
         Vector3 velocityY = Vector3.up * Mathf.Sqrt(-2 * gravity * jumpHeight);
         Vector3 velocityXZ = displacementXZ / time;

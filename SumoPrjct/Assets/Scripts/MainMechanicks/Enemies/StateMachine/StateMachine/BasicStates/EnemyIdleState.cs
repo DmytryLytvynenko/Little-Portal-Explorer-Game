@@ -2,12 +2,12 @@ using UnityEngine;
 
 public class EnemyIdleState : EnemyState
 {
-    public Transform target;
+    private Transform target;
     private Transform moveArea;
-    public EnemyIdleState(Enemy enemy, EnemyStateMachine enemyStateMachine) : base(enemy, enemyStateMachine)
+    public EnemyIdleState(Enemy enemy, EnemyStateMachine enemyStateMachine,Transform IdleMoovementArea, Transform IdleTargetTrigger) : base(enemy, enemyStateMachine)
     {
-        moveArea = enemy.IdleMoovementArea;
-        target = enemy.IdleTargetTrigger.transform;
+        moveArea = IdleMoovementArea;
+        target = IdleTargetTrigger;
     }
 
     public override void AnimationTriggerEvent(Enemy.AnimationTriggerType animationTriggerType)
@@ -20,8 +20,6 @@ public class EnemyIdleState : EnemyState
 
     public override void EnterState()
     {
-        base.EnterState();
-
         enemy.IdleTargetReached += OnIdleTargetReached;
         target.parent = null;
         target.gameObject.SetActive(true);
@@ -59,6 +57,7 @@ public class EnemyIdleState : EnemyState
 
         RaycastHit hitInfo;
         Physics.Raycast(randomInsideBox, -Vector3.up,out hitInfo ,100);
+        Debug.DrawRay(randomInsideBox, -Vector3.up, Color.red, 100);
 
         if (hitInfo.collider == null)
         {

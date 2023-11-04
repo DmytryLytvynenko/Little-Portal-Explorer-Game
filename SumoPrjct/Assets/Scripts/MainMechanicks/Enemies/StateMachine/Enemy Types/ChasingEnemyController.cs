@@ -5,16 +5,15 @@ public class ChasingEnemyController : Enemy
     protected override void Start()
     {
         rb = GetComponent<Rigidbody>();
-        Target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        base.Start();
     }
-    protected override void FixedUpdate()
+    protected void Update()
     {
-        base.FixedUpdate();
-        Rotate(Target);
-        Move();
+        stateMachine.CurrentEnemyState.FrameUpdate();
     }
-    protected override void OnCollisionEnter(Collision collision)
+    protected void FixedUpdate()
     {
-        base.OnCollisionEnter(collision);
+        stateMachine.CurrentEnemyState.PhysicsUpdate();
     }
 }

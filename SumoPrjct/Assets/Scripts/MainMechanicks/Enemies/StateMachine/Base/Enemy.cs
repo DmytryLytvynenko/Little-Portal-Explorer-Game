@@ -5,11 +5,10 @@ using System;
 public class Enemy : MonoBehaviour
 {
     #region Fields
-    public Transform Target;
-
-    public IdleTargetTrigger IdleTargetTrigger;
-    public Transform IdleMoovementArea;
-
+    [SerializeField] protected Transform target;
+    [SerializeField] protected Transform IdleMoovementArea;
+    [SerializeField] private IdleTargetTrigger IdleTargetTrigger;
+    [SerializeField] private SphereCollider chaseCollider;
     [SerializeField] protected int contactDamage;
     [SerializeField] protected float moveSpeed;
     [SerializeField] protected float maxSpeed;
@@ -60,27 +59,17 @@ public class Enemy : MonoBehaviour
     }
     protected virtual void Awake()
     {
+        target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+
         stateMachine = new EnemyStateMachine();
-        idleState = new EnemyIdleState(this, stateMachine);
-        chaseState = new EnemyChaseState(this, stateMachine);
-        stayState = new EnemyStayState(this, stateMachine);
+        idleState = new EnemyIdleState(this, stateMachine, IdleMoovementArea, IdleTargetTrigger.transform);
+        chaseState = new EnemyChaseState(this, stateMachine, chaseCollider, AgrDistance, target);
+        stayState = new EnemyStayState(this, stateMachine, target);
     }
     protected virtual void Start()
     {
-        stateMachine.Initiallize(stayState);
+        stateMachine.Initiallize(idleState);
     }
-    #endregion
-
-    #region Updates
-    protected virtual void Update()
-    {
-        stateMachine.CurrentEnemyState.FrameUpdate();
-    }
-    protected virtual void FixedUpdate()
-    {
-        stateMachine.CurrentEnemyState.PhysicsUpdate();
-    }
-
     #endregion
 
     #region Methods
@@ -108,7 +97,7 @@ public class Enemy : MonoBehaviour
     }
     public void SetTarget(Transform target)
     {
-        this.Target = target;
+        this.target = target;
     }
     protected void Die()
     {
@@ -136,12 +125,12 @@ public class Enemy : MonoBehaviour
     }
 
 
-    private void OnDrawGizmos()
+    protected virtual void OnDrawGizmos()
     {
         Gizmos.color = Color.yellow;
         if (idleState != null)
         {
-            Gizmos.DrawWireSphere(idleState.target.position, 0.1f);
+            Gizmos.DrawWireSphere(IdleTargetTrigger.transform.position, 0.1f);
         }  
         if (chaseState != null)
         {
