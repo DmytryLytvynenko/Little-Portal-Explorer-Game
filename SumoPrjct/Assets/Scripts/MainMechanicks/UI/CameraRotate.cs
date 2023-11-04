@@ -9,6 +9,9 @@ public class CameraRotate : MonoBehaviour, IDragHandler, IPointerUpHandler, IPoi
     [SerializeField] private float rotationSensitivity;
     [SerializeField] private float minVerticalAngle;
     [SerializeField] private float maxVerticalAngle;
+    [SerializeField] private float rotationLerpRate;
+
+    private Quaternion targetRotation;
     public bool IsWorking { get; private set; }
     public void OnDrag(PointerEventData ped)
     {
@@ -16,8 +19,9 @@ public class CameraRotate : MonoBehaviour, IDragHandler, IPointerUpHandler, IPoi
         float yRotation = cameraRoot.localEulerAngles.y + ped.delta.x * rotationSensitivity;
         xRotation = Mathf.Clamp(xRotation, minVerticalAngle, maxVerticalAngle);
 
-        cameraRoot.localEulerAngles = new Vector3(xRotation, yRotation, 0);
-    }    public void OnPointerDown(PointerEventData ped)
+        targetRotation = Quaternion.Euler(xRotation, yRotation, 0);
+    }    
+    public void OnPointerDown(PointerEventData ped)
     {
         IsWorking = true;
         OnDrag(ped);
@@ -25,5 +29,12 @@ public class CameraRotate : MonoBehaviour, IDragHandler, IPointerUpHandler, IPoi
     public virtual void OnPointerUp(PointerEventData ped)
     {
         IsWorking = false;
+    }
+    private void LateUpdate()
+    {
+        float t = Mathf.Clamp(Time.deltaTime * rotationLerpRate, 0f, 0.99f);
+        cameraRoot.rotation = Quaternion.Lerp(cameraRoot.rotation, targetRotation, t);
+        cameraRoot.rotation = Quaternion.Euler(cameraRoot.localEulerAngles.x, cameraRoot.localEulerAngles.y,0f);
+        
     }
 }

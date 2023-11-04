@@ -39,13 +39,19 @@ public class FrogController : Enemy
     }
     protected override void OnCollisionEnter(Collision collision)
     {
-        base.OnCollisionEnter(collision);
-        animator.SetBool(ANIMATOR_PARAMETER_JUMP, !isGrounded);
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            base.OnCollisionEnter(collision);
+            animator.SetBool(ANIMATOR_PARAMETER_JUMP, !isGrounded);
+        }
     }
     protected override void OnCollisionExit(Collision collision)
     {
-        base.OnCollisionExit(collision);
-        animator.SetBool(ANIMATOR_PARAMETER_JUMP, !isGrounded);
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            base.OnCollisionExit(collision);
+            animator.SetBool(ANIMATOR_PARAMETER_JUMP, !isGrounded);
+        }
     }
     public void Disable()
     {
@@ -59,5 +65,14 @@ public class FrogController : Enemy
     public void SetMoveArea(Transform moveArea)
     {
         this.IdleMoovementArea = moveArea;
+    }
+    protected override void OnDrawGizmos()
+    {
+        base.OnDrawGizmos();
+        if (rb != null)
+        {
+            Gizmos.color = Color.blue;
+            Gizmos.DrawSphere(rb.worldCenterOfMass, 0.1f);
+        }
     }
 }

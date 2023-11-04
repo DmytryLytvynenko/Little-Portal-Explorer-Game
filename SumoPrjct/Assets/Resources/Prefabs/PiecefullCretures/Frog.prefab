@@ -439,8 +439,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3715381328228862629}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -7.56, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalPosition: {x: 0, y: 1, z: -7.96}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7071910396441037786}
@@ -886,9 +886,9 @@ MonoBehaviour:
   IdleTargetTrigger: {fileID: 575193585}
   chaseCollider: {fileID: 4005302649236247220}
   contactDamage: 0
-  moveSpeed: 2
+  moveSpeed: 1
   maxSpeed: 0
-  rotationSpeed: 2
+  rotationSpeed: 5
   AgrDistance: 0
   jumpForce: 20
   jumpHeightMultiplier: 4

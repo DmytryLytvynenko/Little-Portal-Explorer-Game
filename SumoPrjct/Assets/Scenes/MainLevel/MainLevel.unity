@@ -1151,7 +1151,7 @@ Transform:
   - {fileID: 2120418920}
   - {fileID: 1019413608}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &124060147
 PrefabInstance:
@@ -4855,9 +4855,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraRoot: {fileID: 1081954356}
-  rotationSensitivity: 0.1
+  rotationSensitivity: 2
   minVerticalAngle: 0
   maxVerticalAngle: 60
+  rotationLerpRate: 6
 --- !u!222 &823976759
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5727,7 +5728,7 @@ PrefabInstance:
     - target: {fileID: 3200612844068445987, guid: 7a3d4cd2991cd1140b775d2322d9fe7c,
         type: 3}
       propertyPath: m_RootOrder
-      value: 13
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 3200612844068445987, guid: 7a3d4cd2991cd1140b775d2322d9fe7c,
         type: 3}
@@ -6387,6 +6388,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerTransform: {fileID: 2129792518}
   posOffset: {x: 0, y: 0, z: 0}
+  positionLerpRate: 3
 --- !u!1 &1092753180
 GameObject:
   m_ObjectHideFlags: 0
@@ -9683,7 +9685,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 1000
+  far clip plane: 300
   field of view: 60
   orthographic: 0
   orthographic size: 5
@@ -11857,6 +11859,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4792738596926923209, guid: eb349ddad09570e41a3c03cbe40fd477,
+        type: 3}
+      propertyPath: m_Interpolate
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6836864531634666598, guid: eb349ddad09570e41a3c03cbe40fd477,
         type: 3}
       propertyPath: m_RootOrder
@@ -11927,11 +11934,6 @@ PrefabInstance:
       propertyPath: cameraRoot
       value: 
       objectReference: {fileID: 1081954356}
-    - target: {fileID: 7279223856504301113, guid: eb349ddad09570e41a3c03cbe40fd477,
-        type: 3}
-      propertyPath: raycastLayerMask.m_Bits
-      value: 15425
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb349ddad09570e41a3c03cbe40fd477, type: 3}
 --- !u!114 &2129792515 stripped

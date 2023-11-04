@@ -6,7 +6,7 @@ public class Throw : MonoBehaviour
 {
     [SerializeField] private Transform throwArea;
 
-    [Range(0f, 4f)]
+    [Range(0f, 7f)]
     [SerializeField] private float yThrowAngle;
 
     [SerializeField] private float throwForce;
