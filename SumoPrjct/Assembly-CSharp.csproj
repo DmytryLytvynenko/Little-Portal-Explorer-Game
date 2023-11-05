@@ -115,6 +115,7 @@
     <Compile Include="Assets\Scripts\MainMechanicks\Hero\EffectScaling.cs" />
     <Compile Include="Assets\Scripts\MainMechanicks\Hero\Explosion.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Components\GrainComponent.cs" />
+    <Compile Include="Assets\Scripts\MainMechanicks\Enemies\StateMachine\TriggerChecks\RunnerAttackTrigger.cs" />
     <Compile Include="Assets\Zololgo\OrbitZoomPanCamera\Scripts\OrbitZoomPanCamera.cs" />
     <Compile Include="Assets\Scripts\MainMechanicks\Enemies\StateMachine\Enemy Types\ShootingEnemyController\ShooterController.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\PostProcessingContext.cs" />
@@ -164,6 +165,7 @@
     <Compile Include="Assets\PostProcessing\Runtime\Models\ScreenSpaceReflectionModel.cs" />
     <Compile Include="Assets\Scripts\MainMechanicks\Other\Coroutines.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Components\DepthOfFieldComponent.cs" />
+    <Compile Include="Assets\Scripts\MainMechanicks\Enemies\StateMachine\StateMachine\NonBasicBehaviours\RunnerRunState.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Components\ColorGradingComponent.cs" />
     <Compile Include="Assets\Scripts\MainMechanicks\Hero\SurfaceSlider.cs" />
     <Compile Include="Assets\Scripts\FrogLevel\PiecefullCretures\FrogController.cs" />
@@ -189,8 +191,7 @@
     <Compile Include="Assets\Scripts\MainMechanicks\Hero\Attack.cs" />
     <Compile Include="Assets\Scripts\MainMechanicks\Enemies\StateMachine\TriggerChecks\ChaseTrigger.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Models\DitheringModel.cs" />
-    <Compile Include="Assets\Scripts\MainMechanicks\Enemies\StateMachine\StateMachine\NonBasicBehaviours\RunnerRunState.cs" />
-    <Compile Include="Assets\Scripts\MainMechanicks\Enemies\StateMachine\TriggerChecks\RunnerAttackTrigger.cs" />
+    <Compile Include="Assets\Scripts\MainMechanicks\Hero\PlayerDeformator.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
