@@ -5,6 +5,7 @@ using System;
 public class Enemy : MonoBehaviour
 {
     #region Fields
+    [SerializeField] private StartState startState;
     [SerializeField] protected Transform target;
     [SerializeField] protected Transform IdleMoovementArea;
     [SerializeField] private IdleTargetTrigger IdleTargetTrigger;
@@ -17,6 +18,13 @@ public class Enemy : MonoBehaviour
 
     protected bool isGrounded;
     protected Rigidbody rb;
+
+    private enum StartState
+    {
+        Idle,
+        Stay,
+        Chase
+    }
     #endregion
 
     #region StateMachineVariables
@@ -68,7 +76,20 @@ public class Enemy : MonoBehaviour
     }
     protected virtual void Start()
     {
-        stateMachine.Initiallize(idleState);
+        switch (startState)
+        {
+            case StartState.Idle:
+                stateMachine.Initiallize(idleState);
+                break;
+            case StartState.Stay:
+                stateMachine.Initiallize(stayState);
+                break;
+            case StartState.Chase:
+                stateMachine.Initiallize(chaseState);
+                break;
+            default:
+                break;
+        }
     }
     #endregion
 

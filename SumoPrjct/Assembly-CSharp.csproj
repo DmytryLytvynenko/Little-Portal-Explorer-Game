@@ -87,7 +87,7 @@
     <Compile Include="Assets\PostProcessing\Runtime\Utils\GraphicsUtils.cs" />
     <Compile Include="Assets\Scripts\Tutorial\RotateTutorialTracker.cs" />
     <Compile Include="Assets\Scripts\MainMechanicks\Hero\Throw.cs" />
-    <Compile Include="Assets\Scripts\MainMechanicks\Enemies\StateMachine\TriggerChecks\AttackTrigger.cs" />
+    <Compile Include="Assets\Scripts\MainMechanicks\Enemies\StateMachine\TriggerChecks\ShooterAttackTrigger.cs" />
     <Compile Include="Assets\Scripts\MainMechanicks\Enemies\StateMachine\Enemy Types\Thrower\ThrowerEnemy.cs" />
     <Compile Include="Assets\Scripts\PlayerRespawner.cs" />
     <Compile Include="Assets\PostProcessing\Utilities\CustomMotionTexture\ExampleWheelController.cs" />
@@ -135,7 +135,7 @@
     <Compile Include="Assets\Scripts\Tutorial\Respawn.cs" />
     <Compile Include="Assets\Scripts\Tutorial\ExplosionTutorial.cs" />
     <Compile Include="Assets\Scripts\MainMechanicks\BombSpawn.cs" />
-    <Compile Include="Assets\Scripts\MainMechanicks\Enemies\StateMachine\Enemy Types\RunningEnemyController.cs" />
+    <Compile Include="Assets\Scripts\MainMechanicks\Enemies\StateMachine\Enemy Types\RunnerController.cs" />
     <Compile Include="Assets\Scripts\TrampolineLevel\RespawnPointSetter.cs" />
     <Compile Include="Assets\Scripts\TrampolineLevel\TrampolineAnimation.cs" />
     <Compile Include="Assets\Scripts\LevelTeleport.cs" />
@@ -160,7 +160,7 @@
     <Compile Include="Assets\PostProcessing\Runtime\Models\ChromaticAberrationModel.cs" />
     <Compile Include="Assets\Scripts\MainMechanicks\Pool\GameObjectPool.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Models\ColorGradingModel.cs" />
-    <Compile Include="Assets\Scripts\MainMechanicks\Enemies\StateMachine\StateMachine\BasicStates\ShooterEnemyAtackState.cs" />
+    <Compile Include="Assets\Scripts\MainMechanicks\Enemies\StateMachine\StateMachine\NonBasicBehaviours\ShooterEnemyAtackState.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Models\ScreenSpaceReflectionModel.cs" />
     <Compile Include="Assets\Scripts\MainMechanicks\Other\Coroutines.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Components\DepthOfFieldComponent.cs" />
@@ -189,6 +189,8 @@
     <Compile Include="Assets\Scripts\MainMechanicks\Hero\Attack.cs" />
     <Compile Include="Assets\Scripts\MainMechanicks\Enemies\StateMachine\TriggerChecks\ChaseTrigger.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Models\DitheringModel.cs" />
+    <Compile Include="Assets\Scripts\MainMechanicks\Enemies\StateMachine\StateMachine\NonBasicBehaviours\RunnerRunState.cs" />
+    <Compile Include="Assets\Scripts\MainMechanicks\Enemies\StateMachine\TriggerChecks\RunnerAttackTrigger.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
