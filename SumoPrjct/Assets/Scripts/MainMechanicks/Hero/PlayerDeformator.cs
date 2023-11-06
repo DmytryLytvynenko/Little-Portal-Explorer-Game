@@ -7,6 +7,7 @@ public class PlayerDeformator : MonoBehaviour
     [SerializeField] private Transform playerTransform;
     [SerializeField] private Transform playerBody;
     [SerializeField] private float scaleKoefficirnt;
+    [SerializeField] private float rotationKoefficient;
 
 
     [SerializeField] private Vector3 scaleDown = new Vector3(1.2f,0.8f,1.2f);
@@ -20,6 +21,15 @@ public class PlayerDeformator : MonoBehaviour
         float interpolant = relativePosition.y * scaleKoefficirnt;
         Vector3 scale = Lerp3(scaleDown, defaultScale, scaleUp, interpolant);
         playerBody.localScale = scale;
+
+        Vector3 newRotation = new Vector3(relativePosition.z, 0, -relativePosition.x) * rotationKoefficient;
+        playerBody.localEulerAngles = new Vector3(
+                Mathf.Clamp(newRotation.x, -50, 50), 
+                0, 
+                Mathf.Clamp((newRotation.z), -20, 20)
+                );
+/*        playerBody.localEulerAngles = new Vector3(Mathf.Clamp(relativePosition.z, -20, 20), 0, Mathf.Clamp((-relativePosition.x), -50, 50)) * rotationKoefficient;
+*/
     }
     private Vector3 Lerp3(Vector3 a, Vector3 b, Vector3 c, float t)
     {

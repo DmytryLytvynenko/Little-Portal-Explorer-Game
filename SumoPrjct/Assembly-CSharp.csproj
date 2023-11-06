@@ -67,6 +67,7 @@
     <Compile Include="Assets\Scripts\Menu\HeroRotating.cs" />
     <Compile Include="Assets\Scripts\FrogLevel\PiecefullCretures\FrogDisabler.cs" />
     <Compile Include="Assets\Scripts\MainMechanicks\Launch.cs" />
+    <Compile Include="Assets\Scripts\MainMechanicks\Hero\PlayerDeformator.cs" />
     <Compile Include="Assets\Scripts\FrogLevel\FrogSpawner.cs" />
     <Compile Include="Assets\Scripts\MainMechanicks\Hero\VisualizeBox.cs" />
     <Compile Include="Assets\Scripts\FrogLevel\Environment\IlluminationBlinking.cs" />
@@ -191,7 +192,6 @@
     <Compile Include="Assets\Scripts\MainMechanicks\Hero\Attack.cs" />
     <Compile Include="Assets\Scripts\MainMechanicks\Enemies\StateMachine\TriggerChecks\ChaseTrigger.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Models\DitheringModel.cs" />
-    <Compile Include="Assets\Scripts\MainMechanicks\Hero\PlayerDeformator.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
