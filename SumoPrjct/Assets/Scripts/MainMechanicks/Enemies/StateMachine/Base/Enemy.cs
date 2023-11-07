@@ -62,7 +62,7 @@ public class Enemy : MonoBehaviour
     {
         stateMachine.AllStatesOnEnable();
     }
-    private void OnDisable()
+    protected virtual void OnDisable()
     {
         stateMachine.AllStatesOnDisable();
     }

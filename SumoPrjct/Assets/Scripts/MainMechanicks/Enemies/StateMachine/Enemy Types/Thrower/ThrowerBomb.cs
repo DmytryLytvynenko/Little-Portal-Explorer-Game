@@ -16,7 +16,7 @@ public class ThrowerBomb : Projectile
 
     private void Awake()
     {
-        target = GameObject.FindAnyObjectByType<HeroController>().transform;
+        target = GlobalData.PlayerInstance.transform;
         projectileAnimation = GetComponentInChildren<Animation>();
         explosion = GetComponent<Explosion>();
         bombRigidbody = GetComponent<Rigidbody>();
@@ -42,13 +42,12 @@ public class ThrowerBomb : Projectile
 
         projectileAnimation.Stop();
         bombRigidbody.useGravity = true;
-        bombRigidbody.isKinematic = false;
-        bombRigidbody.AddForce(moveVector.normalized * pushForce, ForceMode.Impulse);
+        bombRigidbody.AddForce(transform.forward * pushForce, ForceMode.Impulse);
         Invoke(nameof(Explode), explosionDelay);
     }
     private void MoveOnAnimation()
     {
-        transform.Translate(moveVector * Time.deltaTime * moveSpeed);
+        transform.position += moveVector * Time.deltaTime * moveSpeed;
     }
     private void Explode()
     {
@@ -59,9 +58,10 @@ public class ThrowerBomb : Projectile
     {
         base.InitiateThrow();
         transform.rotation = Quaternion.identity;
+        transform.LookAt(target.position);
         bombRigidbody.velocity = Vector3.zero;
         bombRigidbody.angularVelocity = Vector3.zero;
-        moveVector = target.position - thrower.position;
+        moveVector = new Vector3(target.position.x - thrower.position.x,0, target.position.z - thrower.position.z);
         Debug.DrawLine(thrower.position, target.position, Color.red, 10f);
         StartCoroutine(PlayAnimation());
     }

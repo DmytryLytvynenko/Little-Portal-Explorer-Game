@@ -13,12 +13,15 @@ public class ThrowerController : Enemy
     [SerializeField] private GameObject diskPrefab;
     [SerializeField] private Transform bombShootPoint;
     [SerializeField] private Transform diskShootPoint;
+    [SerializeField] private HealthControll healthControll;
 
     [SerializeField] private SphereCollider attackCollider;
     [SerializeField] private float attackDistnace;
 
     [SerializeField] private float shootCooldown;
+    [SerializeField] private float shootDistanse;
     [SerializeField] private float timeBeforeShoot;
+    [SerializeField] private float explosionRadius;
 
     private GameObjectPool bombObjectsPool;
     private GameObjectPool diskObjectsPool;
@@ -32,24 +35,29 @@ public class ThrowerController : Enemy
 
     #endregion
 
-    private ShootAction randomShootAction 
+    private AttackAction randomShootAction 
     { 
         get 
         {
-            int rand =  UnityEngine.Random.Range(0, 2); 
-            return (ShootAction)rand; 
+            if (GetRotationVector(target).magnitude < attackDistnace)
+                return AttackAction.Explosion;
+
+            int rand =  UnityEngine.Random.Range(0, 1); 
+            return (AttackAction)rand; 
         }  
     }
-    private enum ShootAction
+    private enum AttackAction
     {
         Bomb,
-        Disk
+        Disk,
+        Explosion
     }
 
     protected override void Awake()
     {
         target =  GlobalData.PlayerInstance.transform;
         base.Awake();
+        atackState = new ThrowerEnemyAtackState(this, stateMachine, shootCooldown, target);
 
         bombObjectsPool = new GameObjectPool(bombPrefab, BOMB_PRELOAD_COUNT);
         diskObjectsPool = new GameObjectPool(diskPrefab, DISK_PRELOAD_COUNT);
@@ -58,7 +66,16 @@ public class ThrowerController : Enemy
 
         rb = GetComponent<Rigidbody>();
         attackCollider.radius = attackDistnace;
-        atackState = new ThrowerEnemyAtackState(this, stateMachine, shootCooldown, target);
+    }
+    protected override void OnEnable()
+    {
+        base.OnEnable();
+        healthControll.EntityDied += OnEntityDied;
+    }
+    protected override void OnDisable()
+    {
+        base.OnDisable();
+        healthControll.EntityDied -= OnEntityDied;
     }
     private void Update()
     {
@@ -79,10 +96,13 @@ public class ThrowerController : Enemy
     {
         switch (randomShootAction)
         {
-            case ShootAction.Bomb:
+            case AttackAction.Bomb:
                 StartCoroutine(Attack(bombShootPoint, bombObjectsPool));
                 break;
-            case ShootAction.Disk:
+            case AttackAction.Disk:
+                StartCoroutine(Attack(diskShootPoint, diskObjectsPool));
+                break;
+            case AttackAction.Explosion:
                 StartCoroutine(Attack(diskShootPoint, diskObjectsPool));
                 break;
             default:
@@ -101,6 +121,12 @@ public class ThrowerController : Enemy
         projectileObject.transform.position = shootPosition.position;
 
         projectile.InitiateThrow();
+    }
+    private IEnumerator ExplosionAttack()
+    {
+        yield return new WaitForSeconds(timeBeforeShoot);
+
+        //Explode
     }
     private void OnProjectileDestroyed( Projectile projectile)
     {
@@ -124,5 +150,10 @@ public class ThrowerController : Enemy
         {
             item.GetComponent<ThrowerDisk>().SetThrower(diskShootPoint);
         }
+    }
+
+    private void OnEntityDied()
+    {
+        Die();
     }
 }

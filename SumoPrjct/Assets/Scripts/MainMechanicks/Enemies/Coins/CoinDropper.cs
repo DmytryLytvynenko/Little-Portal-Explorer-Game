@@ -6,12 +6,7 @@ public class CoinDropper : MonoBehaviour
     [SerializeField] private int coinCount;
     [SerializeField] private float coinFlyForce;
     [SerializeField] private Enemy enemy;
-    [SerializeField] private GameObject pool;
-    private GameObjectPool _pool;
-    private void Awake()
-    {
-        _pool = pool.GetComponent<GameObjectPool>();
-    }
+    [SerializeField] private CoinPool pool;
     private Vector3 RandomVector
     {
         get
@@ -28,11 +23,15 @@ public class CoinDropper : MonoBehaviour
     {
         enemy.EnemyDied -= OnEnemyDied;
     }
+    private void Start()
+    {
+        pool = GameObject.FindGameObjectWithTag("CoinPool").GetComponent<CoinPool>();
+    }
     private void DropCoin()
     {
         for (int i = 0; i < coinCount; i++)
         {
-            GameObject coin = _pool.Get();
+            GameObject coin = pool.GetCoin();
             coin.transform.position = transform.position;
             coin.GetComponent<Rigidbody>().AddForce((transform.up + RandomVector.normalized) * coinFlyForce);
         }

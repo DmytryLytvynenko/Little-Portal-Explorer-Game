@@ -1,20 +1,22 @@
-using ObjectsPool;
+using System;
 using UnityEngine;
 
 public class Coin : MonoBehaviour
 {
-    [SerializeField] private GameObject pool;
-    private GameObjectPool _pool;
+    [SerializeField] private CoinPool pool;
 
-    private void Awake()
+    public static Action CoinPickedUp;
+
+    private void Start()
     {
-        _pool = pool.GetComponent<GameObjectPool>();
+        pool = GameObject.FindGameObjectWithTag("CoinPool").GetComponent<CoinPool>();
     }
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.GetComponent<HeroController>()) 
         {
-            _pool.Return(gameObject);
+            CoinPickedUp?.Invoke();
+            pool.ReturnCoin(gameObject);
         }
     }
 }

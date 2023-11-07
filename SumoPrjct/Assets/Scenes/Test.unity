@@ -1165,6 +1165,7 @@ GameObject:
   - component: {fileID: 244003133}
   - component: {fileID: 244003132}
   - component: {fileID: 244003131}
+  - component: {fileID: 244003138}
   m_Layer: 10
   m_Name: Hero
   m_TagString: Untagged
@@ -1246,7 +1247,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cff2e2c49475f54da3f887740ededf5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackForce: 800
+  attackForce: 100
   attackDamage: 500
   attackArea: {fileID: 1401034745}
 --- !u!114 &244003133
@@ -1336,6 +1337,18 @@ MonoBehaviour:
   noDamageExplosionRadius: 7
   explosionEffect: {fileID: 6605087354438946986, guid: 4f4394901f46a6f4c92f37d482f7bbd7,
     type: 3}
+--- !u!114 &244003138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 244003127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f117d3a423169074d9bef1b76884997e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &253236945
 GameObject:
   m_ObjectHideFlags: 0
@@ -4853,6 +4866,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1652398362}
   m_CullTransparentMesh: 0
+--- !u!114 &1698255198 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3096531185797414148, guid: e83f46f4a391a0f42b868843e279803f,
+    type: 3}
+  m_PrefabInstance: {fileID: 3096531185797414141}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33438a174875f1940a1dee41e10cee11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1708288250
 GameObject:
   m_ObjectHideFlags: 0
@@ -6938,6 +6963,39 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 943162510, guid: e83f46f4a391a0f42b868843e279803f, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1423859312, guid: e83f46f4a391a0f42b868843e279803f, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3096531185797414149, guid: e83f46f4a391a0f42b868843e279803f,
+        type: 3}
+      propertyPath: coinFlyForce
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 3096531186333210268, guid: e83f46f4a391a0f42b868843e279803f,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3096531186333210268, guid: e83f46f4a391a0f42b868843e279803f,
+        type: 3}
+      propertyPath: startState
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3096531186333210268, guid: e83f46f4a391a0f42b868843e279803f,
+        type: 3}
+      propertyPath: shootCooldown
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3096531186333210268, guid: e83f46f4a391a0f42b868843e279803f,
+        type: 3}
+      propertyPath: healthControll
+      value: 
+      objectReference: {fileID: 1698255198}
     - target: {fileID: 3096531186333210268, guid: e83f46f4a391a0f42b868843e279803f,
         type: 3}
       propertyPath: IdleMoovementArea
@@ -6951,7 +7009,7 @@ PrefabInstance:
     - target: {fileID: 3096531186333210269, guid: e83f46f4a391a0f42b868843e279803f,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -8.78
+      value: -5.79
       objectReference: {fileID: 0}
     - target: {fileID: 3096531186333210269, guid: e83f46f4a391a0f42b868843e279803f,
         type: 3}
@@ -6961,7 +7019,7 @@ PrefabInstance:
     - target: {fileID: 3096531186333210269, guid: e83f46f4a391a0f42b868843e279803f,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.9
+      value: 24.16
       objectReference: {fileID: 0}
     - target: {fileID: 3096531186333210269, guid: e83f46f4a391a0f42b868843e279803f,
         type: 3}
@@ -7002,6 +7060,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Thrower
+      objectReference: {fileID: 0}
+    - target: {fileID: 3096531186333210278, guid: e83f46f4a391a0f42b868843e279803f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3096531186675476052, guid: e83f46f4a391a0f42b868843e279803f,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e83f46f4a391a0f42b868843e279803f, type: 3}
@@ -7092,7 +7160,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6836864530741780296}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalPosition: {x: -0.4, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []

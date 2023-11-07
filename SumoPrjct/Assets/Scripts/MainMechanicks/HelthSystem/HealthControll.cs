@@ -10,6 +10,7 @@ public class HealthControll : MonoBehaviour
     private int currentHelth;
 
     public event Action<float> HealthChanged;
+    public event Action EntityDied;
 
     private void OnEnable()
     {
@@ -72,9 +73,7 @@ public class HealthControll : MonoBehaviour
         {
             gameObject.GetComponent<HeroController>().Die();
         }
-        else
-        {
-            Destroy(this.gameObject);
-        }
+
+        EntityDied?.Invoke();
     }
 }

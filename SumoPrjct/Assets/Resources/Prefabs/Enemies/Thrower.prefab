@@ -656,7 +656,7 @@ MonoBehaviour:
   coinCount: 2
   coinFlyForce: 500
   enemy: {fileID: 3096531186333210268}
-  pool: {fileID: 5289472641333584930, guid: a3584fd5f47e41d439e1e6030cd1a773, type: 3}
+  pool: {fileID: 5289472641333584931, guid: a3584fd5f47e41d439e1e6030cd1a773, type: 3}
 --- !u!1 &3096531186675476053
 GameObject:
   m_ObjectHideFlags: 0

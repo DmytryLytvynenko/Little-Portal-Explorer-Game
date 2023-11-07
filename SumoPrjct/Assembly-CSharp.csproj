@@ -113,6 +113,7 @@
     <Compile Include="Assets\Scripts\MainMechanicks\Enemies\StateMachine\Enemy Types\ShootingEnemyController\Bullet.cs" />
     <Compile Include="Assets\Scripts\SquidGameLevel\TrapHatch.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\PostProcessingProfile.cs" />
+    <Compile Include="Assets\Scripts\MainMechanicks\Enemies\StateMachine\TriggerChecks\ThrowerAttackTrigger.cs" />
     <Compile Include="Assets\Scripts\MainMechanicks\Hero\EffectScaling.cs" />
     <Compile Include="Assets\Scripts\MainMechanicks\Hero\Explosion.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Components\GrainComponent.cs" />
@@ -129,6 +130,7 @@
     <Compile Include="Assets\Scripts\MainMechanicks\Environment\Elevator.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Components\BloomComponent.cs" />
     <Compile Include="Assets\Scripts\MainMechanicks\HelthSystem\HealthControll.cs" />
+    <Compile Include="Assets\Scripts\MainMechanicks\Enemies\Coins\Coin.cs" />
     <Compile Include="Assets\Scripts\Utilities.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Models\MotionBlurModel.cs" />
     <Compile Include="Assets\LowPolyWater_Pack\Scripts\LowPolyWater.cs" />
@@ -140,9 +142,11 @@
     <Compile Include="Assets\Scripts\MainMechanicks\Enemies\StateMachine\Enemy Types\RunnerController.cs" />
     <Compile Include="Assets\Scripts\TrampolineLevel\RespawnPointSetter.cs" />
     <Compile Include="Assets\Scripts\TrampolineLevel\TrampolineAnimation.cs" />
+    <Compile Include="Assets\Scripts\MainMechanicks\Enemies\Coins\CoinPool.cs" />
     <Compile Include="Assets\Scripts\LevelTeleport.cs" />
     <Compile Include="Assets\Scripts\Menu\FallingObject.cs" />
     <Compile Include="Assets\Scripts\MainMechanicks\Bomb.cs" />
+    <Compile Include="Assets\Scripts\MainMechanicks\Enemies\StateMachine\StateMachine\NonBasicBehaviours\ThrowerEnemyAtackState.cs" />
     <Compile Include="Assets\Scripts\Tutorial\ItemCounter.cs" />
     <Compile Include="Assets\Scripts\MainMechanicks\UI\CameraRotate.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Models\AmbientOcclusionModel.cs" />
@@ -152,6 +156,7 @@
     <Compile Include="Assets\PostProcessing\Runtime\Models\BuiltinDebugViewsModel.cs" />
     <Compile Include="Assets\Scripts\MainMechanicks\RotatingPlatform.cs" />
     <Compile Include="Assets\Scripts\MainMechanicks\Enemies\StateMachine\Base\Enemy.cs" />
+    <Compile Include="Assets\Scripts\MainMechanicks\Enemies\Coins\CoinDropper.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\PostProcessingComponent.cs" />
     <Compile Include="Assets\Scripts\MainMechanicks\UI\CameraController.cs" />
     <Compile Include="Assets\Scripts\FrogLevel\Environment\AnimationStarter.cs" />
@@ -192,11 +197,8 @@
     <Compile Include="Assets\Scripts\MainMechanicks\Hero\Attack.cs" />
     <Compile Include="Assets\Scripts\MainMechanicks\Enemies\StateMachine\TriggerChecks\ChaseTrigger.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Models\DitheringModel.cs" />
-    <Compile Include="Assets\Scripts\MainMechanicks\Enemies\StateMachine\StateMachine\NonBasicBehaviours\ThrowerEnemyAtackState.cs" />
-    <Compile Include="Assets\Scripts\MainMechanicks\Enemies\StateMachine\TriggerChecks\ThrowerAttackTrigger.cs" />
-    <Compile Include="Assets\Scripts\MainMechanicks\Enemies\Coins\CoinDropper.cs" />
-    <Compile Include="Assets\Scripts\MainMechanicks\Enemies\Coins\Coin.cs" />
-    <Compile Include="Assets\Scripts\MainMechanicks\Enemies\Coins\CoinPool.cs" />
+    <Compile Include="Assets\Scripts\MainMechanicks\Enemies\Coins\Wallet.cs" />
+    <Compile Include="Assets\Scripts\Test\RotateTowards.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

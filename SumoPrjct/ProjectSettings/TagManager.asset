@@ -12,6 +12,7 @@ TagManager:
   - Bomb
   - Box
   - Log
+  - CoinPool
   layers:
   - Default
   - TransparentFX

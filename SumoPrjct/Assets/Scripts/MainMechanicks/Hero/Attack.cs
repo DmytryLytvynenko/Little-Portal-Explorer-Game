@@ -25,7 +25,7 @@ public class Attack : MonoBehaviour
         {
             Rigidbody rigitbody = overlappedColiders[i].attachedRigidbody;
             if (!rigitbody) continue;
-            if (rigitbody.gameObject.layer != LayerMask.NameToLayer("Enemy")) continue;
+            if (!overlappedColiders[i].gameObject.GetComponent<Enemy>()) continue;
 
             rigitbody.AddExplosionForce(attackForce, transform.position, attackArea.localScale.z);
 

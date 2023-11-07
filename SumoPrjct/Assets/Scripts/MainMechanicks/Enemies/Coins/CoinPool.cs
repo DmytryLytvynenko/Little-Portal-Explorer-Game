@@ -11,10 +11,11 @@ public class CoinPool : MonoBehaviour
     {
         coinObjectsPool = new GameObjectPool(coinPrefab, COIN_PRELOAD_COUNT);
     }
-
     public GameObject GetCoin()
     {
-        return coinObjectsPool.Get();
+        Debug.Log($"{coinObjectsPool == null}");
+        GameObject item =  coinObjectsPool.Get();
+        return item;
     }    
     public void ReturnCoin(GameObject coin)
     {
