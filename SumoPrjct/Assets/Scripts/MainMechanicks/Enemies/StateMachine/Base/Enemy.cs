@@ -41,6 +41,7 @@ public class Enemy : MonoBehaviour
     public Action IdleTargetReached;
     public Action PlayerEnteredChaseZone;
     public Action PlayerExitedChaseZone;
+    public Action EnemyDied;
 
     #endregion
 
@@ -67,8 +68,6 @@ public class Enemy : MonoBehaviour
     }
     protected virtual void Awake()
     {
-        target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
-
         stateMachine = new EnemyStateMachine();
         idleState = new EnemyIdleState(this, stateMachine, IdleMoovementArea, IdleTargetTrigger.transform);
         chaseState = new EnemyChaseState(this, stateMachine, chaseCollider, AgrDistance, target);
@@ -122,6 +121,7 @@ public class Enemy : MonoBehaviour
     }
     protected void Die()
     {
+        EnemyDied?.Invoke();
         Destroy(this.gameObject);
     }
 

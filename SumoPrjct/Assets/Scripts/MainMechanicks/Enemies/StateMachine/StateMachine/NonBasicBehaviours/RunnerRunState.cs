@@ -7,7 +7,6 @@ public class RunnerRunState : EnemyState
     private RunnerController runner;
     private Coroutine runCoroutine;
     private float runDelay = 2f;
-    private float timer = 0;
     private Zone currentZone;
 
     private enum Zone
@@ -69,7 +68,6 @@ public class RunnerRunState : EnemyState
 
         enemyStateMachine.ChangeState(this);
         runCoroutine = Coroutines.StartRoutine(runner.Run(runDelay));
-        Debug.Log(timer);
     }
     private void OnPlayerExitedAttackZone()
     {

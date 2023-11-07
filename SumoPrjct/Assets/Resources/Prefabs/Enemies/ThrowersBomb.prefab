@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 139986805}
   - component: {fileID: 139986804}
   - component: {fileID: 139986803}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: ThrowersBomb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -113,7 +113,7 @@ GameObject:
   - component: {fileID: 278043096728163157}
   - component: {fileID: 278043096728163156}
   - component: {fileID: 1980712227}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: ThrowersBomb
   m_TagString: Untagged
   m_Icon: {fileID: 0}

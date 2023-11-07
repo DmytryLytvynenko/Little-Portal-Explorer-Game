@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4104005082780924144}
   - component: {fileID: 4104005082780924153}
   - component: {fileID: 4104005082780924152}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: ThrowersDisk
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -64,7 +64,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  animation: {fileID: 4264790485864721623}
+  thrower: {fileID: 0}
+  projectileAnimation: {fileID: 0}
   throwTrajectory:
     serializedVersion: 2
     m_Curve:
@@ -98,9 +99,8 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  thrower: {fileID: 0}
   duration: 4
-  distanceMultiplier: 1.5
+  targetOffset: 7
 --- !u!65 &4104005082780924152
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -126,7 +126,7 @@ GameObject:
   - component: {fileID: 4264790485864721617}
   - component: {fileID: 4264790485864721616}
   - component: {fileID: 4264790485864721623}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: ThrowersDisk
   m_TagString: Untagged
   m_Icon: {fileID: 0}

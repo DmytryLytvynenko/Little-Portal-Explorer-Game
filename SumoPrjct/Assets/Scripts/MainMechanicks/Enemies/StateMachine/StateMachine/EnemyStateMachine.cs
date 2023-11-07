@@ -10,7 +10,7 @@ public class EnemyStateMachine
     {
         CurrentEnemyState = startingState;
         CurrentEnemyState.EnterState();
-        Debug.Log(CurrentEnemyState);
+/*        Debug.Log(CurrentEnemyState);*/
     }
 
     public void ChangeState(EnemyState newState)
@@ -18,7 +18,7 @@ public class EnemyStateMachine
         CurrentEnemyState.ExitState();
         CurrentEnemyState = newState;
         CurrentEnemyState.EnterState();
-        Debug.Log(CurrentEnemyState);
+/*        Debug.Log(CurrentEnemyState);*/
     }
 
     public void AllStatesOnEnable()

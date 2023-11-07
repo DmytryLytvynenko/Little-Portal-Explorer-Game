@@ -6,7 +6,7 @@ using UnityEngine;
 public class ShooterController : Enemy
 {
     // Main characteristics
-    [SerializeField] private float AttackDistnace;
+    [SerializeField] private float attackDistnace;
     [SerializeField] private float ShootCooldown;
     [SerializeField] private SphereCollider AttackCollider;
 
@@ -27,7 +27,7 @@ public class ShooterController : Enemy
     {
         base.Awake();
 
-        atackState = new ShooterEnemyAtackState(this, stateMachine, AttackCollider, ShootCooldown, AttackDistnace,target);
+        atackState = new ShooterEnemyAtackState(this, stateMachine, AttackCollider, ShootCooldown, attackDistnace,target);
     }
     protected override void Start()
     {
@@ -54,7 +54,7 @@ public class ShooterController : Enemy
         Gizmos.color = Color.green;
         if (atackState != null)
         {
-            Gizmos.DrawWireSphere(transform.position, AttackDistnace);
+            Gizmos.DrawWireSphere(transform.position, attackDistnace);
         }
     }
 }

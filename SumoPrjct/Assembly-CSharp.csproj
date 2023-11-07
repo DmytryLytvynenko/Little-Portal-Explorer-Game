@@ -89,7 +89,7 @@
     <Compile Include="Assets\Scripts\Tutorial\RotateTutorialTracker.cs" />
     <Compile Include="Assets\Scripts\MainMechanicks\Hero\Throw.cs" />
     <Compile Include="Assets\Scripts\MainMechanicks\Enemies\StateMachine\TriggerChecks\ShooterAttackTrigger.cs" />
-    <Compile Include="Assets\Scripts\MainMechanicks\Enemies\StateMachine\Enemy Types\Thrower\ThrowerEnemy.cs" />
+    <Compile Include="Assets\Scripts\MainMechanicks\Enemies\StateMachine\Enemy Types\Thrower\ThrowerController.cs" />
     <Compile Include="Assets\Scripts\PlayerRespawner.cs" />
     <Compile Include="Assets\PostProcessing\Utilities\CustomMotionTexture\ExampleWheelController.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Components\VignetteComponent.cs" />
@@ -192,6 +192,11 @@
     <Compile Include="Assets\Scripts\MainMechanicks\Hero\Attack.cs" />
     <Compile Include="Assets\Scripts\MainMechanicks\Enemies\StateMachine\TriggerChecks\ChaseTrigger.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Models\DitheringModel.cs" />
+    <Compile Include="Assets\Scripts\MainMechanicks\Enemies\StateMachine\StateMachine\NonBasicBehaviours\ThrowerEnemyAtackState.cs" />
+    <Compile Include="Assets\Scripts\MainMechanicks\Enemies\StateMachine\TriggerChecks\ThrowerAttackTrigger.cs" />
+    <Compile Include="Assets\Scripts\MainMechanicks\Enemies\Coins\CoinDropper.cs" />
+    <Compile Include="Assets\Scripts\MainMechanicks\Enemies\Coins\Coin.cs" />
+    <Compile Include="Assets\Scripts\MainMechanicks\Enemies\Coins\CoinPool.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

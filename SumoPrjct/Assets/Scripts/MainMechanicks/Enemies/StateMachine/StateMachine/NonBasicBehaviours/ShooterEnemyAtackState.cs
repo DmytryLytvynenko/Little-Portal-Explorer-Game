@@ -7,7 +7,6 @@ public class ShooterEnemyAtackState : EnemyState
     private ShooterController shooter;
     private Action ExitAttackStateFunc;
     private Coroutine ExitAttackStateCoroutine;
-    private SphereCollider attackCollider;
     private float ExitAttackStateDelay = 2f;
     private float shootCooldown;
     private float timer = 0;
@@ -15,7 +14,6 @@ public class ShooterEnemyAtackState : EnemyState
     public ShooterEnemyAtackState(ShooterController enemy, EnemyStateMachine enemyStateMachine,SphereCollider AttackCollider,float ShootCooldown,float AttackDistnace, Transform Target) : base(enemy, enemyStateMachine)
     {
         target = Target;
-        attackCollider = AttackCollider;
         AttackCollider.radius = AttackDistnace;
         shooter = enemy;
         shootCooldown = ShootCooldown;
@@ -64,7 +62,6 @@ public class ShooterEnemyAtackState : EnemyState
             return;
 
         enemyStateMachine.ChangeState(this);
-        Debug.Log(timer);
     }
     private void OnPlayerExitedAttackZone()
     {

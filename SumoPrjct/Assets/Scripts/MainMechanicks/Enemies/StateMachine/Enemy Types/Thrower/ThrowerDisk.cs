@@ -3,16 +3,16 @@ using UnityEngine;
 
 public class ThrowerDisk : Projectile
 {
-    [SerializeField] private float distanceMultiplier;
+    [SerializeField] private float targetOffset;
+    [SerializeField] private int damage = 20;
 
     private Vector3 actualTarget;
     private Vector3 startPosition;
     private float progress = 0;
-    private int damage = 20;
 
     private void Awake()
     {
-        target = GameObject.FindAnyObjectByType<HeroController>().transform;
+        target = GlobalData.PlayerInstance.transform;
         projectileAnimation = GetComponentInChildren<Animation>();
     }
     private IEnumerator PlayAnimation()
@@ -46,9 +46,10 @@ public class ThrowerDisk : Projectile
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.layer == LayerMask.NameToLayer("HaveHealth"))
+        HealthControll helthControll;
+        if (collision.gameObject.TryGetComponent<HealthControll>(out helthControll))
         {
-            collision.gameObject.GetComponent<HealthControll>().ChangeHealth(-damage);
+            helthControll.ChangeHealth(-damage);
         }
     }
     public override void InitiateThrow()
@@ -56,7 +57,12 @@ public class ThrowerDisk : Projectile
         base.InitiateThrow();
         startPosition = transform.position;
         moveVector = target.position - startPosition;
-        actualTarget = transform.position + moveVector * distanceMultiplier;
+        actualTarget = transform.position + moveVector + moveVector.normalized * targetOffset;
         StartCoroutine(PlayAnimation());
     }
-}
+/*    private void OnDrawGizmos()
+    {
+        if (target == null) return;
+        Gizmos.DrawSphere(target.position, 0.1f);
+    }
+*/}

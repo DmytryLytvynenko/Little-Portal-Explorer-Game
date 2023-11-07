@@ -34,14 +34,6 @@ public class EnemyChaseState : EnemyState
         enemy.PlayerEnteredChaseZone -= OnPlayerEnteredChaseZone;
         enemy.PlayerExitedChaseZone -= OnPlayerExitedChaseZone;
     }
-    public override void EnterState()
-    {
-    }
-
-    public override void ExitState()
-    {
-    }
-
     public override void FrameUpdate()
     {
         base.FrameUpdate();
