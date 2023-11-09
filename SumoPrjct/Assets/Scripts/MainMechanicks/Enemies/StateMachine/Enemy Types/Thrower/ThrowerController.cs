@@ -14,6 +14,7 @@ public class ThrowerController : Enemy
     [SerializeField] private Transform bombShootPoint;
     [SerializeField] private Transform diskShootPoint;
     [SerializeField] private HealthControll healthControll;
+    [SerializeField] private Explosion explosion;
 
     [SerializeField] private SphereCollider attackCollider;
     [SerializeField] private float attackDistnace;
@@ -22,6 +23,8 @@ public class ThrowerController : Enemy
     [SerializeField] private float shootDistanse;
     [SerializeField] private float timeBeforeShoot;
     [SerializeField] private float explosionRadius;
+    [SerializeField] private float explosionDelay;
+    [SerializeField] private int explosionDamage;
 
     private GameObjectPool bombObjectsPool;
     private GameObjectPool diskObjectsPool;
@@ -39,10 +42,10 @@ public class ThrowerController : Enemy
     { 
         get 
         {
-            if (GetRotationVector(target).magnitude < attackDistnace)
+            if (GetRotationVector(target).magnitude < explosionRadius)
                 return AttackAction.Explosion;
 
-            int rand =  UnityEngine.Random.Range(0, 1); 
+            int rand =  UnityEngine.Random.Range(1, 2); 
             return (AttackAction)rand; 
         }  
     }
@@ -103,7 +106,7 @@ public class ThrowerController : Enemy
                 StartCoroutine(Attack(diskShootPoint, diskObjectsPool));
                 break;
             case AttackAction.Explosion:
-                StartCoroutine(Attack(diskShootPoint, diskObjectsPool));
+                StartCoroutine(ExplosionAttack(explosionDelay));
                 break;
             default:
                 break;
@@ -122,11 +125,11 @@ public class ThrowerController : Enemy
 
         projectile.InitiateThrow();
     }
-    private IEnumerator ExplosionAttack()
+    private IEnumerator ExplosionAttack(float explosionDelay)
     {
-        yield return new WaitForSeconds(timeBeforeShoot);
+        yield return new WaitForSeconds(explosionDelay);
 
-        //Explode
+        explosion.Explode(explosionDamage);
     }
     private void OnProjectileDestroyed( Projectile projectile)
     {
@@ -155,5 +158,10 @@ public class ThrowerController : Enemy
     private void OnEntityDied()
     {
         Die();
+    }
+    protected override void OnDrawGizmos()
+    {
+        base.OnDrawGizmos();
+        Gizmos.DrawWireSphere(transform.position, explosionRadius);
     }
 }

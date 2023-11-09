@@ -14,7 +14,10 @@ public class PlayerDeformator : MonoBehaviour
     [SerializeField] private Vector3 scaleUp = new Vector3(0.8f,1.2f, 0.8f);
     private Vector3 defaultScale = Vector3.one;
 
-
+    private void Awake()
+    {
+        transform.parent = null;
+    }
     void Update()
     {
         Vector3 relativePosition = playerTransform.InverseTransformPoint(transform.position);

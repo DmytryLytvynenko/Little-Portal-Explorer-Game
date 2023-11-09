@@ -5,6 +5,7 @@ public class ThrowerDisk : Projectile
 {
     [SerializeField] private float targetOffset;
     [SerializeField] private int damage = 20;
+    [SerializeField] private float lerpRate = 10;
 
     private Vector3 actualTarget;
     private Vector3 startPosition;
@@ -26,6 +27,7 @@ public class ThrowerDisk : Projectile
 
             if (progress > 0.5f)
             {
+                transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.identity, lerpRate * Time.deltaTime);
                 moveVector = actualTarget - thrower.position;
                 transform.position = thrower.position + moveVector * throwTrajectory.Evaluate(progress);
             }
@@ -55,6 +57,7 @@ public class ThrowerDisk : Projectile
     public override void InitiateThrow()
     {
         base.InitiateThrow();
+        transform.LookAt(target);
         startPosition = transform.position;
         moveVector = target.position - startPosition;
         actualTarget = transform.position + moveVector + moveVector.normalized * targetOffset;

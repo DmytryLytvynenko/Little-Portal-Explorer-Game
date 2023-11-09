@@ -50,7 +50,7 @@ public class Explosion : MonoBehaviour
             {
                 continue;
             }
-            if (rigitbody.CompareTag(gameObject.tag))
+            if (rigitbody.gameObject.layer == gameObject.layer)
             {
                 continue;
             }
@@ -61,9 +61,10 @@ public class Explosion : MonoBehaviour
                 rigitbody.gameObject.GetComponent<Bomb>().SetActive(true);
             }
             rigitbody.AddExplosionForce(explosionForce, transform.position, explosionRadius);
-            if (rigitbody.gameObject.layer == LayerMask.NameToLayer("HaveHealth"))
+            HealthControll healthControll;
+            if (rigitbody.TryGetComponent(out healthControll))
             {
-                rigitbody.GetComponent<HealthControll>().ChangeHealth(-damage);
+                healthControll.ChangeHealth(-damage);
             }
         }
         Exploded?.Invoke();

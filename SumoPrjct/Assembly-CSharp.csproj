@@ -74,6 +74,7 @@
     <Compile Include="Assets\Scripts\Tutorial\WalkTutorialEnded.cs" />
     <Compile Include="Assets\Scripts\Tutorial\MoveTutorialTracker.cs" />
     <Compile Include="Assets\Scripts\MainMechanicks\Enemies\StateMachine\TriggerChecks\IdleTargetTrigger.cs" />
+    <Compile Include="Assets\Scripts\MainMechanicks\Enemies\Coins\Wallet.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Attributes\GetSetAttribute.cs" />
     <Compile Include="Assets\Scripts\MainMechanicks\Triggers\BattleTrigger.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Components\ChromaticAberrationComponent.cs" />
@@ -92,6 +93,7 @@
     <Compile Include="Assets\Scripts\MainMechanicks\Enemies\StateMachine\Enemy Types\Thrower\ThrowerController.cs" />
     <Compile Include="Assets\Scripts\PlayerRespawner.cs" />
     <Compile Include="Assets\PostProcessing\Utilities\CustomMotionTexture\ExampleWheelController.cs" />
+    <Compile Include="Assets\Scripts\Test\RotateTowards.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Components\VignetteComponent.cs" />
     <Compile Include="Assets\Scripts\MainMechanicks\CheckPoint.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Utils\MaterialFactory.cs" />
@@ -197,8 +199,6 @@
     <Compile Include="Assets\Scripts\MainMechanicks\Hero\Attack.cs" />
     <Compile Include="Assets\Scripts\MainMechanicks\Enemies\StateMachine\TriggerChecks\ChaseTrigger.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Models\DitheringModel.cs" />
-    <Compile Include="Assets\Scripts\MainMechanicks\Enemies\Coins\Wallet.cs" />
-    <Compile Include="Assets\Scripts\Test\RotateTowards.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

@@ -69,7 +69,7 @@ GameObject:
   - component: {fileID: 943162513}
   - component: {fileID: 943162511}
   - component: {fileID: 943162512}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: ChaseArea
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -127,7 +127,7 @@ GameObject:
   - component: {fileID: 1423859313}
   - component: {fileID: 1423859315}
   - component: {fileID: 585354328157702538}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: AttackArea
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -488,7 +488,8 @@ GameObject:
   - component: {fileID: 3096531186333210268}
   - component: {fileID: 3096531185797414148}
   - component: {fileID: 3096531185797414149}
-  m_Layer: 11
+  - component: {fileID: 1698255206}
+  m_Layer: 18
   m_Name: Thrower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -608,7 +609,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9000bfbead4c8d14898f6786ad0835a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startState: 0
+  startState: 1
   target: {fileID: 0}
   IdleMoovementArea: {fileID: 0}
   IdleTargetTrigger: {fileID: 791797778}
@@ -624,10 +625,16 @@ MonoBehaviour:
     type: 3}
   bombShootPoint: {fileID: 3096531186675476052}
   diskShootPoint: {fileID: 3096531187292151520}
+  healthControll: {fileID: 3096531185797414148}
+  explosion: {fileID: 1698255206}
   attackCollider: {fileID: 1423859315}
   attackDistnace: 8
   shootCooldown: 3
+  shootDistanse: 0
   timeBeforeShoot: 1
+  explosionRadius: 3
+  explosionDelay: 3
+  explosionDamage: 25
 --- !u!114 &3096531185797414148
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -654,9 +661,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinCount: 2
-  coinFlyForce: 500
+  coinFlyForce: 180
   enemy: {fileID: 3096531186333210268}
   pool: {fileID: 5289472641333584931, guid: a3584fd5f47e41d439e1e6030cd1a773, type: 3}
+--- !u!114 &1698255206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3096531186333210278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad6a6e2d7d27c5749a255c7a66befa33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosionRadius: 3
+  explosionForce: 4000
+  noDamageExplosionForce: 0
+  noDamageExplosionRadius: 0
+  explosionEffect: {fileID: 6605087354438946986, guid: a8b231a8276f0384fac4979cc1a48e18,
+    type: 3}
 --- !u!1 &3096531186675476053
 GameObject:
   m_ObjectHideFlags: 0
@@ -681,7 +706,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3096531186675476053}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.5, z: 2.11}
+  m_LocalPosition: {x: 0, y: 0.5, z: 1.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

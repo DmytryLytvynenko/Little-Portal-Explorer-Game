@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Wallet : MonoBehaviour
@@ -13,6 +11,7 @@ public class Wallet : MonoBehaviour
     private void OnDisable()
     {
         Coin.CoinPickedUp -= OnCoinPickedUp;
+        SaveCoins();
     }
 
     public void AddCoin()
@@ -21,11 +20,20 @@ public class Wallet : MonoBehaviour
         Debug.Log(coinCount);
     }
     public void SaveCoins() 
-    { 
-
+    {
+        PlayerPrefs.SetInt("PlayersMoney", coinCount);
     }
     private void OnCoinPickedUp()
     {
         AddCoin();
+    }
+
+    private void OnDestroy()
+    {
+        SaveCoins();
+    }
+    private void OnApplicationQuit()
+    {
+        SaveCoins();
     }
 }
