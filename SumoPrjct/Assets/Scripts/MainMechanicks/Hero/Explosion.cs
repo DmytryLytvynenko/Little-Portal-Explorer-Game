@@ -22,7 +22,7 @@ public class Explosion : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E))// потом убрать
         {
-            Explode(3000);
+            Explode(1);
         }
     }
     public void SetExplosionRadius(float newRadius)
@@ -39,32 +39,28 @@ public class Explosion : MonoBehaviour
     public void Explode(int explosionDamage)
     {
         Collider[] overlappedColiders = Physics.OverlapSphere(transform.position, explosionRadius);
+        Bomb bomb;
+        HealthControll healthControll;
         for (int i = 0; i < overlappedColiders.Length; i++)
         {
             Rigidbody rigitbody = overlappedColiders[i].attachedRigidbody;
+            if (overlappedColiders[i].isTrigger)
+                continue;
             if (rigitbody == null)
-            {
                 continue;
-            }
             if (rigitbody.CompareTag("Bullet"))
-            {
                 continue;
-            }
             if (rigitbody.gameObject.layer == gameObject.layer)
-            {
                 continue;
-            }
-            Vector3 distanceToTarget = new Vector3(transform.position.x - rigitbody.transform.position.x, transform.position.y - rigitbody.transform.position.y, transform.position.z - rigitbody.transform.position.z);
-            int damage =Convert.ToInt32(((explosionRadius - distanceToTarget.magnitude) / explosionRadius) * explosionDamage);// Чем ближе к игроку протимник тем больше damage
-            if (rigitbody.gameObject.CompareTag("Bomb") && damage >= (explosionDamage/2/*магическое число*/))    // Активируем бомбу если она задета взрывом достаточно сильно
+
+            if (rigitbody.TryGetComponent(out bomb))
             {
-                rigitbody.gameObject.GetComponent<Bomb>().SetActive(true);
+                bomb.SetActive(true);
             }
             rigitbody.AddExplosionForce(explosionForce, transform.position, explosionRadius);
-            HealthControll healthControll;
             if (rigitbody.TryGetComponent(out healthControll))
             {
-                healthControll.ChangeHealth(-damage);
+                healthControll.ChangeHealth(-explosionDamage);
             }
         }
         Exploded?.Invoke();

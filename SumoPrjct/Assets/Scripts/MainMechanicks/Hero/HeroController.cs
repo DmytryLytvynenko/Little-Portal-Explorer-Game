@@ -15,8 +15,9 @@ public class HeroController : MonoBehaviour
     [SerializeField] private float velocityToExplode;
     [SerializeField] private int explosionDamage;
     [SerializeField] private LayerMask raycastLayerMask;
+    [SerializeField] private float damageJumpForce;
+
     private bool canExplode = false;
-    private float damageJumpForce;
 
     //Elements for buff system
     Dictionary<string, MyDelegate> buffableStats;
@@ -49,19 +50,29 @@ public class HeroController : MonoBehaviour
             return new Vector3(horizontal, 0.0f, vertical);
         }
     }
+
+    #region MonoBeh
     private void OnEnable()
     {
+        healthControll.DamageTaken += OnDamageTaken;
         Buff.BuffCollected += OnBuffCollected;
         Enemy.EnemyAndPlayerContacted += OnEnemyColission;
     }
     private void OnDisable()
     {
+        healthControll.DamageTaken -= OnDamageTaken;
         Buff.BuffCollected -= OnBuffCollected;
         Enemy.EnemyAndPlayerContacted -= OnEnemyColission;
     }
 
     private void Awake()
     {
+        healthControll = GetComponent<HealthControll>();
+        explosion = GetComponent<Explosion>();
+        rb = GetComponent<Rigidbody>();
+        /*ch_animator = GetComponent<Animator>();*/
+        mController = GameObject.FindGameObjectWithTag("Joystick").GetComponent<MobileController>();
+
         MyDelegate[] buffFoos = new MyDelegate[]
         {
             // Присваиваем значения элементам массива
@@ -70,7 +81,7 @@ public class HeroController : MonoBehaviour
             BuffJumpForce
         };
 
-        buffableStats = new Dictionary<string, MyDelegate>() 
+        buffableStats = new Dictionary<string, MyDelegate>()
         {
             // Присваиваем значения элементам словаря <название усиленной характеристики, функция которая ее усиливает>
             { "Explosion Radius", buffFoos[0]},//magic word!!!
@@ -80,16 +91,11 @@ public class HeroController : MonoBehaviour
     }
     private void Start()
     {
-        healthControll = GetComponent<HealthControll>();
-        explosion = GetComponent<Explosion>();
-        rb = GetComponent<Rigidbody>();
-        /*ch_animator = GetComponent<Animator>();*/
-        mController = GameObject.FindGameObjectWithTag("Joystick").GetComponent<MobileController>();
-
         defaultMoveSpeed = moveSpeed;
         defaultMaxSpeed = maxSpeed;
-        damageJumpForce = jumpForce;
-    }
+    } 
+    #endregion
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
@@ -166,12 +172,24 @@ public class HeroController : MonoBehaviour
             canExplode = true;
         }
     }
-    private void JumpOnTakeDamage(Transform enemy)
+    private void JumpOnTakeDamage(Transform enemy = null)
     {
-        Vector3 dir = new Vector3(enemy.transform.position.x - transform.position.x, 0, enemy.transform.position.z - transform.position.z);
-        rb.AddForce(-dir * damageJumpForce, ForceMode.Impulse);
+        Vector3 dir;
+        if (enemy == null)
+        {
+            dir = -moveVector;
+        }
+        else
+        {
+            dir = new Vector3(
+                transform.position.x - enemy.position.x,
+                (transform.position.y + 2f - enemy.position.y),
+                transform.position.z - enemy.position.z);
+            Debug.DrawLine(enemy.transform.position, transform.position, Color.green, 100f);
+        }
+        rb.AddForce(dir * damageJumpForce, ForceMode.Impulse);
         explosion.NoDamageExplode();
-        Debug.DrawLine(enemy.transform.position, transform.position, Color.green, 100f);
+
     }
     void OnCollisionEnter(Collision collision)
     {
@@ -185,7 +203,7 @@ public class HeroController : MonoBehaviour
         {
             canExplode = false;
         }
-        if (collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("Bullet") || collision.gameObject.CompareTag("Boss"))
+        if (collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("Projectile"))
         {
             JumpOnTakeDamage(collision.transform);
         }
@@ -264,6 +282,11 @@ public class HeroController : MonoBehaviour
     public void SetSpeedToDefault()
     {
         moveSpeed = defaultMoveSpeed;
+    }
+
+    private void OnDamageTaken()
+    {
+        JumpOnTakeDamage();
     }
 
 }

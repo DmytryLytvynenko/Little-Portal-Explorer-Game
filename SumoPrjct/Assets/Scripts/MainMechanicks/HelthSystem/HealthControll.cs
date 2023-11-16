@@ -10,6 +10,7 @@ public class HealthControll : MonoBehaviour
     private int currentHelth;
 
     public event Action<float> HealthChanged;
+    public event Action DamageTaken;
     public event Action EntityDied;
 
     private void OnEnable()
@@ -36,6 +37,9 @@ public class HealthControll : MonoBehaviour
 
     public void ChangeHealth(int value)
     {
+        if (value < 0)
+            DamageTaken?.Invoke();
+
         currentHelth += value;
         if (currentHelth > maxHealth)
         {

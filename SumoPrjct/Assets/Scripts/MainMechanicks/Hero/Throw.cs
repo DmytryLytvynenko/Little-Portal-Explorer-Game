@@ -33,12 +33,8 @@ public class Throw : MonoBehaviour
         {
             Rigidbody rigitbody = overlappedColiders[i].attachedRigidbody;
             if (!rigitbody) continue;
-            if (rigitbody.gameObject.CompareTag("Player")) continue;
+            if (rigitbody.gameObject == this.gameObject) continue;
 
-/*            Vector3 enemyDir = new Vector3(rigitbody.transform.position.x - transform.position.x,
-                                           yThrowAngle,
-                                           rigitbody.transform.position.z - transform.position.z);
-            rigitbody.AddForce(enemyDir.normalized * throwForce, ForceMode.Impulse);*/
             rigitbody.AddExplosionForce(throwForce, new Vector3(transform.position.x, rigitbody.position.y - yThrowAngle, transform.position.z), explosionRadius);
             Debug.DrawLine(new Vector3(transform.position.x, rigitbody.position.y - yThrowAngle, transform.position.z), rigitbody.position,Color.red, 100f);
             if (rigitbody.gameObject.CompareTag("Bomb"))

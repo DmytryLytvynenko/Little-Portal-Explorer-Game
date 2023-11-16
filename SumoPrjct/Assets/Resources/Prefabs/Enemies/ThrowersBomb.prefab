@@ -115,7 +115,7 @@ GameObject:
   - component: {fileID: 6153512646751828439}
   m_Layer: 16
   m_Name: ThrowersBomb
-  m_TagString: Untagged
+  m_TagString: Bomb
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -214,7 +214,7 @@ MonoBehaviour:
   duration: 1
   height: 1
   pushForce: 5
-  explosionDelay: 2
+  explosionDelay: 5
 --- !u!54 &278043096728163156
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -244,7 +244,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosionRadius: 4
-  explosionForce: 3000
+  explosionForce: 200
   noDamageExplosionForce: 0
   noDamageExplosionRadius: 0
   explosionEffect: {fileID: 6605087354438946986, guid: 5f06ed8731fc1984f9adc4a81cc691bf,

@@ -7,6 +7,7 @@ public class FallExplosionTutorial : MonoBehaviour
 {
     [SerializeField] private Button explosionButton;
     [SerializeField] private GameObject explosionTip;
+    [SerializeField] private GameObject obstacles;
     [SerializeField] private string animParameterName = "Disappear";// Параметр для переключенияя анимации в аниматоре
 
     private bool isTriggered;
@@ -34,6 +35,7 @@ public class FallExplosionTutorial : MonoBehaviour
             isTriggered = true;
             explosionButton.interactable = false;
             explosionTip.SetActive(true);
+            obstacles.SetActive(true);
         }
     }
 }

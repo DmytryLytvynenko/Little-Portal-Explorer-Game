@@ -45,7 +45,7 @@ public class ThrowerController : Enemy
             if (GetRotationVector(target).magnitude < explosionRadius)
                 return AttackAction.Explosion;
 
-            int rand =  UnityEngine.Random.Range(1, 2); 
+            int rand =  UnityEngine.Random.Range(0, 2); 
             return (AttackAction)rand; 
         }  
     }
