@@ -8,7 +8,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] private StartState startState;
     [SerializeField] protected Transform target;
     [SerializeField] protected Transform IdleMoovementArea;
-    [SerializeField] private IdleTargetTrigger IdleTargetTrigger;
+    [SerializeField] protected IdleTargetTrigger idleTargetTrigger;
     [SerializeField] private SphereCollider chaseCollider;
     [SerializeField] protected int contactDamage;
     [SerializeField] protected float moveSpeed;
@@ -69,7 +69,7 @@ public class Enemy : MonoBehaviour
     protected virtual void Awake()
     {
         stateMachine = new EnemyStateMachine();
-        idleState = new EnemyIdleState(this, stateMachine, IdleMoovementArea, IdleTargetTrigger.transform);
+        idleState = new EnemyIdleState(this, stateMachine, IdleMoovementArea, idleTargetTrigger.transform);
         chaseState = new EnemyChaseState(this, stateMachine, chaseCollider, AgrDistance, target);
         stayState = new EnemyStayState(this, stateMachine, target);
     }
@@ -151,7 +151,7 @@ public class Enemy : MonoBehaviour
         Gizmos.color = Color.yellow;
         if (idleState != null)
         {
-            Gizmos.DrawWireSphere(IdleTargetTrigger.transform.position, 0.1f);
+            Gizmos.DrawWireSphere(idleTargetTrigger.transform.position, 0.1f);
         }  
         if (chaseState != null)
         {

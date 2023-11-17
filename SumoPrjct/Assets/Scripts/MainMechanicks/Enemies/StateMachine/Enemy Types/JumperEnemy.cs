@@ -14,20 +14,26 @@ public class JumperEnemy : Enemy
 
     private float timer = 0;
 
+    protected override void Awake()
+    {
+        target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        base.Awake();
+    }
     protected override void Start()
     {
         base.Start();
 
         rb = GetComponent<Rigidbody>();
-        target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         launch = new Launch.Launch();
     }
 
-    // Update is called once per frame
-    private void Update()
+    protected void Update()
     {
-        Rotate(target);
-        Move();
+        stateMachine.CurrentEnemyState.FrameUpdate();
+    }
+    protected void FixedUpdate()
+    {
+        stateMachine.CurrentEnemyState.PhysicsUpdate();
     }
 
     public override void Move()
@@ -44,6 +50,20 @@ public class JumperEnemy : Enemy
             }
             else
             {
+                if (stateMachine.CurrentEnemyState == idleState)
+                {
+                    if (GetRotationVector(idleTargetTrigger.transform).magnitude < aimedJumpDistanse)
+                    {
+                        launch.InitiateLaunch(idleTargetTrigger.transform, rb, jumpHeightMultiplier, Physics.gravity.y);
+                        isGrounded = false;
+                    }                
+                    else
+                    {
+                        rb.AddForce((transform.up * jumpHeightMultiplier + transform.forward).normalized * jumpForce, ForceMode.Impulse);
+                        isGrounded = false;
+                    }
+                    return;
+                }
                 rb.AddForce((transform.up * jumpHeightMultiplier + transform.forward).normalized * jumpForce, ForceMode.Impulse);
                 isGrounded = false;
             }
