@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class HeroController : MonoBehaviour
 {
-    //Oсновные параметры
+    [Header("Oсновные параметры")]
     [SerializeField] private float jumpForce;
     [SerializeField] private float moveSpeed;
     [SerializeField] private float maxSpeed;
@@ -24,11 +23,12 @@ public class HeroController : MonoBehaviour
     private delegate IEnumerator MyDelegate(float newRadius, float buffCooldown);
 
 
-    //Ссылки на компоненты
+    [Header("Cсылки на компоненты")]
     [SerializeField] private GameObject LoseScreen;
     [SerializeField] private Transform cameraRoot;
     [SerializeField] private SurfaceSlider surfaceSlider;
     [SerializeField] private VerticalAccelerator verticalAccelerator;
+    [field:SerializeField] public PlayerDeformator PlayerDeformator { get; private set; }
     private HealthControll healthControll;
     private MobileController mController;
     private Animator ch_animator;
@@ -172,12 +172,12 @@ public class HeroController : MonoBehaviour
             canExplode = true;
         }
     }
-    private void JumpOnTakeDamage(Transform enemy = null)
+    private void JumpOnTakeDamage(Transform enemy)
     {
         Vector3 dir;
         if (enemy == null)
         {
-            dir = -moveVector;
+            dir = new Vector3(Random.Range(-1f,1f),1, Random.Range(-1f, 1f)).normalized;
         }
         else
         {
@@ -202,10 +202,6 @@ public class HeroController : MonoBehaviour
         else
         {
             canExplode = false;
-        }
-        if (collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("Projectile"))
-        {
-            JumpOnTakeDamage(collision.transform);
         }
     }
     void OnCollisionExit(Collision collision)
@@ -284,9 +280,9 @@ public class HeroController : MonoBehaviour
         moveSpeed = defaultMoveSpeed;
     }
 
-    private void OnDamageTaken()
+    private void OnDamageTaken(Transform damager)
     {
-        JumpOnTakeDamage();
+        JumpOnTakeDamage(damager);
     }
 
 }

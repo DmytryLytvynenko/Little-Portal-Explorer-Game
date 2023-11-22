@@ -6,13 +6,13 @@ public class ThrowerBomb : Projectile
     [SerializeField] private float height;
     [SerializeField] private float pushForce;
     [SerializeField] private float explosionDelay;
+    [SerializeField] private int explosionDamage = 20;
 
     private Explosion explosion;
     private Rigidbody bombRigidbody;
     private float moveSpeed;
     private float startHeight;
     private float curveEnd;
-    private int explosionDamage = 20;
 
     private void Awake()
     {

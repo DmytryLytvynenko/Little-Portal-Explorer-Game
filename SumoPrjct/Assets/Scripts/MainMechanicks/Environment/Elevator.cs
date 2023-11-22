@@ -10,17 +10,25 @@ public class Elevator : MonoBehaviour
     [SerializeField] protected float height;
     [SerializeField] protected bool AtStartPosition = true;
 
+    protected Rigidbody rb;
+    protected private Coroutine coroutine;
+
     private Vector3 moveVector;
     private Vector3 startPosition;
+
+    private void Start()
+    {
+        rb = GetComponent<Rigidbody>();
+    }
     private IEnumerator PlayAnimation()
     {
         if (AtStartPosition)
         {
-            moveVector = endPoint.position - startPoint.position;
+            moveVector = (endPoint.position - startPoint.position);
         }
         else
         {
-            moveVector = startPoint.position - endPoint.position;
+            moveVector = (startPoint.position - endPoint.position);
         }
         startPosition = transform.position;
         float expiredTime = 0f;
@@ -31,27 +39,42 @@ public class Elevator : MonoBehaviour
             expiredTime += Time.deltaTime;
             progress = expiredTime / duration;
 
-            transform.position = startPosition + moveVector * moovementCurve.Evaluate(progress);
+            /*            Vector3 offset = new Vector3(moveVector.x * expiredTime, moveVector.y * expiredTime, moveVector.z * expiredTime);
+                        rb.MovePosition(rb.position + offset);*/
+            /*            transform.position = startPosition + moveVector * moovementCurve.Evaluate(progress);*/
+            Vector3 dir = (startPosition + moveVector * moovementCurve.Evaluate(progress) - transform.position);
+            transform.Translate(dir);
 
             yield return null;
         }
         AtStartPosition = !AtStartPosition;
+        coroutine = null;
     }
     public void ActivateElevator()
     {
-        StartCoroutine(PlayAnimation());
+        if (coroutine == null)
+        {
+            coroutine = StartCoroutine(PlayAnimation());
+        }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.GetComponent<HeroController>())
+        HeroController heroController;
+        if (other.TryGetComponent(out heroController))
         {
-            other.transform.parent = transform;
+            heroController.transform.parent = transform;
+            heroController.PlayerDeformator.DeactivateDeformator();
             ActivateElevator();
         }
     }
     private void OnTriggerExit(Collider other)
     {
         other.transform.parent = null;
+        HeroController heroController;
+        if (other.TryGetComponent(out heroController))
+        {
+            heroController.PlayerDeformator.ActivateDeformator();
+        }
     }
 }

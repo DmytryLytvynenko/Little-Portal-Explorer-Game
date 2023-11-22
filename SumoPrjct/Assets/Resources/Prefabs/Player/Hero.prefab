@@ -118,7 +118,7 @@ GameObject:
   m_Layer: 10
   m_Name: Hero
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -155,7 +155,7 @@ Rigidbody:
   m_AngularDrag: 0.5
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 1
+  m_Interpolate: 2
   m_Constraints: 112
   m_CollisionDetection: 3
 --- !u!136 &5763825199413968593
@@ -186,10 +186,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosionRadius: 2
   explosionForce: 3000
-  noDamageExplosionForce: 200
-  noDamageExplosionRadius: 7
+  noDamageExplosionForce: 1000
+  noDamageExplosionRadius: 4
   explosionEffect: {fileID: 6605087354438946986, guid: 4f4394901f46a6f4c92f37d482f7bbd7,
     type: 3}
+  explosionLayers:
+    serializedVersion: 2
+    m_Bits: 276481
 --- !u!114 &5763825199413968552
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -217,6 +220,7 @@ MonoBehaviour:
   cameraRoot: {fileID: 0}
   surfaceSlider: {fileID: 5763825199413968597}
   verticalAccelerator: {fileID: 5763825199413968595}
+  <PlayerDeformator>k__BackingField: {fileID: 5763825201019074169}
 --- !u!114 &5763825199413968599
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -244,9 +248,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   throwArea: {fileID: 5763825200303609873}
   yThrowAngle: 1
-  throwForce: 3000
+  throwForce: 2000
   explosionRadius: 0
-  throwDamage: 500
+  throwDamage: 100
+  throwLayers:
+    serializedVersion: 2
+    m_Bits: 276481
 --- !u!114 &5763825199413968597
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -272,9 +279,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cff2e2c49475f54da3f887740ededf5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackForce: 100
+  attackForce: 1000
   attackDamage: 500
   attackArea: {fileID: 5763825200303609873}
+  attackLayers:
+    serializedVersion: 2
+    m_Bits: 276481
 --- !u!114 &5763825199413968595
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -360,9 +370,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 0, b: 0, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
+  m_Maskable: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -387,7 +397,6 @@ GameObject:
   - component: {fileID: 5763825199675332681}
   - component: {fileID: 5763825199675332684}
   - component: {fileID: 5763825199675332683}
-  - component: {fileID: 5763825199675332682}
   m_Layer: 10
   m_Name: StatsCanvas
   m_TagString: Untagged
@@ -435,7 +444,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!114 &5763825199675332683
 MonoBehaviour:
@@ -460,23 +469,6 @@ MonoBehaviour:
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
   m_PresetInfoIsWorld: 1
---- !u!114 &5763825199675332682
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5763825199675332680}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_IgnoreReversedGraphics: 1
-  m_BlockingObjects: 0
-  m_BlockingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
 --- !u!1 &5763825200303609872
 GameObject:
   m_ObjectHideFlags: 0
@@ -872,7 +864,7 @@ MonoBehaviour:
   scaleKoefficirnt: 3.5
   rotationKoefficient: 150
   scaleDown: {x: 1.2, y: 0.8, z: 1.2}
-  scaleUp: {x: 0.8, y: 1.2, z: 0.8}
+  scaleUp: {x: 0.9, y: 1.1, z: 0.9}
 --- !u!1 &5763825201090729714
 GameObject:
   m_ObjectHideFlags: 0
@@ -935,9 +927,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 0.72156864}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
+  m_Maskable: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []

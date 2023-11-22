@@ -10,9 +10,10 @@ public class HealthControll : MonoBehaviour
     private int currentHelth;
 
     public event Action<float> HealthChanged;
-    public event Action DamageTaken;
+    public event Action<Transform> DamageTaken;
     public event Action EntityDied;
 
+    Vector3 ZeroVector = Vector3.zero;
     private void OnEnable()
     {
         Heal.HealCollected += OnHealCollected;
@@ -35,10 +36,10 @@ public class HealthControll : MonoBehaviour
         }
     }
 
-    public void ChangeHealth(int value)
+    public void ChangeHealth(int value, Transform damager = null)
     {
         if (value < 0)
-            DamageTaken?.Invoke();
+            DamageTaken?.Invoke(damager);
 
         currentHelth += value;
         if (currentHelth > maxHealth)

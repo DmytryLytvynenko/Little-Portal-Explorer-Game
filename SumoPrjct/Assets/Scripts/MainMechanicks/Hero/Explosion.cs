@@ -8,6 +8,7 @@ public class Explosion : MonoBehaviour
     [SerializeField] private float noDamageExplosionForce;
     [SerializeField] private float noDamageExplosionRadius;
     [SerializeField] private GameObject explosionEffect;
+    [SerializeField] private LayerMask explosionLayers;
     public static Action Exploded;
 
     private EffectScaling effectScaling;
@@ -38,19 +39,13 @@ public class Explosion : MonoBehaviour
     }
     public void Explode(int explosionDamage)
     {
-        Collider[] overlappedColiders = Physics.OverlapSphere(transform.position, explosionRadius);
+        Collider[] overlappedColiders = Physics.OverlapSphere(transform.position, explosionRadius, explosionLayers);
         Bomb bomb;
         HealthControll healthControll;
         for (int i = 0; i < overlappedColiders.Length; i++)
         {
             Rigidbody rigitbody = overlappedColiders[i].attachedRigidbody;
-            if (overlappedColiders[i].isTrigger)
-                continue;
             if (rigitbody == null)
-                continue;
-            if (rigitbody.CompareTag("Bullet"))
-                continue;
-            if (rigitbody.gameObject.layer == gameObject.layer)
                 continue;
 
             if (rigitbody.TryGetComponent(out bomb))
@@ -65,9 +60,9 @@ public class Explosion : MonoBehaviour
         }
         Exploded?.Invoke();
 
-        Ray ray = new Ray(transform.position, -100 * Vector3.up);
-        Physics.Raycast(ray, out RaycastHit hit);
-        Instantiate(explosionEffect,new Vector3(hit.point.x, hit.point.y + 0.01f, hit.point.z), Quaternion.identity);
+        Ray ray = new Ray(new Vector3(transform.position.x, transform.position.y + 1, transform.position.z), -100 * Vector3.up);
+        Physics.Raycast(ray, out RaycastHit hit, explosionLayers);
+        Instantiate(explosionEffect, new Vector3(hit.point.x, hit.point.y + 0.01f, hit.point.z), Quaternion.identity);
     }
     public void NoDamageExplode()
     {

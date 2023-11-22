@@ -20,7 +20,6 @@ public class ThrowerController : Enemy
     [SerializeField] private float attackDistnace;
 
     [SerializeField] private float shootCooldown;
-    [SerializeField] private float shootDistanse;
     [SerializeField] private float timeBeforeShoot;
     [SerializeField] private float explosionRadius;
     [SerializeField] private float explosionDelay;

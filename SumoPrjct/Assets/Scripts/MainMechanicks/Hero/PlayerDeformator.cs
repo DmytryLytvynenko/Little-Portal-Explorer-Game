@@ -1,6 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class PlayerDeformator : MonoBehaviour
 {
@@ -40,5 +39,15 @@ public class PlayerDeformator : MonoBehaviour
             return Vector3.LerpUnclamped(a, b, t + 1f);
         else
             return Vector3.LerpUnclamped(b, c, t);
+    }
+    public void DeactivateDeformator()
+    {
+        this.enabled = false;
+        playerBody.localScale = defaultScale;
+        playerBody.localRotation = Quaternion.Euler(0,0,0);
+    }
+    public void ActivateDeformator()
+    {
+        this.enabled = true;
     }
 }

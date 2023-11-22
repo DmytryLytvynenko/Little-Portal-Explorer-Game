@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 791797780}
   - component: {fileID: 791797779}
   - component: {fileID: 791797778}
-  m_Layer: 11
+  m_Layer: 2
   m_Name: Target
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -69,7 +69,7 @@ GameObject:
   - component: {fileID: 943162513}
   - component: {fileID: 943162511}
   - component: {fileID: 943162512}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: ChaseArea
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -127,7 +127,7 @@ GameObject:
   - component: {fileID: 1423859313}
   - component: {fileID: 1423859315}
   - component: {fileID: 585354328157702538}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: AttackArea
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -185,7 +185,7 @@ GameObject:
   - component: {fileID: 1549587850}
   - component: {fileID: 1549587852}
   - component: {fileID: 1549587851}
-  m_Layer: 11
+  m_Layer: 5
   m_Name: HealthBarFilling
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -262,7 +262,7 @@ GameObject:
   - component: {fileID: 1803910581}
   - component: {fileID: 1803910580}
   - component: {fileID: 1803910579}
-  m_Layer: 11
+  m_Layer: 5
   m_Name: StatsCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -363,7 +363,7 @@ GameObject:
   - component: {fileID: 2080449617}
   - component: {fileID: 2080449616}
   - component: {fileID: 2080449615}
-  m_Layer: 11
+  m_Layer: 5
   m_Name: HealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -610,9 +610,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startState: 1
-  target: {fileID: 0}
+  target: {fileID: 791797780}
   IdleMoovementArea: {fileID: 0}
-  IdleTargetTrigger: {fileID: 791797778}
+  idleTargetTrigger: {fileID: 791797778}
   chaseCollider: {fileID: 943162511}
   contactDamage: -10
   moveSpeed: 4
@@ -630,7 +630,6 @@ MonoBehaviour:
   attackCollider: {fileID: 1423859315}
   attackDistnace: 8
   shootCooldown: 3
-  shootDistanse: 0
   timeBeforeShoot: 1
   explosionRadius: 3
   explosionDelay: 3
@@ -647,7 +646,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33438a174875f1940a1dee41e10cee11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth: 5000
 --- !u!114 &3096531185797414149
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -682,6 +681,9 @@ MonoBehaviour:
   noDamageExplosionRadius: 0
   explosionEffect: {fileID: 6605087354438946986, guid: a8b231a8276f0384fac4979cc1a48e18,
     type: 3}
+  explosionLayers:
+    serializedVersion: 2
+    m_Bits: 15361
 --- !u!1 &3096531186675476053
 GameObject:
   m_ObjectHideFlags: 0
@@ -691,7 +693,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3096531186675476052}
-  m_Layer: 11
+  m_Layer: 2
   m_Name: BombShootPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -722,7 +724,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3096531187292151520}
-  m_Layer: 11
+  m_Layer: 2
   m_Name: DiskShootPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}

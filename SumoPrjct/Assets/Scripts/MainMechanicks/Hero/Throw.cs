@@ -12,23 +12,22 @@ public class Throw : MonoBehaviour
     [SerializeField] private float throwForce;
     [SerializeField] private float explosionRadius;
     [SerializeField] private int throwDamage;
+    [SerializeField] private LayerMask throwLayers;
 
     private float xThrowSize;
     private float yThrowSize;
     private float zThrowSize;
-    Quaternion attackAreaRotation;
 
     private void Start()
     {
         xThrowSize = throwArea.localScale.x;
         yThrowSize = throwArea.localScale.y;
         zThrowSize = throwArea.localScale.z;
-        attackAreaRotation = throwArea.rotation;
     }
 
     public void HeroThrow()
     {
-        Collider[] overlappedColiders = Physics.OverlapBox(throwArea.position, new Vector3(xThrowSize / 2, yThrowSize / 2, zThrowSize / 2), throwArea.rotation);
+        Collider[] overlappedColiders = Physics.OverlapBox(throwArea.position, new Vector3(xThrowSize / 2, yThrowSize / 2, zThrowSize / 2), throwArea.rotation, throwLayers);
         for (int i = 0; i < overlappedColiders.Length; i++)
         {
             Rigidbody rigitbody = overlappedColiders[i].attachedRigidbody;

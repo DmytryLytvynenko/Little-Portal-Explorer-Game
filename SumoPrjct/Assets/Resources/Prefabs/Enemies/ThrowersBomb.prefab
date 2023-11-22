@@ -249,6 +249,9 @@ MonoBehaviour:
   noDamageExplosionRadius: 0
   explosionEffect: {fileID: 6605087354438946986, guid: 5f06ed8731fc1984f9adc4a81cc691bf,
     type: 3}
+  explosionLayers:
+    serializedVersion: 2
+    m_Bits: 277505
 --- !u!136 &6153512646751828439
 CapsuleCollider:
   m_ObjectHideFlags: 0

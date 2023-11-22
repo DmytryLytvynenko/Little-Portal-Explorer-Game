@@ -5,6 +5,7 @@ public class Attack : MonoBehaviour
     [SerializeField] private float attackForce;
     [SerializeField] private int attackDamage;
     [SerializeField] private Transform attackArea;
+    [SerializeField] private LayerMask attackLayers;
 
     private float xThrowSize;
     private float yThrowSize;
@@ -20,7 +21,7 @@ public class Attack : MonoBehaviour
     }
     public void InitiateAttack(float attackForce, int attackDamage)
     {
-        Collider[] overlappedColiders = Physics.OverlapBox(attackArea.position, new Vector3(xThrowSize / 2, yThrowSize / 2, zThrowSize / 2), attackAreaRotation);
+        Collider[] overlappedColiders = Physics.OverlapBox(attackArea.position, new Vector3(xThrowSize / 2, yThrowSize / 2, zThrowSize / 2), attackAreaRotation, attackLayers);
         for (int i = 0; i < overlappedColiders.Length; i++)
         {
             Rigidbody rigitbody = overlappedColiders[i].attachedRigidbody;

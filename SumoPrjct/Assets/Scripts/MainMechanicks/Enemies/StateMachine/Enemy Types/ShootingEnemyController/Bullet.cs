@@ -46,7 +46,7 @@ public class Bullet : MonoBehaviour
             {
 				damage *= damageMultiplier;
 			}
-			collision.gameObject.GetComponent<HealthControll>().ChangeHealth(-damage);
+			collision.gameObject.GetComponent<HealthControll>().ChangeHealth(-damage,transform);
 		}
 	}
 }
