@@ -184,8 +184,7 @@ public class HeroController : MonoBehaviour
             dir = new Vector3(
                 transform.position.x - enemy.position.x,
                 (transform.position.y + 2f - enemy.position.y),
-                transform.position.z - enemy.position.z);
-            Debug.DrawLine(enemy.transform.position, transform.position, Color.green, 100f);
+                transform.position.z - enemy.position.z).normalized;
         }
         rb.AddForce(dir * damageJumpForce, ForceMode.Impulse);
         explosion.NoDamageExplode();
@@ -225,9 +224,9 @@ public class HeroController : MonoBehaviour
         buffableStats.TryGetValue(buffedStatName, out MyDelegate foo);
         StartCoroutine(foo(newValue, buffCooldown));
     }   
-    private void OnEnemyColission(int contactDamage)
+    private void OnEnemyColission(int contactDamage, Transform damager)
     {
-        healthControll.ChangeHealth(contactDamage);
+        healthControll.ChangeHealth(contactDamage, damager);
     }
     private IEnumerator BuffExplosionRadius(float newRadius, float buffCooldown)
     {

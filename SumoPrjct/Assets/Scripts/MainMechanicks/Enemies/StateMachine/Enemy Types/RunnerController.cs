@@ -9,7 +9,7 @@ public class RunnerController : Enemy
     [SerializeField] private float maxRunSpeed;
     [SerializeField] private float runDistnace;
     [SerializeField] private float runTime;
-    [SerializeField] private float waitTillRunTime;
+    [SerializeField] private float runDelay;
     [SerializeField] private SphereCollider attackCollider;
     public RunnerRunState atackState { get; set; }
 
@@ -21,6 +21,7 @@ public class RunnerController : Enemy
 
     protected override void Awake()
     {
+        target = GlobalData.PlayerInstance.transform;
         base.Awake();
 
         atackState = new RunnerRunState(this, stateMachine, attackCollider, runDistnace, target);
@@ -29,7 +30,6 @@ public class RunnerController : Enemy
     protected override void Start()
     {
         rb = GetComponent<Rigidbody>();
-        target = FindAnyObjectByType<HeroController>().transform;
 
         base.Start();
     }
@@ -48,7 +48,7 @@ public class RunnerController : Enemy
             rb.AddForce(transform.forward * moveSpeed, ForceMode.Impulse);//метод передвижения 
         }
     }
-    public IEnumerator Run(float runDelay)
+    public IEnumerator Run()
     {
         Vector3 runVector;
         float timer = 0;

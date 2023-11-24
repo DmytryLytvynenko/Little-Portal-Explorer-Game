@@ -2,10 +2,14 @@
 
 public class ChasingEnemyController : Enemy
 {
+    protected override void Awake()
+    {
+        target = GlobalData.PlayerInstance.transform;
+        base.Awake();
+    }
     protected override void Start()
     {
         rb = GetComponent<Rigidbody>();
-        target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         base.Start();
     }
     protected void Update()

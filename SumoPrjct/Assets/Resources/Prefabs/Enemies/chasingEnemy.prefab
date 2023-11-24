@@ -213,7 +213,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1975718632327816936}
-  m_Material: {fileID: 13400000, guid: 3131b94f9a7281543b74bce35421967a, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -227,14 +227,14 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1975718632327816936}
   serializedVersion: 2
-  m_Mass: 6
+  m_Mass: 10
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 112
-  m_CollisionDetection: 0
+  m_CollisionDetection: 3
 --- !u!114 &6565791037162324343
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -247,14 +247,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89811b9eadd99724d833caf98f28fb41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startState: 0
   target: {fileID: 0}
-  IdleTargetTrigger: {fileID: 1477253331964913250}
   IdleMoovementArea: {fileID: 0}
+  idleTargetTrigger: {fileID: 1477253331964913250}
   chaseCollider: {fileID: 5434818878631597176}
   contactDamage: -5
-  moveSpeed: 2
-  maxSpeed: 3
-  rotationSpeed: 15
+  moveSpeed: 4
+  maxSpeed: 5
+  rotationSpeed: 22
   AgrDistance: 15
 --- !u!114 &6898927680364757545
 MonoBehaviour:

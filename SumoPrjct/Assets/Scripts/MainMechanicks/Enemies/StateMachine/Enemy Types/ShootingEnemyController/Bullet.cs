@@ -7,6 +7,7 @@ public class Bullet : MonoBehaviour
 
 	[SerializeField] private int damage;
 	[SerializeField] private GameObject pointer;
+	[SerializeField] private LayerMask layerMask;
 
     private Rigidbody bullet;
 	private GameObject _pointer;
@@ -25,9 +26,9 @@ public class Bullet : MonoBehaviour
 	}
 	private void DrawPointer()
     {
-		Ray ray = new Ray(targetPoint.position, -Vector3.up*10);
+		Ray ray = new Ray(targetPoint.position, -Vector3.up*100);
 		RaycastHit hit;
-		Physics.Raycast(ray, out hit);
+		Physics.Raycast(ray, out hit,100f, layerMask);
 		Vector3 drawPoint = hit.point;
 		_pointer = Instantiate(pointer, drawPoint, Quaternion.identity);
 	}
@@ -39,7 +40,7 @@ public class Bullet : MonoBehaviour
 		HealthControll healthControll;
         if (collision.gameObject.TryGetComponent(out healthControll))
 		{
-			healthControll.ChangeHealth(damage);
+			healthControll.ChangeHealth(damage, transform);
 		}
 	}
 }

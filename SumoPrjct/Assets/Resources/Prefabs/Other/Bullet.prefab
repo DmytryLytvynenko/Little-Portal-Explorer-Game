@@ -130,5 +130,8 @@ MonoBehaviour:
   targetPoint: {fileID: 0}
   damage: -5
   pointer: {fileID: 6193311813821381323, guid: 0f5c00a049be0a14794c348139611fe7, type: 3}
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 1
   trajectoryHeight: 1.5
   debugPath: 0

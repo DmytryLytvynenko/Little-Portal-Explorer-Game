@@ -37,7 +37,7 @@ public class Enemy : MonoBehaviour
 
     #region Events
 
-    public static Action<int> EnemyAndPlayerContacted;
+    public static Action<int, Transform> EnemyAndPlayerContacted;
     public Action IdleTargetReached;
     public Action PlayerEnteredChaseZone;
     public Action PlayerExitedChaseZone;
@@ -131,7 +131,7 @@ public class Enemy : MonoBehaviour
     protected virtual void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.GetComponent<HeroController>())//magic word!!!
-            EnemyAndPlayerContacted?.Invoke(contactDamage);
+            EnemyAndPlayerContacted?.Invoke(contactDamage, transform);
 
         if (collision.gameObject.CompareTag("Ground"))//magic word!!!
             isGrounded = true;

@@ -6,7 +6,6 @@ public class RunnerRunState : EnemyState
     private Transform target;
     private RunnerController runner;
     private Coroutine runCoroutine;
-    private float runDelay = 2f;
     private Zone currentZone;
 
     private enum Zone
@@ -67,7 +66,7 @@ public class RunnerRunState : EnemyState
 
 
         enemyStateMachine.ChangeState(this);
-        runCoroutine = Coroutines.StartRoutine(runner.Run(runDelay));
+        runCoroutine = Coroutines.StartRoutine(runner.Run());
     }
     private void OnPlayerExitedAttackZone()
     {
@@ -80,7 +79,8 @@ public class RunnerRunState : EnemyState
     }
     private void OnEnemyEndedRun()
     {
-       switch (currentZone) 
+        runCoroutine = null;
+        switch (currentZone) 
         {
             case Zone.none:
                 enemyStateMachine.ChangeState(enemy.idleState);
@@ -94,7 +94,6 @@ public class RunnerRunState : EnemyState
 
             default: break;
         }
-        runCoroutine = null;
     }
 }
 
