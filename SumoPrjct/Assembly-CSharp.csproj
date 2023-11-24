@@ -90,8 +90,10 @@
     <Compile Include="Assets\Scripts\Tutorial\RotateTutorialTracker.cs" />
     <Compile Include="Assets\Scripts\MainMechanicks\Hero\Throw.cs" />
     <Compile Include="Assets\Scripts\MainMechanicks\Enemies\StateMachine\TriggerChecks\ShooterAttackTrigger.cs" />
+    <Compile Include="Assets\Scripts\MainMechanicks\Enemies\StateMachine\TriggerChecks\BomberAttackTrigger.cs" />
     <Compile Include="Assets\Scripts\MainMechanicks\Enemies\StateMachine\Enemy Types\Thrower\ThrowerController.cs" />
     <Compile Include="Assets\Scripts\PlayerRespawner.cs" />
+    <Compile Include="Assets\Scripts\MainMechanicks\Enemies\StateMachine\StateMachine\NonBasicBehaviours\BomberEnemyAtackState.cs" />
     <Compile Include="Assets\PostProcessing\Utilities\CustomMotionTexture\ExampleWheelController.cs" />
     <Compile Include="Assets\Scripts\Test\RotateTowards.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Components\VignetteComponent.cs" />
@@ -139,6 +141,7 @@
     <Compile Include="Assets\MeshCombiner\Scripts\MeshCombiner.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Components\UserLutComponent.cs" />
     <Compile Include="Assets\Scripts\Tutorial\Respawn.cs" />
+    <Compile Include="Assets\Scripts\MainMechanicks\Enemies\StateMachine\Enemy Types\BomberEnemy\BomberController.cs" />
     <Compile Include="Assets\Scripts\Tutorial\ExplosionTutorial.cs" />
     <Compile Include="Assets\Scripts\MainMechanicks\BombSpawn.cs" />
     <Compile Include="Assets\Scripts\MainMechanicks\Enemies\StateMachine\Enemy Types\RunnerController.cs" />
@@ -148,6 +151,7 @@
     <Compile Include="Assets\Scripts\LevelTeleport.cs" />
     <Compile Include="Assets\Scripts\Menu\FallingObject.cs" />
     <Compile Include="Assets\Scripts\MainMechanicks\Bomb.cs" />
+    <Compile Include="Assets\Scripts\MainMechanicks\UI\FaceCamera.cs" />
     <Compile Include="Assets\Scripts\MainMechanicks\Enemies\StateMachine\StateMachine\NonBasicBehaviours\ThrowerEnemyAtackState.cs" />
     <Compile Include="Assets\Scripts\Tutorial\ItemCounter.cs" />
     <Compile Include="Assets\Scripts\MainMechanicks\UI\CameraRotate.cs" />
@@ -181,6 +185,7 @@
     <Compile Include="Assets\Scripts\MainMechanicks\Enemies\StateMachine\Enemy Types\ChasingEnemyController.cs" />
     <Compile Include="Assets\Scripts\GpuInstancingEnabler.cs" />
     <Compile Include="Assets\Scripts\MainMechanicks\Buffs\Heal.cs" />
+    <Compile Include="Assets\Scripts\MainMechanicks\Environment\ElevatorLever.cs" />
     <Compile Include="Assets\Scripts\MainMechanicks\Enemies\StateMachine\Enemy Types\EnemyBigBoss.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Components\FogComponent.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Models\BloomModel.cs" />
@@ -199,8 +204,6 @@
     <Compile Include="Assets\Scripts\MainMechanicks\Hero\Attack.cs" />
     <Compile Include="Assets\Scripts\MainMechanicks\Enemies\StateMachine\TriggerChecks\ChaseTrigger.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Models\DitheringModel.cs" />
-    <Compile Include="Assets\Scripts\MainMechanicks\Environment\ElevatorLever.cs" />
-    <Compile Include="Assets\Scripts\MainMechanicks\UI\FaceCamera.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

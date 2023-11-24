@@ -23,7 +23,7 @@ public class Explosion : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E))// потом убрать
         {
-            Explode(1);
+            NoDamageExplode();
         }
     }
     public void SetExplosionRadius(float newRadius)
@@ -61,30 +61,21 @@ public class Explosion : MonoBehaviour
         Exploded?.Invoke();
 
         Ray ray = new Ray(new Vector3(transform.position.x, transform.position.y + 1, transform.position.z), -100 * Vector3.up);
-        Physics.Raycast(ray, out RaycastHit hit, explosionLayers);
+        Physics.Raycast(ray, out RaycastHit hit, 100f,explosionLayers);
         Instantiate(explosionEffect, new Vector3(hit.point.x, hit.point.y + 0.01f, hit.point.z), Quaternion.identity);
     }
     public void NoDamageExplode()
     {
-        Collider[] overlappedColiders = Physics.OverlapSphere(transform.position, noDamageExplosionRadius);
+        Collider[] overlappedColiders = Physics.OverlapSphere(transform.position, noDamageExplosionRadius, explosionLayers);
         for (int i = 0; i < overlappedColiders.Length; i++)
         {
             Rigidbody rigitbody = overlappedColiders[i].attachedRigidbody;
             if (rigitbody == null)
-            {
                 continue;
-            }
-            if (rigitbody.CompareTag("Bullet"))
-            {
-                continue;
-            }
-            if (rigitbody.CompareTag("Player"))
-            {
-                continue;
-            }
+
             rigitbody.AddExplosionForce(noDamageExplosionForce, transform.position, noDamageExplosionRadius);
         }
-        /*Instantiate(explosionEffect, transform.position, Quaternion.identity);*/
+        Debug.Log("NoDamageExplode");
     }
     public void BossExplode(int explosionDamage)
     {
@@ -113,5 +104,10 @@ public class Explosion : MonoBehaviour
             }
         }
         /*Instantiate(explosionEffect, transform.position, Quaternion.identity);*/
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawWireSphere(transform.position, noDamageExplosionRadius);
     }
 }

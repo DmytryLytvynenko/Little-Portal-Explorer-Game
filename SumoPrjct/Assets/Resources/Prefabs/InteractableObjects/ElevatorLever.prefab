@@ -125,7 +125,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6acb868c8b15b5143bb10b9d7ae09516, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  elevator: {fileID: 0}
   button: {fileID: 8224353461798328293}
 --- !u!1 &8224353461798328293
 GameObject:
@@ -139,7 +138,7 @@ GameObject:
   - component: {fileID: 8224353461798328289}
   - component: {fileID: 8224353461798328288}
   - component: {fileID: 8224353461798328295}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -227,10 +226,10 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 0, a: 0.8156863}
-    m_HighlightedColor: {r: 1, g: 0, b: 0.09249592, a: 1}
-    m_PressedColor: {r: 1, g: 0.16131589, b: 0.051886797, a: 1}
-    m_SelectedColor: {r: 1, g: 0.08765498, b: 0, a: 1}
-    m_DisabledColor: {r: 1, g: 0.059341177, b: 0, a: 0.5019608}
+    m_HighlightedColor: {r: 1, g: 0.60045624, b: 0, a: 1}
+    m_PressedColor: {r: 0.4245283, g: 0.4245283, b: 0, a: 1}
+    m_SelectedColor: {r: 1, g: 1, b: 0, a: 1}
+    m_DisabledColor: {r: 0.509434, g: 0.509434, b: 0.16580634, a: 1}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -272,7 +271,7 @@ GameObject:
   - component: {fileID: 8224353462960986672}
   - component: {fileID: 8224353462960986674}
   - component: {fileID: 8224353462960986673}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -409,7 +408,7 @@ GameObject:
   - component: {fileID: 8224353463259193435}
   - component: {fileID: 8224353463259193434}
   - component: {fileID: 8224353463259193413}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: StatsCanvas (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -497,7 +496,7 @@ MonoBehaviour:
   m_BlockingObjects: 0
   m_BlockingMask:
     serializedVersion: 2
-    m_Bits: 32
+    m_Bits: 0
 --- !u!114 &8224353463259193413
 MonoBehaviour:
   m_ObjectHideFlags: 0

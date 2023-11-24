@@ -6,7 +6,6 @@ public class Bullet : MonoBehaviour
     public Transform targetPoint;
 
 	[SerializeField] private int damage;
-	[SerializeField] private int damageMultiplier;//если пуля ударит врага, его здоровье уменьшиться так же сильно, как и у игрока
 	[SerializeField] private GameObject pointer;
 
     private Rigidbody bullet;
@@ -36,17 +35,11 @@ public class Bullet : MonoBehaviour
 	{
 		Destroy(_pointer);
 		Destroy(this.gameObject);
-		if (!collision.gameObject.GetComponent<HealthControll>())
+
+		HealthControll healthControll;
+        if (collision.gameObject.TryGetComponent(out healthControll))
 		{
-			return;
-		}
-		else
-		{
-            if (!collision.gameObject.CompareTag("Player"))
-            {
-				damage *= damageMultiplier;
-			}
-			collision.gameObject.GetComponent<HealthControll>().ChangeHealth(-damage,transform);
+			healthControll.ChangeHealth(damage);
 		}
 	}
 }

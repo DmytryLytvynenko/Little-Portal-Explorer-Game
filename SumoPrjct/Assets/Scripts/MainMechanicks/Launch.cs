@@ -9,7 +9,12 @@ namespace Launch
 			launchObject.useGravity = true;
 			launchObject.velocity = CalculateLaunchData(targetPoint, launchObject, jumpHeight, gravity).initialVelocity;
 		}
-		LaunchData CalculateLaunchData(Transform targetPoint, Rigidbody launchObject, float jumpHeight, float gravity)
+        public void InitiateLaunch(Vector3 targetPoint, Rigidbody launchObject, float jumpHeight, float gravity)
+        {
+            launchObject.useGravity = true;
+            launchObject.velocity = CalculateLaunchData(targetPoint, launchObject, jumpHeight, gravity).initialVelocity;
+        }
+        LaunchData CalculateLaunchData(Transform targetPoint, Rigidbody launchObject, float jumpHeight, float gravity)
 		{
 			if (targetPoint.position.y >= launchObject.position.y)
 			{
@@ -24,7 +29,25 @@ namespace Launch
 
 			return new LaunchData(velocityXZ + velocityY * -Mathf.Sign(gravity), time);
 		}
-		public void DrawPath(Transform targetPoint, Rigidbody launchObject, float jumpHeight, float gravity)
+        LaunchData CalculateLaunchData(Vector3 targetPoint, Rigidbody launchObject, float jumpHeight, float gravity)
+        {
+            if (targetPoint.y >= launchObject.position.y)
+            {
+                jumpHeight = targetPoint.y - launchObject.position.y + jumpHeight;
+            }
+
+            float displacementY = targetPoint.y - launchObject.position.y;
+            Vector3 displacementXZ = new Vector3(targetPoint.x - launchObject.position.x, 0, targetPoint.z - launchObject.position.z);
+            float time = Mathf.Sqrt(-2 * jumpHeight / gravity) + Mathf.Sqrt(2 * (displacementY - jumpHeight) / gravity);
+            Vector3 velocityY = Vector3.up * Mathf.Sqrt(-2 * gravity * jumpHeight);
+            Vector3 velocityXZ = displacementXZ / time;
+
+            return new LaunchData(velocityXZ + velocityY * -Mathf.Sign(gravity), time);
+        }
+
+
+
+        public void DrawPath(Transform targetPoint, Rigidbody launchObject, float jumpHeight, float gravity)
 		{
 			LaunchData launchData = CalculateLaunchData(targetPoint, launchObject, jumpHeight, gravity);
 			Vector3 previousDrawPoint = launchObject.position;

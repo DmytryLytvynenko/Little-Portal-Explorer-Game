@@ -130,8 +130,7 @@ public class Enemy : MonoBehaviour
     #region Callbacks
     protected virtual void OnCollisionEnter(Collision collision)
     {
-
-        if (collision.gameObject.CompareTag("Player"))//magic word!!!
+        if (collision.gameObject.GetComponent<HeroController>())//magic word!!!
             EnemyAndPlayerContacted?.Invoke(contactDamage);
 
         if (collision.gameObject.CompareTag("Ground"))//magic word!!!

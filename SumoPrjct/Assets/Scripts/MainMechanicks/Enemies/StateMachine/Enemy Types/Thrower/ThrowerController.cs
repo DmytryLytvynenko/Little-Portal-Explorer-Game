@@ -44,7 +44,7 @@ public class ThrowerController : Enemy
             if (GetRotationVector(target).magnitude < explosionRadius)
                 return AttackAction.Explosion;
 
-            int rand =  UnityEngine.Random.Range(0, 2); 
+            int rand =  UnityEngine.Random.Range(1, 2); 
             return (AttackAction)rand; 
         }  
     }
@@ -115,13 +115,20 @@ public class ThrowerController : Enemy
     {
 
         yield return new WaitForSeconds(timeBeforeShoot);
+        /*
+                ThrowerBomb bomb = Instantiate(this.bombPrefab, shootPosition.position, Quaternion.identity).GetComponent<ThrowerBomb>();
+                bomb.SetThrower(shootPosition);
+                bomb.SetTarget(target);
+                bomb.InitiateThrow();*/
 
         GameObject projectileObject = pool.Get();
         Projectile projectile = projectileObject.GetComponent<Projectile>();
         projectile.ProjectileDistroyed += OnProjectileDestroyed;
 
-        projectileObject.transform.position = shootPosition.position;
+        projectileObject.transform.localPosition = shootPosition.position;
 
+        projectile.SetThrower(shootPosition);
+        projectile.SetTarget(target);
         projectile.InitiateThrow();
     }
     private IEnumerator ExplosionAttack(float explosionDelay)

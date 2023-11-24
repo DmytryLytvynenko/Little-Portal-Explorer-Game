@@ -6,8 +6,6 @@ public class Projectile : MonoBehaviour
     [SerializeField] protected Transform target;
     [SerializeField] protected Transform thrower;
     [SerializeField] protected Animation projectileAnimation;
-    [SerializeField] protected AnimationCurve throwTrajectory;
-    [SerializeField] protected float duration;
 
     public Action<Projectile> ProjectileDistroyed;
 
@@ -20,5 +18,9 @@ public class Projectile : MonoBehaviour
     public void SetThrower(Transform thrower)
     {
         this.thrower = thrower;
+    }
+    public void SetTarget(Transform target)
+    {
+        this.target = target;
     }
 }

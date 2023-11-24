@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1239810}
   - component: {fileID: 1239811}
   - component: {fileID: 1239812}
-  m_Layer: 11
+  m_Layer: 14
   m_Name: Target
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -69,7 +69,7 @@ GameObject:
   - component: {fileID: 864146403}
   - component: {fileID: 864146404}
   - component: {fileID: 864146405}
-  m_Layer: 11
+  m_Layer: 14
   m_Name: ChaseArea
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -127,7 +127,7 @@ GameObject:
   - component: {fileID: 2044916369}
   - component: {fileID: 2044916371}
   - component: {fileID: 2044916372}
-  m_Layer: 11
+  m_Layer: 14
   m_Name: AttackArea
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -304,7 +304,7 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 228993800423009635}
-  m_Material: {fileID: 13400000, guid: 2c412a2025e9a5a4bab7c25f9cf4a71d, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5000001
@@ -319,8 +319,8 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 228993800423009635}
   serializedVersion: 2
-  m_Mass: 20
-  m_Drag: 1
+  m_Mass: 10
+  m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
@@ -339,16 +339,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e787d8971e254d49a7c81cc54e50566, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startState: 0
   target: {fileID: 0}
-  IdleTargetTrigger: {fileID: 1239812}
   IdleMoovementArea: {fileID: 0}
+  idleTargetTrigger: {fileID: 1239812}
   chaseCollider: {fileID: 864146404}
   contactDamage: -5
   moveSpeed: 3.5
   maxSpeed: 4.5
   rotationSpeed: 10
   AgrDistance: 15
-  AttackDistnace: 8
+  attackDistnace: 8
   ShootCooldown: 3
   AttackCollider: {fileID: 2044916371}
   ShootPos: {fileID: 228993799988786680}
@@ -428,9 +429,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 0.72156864}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
+  m_Maskable: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -498,7 +499,6 @@ GameObject:
   - component: {fileID: 1868833730254238448}
   - component: {fileID: 84049307107455118}
   - component: {fileID: 2827990330813807069}
-  - component: {fileID: 3263197805409662394}
   m_Layer: 11
   m_Name: StatsCanvas
   m_TagString: Untagged
@@ -571,23 +571,6 @@ MonoBehaviour:
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
   m_PresetInfoIsWorld: 1
---- !u!114 &3263197805409662394
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7301764364716184984}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_IgnoreReversedGraphics: 1
-  m_BlockingObjects: 0
-  m_BlockingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
 --- !u!1 &7438811146902217410
 GameObject:
   m_ObjectHideFlags: 0
@@ -648,9 +631,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 0, b: 0, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
+  m_Maskable: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []

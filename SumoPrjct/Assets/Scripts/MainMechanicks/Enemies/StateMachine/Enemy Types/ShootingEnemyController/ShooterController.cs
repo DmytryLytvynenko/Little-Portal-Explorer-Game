@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ShooterController : Enemy
@@ -25,6 +23,7 @@ public class ShooterController : Enemy
 
     protected override void Awake()
     {
+        target = GlobalData.PlayerInstance.transform;
         base.Awake();
 
         atackState = new ShooterEnemyAtackState(this, stateMachine, AttackCollider, ShootCooldown, attackDistnace,target);
@@ -38,6 +37,10 @@ public class ShooterController : Enemy
     protected void Update()
     {
         stateMachine.CurrentEnemyState.FrameUpdate();
+    }
+    protected void FixedUpdate()
+    {
+        stateMachine.CurrentEnemyState.PhysicsUpdate();
     }
     public void Attack()
     {

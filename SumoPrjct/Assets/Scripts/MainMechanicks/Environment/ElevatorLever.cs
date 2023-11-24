@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class ElevatorLever : MonoBehaviour
 {
-    [SerializeField] private Elevator elevator;
     [SerializeField] private GameObject button;
 
     private void OnTriggerEnter(Collider other)

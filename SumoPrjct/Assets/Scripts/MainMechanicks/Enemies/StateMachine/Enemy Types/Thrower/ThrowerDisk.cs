@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class ThrowerDisk : Projectile
 {
+    [SerializeField] protected float duration;
+    [SerializeField] protected AnimationCurve throwTrajectory;
     [SerializeField] private float targetOffset;
     [SerializeField] private int damage = 20;
     [SerializeField] private float lerpRate = 10;
@@ -49,7 +51,7 @@ public class ThrowerDisk : Projectile
     private void OnCollisionEnter(Collision collision)
     {
         HealthControll helthControll;
-        if (collision.gameObject.TryGetComponent<HealthControll>(out helthControll))
+        if (collision.gameObject.TryGetComponent(out helthControll))
         {
             helthControll.ChangeHealth(-damage);
         }
