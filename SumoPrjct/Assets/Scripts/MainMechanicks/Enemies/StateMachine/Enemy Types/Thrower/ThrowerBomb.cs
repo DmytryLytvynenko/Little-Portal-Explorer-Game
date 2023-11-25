@@ -32,15 +32,15 @@ public class ThrowerBomb : Projectile
         base.InitiateThrow();
 
         transform.position = thrower.position;
-        transform.rotation = Quaternion.identity;
+        bombRigidbody.position = thrower.position;
         bombRigidbody.velocity = Vector3.zero;
-        bombRigidbody.angularVelocity = Vector3.zero;
 
         Vector3 moveVector = target.position - transform.position;
-        Vector3 actualTarget = transform.position + moveVector - moveVector.normalized * targetOffset;
+        Vector3 actualTarget =transform.position + moveVector - moveVector.normalized * targetOffset;
+        Debug.DrawLine(target.position, transform.position, Color.green, 10f);
         Debug.DrawLine(thrower.position, actualTarget, Color.red, 10f);
 
-        launch.InitiateLaunch(target, bombRigidbody, throwHeight, Physics.gravity.y);
+        launch.InitiateLaunch(actualTarget, bombRigidbody, throwHeight, Physics.gravity.y);
         Invoke(nameof(Explode), explosionDelay);
     }
 }

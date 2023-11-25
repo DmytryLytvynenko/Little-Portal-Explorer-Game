@@ -52,10 +52,10 @@ MonoBehaviour:
   target: {fileID: 0}
   thrower: {fileID: 0}
   projectileAnimation: {fileID: 0}
-  explosionDelay: 5
+  explosionDelay: 2
   explosionDamage: 20
   throwHeight: 1.5
-  targetOffset: 0
+  targetOffset: 1
 --- !u!54 &278043096728163156
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -69,7 +69,7 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!114 &1980712227

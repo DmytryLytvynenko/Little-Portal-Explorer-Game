@@ -44,7 +44,7 @@ public class ThrowerController : Enemy
             if (GetRotationVector(target).magnitude < explosionRadius)
                 return AttackAction.Explosion;
 
-            int rand =  UnityEngine.Random.Range(1, 2); 
+            int rand =  UnityEngine.Random.Range(0, 1); 
             return (AttackAction)rand; 
         }  
     }
@@ -125,7 +125,6 @@ public class ThrowerController : Enemy
         Projectile projectile = projectileObject.GetComponent<Projectile>();
         projectile.ProjectileDistroyed += OnProjectileDestroyed;
 
-        projectileObject.transform.localPosition = shootPosition.position;
 
         projectile.SetThrower(shootPosition);
         projectile.SetTarget(target);
