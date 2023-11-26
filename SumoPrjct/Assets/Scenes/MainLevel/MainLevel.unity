@@ -2489,12 +2489,12 @@ Terrain:
   m_Enabled: 1
   serializedVersion: 6
   m_TerrainData: {fileID: 15600000, guid: 23460c292117df845b9dd406d3c26941, type: 2}
-  m_TreeDistance: 200
+  m_TreeDistance: 50
   m_TreeBillboardDistance: 50
-  m_TreeCrossFadeLength: 55.2
-  m_TreeMaximumFullLODCount: 50
-  m_DetailObjectDistance: 50
-  m_DetailObjectDensity: 0.202
+  m_TreeCrossFadeLength: 50
+  m_TreeMaximumFullLODCount: 100
+  m_DetailObjectDistance: 250
+  m_DetailObjectDensity: 0
   m_HeightmapPixelError: 100
   m_SplatMapDistance: 100
   m_HeightmapMaximumLOD: 0
@@ -3157,7 +3157,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &521146895
 Transform:
   m_ObjectHideFlags: 0
@@ -11934,6 +11934,11 @@ PrefabInstance:
       propertyPath: cameraRoot
       value: 
       objectReference: {fileID: 1081954356}
+    - target: {fileID: 8133727762810727488, guid: eb349ddad09570e41a3c03cbe40fd477,
+        type: 3}
+      propertyPath: collisionLayers.m_Bits
+      value: 65
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb349ddad09570e41a3c03cbe40fd477, type: 3}
 --- !u!114 &2129792515 stripped

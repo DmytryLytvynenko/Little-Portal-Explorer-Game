@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7546545465193752709}
   - component: {fileID: 1289121501042887315}
   - component: {fileID: 3830212544362800002}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Spruce
   m_TagString: Untagged
   m_Icon: {fileID: 0}

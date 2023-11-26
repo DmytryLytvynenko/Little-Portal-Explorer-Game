@@ -4,6 +4,7 @@ using UnityEngine;
 public class SurfaceSlider : MonoBehaviour
 {
     [SerializeField] float acceptableVerticalAngle;
+    [SerializeField] LayerMask collisionLayers;
     private Vector3 normal;
     private Vector3 horizontal = Vector3.forward;
     private bool canMoveAtAngle;
@@ -23,7 +24,7 @@ public class SurfaceSlider : MonoBehaviour
     }
     private void OnCollisionStay(Collision collision)
     {
-        if (!collision.contacts[0].otherCollider.CompareTag("Ground"))//magic word!
+        if (Equals(collision.contacts[0].otherCollider.gameObject.layer,collisionLayers))//magic word!
             return;
 
         normal = collision.contacts[0].normal;
