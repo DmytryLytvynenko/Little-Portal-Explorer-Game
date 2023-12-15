@@ -881,9 +881,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1d8c8af8f859b641b6cda6073f67038, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startState: 0
   target: {fileID: 3715381328228862628}
   IdleMoovementArea: {fileID: 0}
-  IdleTargetTrigger: {fileID: 575193585}
+  idleTargetTrigger: {fileID: 575193585}
   chaseCollider: {fileID: 4005302649236247220}
   contactDamage: 0
   moveSpeed: 1

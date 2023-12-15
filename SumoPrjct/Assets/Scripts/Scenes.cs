@@ -1,3 +1,4 @@
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 public class Scenes : MonoBehaviour
@@ -11,6 +12,11 @@ public class Scenes : MonoBehaviour
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
+    }
+    public static void LoadSN(SceneAsset scene)
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(scene.name, LoadSceneMode.Single);
     }
     public static void RestartScene()
     {

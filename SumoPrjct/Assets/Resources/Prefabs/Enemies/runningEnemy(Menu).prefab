@@ -77,6 +77,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2420992438558452111, guid: bd0baa6bd99a8a74cbc77277125f5130,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2420992438558452106, guid: bd0baa6bd99a8a74cbc77277125f5130, type: 3}
     - {fileID: 2420992438558452105, guid: bd0baa6bd99a8a74cbc77277125f5130, type: 3}
@@ -101,6 +106,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d77897400780bc94dbda6b46bbdc19b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 0.5
+  rotationSpeed: 90
   fallingSpeed: 0.5
-  destroyHeight: -7
+  TimeTillDie: 20

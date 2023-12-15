@@ -108,6 +108,9 @@ PrefabInstance:
     - {fileID: 2363012331951304107, guid: eb349ddad09570e41a3c03cbe40fd477, type: 3}
     - {fileID: 7279223856504301113, guid: eb349ddad09570e41a3c03cbe40fd477, type: 3}
     - {fileID: 1868945276378792712, guid: eb349ddad09570e41a3c03cbe40fd477, type: 3}
+    - {fileID: 2129792526, guid: eb349ddad09570e41a3c03cbe40fd477, type: 3}
+    - {fileID: 2129792525, guid: eb349ddad09570e41a3c03cbe40fd477, type: 3}
+    - {fileID: 8133727762810727488, guid: eb349ddad09570e41a3c03cbe40fd477, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: eb349ddad09570e41a3c03cbe40fd477, type: 3}
 --- !u!1 &8576008738821656212 stripped
 GameObject:
@@ -127,4 +130,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b7feae8e9ee4304cbdeeece56804ed3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 0.5
+  rotationSpeed: 90

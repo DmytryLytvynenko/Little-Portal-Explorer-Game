@@ -17,6 +17,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: shootingEnemy(Menu)
       objectReference: {fileID: 0}
+    - target: {fileID: 228993800423009637, guid: 7c332c698564bcb46abe64e0792980bc,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 228993800423009638, guid: 7c332c698564bcb46abe64e0792980bc,
         type: 3}
       propertyPath: m_RootOrder
@@ -101,6 +106,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d77897400780bc94dbda6b46bbdc19b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 0.5
+  rotationSpeed: 90
   fallingSpeed: 0.5
-  destroyHeight: -7
+  TimeTillDie: 20

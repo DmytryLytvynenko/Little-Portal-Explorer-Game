@@ -15,9 +15,12 @@ EditorBuildSettings:
     path: Assets/Scenes/MainLevel/MainLevel.unity
     guid: 2cf8ca4d9ef012b44ba0d7ae50ff1b98
   - enabled: 1
-    path: Assets/Scenes/BasketballLevel/BasketballLevel.unity
+    path: Assets/Scenes/Frog Forest/FrogForest.unity
     guid: 614bd413a149de045a6512db075c7128
   - enabled: 1
     path: Assets/Scenes/TrampolineLevel/TrampolineLevel.unity
     guid: a779b6e701952ff44b03af1c2c885f81
+  - enabled: 1
+    path: Assets/Scenes/SquidGame/SquidIsland.unity
+    guid: d5be9a638312b1f4ab3fca82c67042c5
   m_configObjects: {}

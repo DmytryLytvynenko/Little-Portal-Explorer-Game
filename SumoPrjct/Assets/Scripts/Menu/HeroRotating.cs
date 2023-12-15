@@ -8,6 +8,6 @@ public class HeroRotating : MonoBehaviour
 
     void Update()
     {
-        transform.Rotate(new Vector3(rotationSpeed, rotationSpeed + 0.25f, rotationSpeed + 0.5f));
+        transform.Rotate(new Vector3(rotationSpeed, rotationSpeed * 0.5f, rotationSpeed ) * Time.deltaTime);
     }
 }

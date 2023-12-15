@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Utilities
 {
-    public static class Utilities
+    public class Utilities
     {
         public static void SetPlayerPosition() 
         {
