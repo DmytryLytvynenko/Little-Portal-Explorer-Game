@@ -3087,9 +3087,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraRoot: {fileID: 0}
-  rotationSensitivity: 0.1
+  rotationSensitivity: 2
   minVerticalAngle: 0
-  maxVerticalAngle: 85
+  maxVerticalAngle: 60
+  rotationLerpRate: 6
 --- !u!114 &6183197946528390610
 MonoBehaviour:
   m_ObjectHideFlags: 0

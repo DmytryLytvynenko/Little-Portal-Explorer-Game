@@ -4,7 +4,7 @@ using UnityEngine;
 public class SurfaceSlider : MonoBehaviour
 {
     [SerializeField] float acceptableVerticalAngle;
-    [SerializeField] LayerMask collisionLayers;
+    [SerializeField] LayerMask collisionLayersToIgnore;
     private Vector3 normal;
     private Vector3 horizontal = Vector3.forward;
     private bool canMoveAtAngle;
@@ -24,7 +24,9 @@ public class SurfaceSlider : MonoBehaviour
     }
     private void OnCollisionStay(Collision collision)
     {
-        if (Equals(collision.contacts[0].otherCollider.gameObject.layer,collisionLayers))//magic word!
+        if (Equals(collision.contacts[0].otherCollider.gameObject.layer, LayerMask.NameToLayer("Environment")))
+            Debug.Log("sjknda");
+        if ((collisionLayersToIgnore & (1 << collision.contacts[0].otherCollider.gameObject.layer)) != 0)
             return;
 
         normal = collision.contacts[0].normal;

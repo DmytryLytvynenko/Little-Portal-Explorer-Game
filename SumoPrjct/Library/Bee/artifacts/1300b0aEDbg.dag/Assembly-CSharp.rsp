@@ -473,6 +473,7 @@
 "Assets/Scripts/SquidGameLevel/TrapHatch.cs"
 "Assets/Scripts/Test/RotateTowards.cs"
 "Assets/Scripts/TrampolineLevel/HorizontalAccelerator.cs"
+"Assets/Scripts/TrampolineLevel/ParentSetter.cs"
 "Assets/Scripts/TrampolineLevel/RespawnPointSetter.cs"
 "Assets/Scripts/TrampolineLevel/TrampolineAnimation.cs"
 "Assets/Scripts/TrampolineLevel/VerticalAccelerator.cs"

@@ -204,6 +204,7 @@
     <Compile Include="Assets\Scripts\MainMechanicks\Hero\Attack.cs" />
     <Compile Include="Assets\Scripts\MainMechanicks\Enemies\StateMachine\TriggerChecks\ChaseTrigger.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Models\DitheringModel.cs" />
+    <Compile Include="Assets\Scripts\TrampolineLevel\ParentSetter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

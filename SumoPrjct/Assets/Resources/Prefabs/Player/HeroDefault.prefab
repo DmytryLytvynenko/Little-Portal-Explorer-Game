@@ -398,10 +398,12 @@ MonoBehaviour:
   raycastLayerMask:
     serializedVersion: 2
     m_Bits: 15425
+  damageJumpForce: 0
   LoseScreen: {fileID: 0}
   cameraRoot: {fileID: 0}
   surfaceSlider: {fileID: 8133727762810727488}
   verticalAccelerator: {fileID: 2129792526}
+  <PlayerDeformator>k__BackingField: {fileID: 0}
 --- !u!54 &4792738596926923209
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -415,7 +417,7 @@ Rigidbody:
   m_AngularDrag: 0.5
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!136 &9057447180156261568
@@ -450,6 +452,9 @@ MonoBehaviour:
   noDamageExplosionRadius: 7
   explosionEffect: {fileID: 6605087354438946986, guid: 4f4394901f46a6f4c92f37d482f7bbd7,
     type: 3}
+  explosionLayers:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!114 &1868945276378792712
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -480,6 +485,9 @@ MonoBehaviour:
   throwForce: 3000
   explosionRadius: 0
   throwDamage: 500
+  throwLayers:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!114 &8133727762810727488
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -493,6 +501,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   acceptableVerticalAngle: 30
+  collisionLayers:
+    serializedVersion: 2
+    m_Bits: 65
 --- !u!114 &2129792525
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -508,6 +519,9 @@ MonoBehaviour:
   attackForce: 800
   attackDamage: 500
   attackArea: {fileID: 8852483743064176647}
+  attackLayers:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!114 &2129792526
 MonoBehaviour:
   m_ObjectHideFlags: 0
