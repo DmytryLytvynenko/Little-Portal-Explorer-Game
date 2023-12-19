@@ -810,9 +810,21 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
+      <Project>{1B3CEBDC-C1B2-F899-AB90-C9E254732C11}</Project>
+      <Name>Assembly-CSharp-firstpass</Name>
+    </ProjectReference>
     <ProjectReference Include="Assembly-CSharp.csproj">
       <Project>{4A3DD1BC-1656-85C8-C323-3995A8592728}</Project>
       <Name>Assembly-CSharp</Name>
+    </ProjectReference>
+    <ProjectReference Include="AYellowpaper.SerializedCollections.csproj">
+      <Project>{603EFCB0-6D1A-973D-08C3-013E0AEFDC7E}</Project>
+      <Name>AYellowpaper.SerializedCollections</Name>
+    </ProjectReference>
+    <ProjectReference Include="AYellowpaper.SerializedCollections.Editor.csproj">
+      <Project>{8A46A8FD-8925-0B86-DE3E-B453988743A0}</Project>
+      <Name>AYellowpaper.SerializedCollections.Editor</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -123,6 +123,7 @@
     <Compile Include="Assets\PostProcessing\Runtime\Components\GrainComponent.cs" />
     <Compile Include="Assets\Scripts\MainMechanicks\Enemies\StateMachine\TriggerChecks\RunnerAttackTrigger.cs" />
     <Compile Include="Assets\Zololgo\OrbitZoomPanCamera\Scripts\OrbitZoomPanCamera.cs" />
+    <Compile Include="Assets\Scripts\TrampolineLevel\ParentSetter.cs" />
     <Compile Include="Assets\Scripts\MainMechanicks\Enemies\StateMachine\Enemy Types\ShootingEnemyController\ShooterController.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\PostProcessingContext.cs" />
     <Compile Include="Assets\Scripts\MainMechanicks\Pool\PoolBase.cs" />
@@ -204,7 +205,7 @@
     <Compile Include="Assets\Scripts\MainMechanicks\Hero\Attack.cs" />
     <Compile Include="Assets\Scripts\MainMechanicks\Enemies\StateMachine\TriggerChecks\ChaseTrigger.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Models\DitheringModel.cs" />
-    <Compile Include="Assets\Scripts\TrampolineLevel\ParentSetter.cs" />
+    <Compile Include="Assets\Scripts\MainMechanicks\SoundPlayer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
@@ -898,6 +899,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
+      <Project>{1B3CEBDC-C1B2-F899-AB90-C9E254732C11}</Project>
+      <Name>Assembly-CSharp-firstpass</Name>
+    </ProjectReference>
+    <ProjectReference Include="AYellowpaper.SerializedCollections.csproj">
+      <Project>{603EFCB0-6D1A-973D-08C3-013E0AEFDC7E}</Project>
+      <Name>AYellowpaper.SerializedCollections</Name>
+    </ProjectReference>
+    <ProjectReference Include="AYellowpaper.SerializedCollections.Editor.csproj">
+      <Project>{8A46A8FD-8925-0B86-DE3E-B453988743A0}</Project>
+      <Name>AYellowpaper.SerializedCollections.Editor</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
