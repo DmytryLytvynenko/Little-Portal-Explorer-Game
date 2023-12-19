@@ -1,6 +1,8 @@
 using AYellowpaper.SerializedCollections;
+using System;
 using UnityEngine;
 
+[Serializable]
 public class SoundPlayer : MonoBehaviour
 {
     [SerializedDictionary("SoundName","Sound")]
@@ -11,11 +13,15 @@ public class SoundPlayer : MonoBehaviour
     {
         Walk,
         Attack,
+        Throw,
         Jump,
         TakeDamage,
         Die,
-        Explode,
-        Collision
+        Explosion,
+        Collision,
+        Hover,
+        Click,
+        WrongInput
     }
 
     public void PlaySound(SoundName key)

@@ -179,6 +179,7 @@
     <Compile Include="Assets\Scripts\MainMechanicks\Other\Coroutines.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Components\DepthOfFieldComponent.cs" />
     <Compile Include="Assets\Scripts\MainMechanicks\Enemies\StateMachine\StateMachine\NonBasicBehaviours\RunnerRunState.cs" />
+    <Compile Include="Assets\Scripts\MainMechanicks\SoundPlayer.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Components\ColorGradingComponent.cs" />
     <Compile Include="Assets\Scripts\MainMechanicks\Hero\SurfaceSlider.cs" />
     <Compile Include="Assets\Scripts\FrogLevel\PiecefullCretures\FrogController.cs" />
@@ -205,7 +206,6 @@
     <Compile Include="Assets\Scripts\MainMechanicks\Hero\Attack.cs" />
     <Compile Include="Assets\Scripts\MainMechanicks\Enemies\StateMachine\TriggerChecks\ChaseTrigger.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Models\DitheringModel.cs" />
-    <Compile Include="Assets\Scripts\MainMechanicks\SoundPlayer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
