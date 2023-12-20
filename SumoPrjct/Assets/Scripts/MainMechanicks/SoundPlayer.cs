@@ -23,8 +23,11 @@ namespace Sound_Player
         Landing,
         Hover,
         Click,
+        Close,
         WrongInput,
-        SpecialSound
+        SpecialSound,
+        GameSaved,
+        Switch
     }
     public class SoundPlayer : MonoBehaviour
     {
