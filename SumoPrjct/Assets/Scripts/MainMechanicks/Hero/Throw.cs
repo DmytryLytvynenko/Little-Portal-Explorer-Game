@@ -1,11 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
+using Sirenix.OdinInspector;
+using Sound_Player;
 using UnityEngine;
 
 public class Throw : MonoBehaviour
 {
+    [Title("Links")]
     [SerializeField] private Transform throwArea;
+    [SerializeField] private SoundPlayer soundPlayer;
 
+    [Title("Main Stats")]
     [Range(0f, 7f)]
     [SerializeField] private float yThrowAngle;
 
@@ -27,6 +30,7 @@ public class Throw : MonoBehaviour
 
     public void HeroThrow()
     {
+        soundPlayer.PlaySound(SoundName.Throw);
         Collider[] overlappedColiders = Physics.OverlapBox(throwArea.position, new Vector3(xThrowSize / 2, yThrowSize / 2, zThrowSize / 2), throwArea.rotation, throwLayers);
         for (int i = 0; i < overlappedColiders.Length; i++)
         {

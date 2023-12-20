@@ -167,7 +167,7 @@
     <Compile Include="Assets\PostProcessing\Runtime\PostProcessingComponent.cs" />
     <Compile Include="Assets\Scripts\MainMechanicks\UI\CameraController.cs" />
     <Compile Include="Assets\Scripts\FrogLevel\Environment\AnimationStarter.cs" />
-    <Compile Include="Assets\Scripts\TrampolineLevel\VerticalAccelerator.cs" />
+    <Compile Include="Assets\Scripts\MainMechanicks\Hero\VerticalAccelerator.cs" />
     <Compile Include="Assets\Scripts\MainMechanicks\Enemies\StateMachine\Enemy Types\Thrower\ThrowerDisk.cs" />
     <Compile Include="Assets\Scripts\MainMechanicks\PortalController.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Components\EyeAdaptationComponent.cs" />

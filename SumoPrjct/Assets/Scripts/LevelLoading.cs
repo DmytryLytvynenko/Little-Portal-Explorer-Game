@@ -6,8 +6,9 @@ public class LevelLoading : MonoBehaviour
     private void Start()
     {
         ActivateCheckPointOnLoad();
-
+        GlobalData.PlayerInstance.DeactivateDeformation();
         SetPlayerPosition();
+        GlobalData.PlayerInstance.ActivateDeformation();
     }
 
     private void SetPlayerPosition()
@@ -20,11 +21,12 @@ public class LevelLoading : MonoBehaviour
 
     private void ActivateCheckPointOnLoad() 
     {
-        if (!PlayerPrefs.HasKey("CheckPointID")) return;
+        if (!PlayerPrefs.HasKey("CheckPointName")) return;
 
         for (int i = 0; i < CheckPoints.childCount; i++)
         {
-            if (CheckPoints.GetChild(i).GetInstanceID() == PlayerPrefs.GetInt("CheckPointID"))
+            Debug.Log($"Check Point: {CheckPoints.GetChild(i).name} Save:{PlayerPrefs.GetString("CheckPointName")}\n");
+            if (CheckPoints.GetChild(i).name == PlayerPrefs.GetString("CheckPointName"))
             {
                 CheckPoints.GetChild(i).GetComponent<CheckPoint>().ActivateCheckPointOnLoad();
             } 

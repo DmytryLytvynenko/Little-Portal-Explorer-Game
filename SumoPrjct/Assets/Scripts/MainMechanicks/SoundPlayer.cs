@@ -3,12 +3,10 @@ using System;
 using UnityEngine;
 using Sirenix.OdinInspector;
 
-[Serializable]
-public class SoundPlayer : MonoBehaviour
+
+namespace Sound_Player
 {
-    [SerializedDictionary("SoundName","Sound")]
-    [SerializeField] private  SerializedDictionary<SoundName,AudioClip> sounds;
-    [SerializeField] private  AudioSource audioSource;
+[Serializable]
 
     public enum SoundName
     {
@@ -16,24 +14,34 @@ public class SoundPlayer : MonoBehaviour
         Attack,
         Throw,
         Jump,
+        Acceleration,
+        Fall,
         TakeDamage,
         Die,
         Explosion,
         Collision,
+        Landing,
         Hover,
         Click,
-        WrongInput
+        WrongInput,
+        SpecialSound
     }
+    public class SoundPlayer : MonoBehaviour
+    {
+        [SerializedDictionary("SoundName","Sound")]
+        [SerializeField] private  SerializedDictionary<SoundName,AudioClip> sounds;
+        [SerializeField] private  AudioSource audioSource;
 
-    public void PlaySound(string _key)
-    {
-        SoundName key = (SoundName)Enum.Parse(typeof(SoundName), _key);
-        if (sounds.TryGetValue(key, out AudioClip clip))
-            audioSource.PlayOneShot(clip);
-    }
-    public void PlaySound(SoundName key)
-    {
-        if (sounds.TryGetValue(key, out AudioClip clip))
-            audioSource.PlayOneShot(clip);
+        public void PlaySound(string _key)
+        {
+            SoundName key = (SoundName)Enum.Parse(typeof(SoundName), _key);
+            if (sounds.TryGetValue(key, out AudioClip clip))
+                audioSource.PlayOneShot(clip);
+        }
+        public void PlaySound(SoundName key)
+        {
+            if (sounds.TryGetValue(key, out AudioClip clip))
+                audioSource.PlayOneShot(clip);
+        }
     }
 }

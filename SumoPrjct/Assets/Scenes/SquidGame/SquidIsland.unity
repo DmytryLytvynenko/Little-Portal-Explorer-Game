@@ -7438,6 +7438,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultRespawnPoint: {fileID: 1544544993}
+  playerDefornator: {fileID: 0}
   verticalOfffset: 0
 --- !u!65 &848539439
 BoxCollider:
@@ -8056,7 +8057,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e549c9ffe17c720478b2fefddd24af27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelName: MainLevel
+  level: {fileID: 102900000, guid: 2cf8ca4d9ef012b44ba0d7ae50ff1b98, type: 3}
 --- !u!65 &881877171
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9774,7 +9775,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e549c9ffe17c720478b2fefddd24af27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelName: MainLevel
+  level: {fileID: 102900000, guid: 2cf8ca4d9ef012b44ba0d7ae50ff1b98, type: 3}
 --- !u!65 &1109439383
 BoxCollider:
   m_ObjectHideFlags: 0

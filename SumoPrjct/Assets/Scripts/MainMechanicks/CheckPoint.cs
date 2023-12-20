@@ -27,7 +27,7 @@ public class CheckPoint : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag(GlobalData.PlayerTag))
+        if (other.GetComponent<HeroController>())
         {
             ActivateCheckPoint();
 
@@ -42,7 +42,7 @@ public class CheckPoint : MonoBehaviour
         Active = true;
         GlobalData.CurrentCheckPoint = checkPoint;
 
-        rememberCheckPoint(checkPoint);
+        RememberCheckPoint(checkPoint);
         ActivateLights();
         checkPointAnimator.SetBool(animatorParameter, Active);
         gameSavedMessage.SetActive(true);
@@ -55,7 +55,7 @@ public class CheckPoint : MonoBehaviour
         Active = true;
         GlobalData.CurrentCheckPoint = checkPoint;
 
-        rememberCheckPoint(checkPoint);
+        RememberCheckPoint(checkPoint);
         ActivateLights();
         checkPointAnimator.SetBool(animatorParameter, Active);
     }
@@ -76,10 +76,10 @@ public class CheckPoint : MonoBehaviour
         lights.SetActive(false);
         checkPointAnimator.enabled = false;
     }
-    private void rememberCheckPoint(Transform checkPointPosition)
+    private void RememberCheckPoint(Transform checkPointPosition)
     {
         PlayerPrefs.SetString("CheckPointPosition", $"{checkPointPosition.position.x}.{checkPointPosition.position.y}.{checkPointPosition.position.z}");
-        PlayerPrefs.SetInt("CheckPointID", transform.GetInstanceID());
+        PlayerPrefs.SetString("CheckPointName", transform.name);
         print($"{checkPointPosition.position.x}.{checkPointPosition.position.y}.{checkPointPosition.position.z}");
     }
     private void OnPlayerSavedGame()

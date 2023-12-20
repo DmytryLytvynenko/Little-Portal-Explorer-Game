@@ -1,14 +1,20 @@
-﻿using System;
+﻿using Sirenix.OdinInspector;
+using Sound_Player;
+using System;
 using UnityEngine;
 
 public class Explosion : MonoBehaviour
 {
+    [Title("Main Stats")]
     [SerializeField] private float explosionRadius;
     [SerializeField] private float explosionForce;
     [SerializeField] private float noDamageExplosionForce;
     [SerializeField] private float noDamageExplosionRadius;
-    [SerializeField] private GameObject explosionEffect;
     [SerializeField] private LayerMask explosionLayers;
+
+    [Title("Links")]
+    [SerializeField] private GameObject explosionEffect;
+    [SerializeField] private SoundPlayer soundPlayer;
     public static Action Exploded;
 
     private EffectScaling effectScaling;
@@ -39,6 +45,7 @@ public class Explosion : MonoBehaviour
     }
     public void Explode(int explosionDamage)
     {
+        soundPlayer.PlaySound(SoundName.Explosion);
         Collider[] overlappedColiders = Physics.OverlapSphere(transform.position, explosionRadius, explosionLayers);
         Bomb bomb;
         HealthControll healthControll;
@@ -104,10 +111,5 @@ public class Explosion : MonoBehaviour
             }
         }
         /*Instantiate(explosionEffect, transform.position, Quaternion.identity);*/
-    }
-
-    private void OnDrawGizmos()
-    {
-        Gizmos.DrawWireSphere(transform.position, noDamageExplosionRadius);
     }
 }

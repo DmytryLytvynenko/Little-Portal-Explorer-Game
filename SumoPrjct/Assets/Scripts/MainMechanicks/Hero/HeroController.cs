@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using Sound_Player;
 public class HeroController : MonoBehaviour
 {
     [Header("Oсновные параметры")]
@@ -28,6 +28,7 @@ public class HeroController : MonoBehaviour
     [SerializeField] private Transform cameraRoot;
     [SerializeField] private SurfaceSlider surfaceSlider;
     [SerializeField] private VerticalAccelerator verticalAccelerator;
+    [SerializeField] private SoundPlayer soundPlayer;
     [field:SerializeField] public PlayerDeformator PlayerDeformator { get; private set; }
     private HealthControll healthControll;
     private MobileController mController;
@@ -140,6 +141,7 @@ public class HeroController : MonoBehaviour
     {
         if (isGrounded)
         {
+            soundPlayer.PlaySound(SoundName.Jump);
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             isGrounded = false;
         }
@@ -192,6 +194,9 @@ public class HeroController : MonoBehaviour
     }
     void OnCollisionEnter(Collision collision)
     {
+        if (collision.gameObject.tag == ("Ground"))
+            soundPlayer.PlaySound(SoundName.Landing);
+
         IsGroundedUpate(collision, true);
         if (isGrounded && canExplode)
         {
@@ -278,9 +283,19 @@ public class HeroController : MonoBehaviour
     {
         moveSpeed = defaultMoveSpeed;
     }
-
+    public void DeactivateDeformation()
+    {
+        PlayerDeformator.transform.parent = transform;
+        PlayerDeformator.gameObject.SetActive(false);
+    }
+    public void ActivateDeformation()
+    {
+        PlayerDeformator.transform.parent = null;
+        PlayerDeformator.gameObject.SetActive(true);
+    }
     private void OnDamageTaken(Transform damager)
     {
+        soundPlayer.PlaySound(SoundName.TakeDamage);
         JumpOnTakeDamage(damager);
     }
 
