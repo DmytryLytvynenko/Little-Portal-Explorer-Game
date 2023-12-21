@@ -27,7 +27,8 @@ namespace Sound_Player
         WrongInput,
         SpecialSound,
         GameSaved,
-        Switch
+        Switch,
+        Portal
     }
     public class SoundPlayer : MonoBehaviour
     {

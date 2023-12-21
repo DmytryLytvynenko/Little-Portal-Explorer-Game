@@ -117,6 +117,7 @@ GameObject:
   - component: {fileID: 5763825199413968554}
   - component: {fileID: 1835735264386642712}
   - component: {fileID: 3878558954619804429}
+  - component: {fileID: 1460036112}
   m_Layer: 10
   m_Name: Hero
   m_TagString: Untagged
@@ -447,6 +448,14 @@ MonoBehaviour:
     - Key: 4
       Value: {fileID: 8300000, guid: 71575795047d6194db04538cb58123be, type: 3}
   audioSource: {fileID: 1835735264386642712}
+--- !u!81 &1460036112
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5763825199413968607}
+  m_Enabled: 1
 --- !u!1 &5763825199588709506
 GameObject:
   m_ObjectHideFlags: 0

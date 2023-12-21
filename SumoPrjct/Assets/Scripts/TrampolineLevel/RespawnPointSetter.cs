@@ -1,3 +1,4 @@
+using Sound_Player;
 using System;
 using UnityEngine;
 
@@ -6,6 +7,7 @@ public class RespawnPointSetter : MonoBehaviour
     [SerializeField] private Material materialDefault;
     [SerializeField] private Material materialCurrent;
     [SerializeField] private Respawn playerRespawner;
+    [SerializeField] private SoundPlayer soundPlayer;
 
     public static Action<RespawnPointSetter> CurrentRespawnPointChanged;
 
@@ -28,6 +30,7 @@ public class RespawnPointSetter : MonoBehaviour
     {
         if (other.GetComponent<HeroController>())
         {
+            soundPlayer.PlaySound(SoundName.GameSaved);
             CurrentRespawnPointChanged?.Invoke(this);
             meshRenderer.material = materialCurrent;
             playerRespawner.respawnPoint = transform;
