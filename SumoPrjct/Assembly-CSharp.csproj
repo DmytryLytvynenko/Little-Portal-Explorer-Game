@@ -120,6 +120,7 @@
     <Compile Include="Assets\Scripts\MainMechanicks\Enemies\StateMachine\TriggerChecks\ThrowerAttackTrigger.cs" />
     <Compile Include="Assets\Scripts\MainMechanicks\Hero\EffectScaling.cs" />
     <Compile Include="Assets\Scripts\MainMechanicks\Hero\Explosion.cs" />
+    <Compile Include="Assets\Scripts\MainMechanicks\UI\AudioMixer.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Components\GrainComponent.cs" />
     <Compile Include="Assets\Scripts\MainMechanicks\Enemies\StateMachine\TriggerChecks\RunnerAttackTrigger.cs" />
     <Compile Include="Assets\Zololgo\OrbitZoomPanCamera\Scripts\OrbitZoomPanCamera.cs" />
@@ -137,6 +138,7 @@
     <Compile Include="Assets\Scripts\MainMechanicks\HelthSystem\HealthControll.cs" />
     <Compile Include="Assets\Scripts\MainMechanicks\Enemies\Coins\Coin.cs" />
     <Compile Include="Assets\Scripts\Utilities.cs" />
+    <Compile Include="Assets\VolumeSetter.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Models\MotionBlurModel.cs" />
     <Compile Include="Assets\LowPolyWater_Pack\Scripts\LowPolyWater.cs" />
     <Compile Include="Assets\MeshCombiner\Scripts\MeshCombiner.cs" />

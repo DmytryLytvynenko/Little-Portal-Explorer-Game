@@ -473,6 +473,7 @@
 "Assets/Scripts/MainMechanicks/RotatingPlatform.cs"
 "Assets/Scripts/MainMechanicks/SoundPlayer.cs"
 "Assets/Scripts/MainMechanicks/Triggers/BattleTrigger.cs"
+"Assets/Scripts/MainMechanicks/UI/AudioMixer.cs"
 "Assets/Scripts/MainMechanicks/UI/ButtonCooldown.cs"
 "Assets/Scripts/MainMechanicks/UI/CameraController.cs"
 "Assets/Scripts/MainMechanicks/UI/CameraRotate.cs"
@@ -502,6 +503,7 @@
 "Assets/Scripts/Tutorial/SwitchTipAnimation.cs"
 "Assets/Scripts/Tutorial/WalkTutorialEnded.cs"
 "Assets/Scripts/Utilities.cs"
+"Assets/VolumeSetter.cs"
 "Assets/Zololgo/OrbitZoomPanCamera/Scripts/OrbitZoomPanCamera.cs"
 -langversion:9.0
 
