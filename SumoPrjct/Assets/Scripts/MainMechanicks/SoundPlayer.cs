@@ -28,7 +28,8 @@ namespace Sound_Player
         SpecialSound,
         GameSaved,
         Switch,
-        Portal
+        Portal,
+        Respawn
     }
     public class SoundPlayer : MonoBehaviour
     {

@@ -12,6 +12,7 @@ public class RespawnPointSetter : MonoBehaviour
     public static Action<RespawnPointSetter> CurrentRespawnPointChanged;
 
     private MeshRenderer meshRenderer;
+    private bool current = false; 
 
     private void Start()
     {
@@ -28,8 +29,11 @@ public class RespawnPointSetter : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        if (current) return;
+
         if (other.GetComponent<HeroController>())
         {
+            current = true;
             soundPlayer.PlaySound(SoundName.GameSaved);
             CurrentRespawnPointChanged?.Invoke(this);
             meshRenderer.material = materialCurrent;
@@ -41,6 +45,7 @@ public class RespawnPointSetter : MonoBehaviour
     {
         if (this == currentRespawnPointSetter) return;
 
+        current = false;
         meshRenderer.material = materialDefault;
     }
 }

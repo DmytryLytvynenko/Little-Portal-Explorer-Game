@@ -55,12 +55,14 @@ public class HeroController : MonoBehaviour
     #region MonoBeh
     private void OnEnable()
     {
+        Respawn.PlayerFell += OnPlayerFell;
         healthControll.DamageTaken += OnDamageTaken;
         Buff.BuffCollected += OnBuffCollected;
         Enemy.EnemyAndPlayerContacted += OnEnemyColission;
     }
     private void OnDisable()
     {
+        Respawn.PlayerFell -= OnPlayerFell;
         healthControll.DamageTaken -= OnDamageTaken;
         Buff.BuffCollected -= OnBuffCollected;
         Enemy.EnemyAndPlayerContacted -= OnEnemyColission;
@@ -298,5 +300,8 @@ public class HeroController : MonoBehaviour
         soundPlayer.PlaySound(SoundName.TakeDamage);
         JumpOnTakeDamage(damager);
     }
-
+    private void OnPlayerFell()
+    {
+        soundPlayer.PlaySound(SoundName.Respawn);
+    }
 }
