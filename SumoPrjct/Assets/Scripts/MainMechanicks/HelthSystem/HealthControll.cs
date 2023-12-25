@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Sound_Player;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,18 +10,18 @@ public class HealthControll : MonoBehaviour
     [SerializeField] private int maxHealth = 100;
     private int currentHelth;
 
+    [Header("Sound Player")]
+    [SerializeField] private SoundPlayer soundPlayer;
+
     public event Action<float> HealthChanged;
     public event Action<Transform> DamageTaken;
     public event Action EntityDied;
 
-    Vector3 ZeroVector = Vector3.zero;
     private void OnEnable()
     {
-        Heal.HealCollected += OnHealCollected;
     }
     private void OnDisable()
     {
-        Heal.HealCollected -= OnHealCollected;
     }
 
     public void Start()
@@ -44,8 +45,7 @@ public class HealthControll : MonoBehaviour
         currentHelth += value;
         if (currentHelth > maxHealth)
         {
-            currentHelth -= value;
-            return;
+            currentHelth = maxHealth;
         }
         if (currentHelth <= 0)
         {
@@ -56,11 +56,8 @@ public class HealthControll : MonoBehaviour
         float currentHealthAsPercentage = (float)currentHelth / maxHealth;
         HealthChanged?.Invoke(currentHealthAsPercentage);
     }
-    private bool OnHealCollected(int healAmount)
+    public bool OnHealCollected(int healAmount)
     {
-        if (!gameObject.CompareTag("Player"))
-            return false;
-
         if (currentHelth == maxHealth)
             return false;
 
@@ -78,7 +75,7 @@ public class HealthControll : MonoBehaviour
         {
             gameObject.GetComponent<HeroController>().Die();
         }
-
+        soundPlayer.PlaySound(SoundName.Die);
         EntityDied?.Invoke();
     }
 }

@@ -239,6 +239,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
+  soundPlayer: {fileID: 0}
 --- !u!114 &5763825199413968598
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -330,7 +331,8 @@ AudioSource:
   m_GameObject: {fileID: 5763825199413968607}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 2734259546367468562, guid: 7ee25f85d66a1fb4a83970fb07e7856a,
+    type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -432,6 +434,8 @@ MonoBehaviour:
   sounds:
     _serializedList:
     - Key: 0
+      Value: {fileID: 0}
+    - Key: 7
       Value: {fileID: 0}
     - Key: 3
       Value: {fileID: 8300000, guid: f4c21dd75e39e7d4c928bef89e791892, type: 3}

@@ -7,13 +7,12 @@ public class Heal : MonoBehaviour
 {
     [SerializeField] private GameObject pickupEffect;
     [SerializeField] private int healAmount;
-    public static Func<int, bool> HealCollected;
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.TryGetComponent(out HealthControll healthControll))
         {
-            bool healed = Convert.ToBoolean(HealCollected?.Invoke(healAmount));
+            bool healed = Convert.ToBoolean(healthControll.OnHealCollected(healAmount));
             if (healed)
             {
                 /*Instantiate(pickupEffect,transform.position,Quaternion.identity);*/
