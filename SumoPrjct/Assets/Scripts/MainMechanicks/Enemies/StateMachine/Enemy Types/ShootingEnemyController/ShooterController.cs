@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using Sound_Player;
 
 public class ShooterController : Enemy
 {
@@ -45,7 +46,8 @@ public class ShooterController : Enemy
     public void Attack()
     {
         GameObject bullet = Instantiate(this.bullet, ShootPos.position, Quaternion.Euler(0f, transform.localEulerAngles.y, transform.localEulerAngles.z)) as GameObject;
-        bullet.GetComponent<Bullet>().targetPoint = target;
+        bullet.GetComponent<Bullet>().targetPoint = new Vector3(target.position.x, target.position.y + 1, target.position.z);
+        soundPlayer.PlaySound(SoundName.Attack);
     }
     protected override void OnCollisionEnter(Collision collision)
     {

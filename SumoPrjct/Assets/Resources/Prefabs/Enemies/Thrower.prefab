@@ -616,6 +616,8 @@ MonoBehaviour:
   IdleMoovementArea: {fileID: 0}
   idleTargetTrigger: {fileID: 791797778}
   chaseCollider: {fileID: 943162511}
+  healthControll: {fileID: 3096531185797414148}
+  soundPlayer: {fileID: 3096531185797414144}
   contactDamage: -10
   moveSpeed: 5
   maxSpeed: 6
@@ -627,7 +629,6 @@ MonoBehaviour:
     type: 3}
   bombShootPoint: {fileID: 3096531186675476052}
   diskShootPoint: {fileID: 3096531187292151520}
-  healthControll: {fileID: 3096531185797414148}
   explosion: {fileID: 1698255206}
   attackCollider: {fileID: 1423859315}
   attackDistnace: 8
@@ -649,7 +650,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 5000
-  soundPlayer: {fileID: 0}
+  soundPlayer: {fileID: 3096531185797414144}
 --- !u!114 &3096531185797414149
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -710,7 +711,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 6
+  MaxDistance: 10
   Pan2D: 0
   rolloffMode: 1
   BypassEffects: 0

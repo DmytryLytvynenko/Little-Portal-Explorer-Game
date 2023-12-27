@@ -222,13 +222,14 @@ GameObject:
   - component: {fileID: 228993800423009944}
   - component: {fileID: 1133024506}
   - component: {fileID: 1133024507}
+  - component: {fileID: 1240351838}
   m_Layer: 11
   m_Name: shootingEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &228993800423009638
 Transform:
   m_ObjectHideFlags: 0
@@ -346,9 +347,11 @@ MonoBehaviour:
   IdleMoovementArea: {fileID: 0}
   idleTargetTrigger: {fileID: 1239812}
   chaseCollider: {fileID: 864146404}
+  healthControll: {fileID: 228993800423009944}
+  soundPlayer: {fileID: 1133024507}
   contactDamage: -5
-  moveSpeed: 3.5
-  maxSpeed: 4.5
+  moveSpeed: 2.5
+  maxSpeed: 3.5
   rotationSpeed: 10
   AgrDistance: 15
   attackDistnace: 8
@@ -369,7 +372,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 2500
-  soundPlayer: {fileID: 0}
+  soundPlayer: {fileID: 1133024507}
 --- !u!82 &1133024506
 AudioSource:
   m_ObjectHideFlags: 0
@@ -392,7 +395,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 6
+  MaxDistance: 10
   Pan2D: 0
   rolloffMode: 1
   BypassEffects: 0
@@ -490,6 +493,22 @@ MonoBehaviour:
     - Key: 1
       Value: {fileID: 8300000, guid: 27ab95deb3e2739468d0fce0947b44d3, type: 3}
   audioSource: {fileID: 1133024506}
+--- !u!114 &1240351838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 228993800423009635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84ff9c15ce8ff1e49acde1f21900c843, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coinCount: 3
+  coinFlyForce: 180
+  enemy: {fileID: 228993800423009945}
+  pool: {fileID: 0}
 --- !u!1 &4104852528952209650
 GameObject:
   m_ObjectHideFlags: 0

@@ -342,7 +342,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 2500
-  soundPlayer: {fileID: 0}
+  soundPlayer: {fileID: 862998758}
 --- !u!114 &2099930784519596525
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -360,6 +360,8 @@ MonoBehaviour:
   IdleMoovementArea: {fileID: 0}
   idleTargetTrigger: {fileID: 1239812}
   chaseCollider: {fileID: 864146404}
+  healthControll: {fileID: 228993800423009944}
+  soundPlayer: {fileID: 862998758}
   contactDamage: -5
   moveSpeed: 3
   maxSpeed: 4
@@ -392,7 +394,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 6
+  MaxDistance: 10
   Pan2D: 0
   rolloffMode: 1
   BypassEffects: 0

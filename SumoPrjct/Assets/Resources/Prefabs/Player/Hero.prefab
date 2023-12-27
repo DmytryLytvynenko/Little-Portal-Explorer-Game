@@ -239,7 +239,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
-  soundPlayer: {fileID: 0}
+  soundPlayer: {fileID: 3878558954619804429}
 --- !u!114 &5763825199413968598
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -322,6 +322,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f117d3a423169074d9bef1b76884997e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  soundPlayer: {fileID: 3878558954619804429}
 --- !u!82 &1835735264386642712
 AudioSource:
   m_ObjectHideFlags: 0
@@ -440,7 +441,7 @@ MonoBehaviour:
     - Key: 3
       Value: {fileID: 8300000, guid: f4c21dd75e39e7d4c928bef89e791892, type: 3}
     - Key: 6
-      Value: {fileID: 8300000, guid: 7846d1ea6f021cf4dab1ae130676a496, type: 3}
+      Value: {fileID: 8300000, guid: 352593a1d34be80499f5b2f931398fb9, type: 3}
     - Key: 8
       Value: {fileID: 8300000, guid: 559836e221730a048a30b2b027635688, type: 3}
     - Key: 2
@@ -451,6 +452,8 @@ MonoBehaviour:
       Value: {fileID: 8300000, guid: f25745ab39923fc40846ed782aee4776, type: 3}
     - Key: 4
       Value: {fileID: 8300000, guid: 71575795047d6194db04538cb58123be, type: 3}
+    - Key: 21
+      Value: {fileID: 8300000, guid: 612589c88dfd9354b8671b526795794c, type: 3}
   audioSource: {fileID: 1835735264386642712}
 --- !u!81 &1460036112
 AudioListener:

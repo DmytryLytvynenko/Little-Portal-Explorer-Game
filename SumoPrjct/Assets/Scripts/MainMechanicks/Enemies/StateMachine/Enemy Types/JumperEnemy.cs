@@ -1,7 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Launch;
+using Sound_Player;
 
 public class JumperEnemy : Enemy
 {
@@ -43,6 +42,7 @@ public class JumperEnemy : Enemy
 
         if (isGrounded)
         {
+            soundPlayer.PlaySound(SoundName.Jump);
             if (GetRotationVector(target).magnitude < aimedJumpDistanse)
             {
                 launch.InitiateLaunch(target, rb, jumpHeightMultiplier, Physics.gravity.y);

@@ -374,7 +374,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2420992438558452108
 Transform:
   m_ObjectHideFlags: 0
@@ -486,7 +486,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 3000
-  soundPlayer: {fileID: 0}
+  soundPlayer: {fileID: 1640287137}
 --- !u!114 &2420992438558452105
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -504,13 +504,15 @@ MonoBehaviour:
   IdleMoovementArea: {fileID: 0}
   idleTargetTrigger: {fileID: 917647769}
   chaseCollider: {fileID: 656530135}
+  healthControll: {fileID: 2420992438558452106}
+  soundPlayer: {fileID: 1640287137}
   contactDamage: -7
   moveSpeed: 4
   maxSpeed: 5
   rotationSpeed: 15
   AgrDistance: 13
-  runSpeed: 7
-  maxRunSpeed: 8
+  runSpeed: 9
+  maxRunSpeed: 11
   runDistnace: 5
   runTime: 2
   runDelay: 0.7
@@ -537,7 +539,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 6
+  MaxDistance: 10
   Pan2D: 0
   rolloffMode: 1
   BypassEffects: 0
@@ -628,6 +630,8 @@ MonoBehaviour:
     _serializedList:
     - Key: 0
       Value: {fileID: 0}
+    - Key: 4
+      Value: {fileID: 8300000, guid: 1a56077e4246cc24eb4061cc43c084dd, type: 3}
     - Key: 7
       Value: {fileID: 8300000, guid: 54c3bf9d2a717744fa883e5341b8f277, type: 3}
     - Key: 6

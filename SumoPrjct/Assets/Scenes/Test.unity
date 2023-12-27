@@ -1908,6 +1908,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: JumperEnemy
       objectReference: {fileID: 0}
+    - target: {fileID: 3200612844068446014, guid: 7a3d4cd2991cd1140b775d2322d9fe7c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a3d4cd2991cd1140b775d2322d9fe7c, type: 3}
 --- !u!1 &715764483
@@ -2709,7 +2714,7 @@ Canvas:
   serializedVersion: 3
   m_RenderMode: 1
   m_Camera: {fileID: 586077503}
-  m_PlaneDistance: 0.06
+  m_PlaneDistance: 0.1
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
@@ -2895,7 +2900,6 @@ GameObject:
   - component: {fileID: 1053695387}
   - component: {fileID: 1053695386}
   - component: {fileID: 1053695385}
-  - component: {fileID: 1053695384}
   m_Layer: 0
   m_Name: MoovingArea
   m_TagString: Untagged
@@ -2903,19 +2907,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!65 &1053695384
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1053695383}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1053695385
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3597,6 +3588,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1240351838, guid: 7c332c698564bcb46abe64e0792980bc, type: 3}
+      propertyPath: pool
+      value: 
+      objectReference: {fileID: 1470951860}
     - target: {fileID: 228993800423009635, guid: 7c332c698564bcb46abe64e0792980bc,
         type: 3}
       propertyPath: m_Name
@@ -3610,7 +3605,7 @@ PrefabInstance:
     - target: {fileID: 228993800423009638, guid: 7c332c698564bcb46abe64e0792980bc,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5
+      value: 2.7
       objectReference: {fileID: 0}
     - target: {fileID: 228993800423009638, guid: 7c332c698564bcb46abe64e0792980bc,
         type: 3}
@@ -3620,7 +3615,7 @@ PrefabInstance:
     - target: {fileID: 228993800423009638, guid: 7c332c698564bcb46abe64e0792980bc,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 3.6
       objectReference: {fileID: 0}
     - target: {fileID: 228993800423009638, guid: 7c332c698564bcb46abe64e0792980bc,
         type: 3}
@@ -4027,6 +4022,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1414555795}
   m_CullTransparentMesh: 1
+--- !u!114 &1470951860 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5289472641333584931, guid: a3584fd5f47e41d439e1e6030cd1a773,
+    type: 3}
+  m_PrefabInstance: {fileID: 1960220426}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4002ce27f1458247865bb2c123f270a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1573003328
 GameObject:
   m_ObjectHideFlags: 0
@@ -4248,6 +4255,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1640287136, guid: bd0baa6bd99a8a74cbc77277125f5130, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2420992438558452105, guid: bd0baa6bd99a8a74cbc77277125f5130,
         type: 3}
       propertyPath: IdleMoovementArea
@@ -4257,6 +4268,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: runningEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 2420992438558452107, guid: bd0baa6bd99a8a74cbc77277125f5130,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2420992438558452108, guid: bd0baa6bd99a8a74cbc77277125f5130,
         type: 3}
@@ -6390,6 +6406,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Heal
       objectReference: {fileID: 0}
+    - target: {fileID: 1366064201948184262, guid: dcb54b3a2d1b2994fad67df98c9f89b8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dcb54b3a2d1b2994fad67df98c9f89b8, type: 3}
 --- !u!1001 &3096531185797414141
@@ -6565,7 +6586,7 @@ PrefabInstance:
     - target: {fileID: 5763825199413968592, guid: 873e9accae46eda40a59ac0b69f2ed51,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 20
+      value: 38.19
       objectReference: {fileID: 0}
     - target: {fileID: 5763825199413968592, guid: 873e9accae46eda40a59ac0b69f2ed51,
         type: 3}
@@ -6575,7 +6596,7 @@ PrefabInstance:
     - target: {fileID: 5763825199413968592, guid: 873e9accae46eda40a59ac0b69f2ed51,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 7
+      value: 4.26
       objectReference: {fileID: 0}
     - target: {fileID: 5763825199413968592, guid: 873e9accae46eda40a59ac0b69f2ed51,
         type: 3}

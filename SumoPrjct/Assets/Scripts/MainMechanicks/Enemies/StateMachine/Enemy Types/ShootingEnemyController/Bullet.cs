@@ -3,7 +3,7 @@ using Launch;
 
 public class Bullet : MonoBehaviour
 {
-    public Transform targetPoint;
+    public Vector3 targetPoint;
 
 	[SerializeField] private int damage;
 	[SerializeField] private GameObject pointer;
@@ -26,7 +26,7 @@ public class Bullet : MonoBehaviour
 	}
 	private void DrawPointer()
     {
-		Ray ray = new Ray(targetPoint.position, -Vector3.up*100);
+		Ray ray = new Ray(targetPoint, -Vector3.up*100);
 		RaycastHit hit;
 		Physics.Raycast(ray, out hit,100f, layerMask);
 		Vector3 drawPoint = hit.point;

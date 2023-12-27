@@ -13,7 +13,6 @@ public class ThrowerController : Enemy
     [SerializeField] private GameObject diskPrefab;
     [SerializeField] private Transform bombShootPoint;
     [SerializeField] private Transform diskShootPoint;
-    [SerializeField] private HealthControll healthControll;
     [SerializeField] private Explosion explosion;
 
     [SerializeField] private SphereCollider attackCollider;
@@ -72,12 +71,10 @@ public class ThrowerController : Enemy
     protected override void OnEnable()
     {
         base.OnEnable();
-        healthControll.EntityDied += OnEntityDied;
     }
     protected override void OnDisable()
     {
         base.OnDisable();
-        healthControll.EntityDied -= OnEntityDied;
     }
     private void Update()
     {
@@ -158,11 +155,6 @@ public class ThrowerController : Enemy
         {
             item.GetComponent<ThrowerDisk>().SetThrower(diskShootPoint);
         }
-    }
-
-    private void OnEntityDied()
-    {
-        Die();
     }
     protected override void OnDrawGizmos()
     {

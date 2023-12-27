@@ -1,7 +1,9 @@
+using Sound_Player;
 using UnityEngine;
 
 public class Wallet : MonoBehaviour
 {
+    [SerializeField] private SoundPlayer soundPlayer;
     public int coinCount { get; private set; } = 0;
 
     private void OnEnable()
@@ -25,6 +27,7 @@ public class Wallet : MonoBehaviour
     }
     private void OnCoinPickedUp()
     {
+        soundPlayer.PlaySound(SoundName.Coin);
         AddCoin();
     }
 

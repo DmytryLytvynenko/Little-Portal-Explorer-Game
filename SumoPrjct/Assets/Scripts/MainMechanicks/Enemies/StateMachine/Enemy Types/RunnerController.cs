@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Sound_Player;
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -53,7 +54,10 @@ public class RunnerController : Enemy
         Vector3 runVector;
         float timer = 0;
         float tempRotationSpeed = rotationSpeed;
+
         yield return new WaitForSeconds(runDelay);
+
+        soundPlayer.PlaySound(SoundName.Acceleration);
         runVector = (target.position - transform.position).normalized;
         rotationSpeed -= rotationSpeed;
         while (timer < runTime)

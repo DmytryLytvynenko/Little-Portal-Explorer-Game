@@ -39,19 +39,23 @@ public class HealthControll : MonoBehaviour
 
     public void ChangeHealth(int value, Transform damager = null)
     {
-        if (value < 0)
-            DamageTaken?.Invoke(damager);
-
         currentHelth += value;
-        if (currentHelth > maxHealth)
+        if (value > 0) 
         {
-            currentHelth = maxHealth;
+            if (currentHelth > maxHealth)
+                currentHelth = maxHealth;
+
+            soundPlayer.PlaySound(SoundName.Heal);
         }
-        if (currentHelth <= 0)
+        else
         {
-            Die();
-            return;
+            DamageTaken?.Invoke(damager);
+            if (currentHelth <= 0)
+                Die();
+            else
+                soundPlayer.PlaySound(SoundName.TakeDamage);
         }
+
 
         float currentHealthAsPercentage = (float)currentHelth / maxHealth;
         HealthChanged?.Invoke(currentHealthAsPercentage);
@@ -70,7 +74,6 @@ public class HealthControll : MonoBehaviour
     }
     private void Die()
     {
-        HealthChanged?.Invoke(0);
         if (this.gameObject.CompareTag("Player"))
         {
             gameObject.GetComponent<HeroController>().Die();

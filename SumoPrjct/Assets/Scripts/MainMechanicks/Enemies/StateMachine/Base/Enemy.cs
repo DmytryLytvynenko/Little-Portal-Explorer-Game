@@ -1,5 +1,6 @@
 using UnityEngine;
 using System;
+using Sound_Player;
 
 [RequireComponent(typeof(Rigidbody))]
 public class Enemy : MonoBehaviour
@@ -10,6 +11,8 @@ public class Enemy : MonoBehaviour
     [SerializeField] protected Transform IdleMoovementArea;
     [SerializeField] protected IdleTargetTrigger idleTargetTrigger;
     [SerializeField] private SphereCollider chaseCollider;
+    [SerializeField] protected HealthControll healthControll;
+    [SerializeField] protected SoundPlayer soundPlayer;
     [SerializeField] protected int contactDamage;
     [SerializeField] protected float moveSpeed;
     [SerializeField] protected float maxSpeed;
@@ -60,10 +63,12 @@ public class Enemy : MonoBehaviour
     #region MonoBehavior
     protected virtual void OnEnable()
     {
+        healthControll.EntityDied += Die;
         stateMachine.AllStatesOnEnable();
     }
     protected virtual void OnDisable()
     {
+        healthControll.EntityDied -= Die;
         stateMachine.AllStatesOnDisable();
     }
     protected virtual void Awake()
@@ -119,7 +124,7 @@ public class Enemy : MonoBehaviour
     {
         this.target = target;
     }
-    protected void Die()
+    protected virtual void Die()
     {
         EnemyDied?.Invoke();
         Destroy(this.gameObject);

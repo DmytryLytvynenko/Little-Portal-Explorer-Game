@@ -297,7 +297,6 @@ public class HeroController : MonoBehaviour
     }
     private void OnDamageTaken(Transform damager)
     {
-        soundPlayer.PlaySound(SoundName.TakeDamage);
         JumpOnTakeDamage(damager);
     }
     private void OnPlayerFell()
