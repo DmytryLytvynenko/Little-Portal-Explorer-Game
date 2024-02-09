@@ -57,7 +57,7 @@ public class RunnerController : Enemy
 
         yield return new WaitForSeconds(runDelay);
 
-        soundPlayer.PlaySound(SoundName.Acceleration);
+        soundEffectPlayer.PlaySound(SoundName.Acceleration);
         runVector = (target.position - transform.position).normalized;
         rotationSpeed -= rotationSpeed;
         while (timer < runTime)

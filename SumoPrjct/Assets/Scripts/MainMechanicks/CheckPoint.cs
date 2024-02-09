@@ -9,7 +9,7 @@ public class CheckPoint : MonoBehaviour
     [SerializeField] private Animator checkPointAnimator;
     [SerializeField] private GameObject gameSavedMessage;
     [SerializeField] private GameObject lights;
-    [SerializeField] private SoundPlayer soundPlayer;
+    [SerializeField] private SoundEffectPlayer soundEffectPlayer;
     [SerializeField] private float animationLength;
 
     private string animatorParameter = "Enabled";
@@ -39,7 +39,7 @@ public class CheckPoint : MonoBehaviour
     private void ActivateCheckPoint()
     {
         if (Active) return;
-        soundPlayer.PlaySound(SoundName.GameSaved);
+        soundEffectPlayer.PlaySound(SoundName.GameSaved);
 
         checkPointAnimator.enabled = true;
         Active = true;

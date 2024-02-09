@@ -24,8 +24,6 @@ public class SurfaceSlider : MonoBehaviour
     }
     private void OnCollisionStay(Collision collision)
     {
-        if (Equals(collision.contacts[0].otherCollider.gameObject.layer, LayerMask.NameToLayer("Environment")))
-            Debug.Log("sjknda");
         if ((collisionLayersToIgnore & (1 << collision.contacts[0].otherCollider.gameObject.layer)) != 0)
             return;
 

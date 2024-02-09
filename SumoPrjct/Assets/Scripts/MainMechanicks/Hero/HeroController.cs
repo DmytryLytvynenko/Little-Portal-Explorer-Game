@@ -28,7 +28,7 @@ public class HeroController : MonoBehaviour
     [SerializeField] private Transform cameraRoot;
     [SerializeField] private SurfaceSlider surfaceSlider;
     [SerializeField] private VerticalAccelerator verticalAccelerator;
-    [SerializeField] private SoundPlayer soundPlayer;
+    [SerializeField] private SoundEffectPlayer soundEffectPlayer;
     [field:SerializeField] public PlayerDeformator PlayerDeformator { get; private set; }
     private HealthControll healthControll;
     private MobileController mController;
@@ -143,7 +143,7 @@ public class HeroController : MonoBehaviour
     {
         if (isGrounded)
         {
-            soundPlayer.PlaySound(SoundName.Jump);
+            soundEffectPlayer.PlaySound(SoundName.Jump);
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             isGrounded = false;
         }
@@ -197,10 +197,10 @@ public class HeroController : MonoBehaviour
     void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == ("Ground"))
-            soundPlayer.PlaySound(SoundName.Landing);
+            soundEffectPlayer.PlaySound(SoundName.Landing);
 
         IsGroundedUpate(collision, true);
-        if (isGrounded && canExplode)
+        if (/*isGrounded && */canExplode)
         {
             explosion.Explode(explosionDamage);
             canExplode = false;
@@ -301,6 +301,6 @@ public class HeroController : MonoBehaviour
     }
     private void OnPlayerFell()
     {
-        soundPlayer.PlaySound(SoundName.Respawn);
+        soundEffectPlayer.PlaySound(SoundName.Respawn);
     }
 }

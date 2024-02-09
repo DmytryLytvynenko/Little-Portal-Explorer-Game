@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3251397813574482019}
   - component: {fileID: 3257435924461269589}
   - component: {fileID: -2550263788458703090}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: acacia_D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -122,7 +122,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3271600039394788943}
   - component: {fileID: 3271600039394788942}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}

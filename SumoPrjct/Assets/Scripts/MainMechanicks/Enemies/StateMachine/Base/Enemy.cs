@@ -12,7 +12,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] protected IdleTargetTrigger idleTargetTrigger;
     [SerializeField] private SphereCollider chaseCollider;
     [SerializeField] protected HealthControll healthControll;
-    [SerializeField] protected SoundPlayer soundPlayer;
+    [SerializeField] protected SoundEffectPlayer soundEffectPlayer;
     [SerializeField] protected int contactDamage;
     [SerializeField] protected float moveSpeed;
     [SerializeField] protected float maxSpeed;

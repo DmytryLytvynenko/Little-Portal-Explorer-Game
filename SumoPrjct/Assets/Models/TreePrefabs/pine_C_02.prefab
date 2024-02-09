@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 670294649292930612}
   - component: {fileID: 675586467429250820}
   - component: {fileID: 2145460790403803520}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: pine_C_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -122,7 +122,7 @@ GameObject:
   m_Component:
   - component: {fileID: 663461757965830218}
   - component: {fileID: 663461757965830217}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}

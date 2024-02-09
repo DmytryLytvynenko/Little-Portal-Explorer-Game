@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class TrampolineAnimation : MonoBehaviour
 {
-    [SerializeField] private SoundPlayer soundPlayer;
+    [SerializeField] private SoundEffectPlayer soundEffectPlayer;
     private Animation m_Animation;
 
     private void Start()
@@ -14,7 +14,7 @@ public class TrampolineAnimation : MonoBehaviour
     {
         if (collision.gameObject.GetComponent<HeroController>()) 
         {
-            soundPlayer.PlaySound(SoundName.Collision);
+            soundEffectPlayer.PlaySound(SoundName.Collision);
             m_Animation.Play();
         }
     }

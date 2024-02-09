@@ -1281,11 +1281,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: shootingEnemy
       objectReference: {fileID: 0}
-    - target: {fileID: 228993800423009635, guid: 7c332c698564bcb46abe64e0792980bc,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 228993800423009638, guid: 7c332c698564bcb46abe64e0792980bc,
         type: 3}
       propertyPath: m_RootOrder
@@ -1434,6 +1429,11 @@ PrefabInstance:
       propertyPath: gameSavedMessage
       value: 
       objectReference: {fileID: 843540604}
+    - target: {fileID: 1547566437195394587, guid: 5d6a5fdcd30842144a0b62762aae4619,
+        type: 3}
+      propertyPath: soundEffectPlayer
+      value: 
+      objectReference: {fileID: 452685846}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5d6a5fdcd30842144a0b62762aae4619, type: 3}
 --- !u!4 &124060148 stripped
@@ -2324,6 +2324,11 @@ PrefabInstance:
       propertyPath: gameSavedMessage
       value: 
       objectReference: {fileID: 843540604}
+    - target: {fileID: 1547566437195394587, guid: 5d6a5fdcd30842144a0b62762aae4619,
+        type: 3}
+      propertyPath: soundEffectPlayer
+      value: 
+      objectReference: {fileID: 452685846}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5d6a5fdcd30842144a0b62762aae4619, type: 3}
 --- !u!4 &340060742 stripped
@@ -3253,7 +3258,7 @@ Terrain:
   m_DetailObjectDistance: 250
   m_DetailObjectDensity: 0
   m_HeightmapPixelError: 100
-  m_SplatMapDistance: 100
+  m_SplatMapDistance: 50
   m_HeightmapMaximumLOD: 0
   m_ShadowCastingMode: 2
   m_DrawHeightmap: 1
@@ -4547,6 +4552,11 @@ PrefabInstance:
       propertyPath: gameSavedMessage
       value: 
       objectReference: {fileID: 843540604}
+    - target: {fileID: 1547566437195394587, guid: 5d6a5fdcd30842144a0b62762aae4619,
+        type: 3}
+      propertyPath: soundEffectPlayer
+      value: 
+      objectReference: {fileID: 452685846}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5d6a5fdcd30842144a0b62762aae4619, type: 3}
 --- !u!4 &632204504 stripped
@@ -6293,6 +6303,11 @@ PrefabInstance:
       propertyPath: gameSavedMessage
       value: 
       objectReference: {fileID: 843540604}
+    - target: {fileID: 1547566437195394587, guid: 5d6a5fdcd30842144a0b62762aae4619,
+        type: 3}
+      propertyPath: soundEffectPlayer
+      value: 
+      objectReference: {fileID: 452685846}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5d6a5fdcd30842144a0b62762aae4619, type: 3}
 --- !u!4 &921400471 stripped
@@ -7015,11 +7030,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: JumperEnemy
       objectReference: {fileID: 0}
-    - target: {fileID: 3200612844068446014, guid: 7a3d4cd2991cd1140b775d2322d9fe7c,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a3d4cd2991cd1140b775d2322d9fe7c, type: 3}
 --- !u!1 &976598268
@@ -7429,6 +7439,11 @@ PrefabInstance:
       propertyPath: gameSavedMessage
       value: 
       objectReference: {fileID: 843540604}
+    - target: {fileID: 1547566437195394587, guid: 5d6a5fdcd30842144a0b62762aae4619,
+        type: 3}
+      propertyPath: soundEffectPlayer
+      value: 
+      objectReference: {fileID: 452685846}
     - target: {fileID: 1547566438606505338, guid: 5d6a5fdcd30842144a0b62762aae4619,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7636,7 +7651,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1081954355}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0.008726558, y: 0, z: 0, w: 0.999962}
   m_LocalPosition: {x: 127.88, y: 36.09, z: 443.43}
   m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
   m_ConstrainProportionsScale: 1
@@ -7644,7 +7659,7 @@ Transform:
   - {fileID: 1842024717}
   m_Father: {fileID: 0}
   m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 1, y: 0, z: 0}
 --- !u!114 &1081954357
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7834,11 +7849,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: chasingEnemy
-      objectReference: {fileID: 0}
-    - target: {fileID: 1975718632327816936, guid: fa8d3b7c142b7dd488d72332cb20f122,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1975718632327816949, guid: fa8d3b7c142b7dd488d72332cb20f122,
         type: 3}
@@ -10026,12 +10036,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1835735264386642712, guid: 873e9accae46eda40a59ac0b69f2ed51,
-        type: 3}
-      propertyPath: OutputAudioMixerGroup
-      value: 
-      objectReference: {fileID: 2734259546367468562, guid: 7ee25f85d66a1fb4a83970fb07e7856a,
-        type: 2}
     - target: {fileID: 5763825199413968552, guid: 873e9accae46eda40a59ac0b69f2ed51,
         type: 3}
       propertyPath: LoseScreen
@@ -10096,6 +10100,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5763825199413968597, guid: 873e9accae46eda40a59ac0b69f2ed51,
+        type: 3}
+      propertyPath: collisionLayersToIgnore.m_Bits
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5763825199413968607, guid: 873e9accae46eda40a59ac0b69f2ed51,
         type: 3}
@@ -13569,6 +13578,11 @@ PrefabInstance:
       propertyPath: gameSavedMessage
       value: 
       objectReference: {fileID: 843540604}
+    - target: {fileID: 1547566437195394587, guid: 5d6a5fdcd30842144a0b62762aae4619,
+        type: 3}
+      propertyPath: soundEffectPlayer
+      value: 
+      objectReference: {fileID: 452685846}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5d6a5fdcd30842144a0b62762aae4619, type: 3}
 --- !u!4 &2120418920 stripped
@@ -13878,6 +13892,11 @@ PrefabInstance:
       propertyPath: gameSavedMessage
       value: 
       objectReference: {fileID: 843540604}
+    - target: {fileID: 1547566437195394587, guid: 5d6a5fdcd30842144a0b62762aae4619,
+        type: 3}
+      propertyPath: soundEffectPlayer
+      value: 
+      objectReference: {fileID: 452685846}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5d6a5fdcd30842144a0b62762aae4619, type: 3}
 --- !u!23 &2570646523221331077

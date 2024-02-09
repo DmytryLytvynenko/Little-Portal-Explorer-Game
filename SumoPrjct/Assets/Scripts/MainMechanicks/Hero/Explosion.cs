@@ -14,7 +14,7 @@ public class Explosion : MonoBehaviour
 
     [Title("Links")]
     [SerializeField] private GameObject explosionEffect;
-    [SerializeField] private SoundPlayer soundPlayer;
+    [SerializeField] private SoundEffectPlayer soundEffectPlayer;
     public static Action Exploded;
 
     private EffectScaling effectScaling;
@@ -45,7 +45,7 @@ public class Explosion : MonoBehaviour
     }
     public void Explode(int explosionDamage)
     {
-        soundPlayer.PlaySound(SoundName.Explosion);
+        soundEffectPlayer.PlaySound(SoundName.Explosion);
         Collider[] overlappedColiders = Physics.OverlapSphere(transform.position, explosionRadius, explosionLayers);
         Bomb bomb;
         HealthControll healthControll;

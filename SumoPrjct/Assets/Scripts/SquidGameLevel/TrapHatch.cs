@@ -6,7 +6,7 @@ using UnityEngine;
 public class TrapHatch : MonoBehaviour
 {
     [SerializeField] private bool isTrap;
-    [SerializeField] private SoundPlayer soundPlayer;
+    [SerializeField] private SoundEffectPlayer soundEffectPlayer;
     private Rigidbody body;
     private Quaternion defaultRotation;
     private Vector3 defaultposition;
@@ -30,7 +30,7 @@ public class TrapHatch : MonoBehaviour
     {
         if (isTrap)
         {
-            soundPlayer.PlaySound(SoundName.Switch);
+            soundEffectPlayer.PlaySound(SoundName.Switch);
             body.isKinematic = false;
         }
     }

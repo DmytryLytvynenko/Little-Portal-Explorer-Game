@@ -42,7 +42,7 @@ public class JumperEnemy : Enemy
 
         if (isGrounded)
         {
-            soundPlayer.PlaySound(SoundName.Jump);
+            soundEffectPlayer.PlaySound(SoundName.Jump);
             if (GetRotationVector(target).magnitude < aimedJumpDistanse)
             {
                 launch.InitiateLaunch(target, rb, jumpHeightMultiplier, Physics.gravity.y);

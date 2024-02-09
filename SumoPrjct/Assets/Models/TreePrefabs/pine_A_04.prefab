@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5344450660155956208}
   - component: {fileID: 5344450660155956211}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58,7 +58,7 @@ GameObject:
   - component: {fileID: 5358965332904669059}
   - component: {fileID: 5366443177535227165}
   - component: {fileID: 7840443766202088660}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: pine_A_04
   m_TagString: Untagged
   m_Icon: {fileID: 0}

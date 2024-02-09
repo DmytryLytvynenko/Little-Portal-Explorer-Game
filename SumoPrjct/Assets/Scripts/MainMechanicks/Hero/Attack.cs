@@ -11,7 +11,7 @@ public class Attack : MonoBehaviour
 
     [Title("Links")]
     [SerializeField] private Transform attackArea;
-    [SerializeField] private SoundPlayer soundPlayer;
+    [SerializeField] private SoundEffectPlayer soundEffectPlayer;
 
     private float xThrowSize;
     private float yThrowSize;
@@ -27,7 +27,7 @@ public class Attack : MonoBehaviour
     }
     public void InitiateAttack(float attackForce, int attackDamage)
     {
-        soundPlayer.PlaySound(SoundName.Attack);
+        soundEffectPlayer.PlaySound(SoundName.Attack);
         Collider[] overlappedColiders = Physics.OverlapBox(attackArea.position, new Vector3(xThrowSize / 2, yThrowSize / 2, zThrowSize / 2), attackAreaRotation, attackLayers);
         for (int i = 0; i < overlappedColiders.Length; i++)
         {

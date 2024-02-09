@@ -11,7 +11,7 @@ public class HealthControll : MonoBehaviour
     private int currentHelth;
 
     [Header("Sound Player")]
-    [SerializeField] private SoundPlayer soundPlayer;
+    [SerializeField] private SoundEffectPlayer soundEffectPlayer;
 
     public event Action<float> HealthChanged;
     public event Action<Transform> DamageTaken;
@@ -45,7 +45,7 @@ public class HealthControll : MonoBehaviour
             if (currentHelth > maxHealth)
                 currentHelth = maxHealth;
 
-            soundPlayer.PlaySound(SoundName.Heal);
+            soundEffectPlayer.PlaySound(SoundName.Heal);
         }
         else
         {
@@ -53,7 +53,7 @@ public class HealthControll : MonoBehaviour
             if (currentHelth <= 0)
                 Die();
             else
-                soundPlayer.PlaySound(SoundName.TakeDamage);
+                soundEffectPlayer.PlaySound(SoundName.TakeDamage);
         }
 
 
@@ -78,7 +78,7 @@ public class HealthControll : MonoBehaviour
         {
             gameObject.GetComponent<HeroController>().Die();
         }
-        soundPlayer.PlaySound(SoundName.Die);
+        soundEffectPlayer.PlaySound(SoundName.Die);
         EntityDied?.Invoke();
     }
 }

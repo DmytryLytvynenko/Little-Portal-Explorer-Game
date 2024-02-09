@@ -11,7 +11,6 @@ public class FrogController : Enemy
     [Range(0f, 4f)]
     [SerializeField] private float jumpHeightMultiplier;
     [SerializeField] private Animator animator;
-    [SerializeField] private SoundPlayer soundPlayer;
 
     [SerializeField] private Material[] materials;
     [SerializeField] private SkinnedMeshRenderer skinnedMeshRenderer;

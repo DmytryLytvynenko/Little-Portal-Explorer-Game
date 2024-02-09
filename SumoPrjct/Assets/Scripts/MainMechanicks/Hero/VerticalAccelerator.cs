@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class VerticalAccelerator : MonoBehaviour
 {
-    [SerializeField] private SoundPlayer soundPlayer;
+    [SerializeField] private SoundEffectPlayer soundEffectPlayer;
     [SerializeField] private float accelerationForce;
     private Rigidbody body;
     void Start()
@@ -12,7 +12,7 @@ public class VerticalAccelerator : MonoBehaviour
     }
     public void SpeedUp()
     {
-        soundPlayer.PlaySound(SoundName.Acceleration);
+        soundEffectPlayer.PlaySound(SoundName.Acceleration);
         body.AddForce(-transform.up * accelerationForce, ForceMode.Impulse); 
     }
 }

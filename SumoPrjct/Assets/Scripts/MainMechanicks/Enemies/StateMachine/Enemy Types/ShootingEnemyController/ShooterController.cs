@@ -47,7 +47,7 @@ public class ShooterController : Enemy
     {
         GameObject bullet = Instantiate(this.bullet, ShootPos.position, Quaternion.Euler(0f, transform.localEulerAngles.y, transform.localEulerAngles.z)) as GameObject;
         bullet.GetComponent<Bullet>().targetPoint = new Vector3(target.position.x, target.position.y + 1, target.position.z);
-        soundPlayer.PlaySound(SoundName.Attack);
+        soundEffectPlayer.PlaySound(SoundName.Attack);
     }
     protected override void OnCollisionEnter(Collision collision)
     {
