@@ -4,6 +4,11 @@ using Sound_Player;
 
 public class JumperEnemy : Enemy
 {
+    private enum JumpEnemyAnimStates
+    {
+        Jump_Start,
+        Land_Attack
+    }
     [SerializeField] private float jumpForce;
     [SerializeField] private float jumpCooldown;
     [Range(0f, 4f)]
@@ -43,6 +48,7 @@ public class JumperEnemy : Enemy
         if (isGrounded)
         {
             soundEffectPlayer.PlaySound(SoundName.Jump);
+            animator.SetTrigger(JumpEnemyAnimStates.Jump_Start.ToString());
             if (GetRotationVector(target).magnitude < aimedJumpDistanse)
             {
                 launch.InitiateLaunch(target, rb, jumpHeightMultiplier, Physics.gravity.y);
@@ -82,6 +88,7 @@ public class JumperEnemy : Enemy
     }
     protected override void OnCollisionEnter(Collision collision)
     {
+        animator.SetTrigger(JumpEnemyAnimStates.Land_Attack.ToString());
         base.OnCollisionEnter(collision);
     }
 }

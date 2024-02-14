@@ -4,10 +4,12 @@ public class EnemyIdleState : EnemyState
 {
     private Transform target;
     private Transform moveArea;
-    public EnemyIdleState(Enemy enemy, EnemyStateMachine enemyStateMachine,Transform IdleMoovementArea, Transform IdleTargetTrigger) : base(enemy, enemyStateMachine)
+    private LayerMask IdleLayers;
+    public EnemyIdleState(Enemy enemy, EnemyStateMachine enemyStateMachine,Transform IdleMoovementArea, Transform IdleTargetTrigger,LayerMask _IdleLayers) : base(enemy, enemyStateMachine)
     {
         moveArea = IdleMoovementArea;
         target = IdleTargetTrigger;
+        IdleLayers = _IdleLayers;
     }
 
     public override void AnimationTriggerEvent(Enemy.AnimationTriggerType animationTriggerType)
@@ -56,7 +58,7 @@ public class EnemyIdleState : EnemyState
             );
 
         RaycastHit hitInfo;
-        Physics.Raycast(randomInsideBox, -Vector3.up,out hitInfo ,100);
+        Physics.Raycast(randomInsideBox, -Vector3.up,out hitInfo ,100,IdleLayers);
         Debug.DrawRay(randomInsideBox, -Vector3.up, Color.red, 100);
 
         if (hitInfo.collider == null)

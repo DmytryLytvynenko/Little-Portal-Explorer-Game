@@ -13,10 +13,12 @@ public class Enemy : MonoBehaviour
     [SerializeField] private SphereCollider chaseCollider;
     [SerializeField] protected HealthControll healthControll;
     [SerializeField] protected SoundEffectPlayer soundEffectPlayer;
+    [SerializeField] protected Animator animator;
     [SerializeField] protected int contactDamage;
     [SerializeField] protected float moveSpeed;
     [SerializeField] protected float maxSpeed;
     [SerializeField] protected float rotationSpeed;
+    [SerializeField] protected LayerMask IdleLayers;
     public float AgrDistance;
 
     protected bool isGrounded;
@@ -74,7 +76,7 @@ public class Enemy : MonoBehaviour
     protected virtual void Awake()
     {
         stateMachine = new EnemyStateMachine();
-        idleState = new EnemyIdleState(this, stateMachine, IdleMoovementArea, idleTargetTrigger.transform);
+        idleState = new EnemyIdleState(this, stateMachine, IdleMoovementArea, idleTargetTrigger.transform,IdleLayers);
         chaseState = new EnemyChaseState(this, stateMachine, chaseCollider, AgrDistance, target);
         stayState = new EnemyStayState(this, stateMachine, target);
     }
