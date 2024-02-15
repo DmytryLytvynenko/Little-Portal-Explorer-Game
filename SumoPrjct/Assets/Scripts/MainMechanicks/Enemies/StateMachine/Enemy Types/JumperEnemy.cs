@@ -13,6 +13,7 @@ public class JumperEnemy : Enemy
     [SerializeField] private float jumpCooldown;
     [Range(0f, 4f)]
     [SerializeField] private float jumpHeightMultiplier;
+    [SerializeField] private float aimedJumpHeight;
     [SerializeField] private float aimedJumpDistanse;
     Launch.Launch launch;
 
@@ -51,7 +52,7 @@ public class JumperEnemy : Enemy
             animator.SetTrigger(JumpEnemyAnimStates.Jump_Start.ToString());
             if (GetRotationVector(target).magnitude < aimedJumpDistanse)
             {
-                launch.InitiateLaunch(target, rb, jumpHeightMultiplier, Physics.gravity.y);
+                launch.InitiateLaunch(target, rb, aimedJumpHeight, Physics.gravity.y);
                 isGrounded = false;
             }
             else

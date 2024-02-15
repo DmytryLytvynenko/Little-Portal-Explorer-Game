@@ -74,10 +74,6 @@ public class HealthControll : MonoBehaviour
     }
     private void Die()
     {
-        if (this.gameObject.CompareTag("Player"))
-        {
-            gameObject.GetComponent<HeroController>().Die();
-        }
         soundEffectPlayer.PlaySound(SoundName.Die);
         EntityDied?.Invoke();
     }

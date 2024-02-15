@@ -10,9 +10,9 @@ scopes = {
 	"last_search.DA949528" = "player prefs"
 	"OpenInspectorPreview.DA949528" = "0"
 	"currentGroup.DA949528" = "all"
-	"last_search.DD5CDD96" = ""
+	"last_search.DD5CDD96" = "Player"
 	"OpenInspectorPreview.DD5CDD96" = "0"
-	"currentGroup.DD5CDD96" = "scene"
+	"currentGroup.DD5CDD96" = "settings"
 }
 providers = {
 	adb = {

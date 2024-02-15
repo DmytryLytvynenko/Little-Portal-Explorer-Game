@@ -2144,7 +2144,7 @@ Transform:
   m_GameObject: {fileID: 8339047276639981309}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3.62, y: -0.5, z: 1.89}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 9186030977528571479}
@@ -2361,8 +2361,9 @@ MonoBehaviour:
   AgrDistance: 10
   jumpForce: 160
   jumpCooldown: 2
-  jumpHeightMultiplier: 1.5
-  aimedJumpDistanse: 4
+  jumpHeightMultiplier: 1
+  aimedJumpHeight: 0.5
+  aimedJumpDistanse: 6
 --- !u!136 &8339047276639981303
 CapsuleCollider:
   m_ObjectHideFlags: 0

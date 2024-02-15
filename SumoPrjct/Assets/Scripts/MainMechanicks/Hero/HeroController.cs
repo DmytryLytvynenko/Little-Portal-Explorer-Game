@@ -3,6 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Sound_Player;
+
+public enum PlayerAnimParameters
+{
+    Walking,
+    StartJump,
+    LandJump,
+    Death,
+    Attack,
+    Throw,
+    Hit,
+    Interact
+}
 public class HeroController : MonoBehaviour
 {
     [Header("Oсновные параметры")]
@@ -32,7 +44,7 @@ public class HeroController : MonoBehaviour
     [field:SerializeField] public PlayerDeformator PlayerDeformator { get; private set; }
     private HealthControll healthControll;
     private MobileController mController;
-    private Animator ch_animator;
+    private Animator animator;
     private Rigidbody rb;
     private Explosion explosion;
 
@@ -57,6 +69,7 @@ public class HeroController : MonoBehaviour
     {
         Respawn.PlayerFell += OnPlayerFell;
         healthControll.DamageTaken += OnDamageTaken;
+        healthControll.EntityDied += OnHeroDied;
         Buff.BuffCollected += OnBuffCollected;
         Enemy.EnemyAndPlayerContacted += OnEnemyColission;
     }
@@ -73,7 +86,7 @@ public class HeroController : MonoBehaviour
         healthControll = GetComponent<HealthControll>();
         explosion = GetComponent<Explosion>();
         rb = GetComponent<Rigidbody>();
-        /*ch_animator = GetComponent<Animator>();*/
+        animator = GetComponent<Animator>();
         mController = GameObject.FindGameObjectWithTag("Joystick").GetComponent<MobileController>();
 
         MyDelegate[] buffFoos = new MyDelegate[]
@@ -103,7 +116,7 @@ public class HeroController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            Jump();
+            StartJumpAnimation();
         }
     }
     private void FixedUpdate()
@@ -138,19 +151,46 @@ public class HeroController : MonoBehaviour
             Vector3 direction = isGrounded ? directionAlongSurface : transform.forward;
             rb.AddForce(direction * moveVector.magnitude * moveSpeed, ForceMode.Impulse);//метод передвижения 
         }
+        if (currentVelocityXY == 0)
+            animator.SetBool(PlayerAnimParameters.Walking.ToString(), false);
+        else
+            animator.SetBool(PlayerAnimParameters.Walking.ToString(), true);
     }
-    public void Jump()
+    public void StartInteractAnimation()
+    {
+        if (!isGrounded)
+            return;
+        animator.SetTrigger(PlayerAnimParameters.Interact.ToString());
+    }
+    public void StartAttackAnimation()
+    {
+        if (!isGrounded)
+            return;
+        animator.SetTrigger(PlayerAnimParameters.Attack.ToString());
+    }
+    public void StartThrowAnimation()
+    {
+        if (!isGrounded)
+            return;
+        animator.SetTrigger(PlayerAnimParameters.Throw.ToString());
+    }
+    private void StartJumpAnimation()
     {
         if (isGrounded)
         {
-            soundEffectPlayer.PlaySound(SoundName.Jump);
-            rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
-            isGrounded = false;
+            animator.SetTrigger(PlayerAnimParameters.StartJump.ToString());
         }
         else
         {
             verticalAccelerator.SpeedUp();
         }
+    }
+    public void Jump()
+    {
+        animator.SetBool(PlayerAnimParameters.LandJump.ToString(), false);
+        soundEffectPlayer.PlaySound(SoundName.Jump);
+        rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+        isGrounded = false;
     }
     private void SetCanExplode()
     {
@@ -178,6 +218,9 @@ public class HeroController : MonoBehaviour
     }
     private void JumpOnTakeDamage(Transform enemy)
     {
+        if (!isGrounded)
+            return;
+
         Vector3 dir;
         if (enemy == null)
         {
@@ -196,8 +239,11 @@ public class HeroController : MonoBehaviour
     }
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == ("Ground"))
+        if (collision.gameObject.tag == "Ground")
+        {
             soundEffectPlayer.PlaySound(SoundName.Landing);
+            animator.SetBool(PlayerAnimParameters.LandJump.ToString(),true);
+        }
 
         IsGroundedUpate(collision, true);
         if (/*isGrounded && */canExplode)
@@ -266,6 +312,7 @@ public class HeroController : MonoBehaviour
     }   
     public void Die()
     {
+        animator.SetBool(PlayerAnimParameters.Death.ToString(), true);
         LoseScreen.SetActive(true);
     }
     public void Win()
@@ -297,7 +344,13 @@ public class HeroController : MonoBehaviour
     }
     private void OnDamageTaken(Transform damager)
     {
+        animator.SetTrigger(PlayerAnimParameters.Hit.ToString());
+        soundEffectPlayer.PlaySound(SoundName.TakeDamage);
         JumpOnTakeDamage(damager);
+    }
+    private void OnHeroDied()
+    {
+        Die();
     }
     private void OnPlayerFell()
     {
