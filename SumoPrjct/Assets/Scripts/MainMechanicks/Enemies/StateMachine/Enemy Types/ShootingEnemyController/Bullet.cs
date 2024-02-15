@@ -1,11 +1,13 @@
 ﻿using UnityEngine;
 using Launch;
+using static UnityEngine.GraphicsBuffer;
 
 public class Bullet : MonoBehaviour
 {
-    public Vector3 targetPoint;
+    public Transform targetPoint;
 
 	[SerializeField] private int damage;
+	[SerializeField] private float rotationSpeed = 1;
 	[SerializeField] private GameObject pointer;
 	[SerializeField] private LayerMask layerMask;
 
@@ -18,15 +20,17 @@ public class Bullet : MonoBehaviour
 	public bool debugPath;
 
 	private void Start()
-	{
+    {
 		launch = new Launch.Launch();
+        transform.LookAt(targetPoint);
 		bullet = GetComponent<Rigidbody>();
 		launch.InitiateLaunch(targetPoint, bullet, trajectoryHeight, Physics.gravity.y);
 		DrawPointer();
 	}
-	private void DrawPointer()
+    private void DrawPointer()
     {
-		Ray ray = new Ray(targetPoint, -Vector3.up*100);
+		Vector3 rayPos = new Vector3(targetPoint.position.x, targetPoint.position.y + 1, targetPoint.position.z);
+		Ray ray = new Ray(rayPos, -Vector3.up*100);
 		RaycastHit hit;
 		Physics.Raycast(ray, out hit,100f, layerMask);
 		Vector3 drawPoint = hit.point;

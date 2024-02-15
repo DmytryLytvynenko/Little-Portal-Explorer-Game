@@ -173,7 +173,7 @@ public class EnemyBigBoss : Enemy
         for (int i = 0; i < numberOfBullets; i++)
         {
             GameObject bullet = Instantiate(this.bullet, ShootPos.position, Quaternion.Euler(0f, transform.localEulerAngles.y, transform.localEulerAngles.z));
-            bullet.GetComponent<Bullet>().targetPoint = new Vector3(target.position.x, target.position.y + 1, target.position.z);
+            bullet.GetComponent<Bullet>().targetPoint = target;
 
             yield return new WaitForSeconds(timeBetweenShots);
         }
