@@ -3,6 +3,10 @@ using System;
 using System.Collections;
 using UnityEngine;
 
+public enum RunnerAnimParametrs
+{
+    Run
+}
 public class RunnerController : Enemy
 {
     // Main characteristics
@@ -25,7 +29,7 @@ public class RunnerController : Enemy
         target = GlobalData.PlayerInstance.transform;
         base.Awake();
 
-        atackState = new RunnerRunState(this, stateMachine, attackCollider, runDistnace, target);
+        atackState = new RunnerRunState(this, stateMachine, attackCollider, runDistnace, target, animator);
     }
     #endregion
     protected override void Start()

@@ -2,6 +2,10 @@
 using UnityEngine;
 using Sound_Player;
 
+public enum ShooterAnimParametrs 
+{
+    Attack
+}
 public class ShooterController : Enemy
 {
     // Main characteristics
@@ -27,7 +31,7 @@ public class ShooterController : Enemy
         target = GlobalData.PlayerInstance.transform;
         base.Awake();
 
-        atackState = new ShooterEnemyAtackState(this, stateMachine, AttackCollider, ShootCooldown, attackDistnace,target);
+        atackState = new ShooterEnemyAtackState(this, stateMachine, AttackCollider, ShootCooldown, attackDistnace,target,animator);
     }
     protected override void Start()
     {

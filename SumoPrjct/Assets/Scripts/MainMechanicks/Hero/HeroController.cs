@@ -151,7 +151,7 @@ public class HeroController : MonoBehaviour
             Vector3 direction = isGrounded ? directionAlongSurface : transform.forward;
             rb.AddForce(direction * moveVector.magnitude * moveSpeed, ForceMode.Impulse);//метод передвижения 
         }
-        if (currentVelocityXY == 0)
+        if (moveVector == Vector3.zero)
             animator.SetBool(PlayerAnimParameters.Walking.ToString(), false);
         else
             animator.SetBool(PlayerAnimParameters.Walking.ToString(), true);

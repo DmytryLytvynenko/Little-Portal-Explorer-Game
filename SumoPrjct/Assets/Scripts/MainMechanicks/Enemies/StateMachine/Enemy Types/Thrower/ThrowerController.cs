@@ -58,7 +58,7 @@ public class ThrowerController : Enemy
     {
         target =  GlobalData.PlayerInstance.transform;
         base.Awake();
-        atackState = new ThrowerEnemyAtackState(this, stateMachine, shootCooldown, target);
+        atackState = new ThrowerEnemyAtackState(this, stateMachine, shootCooldown, target, animator);
 
         bombObjectsPool = new GameObjectPool(bombPrefab, BOMB_PRELOAD_COUNT);
         diskObjectsPool = new GameObjectPool(diskPrefab, DISK_PRELOAD_COUNT);

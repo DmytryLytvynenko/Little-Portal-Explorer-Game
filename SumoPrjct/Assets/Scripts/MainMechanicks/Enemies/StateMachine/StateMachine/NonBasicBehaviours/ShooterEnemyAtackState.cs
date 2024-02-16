@@ -10,19 +10,16 @@ public class ShooterEnemyAtackState : EnemyState
     private float ExitAttackStateDelay = 2f;
     private float shootCooldown;
     private float timer = 0;
+    private Animator animator;
 
-    public ShooterEnemyAtackState(ShooterController enemy, EnemyStateMachine enemyStateMachine,SphereCollider AttackCollider,float ShootCooldown,float AttackDistnace, Transform Target) : base(enemy, enemyStateMachine)
+    public ShooterEnemyAtackState(ShooterController enemy, EnemyStateMachine enemyStateMachine,SphereCollider AttackCollider,float ShootCooldown,float AttackDistnace, Transform Target, Animator _animator) : base(enemy, enemyStateMachine)
     {
         target = Target;
         AttackCollider.radius = AttackDistnace;
         shooter = enemy;
         shootCooldown = ShootCooldown;
         ExitAttackStateFunc = ExitAttackState;
-    }
-
-    public override void AnimationTriggerEvent(Enemy.AnimationTriggerType animationTriggerType)
-    {
-        base.AnimationTriggerEvent(animationTriggerType);
+        animator = _animator;
     }
     public override void OnEnable()
     {
@@ -37,6 +34,7 @@ public class ShooterEnemyAtackState : EnemyState
     }
     public override void EnterState()
     {
+        animator.SetBool(EnemyAnimParameters.Walking.ToString(), false);
     }
 
     public override void ExitState()
@@ -81,7 +79,8 @@ public class ShooterEnemyAtackState : EnemyState
         timer += Time.deltaTime;
         if (timer > shootCooldown) 
         {
-            shooter.Attack();
+            animator.SetTrigger(ShooterAnimParametrs.Attack.ToString());
+/*            shooter.Attack();*/
             timer = 0;
         }
     }

@@ -5,17 +5,15 @@ public class EnemyIdleState : EnemyState
     private Transform target;
     private Transform moveArea;
     private LayerMask IdleLayers;
-    public EnemyIdleState(Enemy enemy, EnemyStateMachine enemyStateMachine,Transform IdleMoovementArea, Transform IdleTargetTrigger,LayerMask _IdleLayers) : base(enemy, enemyStateMachine)
+    private Animator animator;
+    public EnemyIdleState(Enemy enemy, EnemyStateMachine enemyStateMachine,Transform IdleMoovementArea, Transform IdleTargetTrigger,LayerMask _IdleLayers, Animator _animator) : base(enemy, enemyStateMachine)
     {
         moveArea = IdleMoovementArea;
         target = IdleTargetTrigger;
         IdleLayers = _IdleLayers;
+        animator = _animator;
     }
 
-    public override void AnimationTriggerEvent(Enemy.AnimationTriggerType animationTriggerType)
-    {
-        base.AnimationTriggerEvent(animationTriggerType);
-    }
     public override void OnEnable() { }
 
     public override void OnDisable(){ }
@@ -26,11 +24,11 @@ public class EnemyIdleState : EnemyState
         target.parent = null;
         target.gameObject.SetActive(true);
         target.position = GetRandomPositionInArea();
+        animator.SetBool(EnemyAnimParameters.Walking.ToString(), true);
     }
 
     public override void ExitState()
     {
-        base.ExitState();
         target.gameObject.SetActive(false);
         enemy.IdleTargetReached -= OnIdleTargetReached;
     }

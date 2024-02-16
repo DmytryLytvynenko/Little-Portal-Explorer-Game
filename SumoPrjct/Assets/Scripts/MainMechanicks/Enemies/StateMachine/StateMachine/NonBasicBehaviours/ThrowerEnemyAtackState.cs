@@ -11,6 +11,7 @@ public class ThrowerEnemyAtackState : EnemyState
     private float ExitAttackStateDelay = 2f;
     private float attackCooldown;
     private float timer = 0;
+    private Animator animator;
 
     #region Events
 
@@ -19,18 +20,15 @@ public class ThrowerEnemyAtackState : EnemyState
 
     #endregion
 
-    public ThrowerEnemyAtackState(ThrowerController enemy, EnemyStateMachine enemyStateMachine, float AttackCooldown, Transform Target) : base(enemy, enemyStateMachine)
+    public ThrowerEnemyAtackState(ThrowerController enemy, EnemyStateMachine enemyStateMachine, float AttackCooldown, Transform Target, Animator _animator) : base(enemy, enemyStateMachine)
     {
         target = Target;
         thrower = enemy;
         attackCooldown = AttackCooldown;
         ExitAttackStateFunc = ExitAttackState;
+        animator = _animator;
     }
 
-    public override void AnimationTriggerEvent(Enemy.AnimationTriggerType animationTriggerType)
-    {
-        base.AnimationTriggerEvent(animationTriggerType);
-    }
     public override void OnEnable()
     {
         thrower.PlayerEnteredAttackZone += OnPlayerEnteredAttackZone;

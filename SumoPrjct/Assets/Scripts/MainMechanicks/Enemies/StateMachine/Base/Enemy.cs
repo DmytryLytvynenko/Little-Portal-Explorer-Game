@@ -2,6 +2,12 @@ using UnityEngine;
 using System;
 using Sound_Player;
 
+public enum EnemyAnimParameters
+{
+    Walking,
+    Death,
+    Hit
+}
 [RequireComponent(typeof(Rigidbody))]
 public class Enemy : MonoBehaviour
 {
@@ -50,35 +56,25 @@ public class Enemy : MonoBehaviour
 
     #endregion
 
-    #region AnimationTriggers
-    private void AnimationTriggerEvent(AnimationTriggerType animationTriggerType)
-    {
-        stateMachine.CurrentEnemyState.AnimationTriggerEvent(animationTriggerType);
-    }
-    public enum AnimationTriggerType
-    {
-        EnemyDamaged,
-        PlayFootstepsSound
-    }
-    #endregion
-
     #region MonoBehavior
     protected virtual void OnEnable()
     {
-        healthControll.EntityDied += Die;
+        healthControll.EntityDied += OnEntityDied;
+        healthControll.DamageTaken += OnDamageTaken;
         stateMachine.AllStatesOnEnable();
     }
     protected virtual void OnDisable()
     {
-        healthControll.EntityDied -= Die;
+        healthControll.EntityDied -= OnEntityDied;
+        healthControll.DamageTaken -= OnDamageTaken;
         stateMachine.AllStatesOnDisable();
     }
     protected virtual void Awake()
     {
         stateMachine = new EnemyStateMachine();
-        idleState = new EnemyIdleState(this, stateMachine, IdleMoovementArea, idleTargetTrigger.transform,IdleLayers);
-        chaseState = new EnemyChaseState(this, stateMachine, chaseCollider, AgrDistance, target);
-        stayState = new EnemyStayState(this, stateMachine, target);
+        idleState = new EnemyIdleState(this, stateMachine, IdleMoovementArea, idleTargetTrigger.transform,IdleLayers, animator);
+        chaseState = new EnemyChaseState(this, stateMachine, chaseCollider, AgrDistance, target, animator);
+        stayState = new EnemyStayState(this, stateMachine, target, animator);
     }
     protected virtual void Start()
     {
@@ -126,7 +122,7 @@ public class Enemy : MonoBehaviour
     {
         this.target = target;
     }
-    protected virtual void Die()
+    public virtual void Die()
     {
         EnemyDied?.Invoke();
         Destroy(this.gameObject);
@@ -135,6 +131,15 @@ public class Enemy : MonoBehaviour
     #endregion
 
     #region Callbacks
+    private void OnEntityDied()
+    {
+        animator.SetBool(EnemyAnimParameters.Death.ToString(), true);
+        this.enabled = false;
+    }
+    private void OnDamageTaken(Transform damager)
+    {
+        animator.SetTrigger(EnemyAnimParameters.Hit.ToString());
+    }
     protected virtual void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.GetComponent<HeroController>())//magic word!!!
@@ -150,8 +155,6 @@ public class Enemy : MonoBehaviour
             isGrounded = false;
         }
     }
-
-
     protected virtual void OnDrawGizmos()
     {
         Gizmos.color = Color.yellow;

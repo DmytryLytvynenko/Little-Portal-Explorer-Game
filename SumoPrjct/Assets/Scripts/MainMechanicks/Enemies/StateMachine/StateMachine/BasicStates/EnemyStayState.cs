@@ -3,18 +3,16 @@ using UnityEngine;
 public class EnemyStayState : EnemyState
 {
     public Transform target;
-    public EnemyStayState(Enemy enemy, EnemyStateMachine enemyStateMachine, Transform Target) : base(enemy, enemyStateMachine)
+    private Animator animator;
+    public EnemyStayState(Enemy enemy, EnemyStateMachine enemyStateMachine, Transform Target, Animator _animator) : base(enemy, enemyStateMachine)
     {
         target = Target;
-    }
-
-    public override void AnimationTriggerEvent(Enemy.AnimationTriggerType animationTriggerType)
-    {
-        base.AnimationTriggerEvent(animationTriggerType);
+        animator = _animator;
     }
 
     public override void EnterState()
     {
+        animator.SetBool(EnemyAnimParameters.Walking.ToString(), false);
     }
 
     public override void ExitState()

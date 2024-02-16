@@ -7,6 +7,7 @@ public class RunnerRunState : EnemyState
     private RunnerController runner;
     private Coroutine runCoroutine;
     private Zone currentZone;
+    private Animator animator;
 
     private enum Zone
     {
@@ -15,17 +16,14 @@ public class RunnerRunState : EnemyState
         none
     }
 
-    public RunnerRunState(RunnerController enemy, EnemyStateMachine enemyStateMachine, SphereCollider AttackCollider,  float AttackDistnace, Transform Target) : base(enemy, enemyStateMachine)
+    public RunnerRunState(RunnerController enemy, EnemyStateMachine enemyStateMachine, SphereCollider AttackCollider,  float AttackDistnace, Transform Target, Animator _animator) : base(enemy, enemyStateMachine)
     {
         target = Target;
         AttackCollider.radius =  AttackDistnace;
         runner = enemy;
+        animator = _animator;
     }
 
-    public override void AnimationTriggerEvent(Enemy.AnimationTriggerType animationTriggerType)
-    {
-        base.AnimationTriggerEvent(animationTriggerType);
-    }
     public override void OnEnable()
     {
         runner.PlayerEnteredAttackZone += OnPlayerEnteredAttackZone;
@@ -48,6 +46,7 @@ public class RunnerRunState : EnemyState
     public override void EnterState()
     {
         currentZone = Zone.attack;
+        animator.SetTrigger(RunnerAnimParametrs.Run.ToString());
     }
 
     public override void ExitState()

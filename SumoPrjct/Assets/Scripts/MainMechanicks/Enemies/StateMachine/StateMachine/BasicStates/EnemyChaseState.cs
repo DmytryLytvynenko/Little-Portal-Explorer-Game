@@ -11,17 +11,14 @@ public class EnemyChaseState : EnemyState
     private float ExitChaseStateDelay = 2f; 
     private Coroutine ExitChaseStateCoroutine;
     private SphereCollider chaseCollider;
-    public EnemyChaseState(Enemy enemy, EnemyStateMachine enemyStateMachine, SphereCollider ChaseCollider, float AgrDistnace, Transform Target) : base(enemy, enemyStateMachine)
+    private Animator animator;
+    public EnemyChaseState(Enemy enemy, EnemyStateMachine enemyStateMachine, SphereCollider ChaseCollider, float AgrDistnace, Transform Target, Animator _animator) : base(enemy, enemyStateMachine)
     {
         target = Target;
         chaseCollider = ChaseCollider;
         chaseCollider.radius = AgrDistnace;
         ExitChaseStateFunc = ExitChaseState;
-    }
-
-    public override void AnimationTriggerEvent(Enemy.AnimationTriggerType animationTriggerType)
-    {
-        base.AnimationTriggerEvent(animationTriggerType);
+        animator = _animator;
     }
     public override void OnEnable()
     {
@@ -33,6 +30,10 @@ public class EnemyChaseState : EnemyState
     {
         enemy.PlayerEnteredChaseZone -= OnPlayerEnteredChaseZone;
         enemy.PlayerExitedChaseZone -= OnPlayerExitedChaseZone;
+    }
+    public override void EnterState()
+    {
+        animator.SetBool(EnemyAnimParameters.Walking.ToString(), true);
     }
     public override void FrameUpdate()
     {

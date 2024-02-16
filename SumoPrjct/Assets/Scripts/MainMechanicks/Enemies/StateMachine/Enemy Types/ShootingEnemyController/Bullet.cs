@@ -7,7 +7,6 @@ public class Bullet : MonoBehaviour
     public Transform targetPoint;
 
 	[SerializeField] private int damage;
-	[SerializeField] private float rotationSpeed = 1;
 	[SerializeField] private GameObject pointer;
 	[SerializeField] private LayerMask layerMask;
 

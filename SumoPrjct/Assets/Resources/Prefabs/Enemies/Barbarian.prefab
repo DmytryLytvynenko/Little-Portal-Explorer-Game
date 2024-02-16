@@ -2128,6 +2128,7 @@ GameObject:
   - component: {fileID: 8339047276639981306}
   - component: {fileID: 8339047276639981307}
   - component: {fileID: 8339047276639981303}
+  - component: {fileID: 7866754507117295111}
   m_Layer: 11
   m_Name: Barbarian
   m_TagString: Untagged
@@ -2328,7 +2329,7 @@ Rigidbody:
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 1
+  m_Interpolate: 2
   m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!114 &8339047276639981307
@@ -2362,7 +2363,7 @@ MonoBehaviour:
   jumpForce: 160
   jumpCooldown: 2
   jumpHeightMultiplier: 1
-  aimedJumpHeight: 0.5
+  aimedJumpHeight: 1
   aimedJumpDistanse: 6
 --- !u!136 &8339047276639981303
 CapsuleCollider:
@@ -2378,6 +2379,22 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &7866754507117295111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8339047276639981309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84ff9c15ce8ff1e49acde1f21900c843, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coinCount: 3
+  coinFlyForce: 180
+  enemy: {fileID: 8339047276639981307}
+  pool: {fileID: 0}
 --- !u!1 &8349533770257454987
 GameObject:
   m_ObjectHideFlags: 0
@@ -3030,7 +3047,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBarFilling: {fileID: 9186030977023396949}
-  Health: {fileID: 0}
+  Health: {fileID: 8339047276639981304}
   gradient:
     serializedVersion: 2
     key0: {r: 1, g: 0, b: 0, a: 1}

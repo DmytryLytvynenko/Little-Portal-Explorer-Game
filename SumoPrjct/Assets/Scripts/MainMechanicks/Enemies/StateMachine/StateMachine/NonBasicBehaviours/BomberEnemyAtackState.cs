@@ -20,10 +20,6 @@ public class BomberEnemyAtackState : EnemyState
         ExitAttackStateFunc = ExitAttackState;
     }
 
-    public override void AnimationTriggerEvent(Enemy.AnimationTriggerType animationTriggerType)
-    {
-        base.AnimationTriggerEvent(animationTriggerType);
-    }
     public override void OnEnable()
     {
         shooter.PlayerEnteredAttackZone += OnPlayerEnteredAttackZone;
