@@ -151,6 +151,7 @@
     <Compile Include="Assets\Scripts\TrampolineLevel\RespawnPointSetter.cs" />
     <Compile Include="Assets\Scripts\TrampolineLevel\TrampolineAnimation.cs" />
     <Compile Include="Assets\Scripts\MainMechanics\Enemies\Coins\CoinPool.cs" />
+    <Compile Include="Assets\Scripts\MainMechanics\Other\SlimeControllerLink.cs" />
     <Compile Include="Assets\Scripts\LevelTeleport.cs" />
     <Compile Include="Assets\Scripts\Menu\FallingObject.cs" />
     <Compile Include="Assets\Scripts\MainMechanics\Bomb.cs" />
@@ -208,7 +209,8 @@
     <Compile Include="Assets\Scripts\MainMechanics\Hero\Attack.cs" />
     <Compile Include="Assets\Scripts\MainMechanics\Enemies\StateMachine\TriggerChecks\ChaseTrigger.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Models\DitheringModel.cs" />
-    <Compile Include="Assets\Scripts\MainMechanics\Other\SlimeControllerLink.cs" />
+    <Compile Include="Assets\Scripts\MainMechanics\Environment\DestroyableEnvironment.cs" />
+    <Compile Include="Assets\Scripts\MainMechanics\Buffs\HealPool.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

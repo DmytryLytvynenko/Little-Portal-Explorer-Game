@@ -3,13 +3,13 @@ using UnityEngine;
 
 public class Coin : MonoBehaviour
 {
-    [SerializeField] private CoinPool pool;
+    private CoinPool pool;
 
     public static Action CoinPickedUp;
 
     private void Start()
     {
-        pool = GameObject.FindGameObjectWithTag("CoinPool").GetComponent<CoinPool>();
+        pool = GlobalData.coinPool;
     }
     private void OnCollisionEnter(Collision collision)
     {

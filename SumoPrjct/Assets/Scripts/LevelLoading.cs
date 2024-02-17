@@ -6,9 +6,7 @@ public class LevelLoading : MonoBehaviour
     private void Start()
     {
         ActivateCheckPointOnLoad();
-        GlobalData.PlayerInstance.DeactivateDeformation();
         SetPlayerPosition();
-        GlobalData.PlayerInstance.ActivateDeformation();
     }
 
     private void SetPlayerPosition()

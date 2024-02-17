@@ -45,9 +45,10 @@ public class Throw : MonoBehaviour
             {
                 rigitbody.gameObject.GetComponent<Bomb>().SetActive(true);
             }
-            if (rigitbody.gameObject.layer == LayerMask.NameToLayer("HaveHealth"))
+            HealthControll healthControll;
+            if (rigitbody.gameObject.TryGetComponent(out healthControll))
             {
-                rigitbody.GetComponent<HealthControll>().ChangeHealth(-throwDamage);
+                healthControll.ChangeHealth(-throwDamage);
             }
         }
     }

@@ -7,16 +7,20 @@ public class Heal : MonoBehaviour
 {
     [SerializeField] private GameObject pickupEffect;
     [SerializeField] private int healAmount;
-
-    private void OnTriggerEnter(Collider other)
+    private HealPool pool;
+    private void Awake()
     {
-        if (other.TryGetComponent(out HealthControll healthControll))
+        pool = GlobalData.healPool;
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.TryGetComponent(out HealthControll healthControll))
         {
             bool healed = Convert.ToBoolean(healthControll.OnHealCollected(healAmount));
             if (healed)
             {
                 /*Instantiate(pickupEffect,transform.position,Quaternion.identity);*/
-                Destroy(this.gameObject);
+                pool.ReturnHeal(gameObject);
             }
         }
     }

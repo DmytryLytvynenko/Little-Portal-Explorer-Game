@@ -741,7 +741,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89811b9eadd99724d833caf98f28fb41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startState: 1
+  startState: 0
   target: {fileID: 0}
   IdleMoovementArea: {fileID: 0}
   idleTargetTrigger: {fileID: 6326952988024399223}

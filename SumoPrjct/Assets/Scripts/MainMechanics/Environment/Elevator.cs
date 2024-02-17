@@ -70,11 +70,18 @@ public class Elevator : MonoBehaviour
     }
     private void OnTriggerExit(Collider other)
     {
-        other.transform.parent = null;
+        Enemy enemyController;
         HeroController heroController;
         if (other.TryGetComponent(out heroController))
         {
             heroController.PlayerDeformator.ActivateDeformator();
+            other.transform.parent = null;
+            return;
+        }
+        if (other.TryGetComponent(out enemyController))
+        {
+            other.transform.parent = null;
+            return;
         }
     }
 }

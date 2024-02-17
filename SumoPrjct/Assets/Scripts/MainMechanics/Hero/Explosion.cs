@@ -11,6 +11,7 @@ public class Explosion : MonoBehaviour
     [SerializeField] private float noDamageExplosionForce;
     [SerializeField] private float noDamageExplosionRadius;
     [SerializeField] private LayerMask explosionLayers;
+    [SerializeField] private LayerMask noDamageExplosionLayers;
 
     [Title("Links")]
     [SerializeField] private GameObject explosionEffect;
@@ -73,7 +74,7 @@ public class Explosion : MonoBehaviour
     }
     public void NoDamageExplode()
     {
-        Collider[] overlappedColiders = Physics.OverlapSphere(transform.position, noDamageExplosionRadius, explosionLayers);
+        Collider[] overlappedColiders = Physics.OverlapSphere(transform.position, noDamageExplosionRadius, noDamageExplosionLayers);
         for (int i = 0; i < overlappedColiders.Length; i++)
         {
             Rigidbody rigitbody = overlappedColiders[i].attachedRigidbody;

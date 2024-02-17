@@ -332,15 +332,11 @@ public class HeroController : MonoBehaviour
     {
         moveSpeed = defaultMoveSpeed;
     }
-    public void DeactivateDeformation()
+    public void ResetAllAnimatorTriggers()
     {
-        PlayerDeformator.transform.parent = transform;
-        PlayerDeformator.gameObject.SetActive(false);
-    }
-    public void ActivateDeformation()
-    {
-        PlayerDeformator.transform.parent = null;
-        PlayerDeformator.gameObject.SetActive(true);
+        animator.ResetTrigger(PlayerAnimParameters.StartJump.ToString());
+        animator.ResetTrigger(PlayerAnimParameters.Attack.ToString());
+        animator.ResetTrigger(PlayerAnimParameters.Throw.ToString());
     }
     private void OnDamageTaken(Transform damager)
     {

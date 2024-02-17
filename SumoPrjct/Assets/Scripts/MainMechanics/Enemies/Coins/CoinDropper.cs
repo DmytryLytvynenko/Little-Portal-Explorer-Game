@@ -25,7 +25,7 @@ public class CoinDropper : MonoBehaviour
     }
     private void Start()
     {
-        pool = GameObject.FindGameObjectWithTag("CoinPool").GetComponent<CoinPool>();
+        pool = GlobalData.coinPool;
     }
     private void DropCoin()
     {

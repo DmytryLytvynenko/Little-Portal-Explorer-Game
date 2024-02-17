@@ -6,7 +6,7 @@ public class CoinPool : MonoBehaviour
     const int COIN_PRELOAD_COUNT = 20;
 
     [SerializeField] private GameObject coinPrefab;
-    [SerializeField] private GameObjectPool coinObjectsPool;
+    private GameObjectPool coinObjectsPool;
     private void Awake()
     {
         coinObjectsPool = new GameObjectPool(coinPrefab, COIN_PRELOAD_COUNT);

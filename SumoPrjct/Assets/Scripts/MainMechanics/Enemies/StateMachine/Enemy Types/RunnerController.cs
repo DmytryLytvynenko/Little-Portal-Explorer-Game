@@ -5,7 +5,7 @@ using UnityEngine;
 
 public enum RunnerAnimParametrs
 {
-    Run
+    Running
 }
 public class RunnerController : Enemy
 {
@@ -14,7 +14,8 @@ public class RunnerController : Enemy
     [SerializeField] private float maxRunSpeed;
     [SerializeField] private float runDistnace;
     [SerializeField] private float runTime;
-    [SerializeField] private float runDelay;
+    [SerializeField] private float beforeRunDelay;
+    [SerializeField] private float afterRunDelay;
     [SerializeField] private SphereCollider attackCollider;
     public RunnerRunState atackState { get; set; }
 
@@ -58,8 +59,11 @@ public class RunnerController : Enemy
         Vector3 runVector;
         float timer = 0;
         float tempRotationSpeed = rotationSpeed;
+        animator.SetBool(EnemyAnimParameters.Walking.ToString(), false);
 
-        yield return new WaitForSeconds(runDelay);
+        yield return new WaitForSeconds(beforeRunDelay);
+
+        animator.SetBool(RunnerAnimParametrs.Running.ToString(), true);
 
         soundEffectPlayer.PlaySound(SoundName.Acceleration);
         runVector = (target.position - transform.position).normalized;
@@ -74,6 +78,10 @@ public class RunnerController : Enemy
             yield return null;
         }
         rotationSpeed = tempRotationSpeed;
+        animator.SetBool(RunnerAnimParametrs.Running.ToString(), false);
+        animator.SetBool(EnemyAnimParameters.Walking.ToString(), false);
+        yield return new WaitForSeconds(afterRunDelay);
+        animator.SetBool(EnemyAnimParameters.Walking.ToString(), true);
         EnemyEndedRun?.Invoke();
     }
     protected override void OnCollisionEnter(Collision collision)

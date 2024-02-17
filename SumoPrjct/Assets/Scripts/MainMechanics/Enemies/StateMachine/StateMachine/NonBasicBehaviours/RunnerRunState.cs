@@ -28,9 +28,7 @@ public class RunnerRunState : EnemyState
     {
         runner.PlayerEnteredAttackZone += OnPlayerEnteredAttackZone;
         runner.PlayerExitedAttackZone += OnPlayerExitedAttackZone;
-
         runner.PlayerExitedChaseZone += OnPlayerExitedChaseZone;
-
         runner.EnemyEndedRun += OnEnemyEndedRun;
     }
 
@@ -38,19 +36,17 @@ public class RunnerRunState : EnemyState
     {
         runner.PlayerEnteredAttackZone -= OnPlayerEnteredAttackZone;
         runner.PlayerExitedAttackZone -= OnPlayerExitedAttackZone; 
-        
         runner.PlayerExitedChaseZone -= OnPlayerExitedChaseZone;
-
         runner.EnemyEndedRun -= OnEnemyEndedRun;
     }
     public override void EnterState()
     {
         currentZone = Zone.attack;
-        animator.SetTrigger(RunnerAnimParametrs.Run.ToString());
     }
 
     public override void ExitState()
     {
+
     }
 
     public override void FrameUpdate()
@@ -70,7 +66,6 @@ public class RunnerRunState : EnemyState
     private void OnPlayerExitedAttackZone()
     {
         currentZone = Zone.chase;
-
     }
     private void OnPlayerExitedChaseZone()
     {
