@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class HealPool : MonoBehaviour
 {
-    const int HEAL_PRELOAD_COUNT = 20;
+    const int HEAL_PRELOAD_COUNT = 7;
 
     [SerializeField] private GameObject healPrefab;
     private GameObjectPool healObjectsPool;

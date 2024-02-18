@@ -1,0 +1,11 @@
+Model Information:
+* title:	Stylized Low Poly Wooden Crate
+* source:	https://sketchfab.com/3d-models/stylized-low-poly-wooden-crate-78b49c06cbaa4ba19365b9864bbc8845
+* author:	mnichols (https://sketchfab.com/mnichols)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Stylized Low Poly Wooden Crate" (https://sketchfab.com/3d-models/stylized-low-poly-wooden-crate-78b49c06cbaa4ba19365b9864bbc8845) by mnichols (https://sketchfab.com/mnichols) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

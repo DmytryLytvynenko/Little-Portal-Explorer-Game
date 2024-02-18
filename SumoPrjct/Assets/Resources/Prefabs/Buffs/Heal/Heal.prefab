@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1366064201024635827}
   - component: {fileID: 1366064201024635828}
   - component: {fileID: 1366064201024635825}
-  m_Layer: 13
+  m_Layer: 7
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -112,7 +112,7 @@ GameObject:
   - component: {fileID: 1366064201948184261}
   - component: {fileID: 1366064201948184259}
   - component: {fileID: 3160902546297886584}
-  m_Layer: 13
+  m_Layer: 7
   m_Name: Heal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -163,6 +163,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickupEffect: {fileID: 0}
   healAmount: 20
+  healLayers:
+    serializedVersion: 2
+    m_Bits: 265216
 --- !u!54 &3160902546297886584
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -191,7 +194,7 @@ GameObject:
   - component: {fileID: 5447021452980967310}
   - component: {fileID: 4438766790610291823}
   - component: {fileID: 8878898006884198132}
-  m_Layer: 13
+  m_Layer: 7
   m_Name: Mug
   m_TagString: Untagged
   m_Icon: {fileID: 0}

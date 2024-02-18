@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class DestroyableEnvironment : MonoBehaviour
 {
-    [SerializeField] private float coinCount;
-    [SerializeField] private float healCount;
-    [SerializeField] private float dropFlyForce;
-    private HealPool healPool;
-    private CoinPool coinPool;
-    [SerializeField] private HealthControll healthControll;
+    [SerializeField] protected float coinCount;
+    [SerializeField] protected float healCount;
+    [SerializeField] protected float dropFlyForce;
+    [SerializeField] protected float dropDelay;
+    protected HealPool healPool;
+    protected CoinPool coinPool;
+    [SerializeField] protected HealthControll healthControll;
 
     private void OnEnable()
     {
@@ -24,31 +25,35 @@ public class DestroyableEnvironment : MonoBehaviour
         coinPool = GlobalData.coinPool;
         healPool = GlobalData.healPool;
     }
-    private Vector3 RandomVector
+    protected Vector3 RandomVector
     {
         get
         {
             return new Vector3(Random.Range(-10, 10), 0, Random.Range(-10, 10));
         }
     }
-    private void DropReward()
+    protected virtual IEnumerator DropReward()
     {
+        GetComponent<MeshRenderer>().enabled = false;
         for (int i = 0; i < coinCount; i++)
         {
+            yield return new WaitForSeconds(dropDelay);
             GameObject coin = coinPool.GetCoin();
             coin.transform.position = transform.position;
             coin.GetComponent<Rigidbody>().AddForce((Vector3.up * 2 + RandomVector.normalized) * dropFlyForce);
         }
         for (int i = 0; i < healCount; i++)
         {
+            yield return new WaitForSeconds(dropDelay);
             GameObject heal = healPool.GetHeal();
             heal.transform.position = transform.position;
             heal.GetComponent<Rigidbody>().AddForce((Vector3.up * 2 + RandomVector.normalized) * dropFlyForce);
         }
+        yield return new WaitForSeconds(0.5f);
         Destroy(gameObject);
     }
-    private void OnEntityDied()
+    protected virtual void OnEntityDied()
     {
-        DropReward();
+       StartCoroutine(nameof(DropReward));
     }
 }

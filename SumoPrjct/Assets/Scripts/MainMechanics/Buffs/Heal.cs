@@ -7,6 +7,7 @@ public class Heal : MonoBehaviour
 {
     [SerializeField] private GameObject pickupEffect;
     [SerializeField] private int healAmount;
+    [SerializeField] private LayerMask healLayers;
     private HealPool pool;
     private void Awake()
     {
@@ -16,11 +17,15 @@ public class Heal : MonoBehaviour
     {
         if (collision.gameObject.TryGetComponent(out HealthControll healthControll))
         {
-            bool healed = Convert.ToBoolean(healthControll.OnHealCollected(healAmount));
-            if (healed)
+            if (((1 << collision.gameObject.layer) & healLayers) != 0)
             {
-                /*Instantiate(pickupEffect,transform.position,Quaternion.identity);*/
-                pool.ReturnHeal(gameObject);
+                //It matched one
+                bool healed = Convert.ToBoolean(healthControll.OnHealCollected(healAmount));
+                if (healed)
+                {
+                    /*Instantiate(pickupEffect,transform.position,Quaternion.identity);*/
+                    pool.ReturnHeal(gameObject);
+                }
             }
         }
     }

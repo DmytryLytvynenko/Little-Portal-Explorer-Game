@@ -51,9 +51,14 @@ public class HealthControll : MonoBehaviour
         {
             DamageTaken?.Invoke(damager);
             if (currentHelth <= 0)
+            {
+                soundEffectPlayer.PlaySound(SoundName.Die);
                 Die();
+            }
             else
+            {
                 soundEffectPlayer.PlaySound(SoundName.TakeDamage);
+            }
         }
 
 

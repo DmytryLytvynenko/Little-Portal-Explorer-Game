@@ -112,8 +112,9 @@
     <Compile Include="Assets\Scripts\MainMechanics\Enemies\StateMachine\StateMachine\EnemyState.cs" />
     <Compile Include="Assets\Scripts\MainMechanics\UI\ButtonCooldown.cs" />
     <Compile Include="Assets\Scripts\MainMechanics\Hero\HeroController.cs" />
-    <Compile Include="Assets\Scripts\MainMechanics\Hero\Jump.cs" />
+    <Compile Include="Assets\Scripts\MainMechanics\Buffs\HealPool.cs" />
     <Compile Include="Assets\Scripts\MainMechanics\Environment\EnemySpawner.cs" />
+    <Compile Include="Assets\Scripts\MainMechanics\Hero\Jump.cs" />
     <Compile Include="Assets\Scripts\MainMechanics\Enemies\StateMachine\Enemy Types\ShootingEnemyController\Bullet.cs" />
     <Compile Include="Assets\Scripts\SquidGameLevel\TrapHatch.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\PostProcessingProfile.cs" />
@@ -191,6 +192,7 @@
     <Compile Include="Assets\Scripts\GpuInstancingEnabler.cs" />
     <Compile Include="Assets\Scripts\MainMechanics\Buffs\Heal.cs" />
     <Compile Include="Assets\Scripts\MainMechanics\Environment\ElevatorLever.cs" />
+    <Compile Include="Assets\Scripts\MainMechanics\Environment\DestroyableEnvironment.cs" />
     <Compile Include="Assets\Scripts\MainMechanics\Enemies\StateMachine\Enemy Types\EnemyBigBoss.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Components\FogComponent.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Models\BloomModel.cs" />
@@ -209,10 +211,10 @@
     <Compile Include="Assets\Scripts\MainMechanics\Hero\Attack.cs" />
     <Compile Include="Assets\Scripts\MainMechanics\Enemies\StateMachine\TriggerChecks\ChaseTrigger.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Models\DitheringModel.cs" />
-    <Compile Include="Assets\Scripts\MainMechanics\Environment\DestroyableEnvironment.cs" />
-    <Compile Include="Assets\Scripts\MainMechanics\Buffs\HealPool.cs" />
+    <Compile Include="Assets\Scripts\MainMechanics\Environment\Chest.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\Models\stylized-low-poly-wooden-crate\license.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
