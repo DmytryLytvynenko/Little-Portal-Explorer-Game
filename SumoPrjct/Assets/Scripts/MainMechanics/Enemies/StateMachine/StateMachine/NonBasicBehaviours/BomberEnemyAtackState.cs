@@ -7,17 +7,20 @@ public class BomberEnemyAtackState : EnemyState
     private BomberController shooter;
     private Action ExitAttackStateFunc;
     private Coroutine ExitAttackStateCoroutine;
+    private Animator animator;
     private float ExitAttackStateDelay = 2f;
     private float shootCooldown;
     private float timer = 0;
 
-    public BomberEnemyAtackState(BomberController enemy, EnemyStateMachine enemyStateMachine,SphereCollider AttackCollider,float ShootCooldown,float AttackDistnace, Transform Target) : base(enemy, enemyStateMachine)
+    public BomberEnemyAtackState(BomberController enemy, EnemyStateMachine enemyStateMachine,SphereCollider AttackCollider,float ShootCooldown,float AttackDistnace, Transform Target, Animator _animator) : base(enemy, enemyStateMachine)
     {
         target = Target;
         AttackCollider.radius = AttackDistnace;
         shooter = enemy;
         shootCooldown = ShootCooldown;
+        timer = shootCooldown;
         ExitAttackStateFunc = ExitAttackState;
+        animator = _animator;
     }
 
     public override void OnEnable()
@@ -33,6 +36,7 @@ public class BomberEnemyAtackState : EnemyState
     }
     public override void EnterState()
     {
+        animator.SetBool(EnemyAnimParameters.Walking.ToString(), false);
     }
 
     public override void ExitState()
@@ -77,7 +81,8 @@ public class BomberEnemyAtackState : EnemyState
         timer += Time.deltaTime;
         if (timer > shootCooldown) 
         {
-            shooter.Attack();
+            animator.SetTrigger(ShooterAnimParametrs.Attack.ToString());
+/*            shooter.Attack();*/
             timer = 0;
         }
     }

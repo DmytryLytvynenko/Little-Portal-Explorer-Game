@@ -123,6 +123,7 @@
     <Compile Include="Assets\Scripts\MainMechanics\Hero\Explosion.cs" />
     <Compile Include="Assets\Scripts\MainMechanics\UI\AudioMixer.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Components\GrainComponent.cs" />
+    <Compile Include="Assets\Scripts\MainMechanics\Enemies\StateMachine\Enemy Types\BomberEnemy\BomberBomb.cs" />
     <Compile Include="Assets\Scripts\MainMechanics\Enemies\StateMachine\TriggerChecks\RunnerAttackTrigger.cs" />
     <Compile Include="Assets\Zololgo\OrbitZoomPanCamera\Scripts\OrbitZoomPanCamera.cs" />
     <Compile Include="Assets\Scripts\TrampolineLevel\ParentSetter.cs" />
@@ -130,6 +131,7 @@
     <Compile Include="Assets\PostProcessing\Runtime\PostProcessingContext.cs" />
     <Compile Include="Assets\Scripts\MainMechanics\Pool\PoolBase.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Components\MotionBlurComponent.cs" />
+    <Compile Include="Assets\Scripts\MainMechanics\Environment\Chest.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Attributes\MinAttribute.cs" />
     <Compile Include="Assets\Scripts\MainMechanics\UI\MobileController.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Models\UserLutModel.cs" />
@@ -211,7 +213,6 @@
     <Compile Include="Assets\Scripts\MainMechanics\Hero\Attack.cs" />
     <Compile Include="Assets\Scripts\MainMechanics\Enemies\StateMachine\TriggerChecks\ChaseTrigger.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Models\DitheringModel.cs" />
-    <Compile Include="Assets\Scripts\MainMechanics\Environment\Chest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Models\stylized-low-poly-wooden-crate\license.txt" />

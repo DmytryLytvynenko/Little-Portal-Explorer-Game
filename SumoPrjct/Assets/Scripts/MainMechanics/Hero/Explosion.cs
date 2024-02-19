@@ -113,4 +113,8 @@ public class Explosion : MonoBehaviour
         }
         /*Instantiate(explosionEffect, transform.position, Quaternion.identity);*/
     }
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawWireSphere(transform.position, explosionRadius);
+    }
 }

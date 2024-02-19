@@ -18,6 +18,7 @@ public class ShooterEnemyAtackState : EnemyState
         AttackCollider.radius = AttackDistnace;
         shooter = enemy;
         shootCooldown = ShootCooldown;
+        timer = shootCooldown;
         ExitAttackStateFunc = ExitAttackState;
         animator = _animator;
     }

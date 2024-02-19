@@ -1,7 +1,6 @@
 using System.Collections;
 using UnityEngine;
 using Launch;
-using UnityEngine.WSA;
 
 public class ThrowerBomb : Projectile
 {
@@ -10,15 +9,15 @@ public class ThrowerBomb : Projectile
     [SerializeField] private float throwHeight;
     [SerializeField] private float targetOffset;
 
-    private Explosion explosion;
+    protected Explosion explosion;
     private Rigidbody bombRigidbody;
     private Launch.Launch launch;
 
     private void Awake()
     {
         launch = new Launch.Launch();
-        target = GlobalData.PlayerInstance.transform;
-        projectileAnimation = GetComponentInChildren<Animation>();
+        target = GlobalData.PlayerInstance.transform;/*
+        projectileAnimation = GetComponentInChildren<Animation>();*/
         explosion = GetComponent<Explosion>();
         bombRigidbody = GetComponent<Rigidbody>();
     }

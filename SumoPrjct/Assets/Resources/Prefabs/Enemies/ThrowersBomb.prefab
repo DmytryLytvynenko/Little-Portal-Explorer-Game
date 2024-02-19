@@ -88,11 +88,15 @@ MonoBehaviour:
   explosionForce: 200
   noDamageExplosionForce: 0
   noDamageExplosionRadius: 0
-  explosionEffect: {fileID: 6605087354438946986, guid: 5f06ed8731fc1984f9adc4a81cc691bf,
-    type: 3}
   explosionLayers:
     serializedVersion: 2
     m_Bits: 277505
+  noDamageExplosionLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  explosionEffect: {fileID: 6605087354438946986, guid: 5f06ed8731fc1984f9adc4a81cc691bf,
+    type: 3}
+  soundEffectPlayer: {fileID: 0}
 --- !u!33 &7943060935949285896
 MeshFilter:
   m_ObjectHideFlags: 0

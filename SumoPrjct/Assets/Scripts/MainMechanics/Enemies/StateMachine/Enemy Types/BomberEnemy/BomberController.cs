@@ -1,3 +1,4 @@
+using Sound_Player;
 using System;
 using UnityEngine;
 
@@ -26,7 +27,7 @@ public class BomberController : Enemy
         target = GlobalData.PlayerInstance.transform;
         base.Awake();
 
-        atackState = new BomberEnemyAtackState(this, stateMachine, AttackCollider, ShootCooldown, attackDistnace, target);
+        atackState = new BomberEnemyAtackState(this, stateMachine, AttackCollider, ShootCooldown, attackDistnace, target, animator);
     }
     protected override void Start()
     {
@@ -44,7 +45,9 @@ public class BomberController : Enemy
     }
     public void Attack()
     {
-        ThrowerBomb bomb = Instantiate(this.bomb, ShootPos.position, Quaternion.identity).GetComponent<ThrowerBomb>();
+        soundEffectPlayer.PlaySound(SoundName.Attack);
+        BomberBomb bomb = Instantiate(this.bomb, ShootPos.position, Quaternion.identity).GetComponent<BomberBomb>();
+        bomb.Awake();
         bomb.SetThrower(ShootPos);
         bomb.SetTarget(target);
         bomb.InitiateThrow();

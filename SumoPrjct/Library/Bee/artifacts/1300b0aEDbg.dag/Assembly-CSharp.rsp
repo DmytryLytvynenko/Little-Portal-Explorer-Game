@@ -425,6 +425,7 @@
 "Assets/Scripts/MainMechanics/Enemies/Coins/CoinPool.cs"
 "Assets/Scripts/MainMechanics/Enemies/Coins/Wallet.cs"
 "Assets/Scripts/MainMechanics/Enemies/StateMachine/Base/Enemy.cs"
+"Assets/Scripts/MainMechanics/Enemies/StateMachine/Enemy Types/BomberEnemy/BomberBomb.cs"
 "Assets/Scripts/MainMechanics/Enemies/StateMachine/Enemy Types/BomberEnemy/BomberController.cs"
 "Assets/Scripts/MainMechanics/Enemies/StateMachine/Enemy Types/ChasingEnemyController.cs"
 "Assets/Scripts/MainMechanics/Enemies/StateMachine/Enemy Types/EnemyBigBoss.cs"
