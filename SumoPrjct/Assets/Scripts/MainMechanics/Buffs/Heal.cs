@@ -23,7 +23,7 @@ public class Heal : MonoBehaviour
                 bool healed = Convert.ToBoolean(healthControll.OnHealCollected(healAmount));
                 if (healed)
                 {
-                    /*Instantiate(pickupEffect,transform.position,Quaternion.identity);*/
+                    Instantiate(pickupEffect, transform.position, Quaternion.identity);
                     pool.ReturnHeal(gameObject);
                 }
             }

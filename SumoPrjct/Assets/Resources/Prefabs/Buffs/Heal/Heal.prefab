@@ -161,7 +161,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0c5b081222767f4fabbbd9d34cf4418, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickupEffect: {fileID: 0}
+  pickupEffect: {fileID: 5651323264448856669, guid: 6134315af85ddd54686c92e49842f859,
+    type: 3}
   healAmount: 20
   healLayers:
     serializedVersion: 2

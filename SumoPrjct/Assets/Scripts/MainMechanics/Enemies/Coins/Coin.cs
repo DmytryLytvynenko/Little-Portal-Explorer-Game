@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class Coin : MonoBehaviour
 {
+    [SerializeField] private GameObject pickupEffect;
     private CoinPool pool;
 
     public static Action CoinPickedUp;
@@ -15,6 +16,7 @@ public class Coin : MonoBehaviour
     {
         if (collision.gameObject.GetComponent<HeroController>()) 
         {
+            Instantiate(pickupEffect, transform.position, Quaternion.identity);
             CoinPickedUp?.Invoke();
             pool.ReturnCoin(gameObject);
         }

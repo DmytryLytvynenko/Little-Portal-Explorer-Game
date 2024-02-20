@@ -55,6 +55,8 @@ public class Explosion : MonoBehaviour
             Rigidbody rigitbody = overlappedColiders[i].attachedRigidbody;
             if (rigitbody == null)
                 continue;
+            if (rigitbody.gameObject == gameObject)
+                continue;
 
             if (rigitbody.TryGetComponent(out bomb))
             {
