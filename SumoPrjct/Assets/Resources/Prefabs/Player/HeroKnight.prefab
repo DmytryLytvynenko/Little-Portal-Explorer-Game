@@ -929,7 +929,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e0ac1bcacc600b479a7d7d06ba274d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpForce: 100
+  jumpForce: 75
   moveSpeed: 4.5
   maxSpeed: 6
   rotationSpeed: 7.5
@@ -994,10 +994,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 050495c8e3a17ca429d5393157cb20bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  acceptableVerticalAngle: 30
+  acceptableVerticalAngle: 45
   collisionLayersToIgnore:
     serializedVersion: 2
-    m_Bits: 288896
+    m_Bits: 292992
 --- !u!114 &1055216236094539617
 MonoBehaviour:
   m_ObjectHideFlags: 0

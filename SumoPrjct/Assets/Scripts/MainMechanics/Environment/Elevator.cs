@@ -64,7 +64,6 @@ public class Elevator : MonoBehaviour
         if (other.TryGetComponent(out heroController))
         {
             heroController.transform.parent = transform;
-            heroController.PlayerDeformator.DeactivateDeformator();
             ActivateElevator();
         }
     }
@@ -74,7 +73,6 @@ public class Elevator : MonoBehaviour
         HeroController heroController;
         if (other.TryGetComponent(out heroController))
         {
-            heroController.PlayerDeformator.ActivateDeformator();
             other.transform.parent = null;
             return;
         }
