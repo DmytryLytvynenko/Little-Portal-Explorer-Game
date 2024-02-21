@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 6603798539896560}
   - component: {fileID: 6603798539896563}
   - component: {fileID: 6603798539896566}
+  - component: {fileID: 3975410134656242587}
   m_Layer: 13
   m_Name: DropBarrel
   m_TagString: Untagged
@@ -31,14 +32,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1952181171165865771}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+  m_LocalRotation: {x: -0.7069834, y: 0, z: 0, w: 0.7072302}
   m_LocalPosition: {x: 11.082, y: -0.175, z: -24.484}
   m_LocalScale: {x: 1.4, y: 1.4, z: 1.4}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -89.98, y: 0, z: 0}
 --- !u!33 &2878786798559130164
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -102,11 +103,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b963785006c997a4d8607476ddb4d11f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  minProbability: 0.5
+  maxProbability: 1
   coinCount: 3
   healCount: 1
   dropFlyForce: 120
   dropDelay: 0.1
   healthControll: {fileID: 6603798539896565}
+  brakeEffect: {fileID: 6060502050264614496, guid: 8973d0f63ccf5ed49a31fe9fceb33f68,
+    type: 3}
 --- !u!114 &6603798539896564
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -266,3 +271,28 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.43, y: 0.43, z: 0.49999997}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!205 &3975410134656242587
+LODGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1952181171165865771}
+  serializedVersion: 2
+  m_LocalReferencePoint: {x: 0, y: 0, z: 0}
+  m_Size: 1
+  m_FadeMode: 0
+  m_AnimateCrossFading: 0
+  m_LastLODIsBillboard: 0
+  m_LODs:
+  - screenRelativeHeight: 0.02948627
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 6603798539896574}
+  - screenRelativeHeight: 0.02948627
+    fadeTransitionWidth: 0
+    renderers: []
+  - screenRelativeHeight: 0.02948627
+    fadeTransitionWidth: 0
+    renderers: []
+  m_Enabled: 1

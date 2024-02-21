@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 1376326089}
   - component: {fileID: 1376326088}
   - component: {fileID: 1376326090}
+  - component: {fileID: 3402281263815856214}
   m_Layer: 13
   m_Name: Bomb
   m_TagString: Bomb
@@ -290,3 +291,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 2500
   soundEffectPlayer: {fileID: 1376326089}
+--- !u!205 &3402281263815856214
+LODGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8502569469706987189}
+  serializedVersion: 2
+  m_LocalReferencePoint: {x: 0, y: 0, z: 0}
+  m_Size: 1
+  m_FadeMode: 0
+  m_AnimateCrossFading: 0
+  m_LastLODIsBillboard: 0
+  m_LODs:
+  - screenRelativeHeight: 0.02948627
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 8502569469706987187}
+  - screenRelativeHeight: 0.02948627
+    fadeTransitionWidth: 0
+    renderers: []
+  - screenRelativeHeight: 0.02948627
+    fadeTransitionWidth: 0
+    renderers: []
+  m_Enabled: 1

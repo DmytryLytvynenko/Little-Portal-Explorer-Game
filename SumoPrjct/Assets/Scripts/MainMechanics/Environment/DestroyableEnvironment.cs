@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class DestroyableEnvironment : MonoBehaviour
 {
+    [SerializeField] protected float minProbability = 0;
+    [SerializeField] protected float maxProbability = 1;
     [SerializeField] protected float coinCount;
     [SerializeField] protected float healCount;
     [SerializeField] protected float dropFlyForce;
@@ -11,6 +13,7 @@ public class DestroyableEnvironment : MonoBehaviour
     protected HealPool healPool;
     protected CoinPool coinPool;
     [SerializeField] protected HealthControll healthControll;
+    [SerializeField] protected GameObject brakeEffect;
 
     private void OnEnable()
     {
@@ -22,6 +25,7 @@ public class DestroyableEnvironment : MonoBehaviour
     }
     private void Start()
     {
+        coinCount = Mathf.Round(coinCount * Random.Range(minProbability, maxProbability));
         coinPool = GlobalData.coinPool;
         healPool = GlobalData.healPool;
     }
@@ -35,6 +39,7 @@ public class DestroyableEnvironment : MonoBehaviour
     protected virtual IEnumerator DropReward()
     {
         GetComponent<MeshRenderer>().enabled = false;
+        Instantiate(brakeEffect, transform.position, Quaternion.identity);
         for (int i = 0; i < coinCount; i++)
         {
             yield return new WaitForSeconds(dropDelay);

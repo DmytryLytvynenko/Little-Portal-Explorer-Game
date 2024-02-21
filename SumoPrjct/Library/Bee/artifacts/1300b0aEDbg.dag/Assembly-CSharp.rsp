@@ -487,6 +487,7 @@
 "Assets/Scripts/MainMechanics/UI/FaceCamera.cs"
 "Assets/Scripts/MainMechanics/UI/MobileController.cs"
 "Assets/Scripts/MainMechanics/UI/PauseGame.cs"
+"Assets/Scripts/MainMechanics/UI/SceneTransition.cs"
 "Assets/Scripts/MainMechanics/UI/UIAnimationTimer.cs"
 "Assets/Scripts/Menu/FallingObject.cs"
 "Assets/Scripts/Menu/HeroRotating.cs"

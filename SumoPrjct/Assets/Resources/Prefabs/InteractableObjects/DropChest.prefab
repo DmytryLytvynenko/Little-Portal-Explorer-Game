@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 1184418177983018412}
   - component: {fileID: 1184418177983018413}
   - component: {fileID: 1184418177983018408}
+  - component: {fileID: 1578345942075973856}
   m_Layer: 13
   m_Name: DropChest
   m_TagString: Untagged
@@ -233,6 +234,32 @@ MonoBehaviour:
   dropDelay: 0.2
   healthControll: {fileID: 1184418177983018414}
   _animation: {fileID: 2066747468430461151}
+--- !u!205 &1578345942075973856
+LODGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1184418177983018418}
+  serializedVersion: 2
+  m_LocalReferencePoint: {x: 0.0064303875, y: 0.09778446, z: 0.15952337}
+  m_Size: 4
+  m_FadeMode: 0
+  m_AnimateCrossFading: 0
+  m_LastLODIsBillboard: 0
+  m_LODs:
+  - screenRelativeHeight: 0.0227761
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 2408045789694701401}
+    - renderer: {fileID: 212084467016531600}
+  - screenRelativeHeight: 0.0227761
+    fadeTransitionWidth: 0
+    renderers: []
+  - screenRelativeHeight: 0.0227761
+    fadeTransitionWidth: 0
+    renderers: []
+  m_Enabled: 1
 --- !u!1 &4559821963201154916
 GameObject:
   m_ObjectHideFlags: 0

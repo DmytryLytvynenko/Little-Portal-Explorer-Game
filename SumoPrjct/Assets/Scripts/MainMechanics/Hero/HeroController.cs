@@ -174,7 +174,7 @@ public class HeroController : MonoBehaviour
             return;
         animator.SetTrigger(PlayerAnimParameters.Throw.ToString());
     }
-    private void StartJumpAnimation()
+    public void StartJumpAnimation()
     {
         if (isGrounded)
         {
