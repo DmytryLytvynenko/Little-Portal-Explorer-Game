@@ -73,13 +73,16 @@ public class HeroController : MonoBehaviour
         healthControll.EntityDied += OnHeroDied;
         Buff.BuffCollected += OnBuffCollected;
         Enemy.EnemyAndPlayerContacted += OnEnemyColission;
+        CheckPoint.PlayerSavedGame += OnPlayerSavedGame;
     }
     private void OnDisable()
     {
         Respawn.PlayerFell -= OnPlayerFell;
         healthControll.DamageTaken -= OnDamageTaken;
+        healthControll.EntityDied -= OnHeroDied;
         Buff.BuffCollected -= OnBuffCollected;
         Enemy.EnemyAndPlayerContacted -= OnEnemyColission;
+        CheckPoint.PlayerSavedGame -= OnPlayerSavedGame;
     }
 
     private void Awake()
@@ -124,10 +127,10 @@ public class HeroController : MonoBehaviour
     {
         SetCanExplode();
         Move();
-        SetFallState();
+        /*SetFallState();*/
     }
 
-    private bool CheckFallState()
+/*    private bool CheckFallState()
     {
         return rb.velocity.y < -1;
     }
@@ -137,7 +140,7 @@ public class HeroController : MonoBehaviour
             animator.SetBool(PlayerAnimParameters.LandJump.ToString(), false);
 
         animator.SetBool(PlayerAnimParameters.Falling.ToString(), CheckFallState());
-    }
+    }*/
     private void Move()
     {
         //вращение персонажа
@@ -328,6 +331,7 @@ public class HeroController : MonoBehaviour
     {
         animator.SetBool(PlayerAnimParameters.Death.ToString(), true);
         LoseScreen.SetActive(true);
+        Destroy(healthControll);
     }
     public void Win()
     {
@@ -365,5 +369,10 @@ public class HeroController : MonoBehaviour
     private void OnPlayerFell()
     {
         soundEffectPlayer.PlaySound(SoundName.Respawn);
+    }   
+    private void OnPlayerSavedGame()
+    {
+        if (healthControll.NotFull)
+            healthControll.RestoreHealth();
     }
 }

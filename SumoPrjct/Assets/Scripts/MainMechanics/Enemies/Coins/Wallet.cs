@@ -19,7 +19,7 @@ public class Wallet : MonoBehaviour
     public void AddCoin()
     {
         coinCount++;
-        Debug.Log(coinCount);
+        Debug.Log("CoinCount = " + coinCount);
     }
     public void SaveCoins() 
     {

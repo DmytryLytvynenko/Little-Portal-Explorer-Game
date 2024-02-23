@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6409353509950558545}
   - component: {fileID: 3788288919475033155}
   - component: {fileID: 8274221755162832730}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: RogueAxe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -112,7 +112,7 @@ GameObject:
   - component: {fileID: 8274221754333458262}
   - component: {fileID: 8274221754333458261}
   - component: {fileID: 8274221754333458260}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: RogueAxe 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -149,7 +149,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetPoint: {fileID: 0}
   damage: -5
-  rotationSpeed: 10
   pointer: {fileID: 6193311813821381323, guid: 0f5c00a049be0a14794c348139611fe7, type: 3}
   layerMask:
     serializedVersion: 2

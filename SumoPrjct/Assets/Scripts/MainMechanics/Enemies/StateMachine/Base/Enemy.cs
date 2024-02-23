@@ -122,7 +122,7 @@ public class Enemy : MonoBehaviour
     {
         this.target = target;
     }
-    public virtual void Die()
+    public virtual void EnemyDie()
     {
         EnemyDied?.Invoke();
         Destroy(this.gameObject);

@@ -23,7 +23,6 @@ public class LevelLoading : MonoBehaviour
 
         for (int i = 0; i < CheckPoints.childCount; i++)
         {
-            Debug.Log($"Check Point: {CheckPoints.GetChild(i).name} Save:{PlayerPrefs.GetString("CheckPointName")}\n");
             if (CheckPoints.GetChild(i).name == PlayerPrefs.GetString("CheckPointName"))
             {
                 CheckPoints.GetChild(i).GetComponent<CheckPoint>().ActivateCheckPointOnLoad();

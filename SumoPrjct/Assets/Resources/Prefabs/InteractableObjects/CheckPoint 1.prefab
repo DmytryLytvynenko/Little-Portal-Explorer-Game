@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1547566436578921144}
   - component: {fileID: 1547566436577953912}
   - component: {fileID: 5817081603586212819}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: rock2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -141,7 +141,7 @@ GameObject:
   - component: {fileID: 1547566437195394585}
   - component: {fileID: 1547566437195394587}
   - component: {fileID: 1200680843}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: CheckPoint 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -182,7 +182,7 @@ MonoBehaviour:
   checkPointAnimator: {fileID: 2692991574971345187}
   gameSavedMessage: {fileID: 0}
   lights: {fileID: 1547566436793420667}
-  soundPlayer: {fileID: 0}
+  soundEffectPlayer: {fileID: 0}
   animationLength: 1.5
 --- !u!135 &1200680843
 SphereCollider:

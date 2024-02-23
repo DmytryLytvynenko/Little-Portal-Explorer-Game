@@ -36,11 +36,14 @@ public class HealthControll : MonoBehaviour
             ChangeHealth(-10);
         }
     }
-
+    public bool NotFull 
+    {
+        get { return currentHelth == maxHealth; }
+    }
     public void ChangeHealth(int value, Transform damager = null)
     {
         currentHelth += value;
-        if (value > 0) 
+        if (value >= 0) 
         {
             if (currentHelth > maxHealth)
                 currentHelth = maxHealth;

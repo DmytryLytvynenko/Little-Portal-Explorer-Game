@@ -15,7 +15,6 @@ public class HealPool : MonoBehaviour
     }
     public GameObject GetHeal()
     {
-        Debug.Log($"{healObjectsPool == null}");
         GameObject item = healObjectsPool.Get();
         return item;
     }

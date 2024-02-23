@@ -25,7 +25,7 @@ public class EnemyStayState : EnemyState
 
     public override void PhysicsUpdate()
     {
-        enemy.Rotate(target);
+        /*enemy.Rotate(target);*/
     }
 
 }

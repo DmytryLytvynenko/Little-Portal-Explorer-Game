@@ -543,8 +543,8 @@ Transform:
   m_GameObject: {fileID: 6326952988024399221}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.75, y: 0.75, z: 0.75}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 6326952988095229189}
   m_RootOrder: 1
@@ -756,7 +756,7 @@ MonoBehaviour:
   IdleLayers:
     serializedVersion: 2
     m_Bits: 1
-  AgrDistance: 5
+  AgrDistance: 7.5
 --- !u!114 &6326952988095229185
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -799,7 +799,7 @@ SphereCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6326952988095229199}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 3131b94f9a7281543b74bce35421967a, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -817,7 +817,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84ff9c15ce8ff1e49acde1f21900c843, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinCount: 3
+  coinCount: 1
   coinFlyForce: 180
   enemy: {fileID: 6326952988095229186}
   pool: {fileID: 0}
@@ -865,7 +865,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 5
+  m_Radius: 7.5
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &6326952988463267289
 MonoBehaviour:

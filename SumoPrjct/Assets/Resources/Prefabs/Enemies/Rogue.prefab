@@ -2618,7 +2618,7 @@ MonoBehaviour:
     m_Bits: 1
   AgrDistance: 15
   attackDistnace: 8
-  ShootCooldown: 3
+  ShootCooldown: 2
   AttackCollider: {fileID: 4247971788236275607}
   ShootPos: {fileID: 4169875239839201532}
   bullet: {fileID: 8274221754333458266, guid: 79ce11cd9b83f9641a938e3a3e4989c0, type: 3}
@@ -2986,7 +2986,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 5
+  m_Radius: 15
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &4247971789211639521
 MonoBehaviour:

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 380846934}
   - component: {fileID: 380846933}
   - component: {fileID: 380846932}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: RogueBomb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -113,7 +113,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!114 &380846932
 MonoBehaviour:
@@ -127,7 +127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e0f341ed96ebe048baba2d4ce664c34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetPoint: {x: 0, y: 0, z: 0}
+  targetPoint: {fileID: 0}
   damage: -5
   pointer: {fileID: 6193311813821381323, guid: 0f5c00a049be0a14794c348139611fe7, type: 3}
   layerMask:

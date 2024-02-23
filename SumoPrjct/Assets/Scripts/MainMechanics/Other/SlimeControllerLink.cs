@@ -9,6 +9,6 @@ public class SlimeControllerLink : MonoBehaviour
 
     public void InvokeDeath()
     {
-        chasingEnemyController.Die();
+        chasingEnemyController.EnemyDie();
     }
 }

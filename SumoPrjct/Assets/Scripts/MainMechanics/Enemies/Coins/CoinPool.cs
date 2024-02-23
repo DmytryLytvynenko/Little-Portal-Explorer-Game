@@ -13,7 +13,6 @@ public class CoinPool : MonoBehaviour
     }
     public GameObject GetCoin()
     {
-        Debug.Log($"{coinObjectsPool == null}");
         GameObject item =  coinObjectsPool.Get();
         return item;
     }    

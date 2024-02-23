@@ -4,17 +4,14 @@ using UnityEngine;
 
 public class BattleTrigger : MonoBehaviour
 {
-    [SerializeField] private EnemySpawner[] enemySpawners;
+    [SerializeField] private GameObject enemies;
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag(GlobalData.PlayerTag))
+        if (other.GetComponent<HeroController>())
         {
-            foreach (EnemySpawner spawner in enemySpawners)
-            {
-                spawner.StartSpawnCoroutine();
-                gameObject.SetActive(false);
-            }
+            enemies.SetActive(true);
+            gameObject.SetActive(false);
         }
     }
 }

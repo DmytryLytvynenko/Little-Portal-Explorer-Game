@@ -1052,7 +1052,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 2}
+  m_AnchoredPosition: {x: 0, y: 3}
   m_SizeDelta: {x: 50, y: 10}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &6215804618640722650
@@ -1779,7 +1779,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4a50f915e332504db4fc497c98bb119, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startState: 0
+  startState: 1
   target: {fileID: 0}
   IdleMoovementArea: {fileID: 0}
   idleTargetTrigger: {fileID: 6298393172833931600}
@@ -1796,7 +1796,7 @@ MonoBehaviour:
     m_Bits: 1
   AgrDistance: 15
   attackDistnace: 8
-  ShootCooldown: 4
+  ShootCooldown: 3
   AttackCollider: {fileID: 6298393171373263047}
   ShootPos: {fileID: 6072523133163196332}
   bomb: {fileID: 8486143771797143337, guid: 03627b482d50b404f86c3ea0a45f3aee, type: 3}
@@ -2218,7 +2218,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 5
+  m_Radius: 15
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &6298393172541188529
 MonoBehaviour:
