@@ -8452,6 +8452,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BomberRogue
       objectReference: {fileID: 0}
+    - target: {fileID: 6072523132775372599, guid: a3146240e742e6e4db9367366ea27681,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a3146240e742e6e4db9367366ea27681, type: 3}
 --- !u!1001 &6326952989618975640
@@ -8568,7 +8573,7 @@ PrefabInstance:
     - target: {fileID: 1055216236094539621, guid: ce09820f95fed0e45bb88be489a53f7c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 22.75
+      value: 8.33
       objectReference: {fileID: 0}
     - target: {fileID: 1055216236094539621, guid: ce09820f95fed0e45bb88be489a53f7c,
         type: 3}
@@ -8578,7 +8583,7 @@ PrefabInstance:
     - target: {fileID: 1055216236094539621, guid: ce09820f95fed0e45bb88be489a53f7c,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -4.28
+      value: -19.24
       objectReference: {fileID: 0}
     - target: {fileID: 1055216236094539621, guid: ce09820f95fed0e45bb88be489a53f7c,
         type: 3}

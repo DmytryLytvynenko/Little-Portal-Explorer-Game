@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -15,6 +14,7 @@ public class SceneTransition : MonoBehaviour
     private AsyncOperation loadingOperation;
     private string sceneName;
 
+    public static event Action SceneChanged;
 
     private void Start()
     {
@@ -27,7 +27,7 @@ public class SceneTransition : MonoBehaviour
     public static void SwitchToScene(string _sceneName)
     {
         instance.sceneName = _sceneName;
-        instance.loadBackground.sprite = instance.loadBackgrounds[Random.Range(0, instance.loadBackgrounds.Length)];
+        instance.loadBackground.sprite = instance.loadBackgrounds[UnityEngine.Random.Range(0, instance.loadBackgrounds.Length)];
         instance.animator.SetTrigger("SceneClosing");
     }
     public void LoadScene()
