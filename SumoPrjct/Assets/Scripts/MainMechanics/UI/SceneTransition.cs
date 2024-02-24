@@ -2,14 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class SceneTransition : MonoBehaviour
 {
+    [SerializeField] private Sprite[] loadBackgrounds;
+    [SerializeField] private Image loadBackground;
     private static SceneTransition instance;
     private static bool  shouldPlayOpeningAnimation = true;
 
     private Animator animator;
     private AsyncOperation loadingOperation;
+    private string sceneName;
 
 
     private void Start()
@@ -20,15 +24,18 @@ public class SceneTransition : MonoBehaviour
 
         if (shouldPlayOpeningAnimation) animator.SetTrigger("SceneOpening");
     }
-    public static void SwitchToScene(string sceneName)
+    public static void SwitchToScene(string _sceneName)
     {
+        instance.sceneName = _sceneName;
+        instance.loadBackground.sprite = instance.loadBackgrounds[Random.Range(0, instance.loadBackgrounds.Length)];
         instance.animator.SetTrigger("SceneClosing");
-
-        instance.loadingOperation = SceneManager.LoadSceneAsync(sceneName);
-        Time.timeScale = 1.0f;
-        instance.loadingOperation.allowSceneActivation = false;
     }
-
+    public void LoadScene()
+    {
+        loadingOperation = SceneManager.LoadSceneAsync(sceneName);
+        Time.timeScale = 1.0f;
+        loadingOperation.allowSceneActivation = false;
+    }
     public void OnAnimationOver()
     {
         shouldPlayOpeningAnimation = true;

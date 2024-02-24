@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class LevelTeleport : MonoBehaviour
 {
-    [SerializeField] private SceneAsset level;
+    [SerializeField] private string levelName;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -13,6 +13,6 @@ public class LevelTeleport : MonoBehaviour
 
     private void LoadLevel()
     {
-        Scenes.LoadSN(level);
+        SceneTransition.SwitchToScene(levelName);
     }
 }

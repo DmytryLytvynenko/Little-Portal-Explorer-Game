@@ -10,6 +10,7 @@ public class TrapHatch : MonoBehaviour
     private Rigidbody body;
     private Quaternion defaultRotation;
     private Vector3 defaultposition;
+    private bool ignoreCollision = false;
 
 
     private void OnEnable()
@@ -28,10 +29,13 @@ public class TrapHatch : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
+        if (ignoreCollision)
+            return;
         if (isTrap)
         {
             soundEffectPlayer.PlaySound(SoundName.Switch);
             body.isKinematic = false;
+            ignoreCollision = true;
         }
     }
     private void ResetHatch()
@@ -39,5 +43,6 @@ public class TrapHatch : MonoBehaviour
         transform.position = defaultposition;
         transform.rotation = defaultRotation;
         body.isKinematic = true;
+        ignoreCollision = false;
     }
 }

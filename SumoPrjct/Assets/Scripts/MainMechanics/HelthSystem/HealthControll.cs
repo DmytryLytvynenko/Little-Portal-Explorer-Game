@@ -38,7 +38,7 @@ public class HealthControll : MonoBehaviour
     }
     public bool NotFull 
     {
-        get { return currentHelth == maxHealth; }
+        get { return currentHelth != maxHealth; }
     }
     public void ChangeHealth(int value, Transform damager = null)
     {
@@ -48,7 +48,8 @@ public class HealthControll : MonoBehaviour
             if (currentHelth > maxHealth)
                 currentHelth = maxHealth;
 
-            soundEffectPlayer.PlaySound(SoundName.Heal);
+            if (value != 0)
+                soundEffectPlayer.PlaySound(SoundName.Heal);
         }
         else
         {

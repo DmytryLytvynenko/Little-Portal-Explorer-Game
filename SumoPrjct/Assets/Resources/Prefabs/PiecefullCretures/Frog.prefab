@@ -891,14 +891,17 @@ MonoBehaviour:
   chaseCollider: {fileID: 4005302649236247220}
   healthControll: {fileID: 8881283347618451030}
   soundEffectPlayer: {fileID: 8628793345052573764}
+  animator: {fileID: 7990811636589251790}
   contactDamage: 0
   moveSpeed: 1
   maxSpeed: 0
   rotationSpeed: 5
+  IdleLayers:
+    serializedVersion: 2
+    m_Bits: 1
   AgrDistance: 0
   jumpForce: 20
   jumpHeightMultiplier: 4
-  animator: {fileID: 7990811636589251790}
   materials:
   - {fileID: 2100000, guid: d6f5538145fbce542a8f6d748c063730, type: 2}
   - {fileID: 2100000, guid: c841c9ec2fbf8b94c85ad03ef7f2a95c, type: 2}
