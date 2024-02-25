@@ -1044,6 +1044,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soundEffectPlayer: {fileID: 8397719316738761400}
+  moneyViewer: {fileID: 0}
 --- !u!82 &6350091517508192941
 AudioSource:
   m_ObjectHideFlags: 0

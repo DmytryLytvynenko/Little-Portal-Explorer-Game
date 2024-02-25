@@ -3,10 +3,12 @@ using UnityEngine;
 public class PlayerRespawner : MonoBehaviour
 {
     [SerializeField] private HealthControll PlayerHealth;
+    [SerializeField] private Animator playerAnimator;
     public void RespawnPlayer()
     {
         Utilities.Utilities.SetPlayerPosition();
         PlayerHealth.RestoreHealth();
-        gameObject.SetActive(false);
+        playerAnimator.Rebind();
+        playerAnimator.Update(0f);
     }
 }
