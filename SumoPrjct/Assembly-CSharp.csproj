@@ -89,6 +89,7 @@
     <Compile Include="Assets\Scripts\Tutorial\RotateTutorialTracker.cs" />
     <Compile Include="Assets\Scripts\MainMechanics\Hero\Throw.cs" />
     <Compile Include="Assets\Scripts\MainMechanics\Enemies\StateMachine\TriggerChecks\ShooterAttackTrigger.cs" />
+    <Compile Include="Assets\Scripts\MainMechanics\UI\MoneyViewer.cs" />
     <Compile Include="Assets\Scripts\MainMechanics\Enemies\StateMachine\TriggerChecks\BomberAttackTrigger.cs" />
     <Compile Include="Assets\Scripts\MainMechanics\Enemies\StateMachine\Enemy Types\Thrower\ThrowerController.cs" />
     <Compile Include="Assets\Scripts\PlayerRespawner.cs" />
@@ -163,6 +164,7 @@
     <Compile Include="Assets\PostProcessing\Runtime\Models\AmbientOcclusionModel.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Components\DitheringComponent.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Utils\RenderTextureFactory.cs" />
+    <Compile Include="Assets\Scripts\Menu\ShowTrigger.cs" />
     <Compile Include="Assets\Scripts\MainMechanics\UI\PauseGame.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Models\BuiltinDebugViewsModel.cs" />
     <Compile Include="Assets\Scripts\MainMechanics\RotatingPlatform.cs" />
@@ -211,8 +213,6 @@
     <Compile Include="Assets\Scripts\MainMechanics\Hero\Attack.cs" />
     <Compile Include="Assets\Scripts\MainMechanics\Enemies\StateMachine\TriggerChecks\ChaseTrigger.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Models\DitheringModel.cs" />
-    <Compile Include="Assets\Scripts\MainMechanics\UI\MoneyViewer.cs" />
-    <Compile Include="Assets\Scripts\Menu\MoneyBagMenu.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Cainos\Pixel Art Icon Pack - RPG\Shader\SH UI Icon Outline Color.shader" />

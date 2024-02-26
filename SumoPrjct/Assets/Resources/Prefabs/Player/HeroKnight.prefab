@@ -935,7 +935,7 @@ MonoBehaviour:
   rotationSpeed: 7.5
   ExplosionJumpHeight: 4.5
   velocityToExplode: -6.5
-  explosionDamage: 1
+  explosionDamage: 3000
   raycastLayerMask:
     serializedVersion: 2
     m_Bits: 15425
