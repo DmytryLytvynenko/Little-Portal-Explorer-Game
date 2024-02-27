@@ -351,6 +351,7 @@
 -r:"Library/Bee/artifacts/1300b0aEDbg.dag/Assembly-CSharp.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aEDbg.dag/AYellowpaper.SerializedCollections.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aEDbg.dag/AYellowpaper.SerializedCollections.ref.dll"
+-r:"Library/Bee/artifacts/1300b0aEDbg.dag/Unity.2D.Sprite.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aEDbg.dag/Unity.Mobile.AndroidLogcat.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aEDbg.dag/Unity.Notifications.Android.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aEDbg.dag/Unity.Notifications.iOS.ref.dll"
