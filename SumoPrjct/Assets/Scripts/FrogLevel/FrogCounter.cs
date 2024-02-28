@@ -3,7 +3,7 @@ using TMPro;
 
 public class FrogCounter : MonoBehaviour
 {
-    private const string QUEST_PROGRESS_DEFAULT_TEXT = "Ћ€гушек собрано:";
+    private const string QUEST_PROGRESS_DEFAULT_TEXT = "Frogs collected:";
 
     [SerializeField] private FrogSpawner spawner;
     [SerializeField] private GameObject questProgress;
@@ -19,7 +19,7 @@ public class FrogCounter : MonoBehaviour
     }
     private void UpdateQuestText()
     {
-        questProgressText.text = QUEST_PROGRESS_DEFAULT_TEXT + $" {FrogsAtHome} из {FrogCount}";
+        questProgressText.text = QUEST_PROGRESS_DEFAULT_TEXT + $" {FrogsAtHome} out of {FrogCount}";
         if (FrogsAtHome == FrogCount)
         {
             WinScreen.SetActive(true);
