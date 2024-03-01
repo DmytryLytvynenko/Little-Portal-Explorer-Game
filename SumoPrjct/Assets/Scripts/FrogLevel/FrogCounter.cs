@@ -23,6 +23,7 @@ public class FrogCounter : MonoBehaviour
         if (FrogsAtHome == FrogCount)
         {
             WinScreen.SetActive(true);
+            questProgress.GetComponent<SwitchTipAnimation>().SetBool("Disappear 1");
             gameObject.SetActive(false);
         }
     }

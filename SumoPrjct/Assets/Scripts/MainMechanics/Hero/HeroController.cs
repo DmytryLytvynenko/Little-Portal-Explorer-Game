@@ -42,7 +42,6 @@ public class HeroController : MonoBehaviour
     [SerializeField] private SurfaceSlider surfaceSlider;
     [SerializeField] private VerticalAccelerator verticalAccelerator;
     [SerializeField] private SoundEffectPlayer soundEffectPlayer;
-    [field:SerializeField] public PlayerDeformator PlayerDeformator { get; private set; }
     private HealthControll healthControll;
     private MobileController mController;
     private Animator animator;
