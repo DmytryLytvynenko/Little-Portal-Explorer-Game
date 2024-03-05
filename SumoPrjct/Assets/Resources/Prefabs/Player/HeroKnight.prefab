@@ -945,7 +945,6 @@ MonoBehaviour:
   surfaceSlider: {fileID: 1055216236094539616}
   verticalAccelerator: {fileID: 1055216236094539622}
   soundEffectPlayer: {fileID: 8397719316738761400}
-  <PlayerDeformator>k__BackingField: {fileID: 0}
 --- !u!114 &1055216236094539618
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -977,7 +976,7 @@ MonoBehaviour:
   yThrowAngle: 1
   throwForce: 2000
   explosionRadius: 0
-  throwDamage: 100
+  throwDamage: 2
   upwardsModifier: 0.1
   throwLayers:
     serializedVersion: 2
@@ -1011,7 +1010,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackForce: 1000
-  attackDamage: 500
+  attackDamage: 7
   attackLayers:
     serializedVersion: 2
     m_Bits: 276481

@@ -143,6 +143,7 @@
     <Compile Include="Assets\Scripts\Utilities.cs" />
     <Compile Include="Assets\VolumeSetter.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Models\MotionBlurModel.cs" />
+    <Compile Include="Assets\Scripts\Menu\MenuPlayButton.cs" />
     <Compile Include="Assets\LowPolyWater_Pack\Scripts\LowPolyWater.cs" />
     <Compile Include="Assets\MeshCombiner\Scripts\MeshCombiner.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Components\UserLutComponent.cs" />

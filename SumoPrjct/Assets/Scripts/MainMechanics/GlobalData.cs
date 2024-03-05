@@ -9,5 +9,5 @@ public static class GlobalData
     public static HealPool healPool;
     public static string PlayerTag = "Player";
     public static Transform CurrentCheckPoint;
-    public static Vector3 DefaultCheckPoint = new Vector3(128f, 36f, 444f);
+    public static Vector3 DefaultCheckPoint = new Vector3(144.5f, 37.1f, 468f);
 }

@@ -134,7 +134,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 166314e5bb252054687f0fe09d56c130, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosionDamage: 3000
+  explosionDamage: 30
   healthControll: {fileID: 1376326090}
 --- !u!114 &8502569469706987198
 MonoBehaviour:
@@ -289,7 +289,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33438a174875f1940a1dee41e10cee11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 2500
+  maxHealth: 30
   soundEffectPlayer: {fileID: 1376326089}
 --- !u!205 &3402281263815856214
 LODGroup:

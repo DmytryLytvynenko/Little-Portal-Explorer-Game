@@ -126,20 +126,8 @@ public class HeroController : MonoBehaviour
     {
         SetCanExplode();
         Move();
-        /*SetFallState();*/
     }
 
-/*    private bool CheckFallState()
-    {
-        return rb.velocity.y < -1;
-    }
-    private void SetFallState()
-    {
-        if (!CheckFallState())
-            animator.SetBool(PlayerAnimParameters.LandJump.ToString(), false);
-
-        animator.SetBool(PlayerAnimParameters.Falling.ToString(), CheckFallState());
-    }*/
     private void Move()
     {
         //вращение персонажа
@@ -256,7 +244,9 @@ public class HeroController : MonoBehaviour
     {
         if (collision.gameObject.tag == "Ground")
         {
-            soundEffectPlayer.PlaySound(SoundName.Landing);
+            if(collision.relativeVelocity.magnitude > 3.5f)
+                soundEffectPlayer.PlaySound(SoundName.Landing);
+
             animator.SetBool(PlayerAnimParameters.Falling.ToString(), false);
             animator.SetBool(PlayerAnimParameters.LandJump.ToString(), true);
         }

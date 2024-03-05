@@ -143,7 +143,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33438a174875f1940a1dee41e10cee11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 900
+  maxHealth: 10
   soundEffectPlayer: {fileID: 6603798539896564}
 --- !u!82 &6603798539896560
 AudioSource:

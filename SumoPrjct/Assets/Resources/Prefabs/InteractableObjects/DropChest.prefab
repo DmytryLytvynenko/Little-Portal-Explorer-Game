@@ -88,7 +88,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33438a174875f1940a1dee41e10cee11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 500
+  maxHealth: 7
   soundEffectPlayer: {fileID: 1184418177983018409}
 --- !u!82 &1184418177983018415
 AudioSource:
@@ -228,11 +228,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51153aeacf111174987edcf034a4ab00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  minProbability: 0
+  maxProbability: 1
   coinCount: 4
   healCount: 1
   dropFlyForce: 120
   dropDelay: 0.2
   healthControll: {fileID: 1184418177983018414}
+  brakeEffect: {fileID: 0}
   _animation: {fileID: 2066747468430461151}
 --- !u!205 &1578345942075973856
 LODGroup:

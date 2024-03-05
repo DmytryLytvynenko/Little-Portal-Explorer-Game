@@ -1,5 +1,6 @@
 using Sound_Player;
 using UnityEngine;
+using Sirenix.OdinInspector;
 
 public class Wallet : MonoBehaviour
 {
@@ -28,6 +29,12 @@ public class Wallet : MonoBehaviour
         moneyViewer.UpdateCoinCount(coinCount);
         Debug.Log("CoinCount = " + coinCount);
     }
+    public void SpendCoin( int coinAmount)
+    {
+        coinCount -= coinAmount;
+        moneyViewer.UpdateCoinCount(coinCount);
+        Debug.Log("CoinCount = " + coinCount);
+    }
     public void SaveCoins() 
     {
         PlayerPrefs.SetInt("PlayersMoney", coinCount);
@@ -45,5 +52,11 @@ public class Wallet : MonoBehaviour
     private void OnApplicationQuit()
     {
         SaveCoins();
+    }
+
+    [Button("DeleteMoney")]
+    private void DeleteMoney()
+    {
+        PlayerPrefs.DeleteKey("PlayersMoney");
     }
 }
