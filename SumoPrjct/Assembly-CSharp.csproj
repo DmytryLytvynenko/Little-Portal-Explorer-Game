@@ -103,6 +103,7 @@
     <Compile Include="Assets\Scripts\MainMechanics\GlobalData.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Components\TaaComponent.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Components\ScreenSpaceReflectionComponent.cs" />
+    <Compile Include="Assets\Scripts\MainMechanics\Environment\UVMooving.cs" />
     <Compile Include="Assets\Scripts\MainMechanics\Enemies\StateMachine\Enemy Types\Thrower\Projectile.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Models\VignetteModel.cs" />
     <Compile Include="Assets\Scripts\MainMechanics\UI\UIAnimationTimer.cs" />
@@ -215,6 +216,7 @@
     <Compile Include="Assets\Scripts\MainMechanics\Hero\Attack.cs" />
     <Compile Include="Assets\Scripts\MainMechanics\Enemies\StateMachine\TriggerChecks\ChaseTrigger.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Models\DitheringModel.cs" />
+    <Compile Include="Assets\Scripts\Menu\QuitApplication.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\ImportedAssets\Cainos\Pixel Art Icon Pack - RPG\Shader\SH UI Icon Outline Color.shader" />
@@ -228,7 +230,6 @@
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\LowPolyWater_Pack\Shaders\WaterShaded.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
-    <None Include="Assets\LowPolyWater_Pack\LowPoly Island\Credits.txt" />
     <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF.shader" />

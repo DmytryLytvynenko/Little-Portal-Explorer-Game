@@ -23,7 +23,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 16
   m_IsActive: 1
 --- !u!4 &1178916991839010193
 Transform:
@@ -105,8 +105,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minProbability: 0.5
   maxProbability: 1
-  coinCount: 3
-  healCount: 1
+  coinCount: 2
+  healCount: 0
   dropFlyForce: 120
   dropDelay: 0.1
   healthControll: {fileID: 6603798539896565}
@@ -285,14 +285,14 @@ LODGroup:
   m_AnimateCrossFading: 0
   m_LastLODIsBillboard: 0
   m_LODs:
-  - screenRelativeHeight: 0.02948627
+  - screenRelativeHeight: 0.008023359
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 6603798539896574}
-  - screenRelativeHeight: 0.02948627
+  - screenRelativeHeight: 0.008023359
     fadeTransitionWidth: 0
     renderers: []
-  - screenRelativeHeight: 0.02948627
+  - screenRelativeHeight: 0.008023359
     fadeTransitionWidth: 0
     renderers: []
   m_Enabled: 1

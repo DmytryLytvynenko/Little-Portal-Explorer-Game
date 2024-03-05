@@ -83,7 +83,6 @@ public class HealthControll : MonoBehaviour
     }
     private void Die()
     {
-        soundEffectPlayer.PlaySound(SoundName.Die);
         EntityDied?.Invoke();
     }
 }

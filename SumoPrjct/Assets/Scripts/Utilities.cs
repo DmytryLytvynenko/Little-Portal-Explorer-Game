@@ -29,6 +29,10 @@ namespace Utilities
             yield return new WaitForSeconds(delay);
             WaitForStateExit.Invoke();
         }
+        public static void QuitAplication()
+        {
+            Application.Quit();
+        }
     }
 }
 

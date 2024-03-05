@@ -134,6 +134,7 @@ public class Enemy : MonoBehaviour
     private void OnEntityDied()
     {
         animator.SetBool(EnemyAnimParameters.Death.ToString(), true);
+        soundEffectPlayer.PlaySound(SoundName.Die);
         this.enabled = false;
     }
     private void OnDamageTaken(Transform damager)

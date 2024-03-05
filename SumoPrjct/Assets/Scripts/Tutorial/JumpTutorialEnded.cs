@@ -6,6 +6,7 @@ public class JumpTutorialEnded : MonoBehaviour
 {
     [SerializeField] private GameObject throwButton;
     [SerializeField] private GameObject throwTip;
+    [SerializeField] private GameObject attackButton;
     private bool isTriggered;
     private void OnTriggerEnter(Collider other)
     {
@@ -14,6 +15,7 @@ public class JumpTutorialEnded : MonoBehaviour
             isTriggered = true;
             throwButton.SetActive(true);
             throwTip.SetActive(true);
+            attackButton.SetActive(true);
         }
     }
 }

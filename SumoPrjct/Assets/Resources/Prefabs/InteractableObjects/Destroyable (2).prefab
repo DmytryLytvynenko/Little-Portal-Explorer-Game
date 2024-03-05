@@ -359,14 +359,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7926043166102974990}
     m_Modifications:
-    - target: {fileID: 6603798539896561, guid: 0d2ef374e6d2d8342aed682227f35b56, type: 3}
-      propertyPath: coinCount
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6603798539896561, guid: 0d2ef374e6d2d8342aed682227f35b56, type: 3}
-      propertyPath: healCount
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1178916991839010193, guid: 0d2ef374e6d2d8342aed682227f35b56,
         type: 3}
       propertyPath: m_RootOrder

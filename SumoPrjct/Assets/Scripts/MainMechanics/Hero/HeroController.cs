@@ -319,6 +319,7 @@ public class HeroController : MonoBehaviour
     public void Die()
     {
         animator.SetBool(PlayerAnimParameters.Death.ToString(), true);
+        soundEffectPlayer.PlaySound(SoundName.Die);
         LoseScreen.SetActive(true);
         Destroy(healthControll);
     }
