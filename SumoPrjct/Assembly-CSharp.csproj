@@ -135,6 +135,7 @@
     <Compile Include="Assets\Scripts\MainMechanics\Environment\Chest.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Attributes\MinAttribute.cs" />
     <Compile Include="Assets\Scripts\MainMechanics\UI\MobileController.cs" />
+    <Compile Include="Assets\Scripts\Menu\QuitApplication.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Models\UserLutModel.cs" />
     <Compile Include="Assets\Scripts\MainMechanics\HelthSystem\HealthBar.cs" />
     <Compile Include="Assets\Scripts\MainMechanics\Environment\Elevator.cs" />
@@ -216,7 +217,13 @@
     <Compile Include="Assets\Scripts\MainMechanics\Hero\Attack.cs" />
     <Compile Include="Assets\Scripts\MainMechanics\Enemies\StateMachine\TriggerChecks\ChaseTrigger.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Models\DitheringModel.cs" />
-    <Compile Include="Assets\Scripts\Menu\QuitApplication.cs" />
+    <Compile Include="Assets\ImportedAssets\Joystick Pack\Scripts\Joysticks\DynamicJoystick.cs" />
+    <Compile Include="Assets\ImportedAssets\Joystick Pack\Scripts\Joysticks\FloatingJoystick.cs" />
+    <Compile Include="Assets\ImportedAssets\Joystick Pack\Scripts\Joysticks\VariableJoystick.cs" />
+    <Compile Include="Assets\ImportedAssets\Joystick Pack\Scripts\Base\Joystick.cs" />
+    <Compile Include="Assets\ImportedAssets\Joystick Pack\Examples\JoystickPlayerExample.cs" />
+    <Compile Include="Assets\ImportedAssets\Joystick Pack\Examples\JoystickSetterExample.cs" />
+    <Compile Include="Assets\ImportedAssets\Joystick Pack\Scripts\Joysticks\FixedJoystick.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\ImportedAssets\Cainos\Pixel Art Icon Pack - RPG\Shader\SH UI Icon Outline Color.shader" />

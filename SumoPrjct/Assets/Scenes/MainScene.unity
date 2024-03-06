@@ -3664,6 +3664,7 @@ MonoBehaviour:
   rotationSensitivity: 0.1
   minVerticalAngle: 0
   maxVerticalAngle: 60
+  rotationLerpRate: 0
 --- !u!114 &1055148665
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3871,6 +3872,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerTransform: {fileID: 6836864530271257832}
   posOffset: {x: 0, y: 0, z: 0}
+  positionLerpRate: 0
 --- !u!1 &1215490028
 GameObject:
   m_ObjectHideFlags: 0

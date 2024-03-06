@@ -92,6 +92,10 @@
     <Compile Include="Assets\PostProcessing\Editor\Models\DitheringModelEditor.cs" />
     <Compile Include="Assets\PostProcessing\Editor\Models\ChromaticAberrationEditor.cs" />
     <Compile Include="Assets\PostProcessing\Editor\Monitors\VectorscopeMonitor.cs" />
+    <Compile Include="Assets\ImportedAssets\Joystick Pack\Scripts\Editor\FloatingJoystickEditor.cs" />
+    <Compile Include="Assets\ImportedAssets\Joystick Pack\Scripts\Editor\JoystickEditor.cs" />
+    <Compile Include="Assets\ImportedAssets\Joystick Pack\Scripts\Editor\DynamicJoystickEditor.cs" />
+    <Compile Include="Assets\ImportedAssets\Joystick Pack\Scripts\Editor\VariableJoystickEditor.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

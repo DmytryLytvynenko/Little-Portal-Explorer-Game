@@ -137,7 +137,6 @@ GameObject:
   - component: {fileID: 23607780}
   - component: {fileID: 23607779}
   - component: {fileID: 23607778}
-  - component: {fileID: 23607781}
   m_Layer: 5
   m_Name: Frog Forest
   m_TagString: Untagged
@@ -273,18 +272,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 23607776}
   m_CullTransparentMesh: 1
---- !u!114 &23607781
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 23607776}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 616a19487ca76dd4bba9afe923037ff9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &62737544 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: d404b2eb9f89d6845825ab696843b03f,
@@ -4679,7 +4666,6 @@ GameObject:
   - component: {fileID: 802117630}
   - component: {fileID: 802117629}
   - component: {fileID: 802117628}
-  - component: {fileID: 802117631}
   m_Layer: 5
   m_Name: "\u041E\u0431\u0443\u0447\u0435\u043D\u0438\u0435"
   m_TagString: Untagged
@@ -4764,7 +4750,7 @@ MonoBehaviour:
           m_StringArgument: Click
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 802117631}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Scenes, Assembly-CSharp
         m_MethodName: LoadSN
         m_Mode: 5
@@ -4814,18 +4800,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 802117626}
   m_CullTransparentMesh: 1
---- !u!114 &802117631
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 802117626}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 616a19487ca76dd4bba9afe923037ff9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &837856304
 GameObject:
   m_ObjectHideFlags: 0
@@ -11519,7 +11493,6 @@ GameObject:
   - component: {fileID: 1196588077}
   - component: {fileID: 1196588076}
   - component: {fileID: 1196588075}
-  - component: {fileID: 1196588078}
   m_Layer: 5
   m_Name: Squid Island
   m_TagString: Untagged
@@ -11655,18 +11628,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1196588073}
   m_CullTransparentMesh: 1
---- !u!114 &1196588078
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1196588073}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 616a19487ca76dd4bba9afe923037ff9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1228680797
 GameObject:
   m_ObjectHideFlags: 0
@@ -12069,7 +12030,6 @@ GameObject:
   - component: {fileID: 1358499810}
   - component: {fileID: 1358499809}
   - component: {fileID: 1358499808}
-  - component: {fileID: 1358499811}
   m_Layer: 5
   m_Name: Bouncy Clouds
   m_TagString: Untagged
@@ -12205,18 +12165,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1358499806}
   m_CullTransparentMesh: 1
---- !u!114 &1358499811
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1358499806}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 616a19487ca76dd4bba9afe923037ff9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1383685776
 GameObject:
   m_ObjectHideFlags: 0
@@ -14755,7 +14703,6 @@ GameObject:
   - component: {fileID: 1987521858}
   - component: {fileID: 1987521857}
   - component: {fileID: 1987521856}
-  - component: {fileID: 1987521859}
   m_Layer: 5
   m_Name: Tutorial
   m_TagString: Untagged
@@ -14891,18 +14838,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1987521854}
   m_CullTransparentMesh: 1
---- !u!114 &1987521859
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1987521854}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 616a19487ca76dd4bba9afe923037ff9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1998568124
 PrefabInstance:
   m_ObjectHideFlags: 0
