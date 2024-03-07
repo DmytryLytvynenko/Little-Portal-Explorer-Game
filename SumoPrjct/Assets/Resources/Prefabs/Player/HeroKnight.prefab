@@ -930,7 +930,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpForce: 75
-  moveSpeed: 4.5
+  moveSpeed: 4
   maxSpeed: 6
   rotationSpeed: 7.5
   ExplosionJumpHeight: 4.5

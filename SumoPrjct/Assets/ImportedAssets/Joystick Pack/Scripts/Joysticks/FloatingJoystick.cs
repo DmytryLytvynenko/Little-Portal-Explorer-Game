@@ -1,10 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.EventSystems;
+﻿using UnityEngine.EventSystems;
 
 public class FloatingJoystick : Joystick
 {
+    public bool IsWorking { get; private set; }
     protected override void Start()
     {
         base.Start();
@@ -13,6 +11,7 @@ public class FloatingJoystick : Joystick
 
     public override void OnPointerDown(PointerEventData eventData)
     {
+        IsWorking = true;
         background.anchoredPosition = ScreenPointToAnchoredPosition(eventData.position);
         background.gameObject.SetActive(true);
         base.OnPointerDown(eventData);
@@ -20,6 +19,7 @@ public class FloatingJoystick : Joystick
 
     public override void OnPointerUp(PointerEventData eventData)
     {
+        IsWorking = false;
         background.gameObject.SetActive(false);
         base.OnPointerUp(eventData);
     }

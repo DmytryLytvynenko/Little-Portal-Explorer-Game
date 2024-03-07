@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\MainMechanics\Buffs\Buff.cs" />
+    <Compile Include="Assets\ImportedAssets\Joystick Pack\Scripts\Joysticks\DynamicJoystick.cs" />
     <Compile Include="Assets\Scripts\MainMechanics\COMSetter.cs" />
     <Compile Include="Assets\Scripts\Tutorial\SwitchTipAnimation.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Components\FxaaComponent.cs" />
@@ -65,6 +66,7 @@
     <Compile Include="Assets\Scripts\MainMechanics\Enemies\StateMachine\Enemy Types\Thrower\ThrowerBomb.cs" />
     <Compile Include="Assets\Scripts\MainMechanics\Enemies\StateMachine\StateMachine\EnemyStateMachine.cs" />
     <Compile Include="Assets\Scripts\FrogLevel\PiecefullCretures\FrogDisabler.cs" />
+    <Compile Include="Assets\ImportedAssets\Joystick Pack\Scripts\Base\Joystick.cs" />
     <Compile Include="Assets\Scripts\MainMechanics\Launch.cs" />
     <Compile Include="Assets\Scripts\MainMechanics\Hero\PlayerDeformator.cs" />
     <Compile Include="Assets\Scripts\FrogLevel\FrogSpawner.cs" />
@@ -78,9 +80,11 @@
     <Compile Include="Assets\Scripts\MainMechanics\Triggers\BattleTrigger.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Components\ChromaticAberrationComponent.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Components\BuiltinDebugViewsComponent.cs" />
+    <Compile Include="Assets\ImportedAssets\Joystick Pack\Scripts\Joysticks\FixedJoystick.cs" />
     <Compile Include="Assets\Scripts\LevelLoading.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Attributes\TrackballGroupAttribute.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Utils\ColorGradingCurve.cs" />
+    <Compile Include="Assets\ImportedAssets\Joystick Pack\Scripts\Joysticks\VariableJoystick.cs" />
     <Compile Include="Assets\Scripts\Tutorial\FallExplosionTutorial.cs" />
     <Compile Include="Assets\Scripts\FrogLevel\FrogCounter.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\PostProcessingBehaviour.cs" />
@@ -126,6 +130,7 @@
     <Compile Include="Assets\PostProcessing\Runtime\Components\GrainComponent.cs" />
     <Compile Include="Assets\Scripts\MainMechanics\Enemies\StateMachine\Enemy Types\BomberEnemy\BomberBomb.cs" />
     <Compile Include="Assets\Scripts\MainMechanics\Enemies\StateMachine\TriggerChecks\RunnerAttackTrigger.cs" />
+    <Compile Include="Assets\ImportedAssets\Joystick Pack\Examples\JoystickSetterExample.cs" />
     <Compile Include="Assets\Zololgo\OrbitZoomPanCamera\Scripts\OrbitZoomPanCamera.cs" />
     <Compile Include="Assets\Scripts\TrampolineLevel\ParentSetter.cs" />
     <Compile Include="Assets\Scripts\MainMechanics\Enemies\StateMachine\Enemy Types\ShootingEnemyController\ShooterController.cs" />
@@ -158,6 +163,7 @@
     <Compile Include="Assets\Scripts\TrampolineLevel\TrampolineAnimation.cs" />
     <Compile Include="Assets\Scripts\MainMechanics\Enemies\Coins\CoinPool.cs" />
     <Compile Include="Assets\Scripts\MainMechanics\Other\SlimeControllerLink.cs" />
+    <Compile Include="Assets\ImportedAssets\Joystick Pack\Scripts\Joysticks\FloatingJoystick.cs" />
     <Compile Include="Assets\Scripts\LevelTeleport.cs" />
     <Compile Include="Assets\Scripts\MainMechanics\Bomb.cs" />
     <Compile Include="Assets\Scripts\MainMechanics\UI\FaceCamera.cs" />
@@ -187,6 +193,7 @@
     <Compile Include="Assets\Scripts\MainMechanics\Enemies\StateMachine\StateMachine\NonBasicBehaviours\ShooterEnemyAtackState.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Models\ScreenSpaceReflectionModel.cs" />
     <Compile Include="Assets\Scripts\MainMechanics\Other\Coroutines.cs" />
+    <Compile Include="Assets\ImportedAssets\Joystick Pack\Examples\JoystickPlayerExample.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Components\DepthOfFieldComponent.cs" />
     <Compile Include="Assets\Scripts\MainMechanics\Enemies\StateMachine\StateMachine\NonBasicBehaviours\RunnerRunState.cs" />
     <Compile Include="Assets\Scripts\MainMechanics\SoundEffectPlayer.cs" />
@@ -217,13 +224,6 @@
     <Compile Include="Assets\Scripts\MainMechanics\Hero\Attack.cs" />
     <Compile Include="Assets\Scripts\MainMechanics\Enemies\StateMachine\TriggerChecks\ChaseTrigger.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Models\DitheringModel.cs" />
-    <Compile Include="Assets\ImportedAssets\Joystick Pack\Scripts\Joysticks\DynamicJoystick.cs" />
-    <Compile Include="Assets\ImportedAssets\Joystick Pack\Scripts\Joysticks\FloatingJoystick.cs" />
-    <Compile Include="Assets\ImportedAssets\Joystick Pack\Scripts\Joysticks\VariableJoystick.cs" />
-    <Compile Include="Assets\ImportedAssets\Joystick Pack\Scripts\Base\Joystick.cs" />
-    <Compile Include="Assets\ImportedAssets\Joystick Pack\Examples\JoystickPlayerExample.cs" />
-    <Compile Include="Assets\ImportedAssets\Joystick Pack\Examples\JoystickSetterExample.cs" />
-    <Compile Include="Assets\ImportedAssets\Joystick Pack\Scripts\Joysticks\FixedJoystick.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\ImportedAssets\Cainos\Pixel Art Icon Pack - RPG\Shader\SH UI Icon Outline Color.shader" />

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MoveTutorialTracker : MonoBehaviour
 {
-    [SerializeField] private MobileController controller;
+    [SerializeField] private FloatingJoystick controller;
     [SerializeField] private float timeToEndTutorial = 5;
     [SerializeField] private string animParameterName = "Disappear";// Параметр для переключенияя анимации в аниматоре
     private Animator tipAnimator;

@@ -43,7 +43,6 @@ public class HeroController : MonoBehaviour
     [SerializeField] private VerticalAccelerator verticalAccelerator;
     [SerializeField] private SoundEffectPlayer soundEffectPlayer;
     private HealthControll healthControll;
-    private MobileController mController;
     private FloatingJoystick joystick;
     private Animator animator;
     private Rigidbody rb;
@@ -58,11 +57,8 @@ public class HeroController : MonoBehaviour
     {
         get
         {
-            /*var horizontal = joystick.Horizontal;
-            var vertical = joystick.Vertical;*/
-            var horizontal = mController.Horizontal();
-            var vertical = mController.Vertical();
-
+            var horizontal = joystick.Horizontal;
+            var vertical = joystick.Vertical;
             return new Vector3(horizontal, 0.0f, vertical);
         }
     }
@@ -93,7 +89,6 @@ public class HeroController : MonoBehaviour
         explosion = GetComponent<Explosion>();
         rb = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
-        mController = GameObject.FindGameObjectWithTag("Joystick").GetComponent<MobileController>();
         joystick = GameObject.FindGameObjectWithTag("Joystick").GetComponent<FloatingJoystick>();
         MyDelegate[] buffFoos = new MyDelegate[]
         {

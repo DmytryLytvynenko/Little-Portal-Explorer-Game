@@ -56,7 +56,9 @@
     <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\ImportedAssets\Joystick Pack\Scripts\Editor\VariableJoystickEditor.cs" />
     <Compile Include="Assets\PostProcessing\Editor\PropertyDrawers\GetSetDrawer.cs" />
+    <Compile Include="Assets\ImportedAssets\Joystick Pack\Scripts\Editor\FloatingJoystickEditor.cs" />
     <Compile Include="Assets\PostProcessing\Editor\Models\DepthOfFieldModelEditor.cs" />
     <Compile Include="Assets\PostProcessing\Editor\PropertyDrawers\MinDrawer.cs" />
     <Compile Include="Assets\PostProcessing\Editor\Models\VignetteModelEditor.cs" />
@@ -78,6 +80,7 @@
     <Compile Include="Assets\PostProcessing\Editor\PropertyDrawers\TrackballGroupDrawer.cs" />
     <Compile Include="Assets\PostProcessing\Editor\Models\AmbientOcclusionModelEditor.cs" />
     <Compile Include="Assets\PostProcessing\Editor\Monitors\HistogramMonitor.cs" />
+    <Compile Include="Assets\ImportedAssets\Joystick Pack\Scripts\Editor\JoystickEditor.cs" />
     <Compile Include="Assets\PostProcessing\Editor\PostProcessingFactory.cs" />
     <Compile Include="Assets\PostProcessing\Editor\Models\ScreenSpaceReflectionModelEditor.cs" />
     <Compile Include="Assets\PostProcessing\Editor\Models\BuiltinDebugViewsEditor.cs" />
@@ -92,10 +95,7 @@
     <Compile Include="Assets\PostProcessing\Editor\Models\DitheringModelEditor.cs" />
     <Compile Include="Assets\PostProcessing\Editor\Models\ChromaticAberrationEditor.cs" />
     <Compile Include="Assets\PostProcessing\Editor\Monitors\VectorscopeMonitor.cs" />
-    <Compile Include="Assets\ImportedAssets\Joystick Pack\Scripts\Editor\FloatingJoystickEditor.cs" />
-    <Compile Include="Assets\ImportedAssets\Joystick Pack\Scripts\Editor\JoystickEditor.cs" />
     <Compile Include="Assets\ImportedAssets\Joystick Pack\Scripts\Editor\DynamicJoystickEditor.cs" />
-    <Compile Include="Assets\ImportedAssets\Joystick Pack\Scripts\Editor\VariableJoystickEditor.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
