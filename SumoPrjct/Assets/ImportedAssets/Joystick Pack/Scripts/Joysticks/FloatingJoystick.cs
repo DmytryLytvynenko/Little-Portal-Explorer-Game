@@ -5,8 +5,12 @@ public class FloatingJoystick : Joystick
     public bool IsWorking { get; private set; }
     protected override void Start()
     {
+        EventSystem eventSystem = EventSystem.current;
+        PointerEventData eventData = new PointerEventData(eventSystem);
         base.Start();
         background.gameObject.SetActive(false);
+        OnPointerDown(eventData);
+        OnPointerUp(eventData);
     }
 
     public override void OnPointerDown(PointerEventData eventData)

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -15,6 +16,8 @@ public class Elevator : MonoBehaviour
 
     private Vector3 moveVector;
     private Vector3 startPosition;
+
+    public event Action ElevatorMoveEnded;
 
     private void Start()
     {
@@ -48,6 +51,7 @@ public class Elevator : MonoBehaviour
             yield return null;
         }
         AtStartPosition = !AtStartPosition;
+        ElevatorMoveEnded?.Invoke();
         coroutine = null;
     }
     public void ActivateElevator()
