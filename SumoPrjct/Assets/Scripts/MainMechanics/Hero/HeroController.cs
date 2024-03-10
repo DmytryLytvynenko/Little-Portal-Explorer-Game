@@ -156,6 +156,37 @@ public class HeroController : MonoBehaviour
             animator.SetBool(PlayerAnimParameters.Walking.ToString(), false);
         else
             animator.SetBool(PlayerAnimParameters.Walking.ToString(), true);
+    }    
+    public void Move(Vector3 moveDirection)
+    {
+        //вращение персонажа
+        if (moveDirection.magnitude > 0.1f)
+        {
+            float rotationAngle = Mathf.Atan2(moveDirection.x, moveDirection.z) * Mathf.Rad2Deg + cameraRoot.eulerAngles.y;
+            Quaternion rotation = Quaternion.Euler(0f,rotationAngle,0f);
+            transform.rotation = Quaternion.Lerp(transform.rotation, rotation, rotationSpeed * Time.deltaTime);
+        }
+
+        //перемещение персонажа
+
+        // без инерции
+        /*        Vector3 offset = transform.forward * moveVector.magnitude * moveSpeed * Time.deltaTime;
+                rb.MovePosition(rb.position + offset);*/
+
+        // с инерцией
+        maxSpeed = defaultMaxSpeed * moveDirection.magnitude;
+        Vector3 directionAlongSurface = surfaceSlider.Project(transform.forward);
+
+        float currentVelocityXY = (Mathf.Abs(rb.velocity.x) + Mathf.Abs(rb.velocity.z));
+        if (currentVelocityXY < maxSpeed)
+        {
+            Vector3 direction = isGrounded ? directionAlongSurface : transform.forward;
+            rb.AddForce(direction * moveDirection.magnitude * moveSpeed, ForceMode.Impulse);//метод передвижения 
+        }
+        if (moveDirection == Vector3.zero)
+            animator.SetBool(PlayerAnimParameters.Walking.ToString(), false);
+        else
+            animator.SetBool(PlayerAnimParameters.Walking.ToString(), true);
     }
     public void StartInteractAnimation()
     {
@@ -192,6 +223,10 @@ public class HeroController : MonoBehaviour
         soundEffectPlayer.PlaySound(SoundName.Jump);
         rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
         isGrounded = false;
+    }
+    public void Explode()
+    {
+        explosion.Explode(explosionDamage);
     }
     private void SetCanExplode()
     {
@@ -252,7 +287,7 @@ public class HeroController : MonoBehaviour
         IsGroundedUpate(collision, true);
         if (/*isGrounded && */canExplode)
         {
-            explosion.Explode(explosionDamage);
+            Explode();
             canExplode = false;
         }
         else
