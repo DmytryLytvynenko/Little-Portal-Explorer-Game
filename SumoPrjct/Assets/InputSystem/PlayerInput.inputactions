@@ -15,6 +15,15 @@
                     "initialStateCheck": true
                 },
                 {
+                    "name": "RotateCamera",
+                    "type": "Value",
+                    "id": "f84b40f2-da49-4017-8f43-a1a55dc33dcc",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
                     "name": "Jump",
                     "type": "Button",
                     "id": "48af267a-8b26-4a48-bdb2-7590f59b910d",
@@ -51,13 +60,22 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "RotateCamera",
-                    "type": "Value",
-                    "id": "f84b40f2-da49-4017-8f43-a1a55dc33dcc",
-                    "expectedControlType": "Vector2",
+                    "name": "Interact",
+                    "type": "Button",
+                    "id": "6dd1defe-a9c4-4fc2-aa1e-42f2c07440d6",
+                    "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": true
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Pause",
+                    "type": "Button",
+                    "id": "9f6cd49f-5298-439a-9776-a5aacd775c40",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -223,6 +241,28 @@
                     "processors": "",
                     "groups": "Клавамыш",
                     "action": "RotateCamera",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b84312f6-91a9-48d9-9a71-4f792933517b",
+                    "path": "<Keyboard>/f",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Клавамыш",
+                    "action": "Interact",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "11f316b3-2797-41ea-bb1d-3b4062147715",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Клавамыш",
+                    "action": "Pause",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

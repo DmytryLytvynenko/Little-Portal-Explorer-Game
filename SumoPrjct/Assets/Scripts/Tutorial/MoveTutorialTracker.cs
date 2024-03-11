@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MoveTutorialTracker : MonoBehaviour
 {
-    [SerializeField] private FloatingJoystick controller;
+    [SerializeField] private Rigidbody PlayerBody;
     [SerializeField] private float timeToEndTutorial = 5;
     [SerializeField] private string animParameterName = "Disappear";// Параметр для переключенияя анимации в аниматоре
     private Animator tipAnimator;
@@ -19,7 +19,7 @@ public class MoveTutorialTracker : MonoBehaviour
         {
             tipAnimator.SetBool(animParameterName, true);
         }
-        else if (controller.IsWorking)
+        else if (PlayerBody.velocity.magnitude > 0)
         {
             learnTime += Time.deltaTime;
         }

@@ -4,7 +4,7 @@ public class PlayerInputController : MonoBehaviour
 {
     [SerializeField] private HeroController heroController;
     [SerializeField] private CameraRotate cameraRotate;
-
+    [SerializeField] private PauseGame pauseGame;
 
     private PlayerInput inputs;
 
@@ -15,7 +15,9 @@ public class PlayerInputController : MonoBehaviour
         inputs.Player.Attack.performed += context => heroController.StartAttackAnimation();
         inputs.Player.Throw.performed += context => heroController.StartThrowAnimation();
         inputs.Player.Jump.performed += context => heroController.StartJumpAnimation();
+        inputs.Player.Interact.performed += context => heroController.StartInteractAnimation();
         inputs.Player.Explode.performed += context => heroController.Explode();
+        inputs.Player.Pause.performed += context => pauseGame.PauseUnpause();
     }
     private void OnEnable()
     {
@@ -28,6 +30,9 @@ public class PlayerInputController : MonoBehaviour
     private void FixedUpdate()
     {
         ReadMoveDirection();
+    }
+    private void LateUpdate()
+    {
         ReadRotationInput();
     }
     private void ReadMoveDirection()

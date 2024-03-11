@@ -26,13 +26,6 @@ public class Explosion : MonoBehaviour
         effectScaling = explosionEffect.GetComponent<EffectScaling>();
         effectScaling.SetScale(explosionRadius);
     }
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.E))// потом убрать
-        {
-            NoDamageExplode();
-        }
-    }
     public void SetExplosionRadius(float newRadius)
     {
         explosionRadius = newRadius;

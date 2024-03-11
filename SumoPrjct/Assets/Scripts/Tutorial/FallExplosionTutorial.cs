@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class FallExplosionTutorial : MonoBehaviour
 {
-    [SerializeField] private Button explosionButton;
     [SerializeField] private GameObject explosionTip;
     [SerializeField] private string animParameterName = "Disappear";// Параметр для переключенияя анимации в аниматоре
 
@@ -24,7 +23,6 @@ public class FallExplosionTutorial : MonoBehaviour
         if (explosionTip.activeSelf)
         {
             explosionTip.GetComponent<Animator>().SetBool(animParameterName, true);
-            explosionButton.interactable = true;
         }
     }
     private void OnTriggerEnter(Collider other)
@@ -34,7 +32,6 @@ public class FallExplosionTutorial : MonoBehaviour
         if (!isTriggered)
         {
             isTriggered = true;
-            explosionButton.interactable = false;
             explosionTip.SetActive(true);
         }
     }

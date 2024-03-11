@@ -1,9 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using Sound_Player;
-using UnityEngine.EventSystems;
+using System;
 
 public enum PlayerAnimParameters
 {
@@ -52,6 +51,9 @@ public class HeroController : MonoBehaviour
     //Переменные для хранения временных данных
     private float defaultMoveSpeed;
     private float defaultMaxSpeed;
+
+    //events
+    public static event Action PlayerInteracted;
 
     public bool isGrounded { get; private set; }
     public Vector3 moveVector { private get; set; }
@@ -103,7 +105,6 @@ public class HeroController : MonoBehaviour
     {
         defaultMoveSpeed = moveSpeed;
         defaultMaxSpeed = maxSpeed;
-        Cursor.visible = false;
     } 
     #endregion
 
@@ -154,6 +155,7 @@ public class HeroController : MonoBehaviour
         {
             timer.OnActionPerformed();
             animator.SetTrigger(PlayerAnimParameters.Interact.ToString());
+            PlayerInteracted?.Invoke();
         }
     }
     public void StartAttackAnimation()
@@ -232,7 +234,7 @@ public class HeroController : MonoBehaviour
         Vector3 dir;
         if (enemy == null)
         {
-            dir = new Vector3(Random.Range(-1f,1f),1, Random.Range(-1f, 1f)).normalized;
+            dir = new Vector3(UnityEngine.Random.Range(-1f,1f),1, UnityEngine.Random.Range(-1f, 1f)).normalized;
         }
         else
         {
@@ -326,15 +328,8 @@ public class HeroController : MonoBehaviour
         animator.SetBool(PlayerAnimParameters.Death.ToString(), true);
         soundEffectPlayer.PlaySound(SoundName.Die);
         LoseScreen.SetActive(true);
+        CursorHider.ShowCursor();
         Destroy(healthControll);
-    }
-    public void Win()
-    {
-        GameObject.Find("JumpButton").GetComponent<Button>().interactable = false;
-        GameObject.Find("ThrowButton").GetComponent<Button>().interactable = false;
-        GameObject.Find("ExplosionButton").GetComponent<Button>().interactable = false;
-        gameObject.GetComponent<HeroController>().enabled = false;
-        Time.timeScale = 0;
     }
     public void SetSpeedToZero()
     {

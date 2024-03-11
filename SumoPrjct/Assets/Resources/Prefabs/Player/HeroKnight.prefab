@@ -830,6 +830,9 @@ GameObject:
   - component: {fileID: 4709034476656008101}
   - component: {fileID: 1055216236094539613}
   - component: {fileID: 2435843526609379247}
+  - component: {fileID: 5608207528562100611}
+  - component: {fileID: 3935398091671616947}
+  - component: {fileID: 575246824894917822}
   m_Layer: 10
   m_Name: HeroKnight
   m_TagString: Player
@@ -1221,6 +1224,52 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   heroController: {fileID: 1055216236094539549}
+  cameraRotate: {fileID: 5608207528562100611}
+  pauseGame: {fileID: 575246824894917822}
+--- !u!114 &5608207528562100611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1055216236094539626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe5ff9f9b9312234486bbed130e93741, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraRoot: {fileID: 0}
+  rotationSensitivity: 7
+  minVerticalAngle: 2
+  maxVerticalAngle: 80
+  rotationLerpRate: 6
+--- !u!114 &3935398091671616947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1055216236094539626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea90b271b388223459d8bd5b6925c3e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coolDowm: 0.8
+--- !u!114 &575246824894917822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1055216236094539626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 746c6584084965143a954fbeb5b48b19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PauseMenu: {fileID: 0}
+  soundPlayer: {fileID: 0}
 --- !u!1 &1088382368314406805
 GameObject:
   m_ObjectHideFlags: 0

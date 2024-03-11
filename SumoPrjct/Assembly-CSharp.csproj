@@ -61,6 +61,7 @@
     <Compile Include="Assets\Scripts\MainMechanics\COMSetter.cs" />
     <Compile Include="Assets\Scripts\Tutorial\SwitchTipAnimation.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Components\FxaaComponent.cs" />
+    <Compile Include="Assets\Scripts\FPSSetter.cs" />
     <Compile Include="Assets\Scripts\FrogLevel\QuestGiver.cs" />
     <Compile Include="Assets\Scripts\MainMechanics\Enemies\StateMachine\StateMachine\BasicStates\EnemyIdleState.cs" />
     <Compile Include="Assets\Scripts\MainMechanics\Enemies\StateMachine\Enemy Types\Thrower\ThrowerBomb.cs" />
@@ -97,11 +98,13 @@
     <Compile Include="Assets\Scripts\MainMechanics\Enemies\StateMachine\Enemy Types\Thrower\ThrowerController.cs" />
     <Compile Include="Assets\Scripts\PlayerRespawner.cs" />
     <Compile Include="Assets\Scripts\MainMechanics\Enemies\StateMachine\StateMachine\NonBasicBehaviours\BomberEnemyAtackState.cs" />
+    <Compile Include="Assets\Scripts\MainMechanics\UI\CursorHider.cs" />
     <Compile Include="Assets\PostProcessing\Utilities\CustomMotionTexture\ExampleWheelController.cs" />
     <Compile Include="Assets\Scripts\Test\RotateTowards.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Components\VignetteComponent.cs" />
     <Compile Include="Assets\Scripts\MainMechanics\CheckPoint.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Utils\MaterialFactory.cs" />
+    <Compile Include="Assets\Scripts\Tutorial\JumpTutorialTracker.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Models\FogModel.cs" />
     <Compile Include="Assets\Scripts\MainMechanics\GlobalData.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Components\TaaComponent.cs" />
@@ -124,6 +127,7 @@
     <Compile Include="Assets\PostProcessing\Runtime\PostProcessingProfile.cs" />
     <Compile Include="Assets\Scripts\MainMechanics\Enemies\StateMachine\TriggerChecks\ThrowerAttackTrigger.cs" />
     <Compile Include="Assets\Scripts\MainMechanics\Hero\EffectScaling.cs" />
+    <Compile Include="Assets\Scripts\MainMechanics\Hero\PlayerActionTimer.cs" />
     <Compile Include="Assets\Scripts\MainMechanics\Hero\Explosion.cs" />
     <Compile Include="Assets\Scripts\MainMechanics\UI\AudioMixer.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Components\GrainComponent.cs" />
@@ -164,10 +168,12 @@
     <Compile Include="Assets\Scripts\MainMechanics\Enemies\Coins\CoinPool.cs" />
     <Compile Include="Assets\Scripts\MainMechanics\Other\SlimeControllerLink.cs" />
     <Compile Include="Assets\ImportedAssets\Joystick Pack\Scripts\Joysticks\FloatingJoystick.cs" />
+    <Compile Include="Assets\Scripts\FrogLevel\QuestTipClose.cs" />
     <Compile Include="Assets\Scripts\LevelTeleport.cs" />
     <Compile Include="Assets\Scripts\MainMechanics\Bomb.cs" />
     <Compile Include="Assets\Scripts\MainMechanics\UI\FaceCamera.cs" />
     <Compile Include="Assets\Scripts\MainMechanics\Enemies\StateMachine\StateMachine\NonBasicBehaviours\ThrowerEnemyAtackState.cs" />
+    <Compile Include="Assets\Scripts\Tutorial\ThrowTutorialTracker.cs" />
     <Compile Include="Assets\Scripts\Tutorial\ItemCounter.cs" />
     <Compile Include="Assets\Scripts\MainMechanics\UI\CameraRotate.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Models\AmbientOcclusionModel.cs" />
@@ -176,6 +182,7 @@
     <Compile Include="Assets\Scripts\MainMechanics\Signs\ShowTrigger.cs" />
     <Compile Include="Assets\Scripts\MainMechanics\UI\PauseGame.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Models\BuiltinDebugViewsModel.cs" />
+    <Compile Include="Assets\Scripts\MainMechanics\UI\FPSCounter.cs" />
     <Compile Include="Assets\Scripts\MainMechanics\RotatingPlatform.cs" />
     <Compile Include="Assets\Scripts\MainMechanics\Enemies\StateMachine\Base\Enemy.cs" />
     <Compile Include="Assets\Scripts\MainMechanics\Enemies\Coins\CoinDropper.cs" />
@@ -224,7 +231,6 @@
     <Compile Include="Assets\Scripts\MainMechanics\Hero\Attack.cs" />
     <Compile Include="Assets\Scripts\MainMechanics\Enemies\StateMachine\TriggerChecks\ChaseTrigger.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Models\DitheringModel.cs" />
-    <Compile Include="Assets\Scripts\MainMechanics\Hero\PlayerActionTimer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\ImportedAssets\Cainos\Pixel Art Icon Pack - RPG\Shader\SH UI Icon Outline Color.shader" />

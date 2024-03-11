@@ -17,8 +17,8 @@ public class CameraRotate : MonoBehaviour
     public float yRotation { private get; set; }
     private void LateUpdate()
     {
-        float _xRotation = cameraRoot.localEulerAngles.x + xRotation * rotationSensitivity * Time.deltaTime;
-        float _yRotation = cameraRoot.localEulerAngles.y + yRotation * rotationSensitivity * Time.deltaTime;
+        float _xRotation = cameraRoot.localEulerAngles.x - xRotation * rotationSensitivity;
+        float _yRotation = cameraRoot.localEulerAngles.y + yRotation * rotationSensitivity;
         _xRotation = Mathf.Clamp(_xRotation, minVerticalAngle, maxVerticalAngle);
         targetRotation = Quaternion.Euler(_xRotation, _yRotation, 0);
 
