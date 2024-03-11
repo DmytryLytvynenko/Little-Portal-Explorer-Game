@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Sound_Player;
+using UnityEngine.EventSystems;
 
 public enum PlayerAnimParameters
 {
@@ -43,25 +44,17 @@ public class HeroController : MonoBehaviour
     [SerializeField] private VerticalAccelerator verticalAccelerator;
     [SerializeField] private SoundEffectPlayer soundEffectPlayer;
     private HealthControll healthControll;
-    private FloatingJoystick joystick;
     private Animator animator;
     private Rigidbody rb;
     private Explosion explosion;
+    private PlayerActionTimer timer;
 
     //Переменные для хранения временных данных
     private float defaultMoveSpeed;
     private float defaultMaxSpeed;
 
     public bool isGrounded { get; private set; }
-    private Vector3 moveVector// направление  передвижения
-    {
-        get
-        {
-            var horizontal = joystick.Horizontal;
-            var vertical = joystick.Vertical;
-            return new Vector3(horizontal, 0.0f, vertical);
-        }
-    }
+    public Vector3 moveVector { private get; set; }
 
     #region MonoBeh
     private void OnEnable()
@@ -89,7 +82,7 @@ public class HeroController : MonoBehaviour
         explosion = GetComponent<Explosion>();
         rb = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
-        joystick = GameObject.FindGameObjectWithTag("Joystick").GetComponent<FloatingJoystick>();
+        timer = GetComponent<PlayerActionTimer>();
         MyDelegate[] buffFoos = new MyDelegate[]
         {
             // Присваиваем значения элементам массива
@@ -110,15 +103,13 @@ public class HeroController : MonoBehaviour
     {
         defaultMoveSpeed = moveSpeed;
         defaultMaxSpeed = maxSpeed;
+        Cursor.visible = false;
     } 
     #endregion
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            StartJumpAnimation();
-        }
+        UpdateAnimations();
     }
     private void FixedUpdate()
     {
@@ -126,23 +117,23 @@ public class HeroController : MonoBehaviour
         Move();
     }
 
-    private void Move()
+    private void UpdateAnimations()
+    {
+        if (moveVector.magnitude > 0)
+            animator.SetBool(PlayerAnimParameters.Walking.ToString(), true);
+        else
+            animator.SetBool(PlayerAnimParameters.Walking.ToString(), false);
+    }
+    public void Move()
     {
         //вращение персонажа
         if (moveVector.magnitude > 0.1f)
         {
-            float rotationAngle = Mathf.Atan2(moveVector.x,moveVector.z) * Mathf.Rad2Deg + cameraRoot.eulerAngles.y;
+            float rotationAngle = Mathf.Atan2(moveVector.x, moveVector.z) * Mathf.Rad2Deg + cameraRoot.eulerAngles.y;
             Quaternion rotation = Quaternion.Euler(0f,rotationAngle,0f);
             transform.rotation = Quaternion.Lerp(transform.rotation, rotation, rotationSpeed * Time.deltaTime);
         }
 
-        //перемещение персонажа
-
-        // без инерции
-        /*        Vector3 offset = transform.forward * moveVector.magnitude * moveSpeed * Time.deltaTime;
-                rb.MovePosition(rb.position + offset);*/
-
-        // с инерцией
         maxSpeed = defaultMaxSpeed * moveVector.magnitude;
         Vector3 directionAlongSurface = surfaceSlider.Project(transform.forward);
 
@@ -152,59 +143,40 @@ public class HeroController : MonoBehaviour
             Vector3 direction = isGrounded ? directionAlongSurface : transform.forward;
             rb.AddForce(direction * moveVector.magnitude * moveSpeed, ForceMode.Impulse);//метод передвижения 
         }
-        if (moveVector == Vector3.zero)
-            animator.SetBool(PlayerAnimParameters.Walking.ToString(), false);
-        else
-            animator.SetBool(PlayerAnimParameters.Walking.ToString(), true);
-    }    
-    public void Move(Vector3 moveDirection)
-    {
-        //вращение персонажа
-        if (moveDirection.magnitude > 0.1f)
-        {
-            float rotationAngle = Mathf.Atan2(moveDirection.x, moveDirection.z) * Mathf.Rad2Deg + cameraRoot.eulerAngles.y;
-            Quaternion rotation = Quaternion.Euler(0f,rotationAngle,0f);
-            transform.rotation = Quaternion.Lerp(transform.rotation, rotation, rotationSpeed * Time.deltaTime);
-        }
-
-        //перемещение персонажа
-
-        // без инерции
-        /*        Vector3 offset = transform.forward * moveVector.magnitude * moveSpeed * Time.deltaTime;
-                rb.MovePosition(rb.position + offset);*/
-
-        // с инерцией
-        maxSpeed = defaultMaxSpeed * moveDirection.magnitude;
-        Vector3 directionAlongSurface = surfaceSlider.Project(transform.forward);
-
-        float currentVelocityXY = (Mathf.Abs(rb.velocity.x) + Mathf.Abs(rb.velocity.z));
-        if (currentVelocityXY < maxSpeed)
-        {
-            Vector3 direction = isGrounded ? directionAlongSurface : transform.forward;
-            rb.AddForce(direction * moveDirection.magnitude * moveSpeed, ForceMode.Impulse);//метод передвижения 
-        }
-        if (moveDirection == Vector3.zero)
-            animator.SetBool(PlayerAnimParameters.Walking.ToString(), false);
-        else
-            animator.SetBool(PlayerAnimParameters.Walking.ToString(), true);
     }
     public void StartInteractAnimation()
     {
+        if (animator.GetCurrentAnimatorStateInfo(0).IsName("Interact"))
+            return;
         if (!isGrounded)
             return;
-        animator.SetTrigger(PlayerAnimParameters.Interact.ToString());
+        if (timer.ActionCanBePerformed) 
+        {
+            timer.OnActionPerformed();
+            animator.SetTrigger(PlayerAnimParameters.Interact.ToString());
+        }
     }
     public void StartAttackAnimation()
     {
-        if (!isGrounded)
+        if (animator.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
             return;
-        animator.SetTrigger(PlayerAnimParameters.Attack.ToString());
+        if (timer.ActionCanBePerformed)
+        {
+            timer.OnActionPerformed();
+            animator.SetTrigger(PlayerAnimParameters.Attack.ToString());
+        }
     }
     public void StartThrowAnimation()
     {
+        if (animator.GetCurrentAnimatorStateInfo(0).IsName("Throw"))
+            return;
         if (!isGrounded)
             return;
-        animator.SetTrigger(PlayerAnimParameters.Throw.ToString());
+        if (timer.ActionCanBePerformed)
+        {
+            timer.OnActionPerformed();
+            animator.SetTrigger(PlayerAnimParameters.Throw.ToString());
+        }
     }
     public void StartJumpAnimation()
     {
@@ -277,7 +249,7 @@ public class HeroController : MonoBehaviour
     {
         if (collision.gameObject.tag == "Ground")
         {
-            if(collision.relativeVelocity.magnitude > 3.5f)
+            if(collision.relativeVelocity.magnitude > 2f)
                 soundEffectPlayer.PlaySound(SoundName.Landing);
 
             animator.SetBool(PlayerAnimParameters.Falling.ToString(), false);

@@ -1,10 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerInputController : MonoBehaviour
 {
     [SerializeField] private HeroController heroController;
+    [SerializeField] private CameraRotate cameraRotate;
+
+
     private PlayerInput inputs;
 
     private void Awake()
@@ -24,12 +25,21 @@ public class PlayerInputController : MonoBehaviour
     {
         inputs.Disable();
     }
-
-    private void Update()
+    private void FixedUpdate()
     {
-        Vector2 direction = inputs.Player.Move.ReadValue<Vector2>();
-        print(direction);
-        Vector3 moveDirection = new Vector3(direction.x,0f,direction.y);
-        heroController.Move(moveDirection);
+        ReadMoveDirection();
+        ReadRotationInput();
+    }
+    private void ReadMoveDirection()
+    {
+        Vector2 directionInput = inputs.Player.Move.ReadValue<Vector2>();
+        Vector3 moveDirection = new Vector3(directionInput.x, 0f, directionInput.y);
+        heroController.moveVector = moveDirection;
+    }
+    private void ReadRotationInput()
+    {
+        Vector2 rotationInput = inputs.Player.RotateCamera.ReadValue<Vector2>();
+        cameraRotate.xRotation = rotationInput.y;
+        cameraRotate.yRotation = rotationInput.x;
     }
 }

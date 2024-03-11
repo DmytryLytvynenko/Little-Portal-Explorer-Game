@@ -829,6 +829,7 @@ GameObject:
   - component: {fileID: 8397719316738761400}
   - component: {fileID: 4709034476656008101}
   - component: {fileID: 1055216236094539613}
+  - component: {fileID: 2435843526609379247}
   m_Layer: 10
   m_Name: HeroKnight
   m_TagString: Player
@@ -1160,7 +1161,7 @@ MonoBehaviour:
     - Key: 7
       Value: {fileID: 8300000, guid: 8c8758cf4f70cc442b3aa825f58d92ae, type: 3}
     - Key: 3
-      Value: {fileID: 8300000, guid: f4c21dd75e39e7d4c928bef89e791892, type: 3}
+      Value: {fileID: 8300000, guid: 13fa6656705d1a54ca093554444b9e6f, type: 3}
     - Key: 6
       Value: {fileID: 8300000, guid: 0d33af3cab6b4f34dbc043882cf463c4, type: 3}
     - Key: 8
@@ -1207,6 +1208,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &2435843526609379247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1055216236094539626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22611d3b92d0ee64cb7593fd01991422, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  heroController: {fileID: 1055216236094539549}
 --- !u!1 &1088382368314406805
 GameObject:
   m_ObjectHideFlags: 0

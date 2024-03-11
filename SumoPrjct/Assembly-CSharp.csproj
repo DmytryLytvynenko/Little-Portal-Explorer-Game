@@ -90,7 +90,6 @@
     <Compile Include="Assets\PostProcessing\Runtime\PostProcessingBehaviour.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Models\EyeAdaptationModel.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Utils\GraphicsUtils.cs" />
-    <Compile Include="Assets\Scripts\Tutorial\RotateTutorialTracker.cs" />
     <Compile Include="Assets\Scripts\MainMechanics\Hero\Throw.cs" />
     <Compile Include="Assets\Scripts\MainMechanics\Enemies\StateMachine\TriggerChecks\ShooterAttackTrigger.cs" />
     <Compile Include="Assets\Scripts\MainMechanics\UI\MoneyViewer.cs" />
@@ -152,8 +151,10 @@
     <Compile Include="Assets\PostProcessing\Runtime\Models\MotionBlurModel.cs" />
     <Compile Include="Assets\Scripts\Menu\MenuPlayButton.cs" />
     <Compile Include="Assets\ImportedAssets\MeshCombiner\Scripts\MeshCombiner.cs" />
+    <Compile Include="Assets\InputSystem\PlayerInput.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Components\UserLutComponent.cs" />
     <Compile Include="Assets\Scripts\Tutorial\Respawn.cs" />
+    <Compile Include="Assets\InputSystem\PlayerInputController.cs" />
     <Compile Include="Assets\Scripts\MainMechanics\Enemies\StateMachine\Enemy Types\BomberEnemy\BomberController.cs" />
     <Compile Include="Assets\Scripts\Tutorial\ExplosionTutorial.cs" />
     <Compile Include="Assets\Scripts\MainMechanics\BombSpawn.cs" />
@@ -223,8 +224,7 @@
     <Compile Include="Assets\Scripts\MainMechanics\Hero\Attack.cs" />
     <Compile Include="Assets\Scripts\MainMechanics\Enemies\StateMachine\TriggerChecks\ChaseTrigger.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Models\DitheringModel.cs" />
-    <Compile Include="Assets\InputSystem\PlayerInput.cs" />
-    <Compile Include="Assets\InputSystem\PlayerInputController.cs" />
+    <Compile Include="Assets\Scripts\MainMechanics\Hero\PlayerActionTimer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\ImportedAssets\Cainos\Pixel Art Icon Pack - RPG\Shader\SH UI Icon Outline Color.shader" />

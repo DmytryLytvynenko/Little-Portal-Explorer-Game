@@ -1565,12 +1565,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 308351779}
   m_Mesh: {fileID: -439478764173336586, guid: f59533033359b134a877448228245205, type: 3}
---- !u!1 &319719846 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1055216236094539626, guid: ce09820f95fed0e45bb88be489a53f7c,
-    type: 3}
-  m_PrefabInstance: {fileID: 854272149}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &321628737
 GameObject:
   m_ObjectHideFlags: 0
@@ -4752,7 +4746,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 854272149}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 319719846}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3e0ac1bcacc600b479a7d7d06ba274d7, type: 3}
@@ -4764,25 +4758,12 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 854272149}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 319719846}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ad6a6e2d7d27c5749a255c7a66befa33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &799283060
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 319719846}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22611d3b92d0ee64cb7593fd01991422, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  heroController: {fileID: 799283045}
 --- !u!1 &801461270
 GameObject:
   m_ObjectHideFlags: 0
@@ -5257,6 +5238,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1055216235282145789, guid: ce09820f95fed0e45bb88be489a53f7c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1055216236094539549, guid: ce09820f95fed0e45bb88be489a53f7c,
         type: 3}
       propertyPath: jumpForce
@@ -5337,11 +5323,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: HeroKnight
       objectReference: {fileID: 0}
-    - target: {fileID: 8397719316738761400, guid: ce09820f95fed0e45bb88be489a53f7c,
-        type: 3}
-      propertyPath: sounds._serializedList.Array.data[2].Value
-      value: 
-      objectReference: {fileID: 8300000, guid: 13fa6656705d1a54ca093554444b9e6f, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ce09820f95fed0e45bb88be489a53f7c, type: 3}
 --- !u!1 &887563544
