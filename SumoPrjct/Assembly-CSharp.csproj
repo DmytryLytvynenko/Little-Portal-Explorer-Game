@@ -73,7 +73,6 @@
     <Compile Include="Assets\Scripts\MainMechanics\Hero\VisualizeBox.cs" />
     <Compile Include="Assets\Scripts\FrogLevel\Environment\IlluminationBlinking.cs" />
     <Compile Include="Assets\Scripts\Tutorial\WalkTutorialEnded.cs" />
-    <Compile Include="Assets\Scripts\Tutorial\MoveTutorialTracker.cs" />
     <Compile Include="Assets\Scripts\MainMechanics\Enemies\StateMachine\TriggerChecks\IdleTargetTrigger.cs" />
     <Compile Include="Assets\Scripts\MainMechanics\Enemies\Coins\Wallet.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Attributes\GetSetAttribute.cs" />
@@ -90,7 +89,6 @@
     <Compile Include="Assets\PostProcessing\Runtime\PostProcessingBehaviour.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Models\EyeAdaptationModel.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Utils\GraphicsUtils.cs" />
-    <Compile Include="Assets\Scripts\Tutorial\RotateTutorialTracker.cs" />
     <Compile Include="Assets\Scripts\MainMechanics\Hero\Throw.cs" />
     <Compile Include="Assets\Scripts\MainMechanics\Enemies\StateMachine\TriggerChecks\ShooterAttackTrigger.cs" />
     <Compile Include="Assets\Scripts\MainMechanics\UI\MoneyViewer.cs" />
@@ -224,6 +222,7 @@
     <Compile Include="Assets\Scripts\MainMechanics\Hero\Attack.cs" />
     <Compile Include="Assets\Scripts\MainMechanics\Enemies\StateMachine\TriggerChecks\ChaseTrigger.cs" />
     <Compile Include="Assets\PostProcessing\Runtime\Models\DitheringModel.cs" />
+    <Compile Include="Assets\Scripts\FPSCounter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\ImportedAssets\Cainos\Pixel Art Icon Pack - RPG\Shader\SH UI Icon Outline Color.shader" />
