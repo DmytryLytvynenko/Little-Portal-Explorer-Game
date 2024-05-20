@@ -14258,6 +14258,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: HeroKnight
       objectReference: {fileID: 0}
+    - target: {fileID: 4984139693585745541, guid: ce09820f95fed0e45bb88be489a53f7c,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ce09820f95fed0e45bb88be489a53f7c, type: 3}
 --- !u!114 &998770110 stripped
@@ -25773,6 +25778,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraRoot: {fileID: 1394690875}
+  PV: {fileID: 0}
   rotationSensitivity: 1
   minVerticalAngle: 0
   maxVerticalAngle: 85

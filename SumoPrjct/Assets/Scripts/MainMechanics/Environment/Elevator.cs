@@ -9,7 +9,7 @@ public class Elevator : MonoBehaviour
     [SerializeField] Transform endPoint;
     [SerializeField] protected float duration;
     [SerializeField] protected float height;
-    [SerializeField] protected bool AtStartPosition = true;
+    public bool AtStartPosition { get; private set; } = true;
 
     protected Rigidbody rb;
     protected private Coroutine coroutine;

@@ -1,4 +1,5 @@
-﻿using Sirenix.OdinInspector;
+﻿using Photon.Pun;
+using Sirenix.OdinInspector;
 using Sound_Player;
 using System;
 using UnityEngine;
@@ -17,11 +18,13 @@ public class Explosion : MonoBehaviour
     [SerializeField] private GameObject explosionEffect;
     [SerializeField] private SoundEffectPlayer soundEffectPlayer;
     public static Action Exploded;
+    private PhotonView photonView;
 
     private EffectScaling effectScaling;
     private float defaultExplosionRadius;
     private void Awake()
     {
+        photonView = GetComponent<PhotonView>();
         defaultExplosionRadius = explosionRadius;
         effectScaling = explosionEffect.GetComponent<EffectScaling>();
         effectScaling.SetScale(explosionRadius);
@@ -46,6 +49,10 @@ public class Explosion : MonoBehaviour
     }
     public void Explode(int explosionDamage)
     {
+        if (photonView)
+            if (!photonView.IsMine)
+                return;
+
         soundEffectPlayer.PlaySound(SoundName.Explosion);
         Collider[] overlappedColiders = Physics.OverlapSphere(transform.position, explosionRadius, explosionLayers);
         Bomb bomb;
@@ -76,6 +83,8 @@ public class Explosion : MonoBehaviour
     }
     public void NoDamageExplode()
     {
+        if (!photonView.IsMine)
+            return;
         Collider[] overlappedColiders = Physics.OverlapSphere(transform.position, noDamageExplosionRadius, noDamageExplosionLayers);
         for (int i = 0; i < overlappedColiders.Length; i++)
         {

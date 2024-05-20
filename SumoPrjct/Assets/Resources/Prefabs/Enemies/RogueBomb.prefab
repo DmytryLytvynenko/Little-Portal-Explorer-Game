@@ -106,7 +106,7 @@ PrefabInstance:
       objectReference: {fileID: 1566096841}
     - target: {fileID: 1980712227, guid: cb5f7ca50b88b16479f109d033fcc47c, type: 3}
       propertyPath: explosionLayers.m_Bits
-      value: 275457
+      value: 277505
       objectReference: {fileID: 0}
     - target: {fileID: 278043096728163154, guid: cb5f7ca50b88b16479f109d033fcc47c,
         type: 3}

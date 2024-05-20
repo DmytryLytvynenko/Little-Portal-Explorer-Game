@@ -33,6 +33,8 @@ public class Attack : MonoBehaviour
         {
             Rigidbody rigitbody = overlappedColiders[i].attachedRigidbody;
             if (!rigitbody) continue;
+            if (rigitbody.gameObject == this.gameObject) continue;
+
             rigitbody.AddExplosionForce(attackForce, transform.position, attackArea.localScale.z);
 
             HealthControll healthControll;

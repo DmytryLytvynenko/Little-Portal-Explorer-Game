@@ -1,10 +1,12 @@
-﻿using UnityEngine;
+﻿using Photon.Pun;
+using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
     public Transform playerTransform;
     public Vector3 posOffset;
     [SerializeField] private float positionLerpRate;
+
     private void LateUpdate()
     {
         Vector3 targetPosition = new Vector3(

@@ -120,6 +120,10 @@
 -define:ODIN_INSPECTOR
 -define:ODIN_INSPECTOR_3
 -define:ODIN_INSPECTOR_3_1
+-define:PHOTON_UNITY_NETWORKING
+-define:PUN_2_0_OR_NEWER
+-define:PUN_2_OR_NEWER
+-define:PUN_2_19_OR_NEWER
 -define:PACKAGE_PHYSICS
 -define:PACKAGE_PHYSICS2D
 -define:PACKAGE_TILEMAP
@@ -340,6 +344,8 @@
 -r:"A:/UnityProjects/Github/SumoProject/SumoPrjct/Library/PackageCache/com.unity.collab-proxy@2.0.4/Lib/Editor/PlasticSCM/Unity.Plastic.Antlr3.Runtime.dll"
 -r:"A:/UnityProjects/Github/SumoProject/SumoPrjct/Library/PackageCache/com.unity.collab-proxy@2.0.4/Lib/Editor/PlasticSCM/Unity.Plastic.Newtonsoft.Json.dll"
 -r:"A:/UnityProjects/Github/SumoProject/SumoPrjct/Library/PackageCache/com.unity.collab-proxy@2.0.4/Lib/Editor/PlasticSCM/unityplastic.dll"
+-r:"Assets/Photon/PhotonLibs/netstandard2.0/Photon3Unity3D.dll"
+-r:"Assets/Photon/PhotonLibs/WebSocket/websocket-sharp.dll"
 -r:"Assets/Plugins/Sirenix/Assemblies/Sirenix.OdinInspector.Attributes.dll"
 -r:"Assets/Plugins/Sirenix/Assemblies/Sirenix.OdinInspector.Editor.dll"
 -r:"Assets/Plugins/Sirenix/Assemblies/Sirenix.Reflection.Editor.dll"

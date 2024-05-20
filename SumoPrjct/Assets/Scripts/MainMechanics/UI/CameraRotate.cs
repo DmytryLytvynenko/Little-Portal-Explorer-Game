@@ -1,11 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
+using Photon.Pun;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
 public class CameraRotate : MonoBehaviour, IDragHandler, IPointerUpHandler, IPointerDownHandler
 {
     [SerializeField] private Transform cameraRoot;
+    [SerializeField] private PhotonView PV;
     [SerializeField] private float rotationSensitivity;
     [SerializeField] private float minVerticalAngle;
     [SerializeField] private float maxVerticalAngle;
@@ -32,9 +32,23 @@ public class CameraRotate : MonoBehaviour, IDragHandler, IPointerUpHandler, IPoi
     }
     private void LateUpdate()
     {
+        if (PV)
+        {
+            if (!PV.IsMine)
+                return;
+        }
+
         float t = Mathf.Clamp(Time.deltaTime * rotationLerpRate, 0f, 0.99f);
         cameraRoot.rotation = Quaternion.Lerp(cameraRoot.rotation, targetRotation, t);
         cameraRoot.rotation = Quaternion.Euler(cameraRoot.localEulerAngles.x, cameraRoot.localEulerAngles.y,0f);
         
+    }
+    public void SetCameraRoort(Transform _cameraRoot)
+    {
+        cameraRoot = _cameraRoot;
+    }
+    public void SetPhotonView(PhotonView photonView)
+    {
+        PV = photonView;
     }
 }

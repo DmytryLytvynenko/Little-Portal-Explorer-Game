@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Sound_Player;
+using Photon.Pun;
 
 public enum PlayerAnimParameters
 {
@@ -43,10 +44,11 @@ public class HeroController : MonoBehaviour
     [SerializeField] private VerticalAccelerator verticalAccelerator;
     [SerializeField] private SoundEffectPlayer soundEffectPlayer;
     private HealthControll healthControll;
-    private FloatingJoystick joystick;
+    [SerializeField] private FloatingJoystick joystick;
     private Animator animator;
     private Rigidbody rb;
     private Explosion explosion;
+    private PhotonView photonView;
 
     //Переменные для хранения временных данных
     private float defaultMoveSpeed;
@@ -85,11 +87,14 @@ public class HeroController : MonoBehaviour
 
     private void Awake()
     {
+        photonView = GetComponent<PhotonView>();
         healthControll = GetComponent<HealthControll>();
         explosion = GetComponent<Explosion>();
         rb = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
-        joystick = GameObject.FindGameObjectWithTag("Joystick").GetComponent<FloatingJoystick>();
+        if (joystick == null)
+            joystick = GameObject.FindGameObjectWithTag("Joystick").GetComponent<FloatingJoystick>();
+
         MyDelegate[] buffFoos = new MyDelegate[]
         {
             // Присваиваем значения элементам массива
@@ -112,16 +117,11 @@ public class HeroController : MonoBehaviour
         defaultMaxSpeed = maxSpeed;
     } 
     #endregion
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            StartJumpAnimation();
-        }
-    }
     private void FixedUpdate()
     {
+        if (!photonView.IsMine)
+            return;
+
         SetCanExplode();
         Move();
     }
@@ -135,12 +135,6 @@ public class HeroController : MonoBehaviour
             Quaternion rotation = Quaternion.Euler(0f,rotationAngle,0f);
             transform.rotation = Quaternion.Lerp(transform.rotation, rotation, rotationSpeed * Time.deltaTime);
         }
-
-        //перемещение персонажа
-
-        // без инерции
-        /*        Vector3 offset = transform.forward * moveVector.magnitude * moveSpeed * Time.deltaTime;
-                rb.MovePosition(rb.position + offset);*/
 
         // с инерцией
         maxSpeed = defaultMaxSpeed * moveVector.magnitude;
@@ -159,24 +153,32 @@ public class HeroController : MonoBehaviour
     }
     public void StartInteractAnimation()
     {
+        if (!photonView.IsMine)
+            return;
         if (!isGrounded)
             return;
         animator.SetTrigger(PlayerAnimParameters.Interact.ToString());
     }
     public void StartAttackAnimation()
     {
+        if (!photonView.IsMine)
+            return;
         if (!isGrounded)
             return;
         animator.SetTrigger(PlayerAnimParameters.Attack.ToString());
     }
     public void StartThrowAnimation()
     {
+        if (!photonView.IsMine)
+            return;
         if (!isGrounded)
             return;
         animator.SetTrigger(PlayerAnimParameters.Throw.ToString());
     }
     public void StartJumpAnimation()
     {
+        if (!photonView.IsMine)
+            return;
         if (isGrounded)
         {
             animator.SetTrigger(PlayerAnimParameters.StartJump.ToString());
@@ -192,6 +194,12 @@ public class HeroController : MonoBehaviour
         soundEffectPlayer.PlaySound(SoundName.Jump);
         rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
         isGrounded = false;
+    }
+    public void Explode()
+    {
+        if (!photonView.IsMine) return;
+
+        explosion.Explode(explosionDamage);
     }
     private void SetCanExplode()
     {

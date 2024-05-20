@@ -13,7 +13,7 @@ TagManager:
   - Box
   - Log
   - CoinPool
-  - Projectile
+  - Canvas
   layers:
   - Default
   - TransparentFX
